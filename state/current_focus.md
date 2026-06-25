@@ -1,85 +1,78 @@
 # Current Focus
 
-**Session:** 20260625_180000 (Session 5)
+**Session:** 20260625_200000 (Session 6)
 
-**Current direction:** Assessed p-adic Baker (Yu's theorem) quantitatively; analyzed the
-algebraic structure of the constant c=5; proved the A=1 sub-theorem; assessed
-Skolem/Bertók-Hajdu method; investigated z mod 37 structure.
+**Current direction:** Literature survey of 2025-2026 arXiv; phantom-free neighbor analysis;
+descent investigation; derivation of new fine-grained constraints on A = z - 3^j.
 
-**Why this direction:** After Session 4 retired the last active non-size lead, the
-remaining [MEDIUM] directions were Baker/Yu's p-adic Baker (never computed
-quantitatively), the Thue-Mahler approach, and the "constant 5" speculative angle from
-Session 4's next suggestions. These were the highest-value remaining moves.
+**Why this direction:** After Session 5 cleared the board of every known method, the
+remaining actionable items were: (a) scan the 2025-2026 literature for new tools in the
+"two-comparable-S-units" regime; (b) pursue the descent-on-A idea suggested in Session 5;
+(c) study phantom-free neighboring constants c to understand what makes c=5 uniquely hard.
 
-## Session 5 main results
+## Session 6 main results
 
-1. **p-adic Baker (Yu's theorem): definitively retired.** For both relevant p-adic linear
-   forms (p=2 and p=3), the actual p-adic valuation is 0 — these are p-adic *units*.
-   - $v_3(2^x - z^3) = v_3(-(3^y+5)) = 0$ (since $5 \equiv 2 \pmod 3$, $v_3(5)=0$).
-   - $v_2(2^x - z^3) - v_2(z^3) = v_2(-(3^y+5)) - 3 = 3-3 = 0$.
-   Yu's theorem gives an *upper* bound on $v_p(\Lambda_p)$; a contradiction requires the
-   actual $v_p$ to exceed that upper bound. With $v_p = 0$, no upper bound can ever be
-   violated. This is the same root cause as the archimedean failure: all linear forms
-   (archimedean and p-adic) are far from zero in the "two comparable S-units" regime.
+1. **Literature survey: no new unconditional tools found.**
+   - arXiv:2510.11753 (Cai 2025): Handles only a^x + b = c^y (ONE exponential).
+     Not applicable.
+   - arXiv:2601.11376 (Müller–Taktikos 2026): Effective Roth/Ridout for cube roots,
+     conditional on ABC. Does not help the two-S-units regime unconditionally.
+   - arXiv:2602.19061 (Müller 2026): Gain bounds for diagonal superelliptic equations
+     under strong ABC. Conditional and structurally mismatched.
+   - arXiv:2506.20909 (Jun 2025): Reduces exponential Diophantine to ordinary via Lucas
+     sequences, but requires a specific form that Kuromine (with additive constant 5) does not
+     satisfy.
+   - The κ_real ≈ 0.62 gap (Session 3) remains the fundamental barrier; no 2025-2026
+     paper closes it.
 
-2. **A=1 sub-theorem proved.** The equation $2^x + 5 = 1 + 3^{j+1} + 3^{2j+1}$ (i.e.,
-   $A = z - 3^j = 1$) has *exactly* two non-negative integer solutions:
-   - $j=0$: $2^x = 2$, $x=1$ giving solution $(1,0,2)$.
-   - $j=1$: $2^x = 32$, $x=5$ giving solution $(5,3,4)$.
-   For $j \geq 2$ even: $v_2(\text{value}) = 1 \neq v_2(\text{value})$ for any power of 2
-   (value $\gg 2$). For $j \geq 3$ odd: $v_2(\text{value}) = 3$, value $= 8 \cdot (\text{odd})$
-   with odd part $\gg 1$. In both cases the value cannot be a pure power of 2. This
-   confirms and provides a clean proof for the two known solutions being the only A=1 cases.
+2. **New constraint: j ≡ 7 (mod 8) for all Theorem-5 solutions.**
+   From y = 166317 + 166320k, j = y/3 = 55439 + 55440k.
+   55439 mod 8 = 7, 55440 mod 8 = 0, so j ≡ 7 (mod 8) for all k.
 
-3. **Constant c=5 algebraically characterized.** The equation $2^x + 3^y + c = z^3$ has
-   a rational phantom solution $(5, -3, z_0)$ at $(x,y) = (5,-3)$ if and only if
-   $865 + 27c$ is a perfect cube. The smallest positive $c$ satisfying this is $c=5$
-   (giving $10^3 = 1000$). The sequence is $c \in \{-32, 5, 222, 781, 1844, \ldots\}$
-   (corresponding to cube root $n \equiv 1 \pmod 9$: $n = 1, 10, 19, 28, 37, \ldots$).
-   For all other small positive $c$ (e.g., $c=4, 6, 7, \ldots$), no rational phantom exists
-   at $(5,-3)$ and congruence methods may succeed. This is the precise algebraic reason
-   $c=5$ is maximally obstructed: it is the first small positive integer generating a global
-   rational cube phantom.
+3. **New constraint: A ≡ 27 (mod 32) for any Theorem-5 solution.**
+   Proof: z ≡ 6 (mod 32) [Session 2], j ≡ 7 (mod 8), so 3^j ≡ 3^7 ≡ 11 (mod 32).
+   B = z^2 + z·3^j + (3^j)^2 ≡ 36 + 66 + 121 = 223 ≡ 31 (mod 32).
+   2^x + 5 ≡ 5 (mod 32) for x ≥ 5.
+   A ≡ 5 · 31^{-1} ≡ 5 · 31 = 155 ≡ 27 (mod 32). (31^{-1} ≡ 31 mod 32.)
 
-4. **Skolem/Bertók-Hajdu: inapplicable.** The Bertók-Hajdu algorithm requires the equation
-   to be *locally unsolvable* somewhere (no local solution implies no global solution).
-   The Kuromine equation is locally solvable at every prime (Session 2). Therefore the
-   Bertók-Hajdu/Miyazaki infinite-family approach cannot confirm absence of solutions.
+4. **New constraint: A ≡ 4 (mod 9) for any Theorem-5 solution.**
+   Proof: z^3 ≡ 2^x + 3^y + 5 ≡ 10 (mod 27) [since 3^y ≡ 0 mod 27 for y ≥ 3,
+   and 2^x ≡ 2^5 = 32 ≡ 5 mod 27 for the Theorem-5 family].
+   Cube roots of 10 mod 27 are {4, 13, 22}, all ≡ 4 (mod 9).
+   Since 3^j ≡ 0 (mod 9) for j ≥ 2, A = z - 3^j ≡ z ≡ 4 (mod 9).
+   (Previously known: A ≡ {1, 4, 7} mod 9. Now pinned to exactly 4.)
 
-5. **Thue-Mahler for k=1: computationally intractable.** $N_1 = 2^{332645}+5$ has
-   approximately 100,133 decimal digits. No algorithm can explicitly resolve the Thue-Mahler
-   equation for this input.
+5. **New constraint: A ≡ 22 (mod 27) for any Theorem-5 solution.**
+   From z^3 ≡ 37 (mod 81), cube roots are {22, 49, 76}. All ≡ 22 (mod 27).
 
-6. **z mod 37 structure.** $37 \mid N_k = 2^x + 5$ for all $k \geq 1$ (since $\mathrm{ord}_{37}(2) = 36 \mid 332640$). The Theorem-5 family has z mod 37 cycling through all three branches
-   ({21, 25, 28}) as $k$ varies (verified for $k=0,\ldots,5$). This confirms no fixed
-   branch contradiction is possible via 37-adic data alone. The phantom is in the $z \equiv
-   28 \pmod{37}$ branch.
+6. **Combined CRT constraint: A ≡ {1723, 859, 2587} (mod 2592).**
+   Three branches from (A mod 81 ∈ {22, 49, 76}) combined with (A mod 32 = 27) via CRT,
+   with mod 2592 = lcm(81, 32). Each branch satisfies A ≡ 4 mod 9, A ≡ 22 mod 27.
 
-## Where things stand (board state)
+7. **Phantom-free neighbor analysis.**
+   c=4, 6, 7, ... (all up to 221, excluding phantom values 5, 222, ...) have no rational
+   phantom at (x,y)=(5,-3). The equation for c=4 has solution (0,1,2) immediately.
+   The structure of the c=5 mod-9 sieve (survivors: x≡2,5 mod 6 for y≥2) is unchanged;
+   the phantom's special role is confirmed algebraically as a c=5-specific obstruction.
 
-- Local / congruence / p-adic (standalone): RETIRED (Session 2)
-- Single irrationality measure / 2-term linear form: RETIRED (Session 3)
-- Full 3-log Baker (Matveev, archimedean): RETIRED (Sessions 1, 3)
-- p-adic Baker (Yu's theorem): RETIRED (this session)
-- Primitive-divisor / Zsygmondy: RETIRED (Session 4)
-- Modular / Frey-curve method: RETIRED (Session 4)
-- Skolem / Bertók-Hajdu: RETIRED (this session)
-- Thue-Mahler (theoretical): [MEDIUM] — per-k finiteness only; uniformity open; computationally intractable
-- Elliptic curve (fixed x): [MEDIUM] — same limitation
+8. **Assessment of descent-on-A idea.**
+   The descent idea (force A | something small to get A=1) was investigated.
+   Result: A ≡ 3 (mod p) for every prime p ≡ 2 (mod 3) dividing 2^x+5 (confirmed).
+   A ≡ 4 (mod 9) distinguishes real solutions from phantom (phantom has A=3 ≡ 3 mod 9).
+   But this 3-adic distinction cannot be exploited (3^n wall, as before).
+   No mechanism found to force A=1 or any other specific value via descent.
 
-**Honest assessment (sharpened):** Every known effective global tool (all Baker variants,
-all approximation measures) and every local/algebraic/combinatorial tool (congruences,
-factorization, Skolem, modular method) has now been assessed and found insufficient, with
-explicit quantitative or structural reasons for each failure. The board is now essentially
-cleared of plausible near-term attacks. A breakthrough would require either:
-(a) A new effective method for "two comparable large S-units summing to a cube" (the
-    simultaneous approximation regime $3^y \approx z^2$), or
-(b) A coupling of the 3-adic integrality distinction ($v_3(A)=0$ for real solutions vs
-    $v_3(A_{\text{phantom}})=1$) to a global size bound — mechanism presently unknown.
+## Where things stand (updated)
 
-## Notes on remaining positive/structural results
+- All Baker variants, all congruence/local methods, all size-based methods,
+  modular/Frey, primitive-divisor, Skolem: RETIRED (Sessions 1–5).
+- Thue-Mahler [MEDIUM]: per-k finiteness only; computationally intractable for k≥1.
+- Elliptic curve (fixed x) [MEDIUM]: same limitation.
+- New refined constraints on A documented here, but do not resolve the problem.
+- Literature: no new applicable tool found in 2025-2026 arXiv.
 
-- The A=1 sub-theorem gives a clean characterization of the two known solutions.
-- The c=5 characterization explains the phantom's origin algebraically.
-- The problem is now documented with six independent reference files, one for each retired
-  method cluster.
+**Honest assessment (sharpened, Session 6):** The problem remains beyond all known effective
+methods. The new constraints (A ≡ 27 mod 32, A ≡ 4 mod 9, A ≡ 22 mod 27) are genuine
+addenda to the picture of what a Theorem-5 solution would look like, but do not yield
+a contradiction. The fundamental gap (κ_real ≈ 0.62 in the two-S-units regime) is
+confirmed unchanged by the 2025-2026 literature.
