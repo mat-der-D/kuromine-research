@@ -53,6 +53,16 @@ so $3^y\approx z^2$. This is the "two comparable dominant S-units" regime, beyon
 single cubic irrationality measure. See
 `knowledge/references/irrationality_measure_obstruction.md`. Moved toward dead_ends.
 
+**Session 11 strengthening.** The realized approximation exponent $\kappa_{\text{real}}$
+of $z/W$ to $2^{2/3}$ is **not** a single value $\approx 0.62$; it is $0.62$ only at the
+family floor $k_y = 0$ and goes **negative** for every $k_y \geq 1$ ($-1.75, -4.13, -6.51,
+\dots$; Wolfram). For almost the entire Theorem-5 family the approximation *diverges*
+($|2^{2/3} - z/W| \gg e^{134867} \gg 1$), because $3^y$ grows faster than $2^x$ along the
+progression. So the situation is even worse than Session 3 recorded: any
+separation/measure bound (a lower bound, nontrivial only for *good* approximations,
+$v \geq 2$) has nothing to act on. This also rules out Badziahin's 2026 cubic-vs-rational
+separation results — see the arXiv-survey [LOW] direction below.
+
 ### [LOW, ~RETIRED as standalone] $p$-adic analysis of the phantom solution
 
 **Session 10 addendum (Suggestion #1 resolved).** The map $k_x \mapsto A$ is now written
@@ -159,6 +169,23 @@ Kuromine shape):
 - Holonomy bounds (2510.04156) re-checked: still effective irrationality measure > 2 for
   2^{1/3}, far above κ < 1.107. No new unconditional tool in the two-S-units regime.
 
+**Session 11 update:** Assessed two previously-unassessed 2024–2026 papers, the closest to
+the exact quantified target found so far. Both NOT APPLICABLE:
+- arXiv:2509.01105 (Badziahin, "Distance between cubics and rationals", Sep 2025; Results
+  in Math. 2026): bounds |ξ − p/q| for **cubic irrationals** ξ via cubic root-separation;
+  nontrivial only for good approximations 2 ≤ v ≤ 3, and **all results conditional on
+  abc/Hall** (under abc: interior of D_{3,1} is u > 10 − 3v). Kuromine cannot enter that
+  regime: "cube − square" needs y even but y is always odd in the family (y ≡ 3 mod 6);
+  "cube − cube" degenerates (3^{y/3} is a rational integer, not a cubic irrational);
+  the 2^{2/3}-Thue casting realizes v_real ≈ 0.62 at the floor (k_y=0) and **negative** for
+  all k_y ≥ 1 (the approximation diverges). All far below v ≥ 2. And abc gives no leverage
+  anyway — Kuromine's abc-quality ≈ 0.888 < 1 (Session 8).
+- Bajpai, "Effective and Explicit S-Unit Equations with Many Terms" (UBC thesis;
+  Bajpai–Bennett, Acta Arith. 214 (2024)): effective many-term S-unit equations, but
+  **method = Baker's linear forms in logarithms** (retired Session 5: v_p = 0, no bound
+  violable) and requires all terms to be S-units, which z³ and the constant 5 are not
+  (= the Session-8 obstruction for arXiv:2505.19141). NOT APPLICABLE.
+
 **Session 8 update:** Assessed two additional 2026 papers:
 - arXiv:2505.19141 (Dong-Shafrir / Karimov et al., 2025): Decidability of linear-exponential Diophantine equations over two primes {p,q}. These are equations Σ a_i · p^{x_i} · q^{y_i} = 0. NOT APPLICABLE: Kuromine has z^3 as a term, and z is not an S-unit (not of the form 2^a·3^b). The decidability result requires all terms to be S-units in {p,q}; z^3 falls outside this class.
 - arXiv:2604.18991 (Miyazaki-Scott-Styer, April 2026): Handles a^x + b^y = c^z (purely exponential, all three bases fixed). NOT APPLICABLE: Kuromine has z^3 with z as the variable, not c^z with c fixed.
@@ -186,4 +213,5 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 
 - **2026-06-25 (Session 8):** No new directions retired; no new directions elevated. Completed the (k_x, k_y) indexing of all A-congruence branches. Theorem I: the three branches of A mod 81 are indexed by k_x mod 3 (k_x≡0 → A≡49, k_x≡1 → A≡22, k_x≡2 → A≡76 mod 81). Theorem J: A mod 3^{n-1} uniquely determined by k_x mod 3^{n-4} for n≥5 (gcd(332640, ord_{3^n}(2))=54 for all n≥5). Theorem K: full 12-branch A mod 20736=lcm(81,256) indexed by (k_x mod 3, k_y mod 4), all 12 values listed. Corrected and completed Session 6's three-branch CRT to a six-branch CRT mod 2592 indexed by (k_x mod 3, k_y mod 2). Assessed ABC conjecture: no contradiction (quality exponent q≈0.888<1, ABC is never violated). Assessed two new 2026 arXiv papers: arXiv:2505.19141 (S-unit decidability, two primes) and arXiv:2604.18991 (a^x+b^y=c^z); both NOT APPLICABLE to Kuromine. Noted that the 3-adic expansion of A is determined digit-by-digit by k_x, confirming it is a bijection Z_3→Z_3 (no contradiction). Updated current_focus.md.
 
+- **2026-06-25 (Session 11):** No new directions retired (all relevant ones already retired); no new directions elevated. Literature watch on a previously-unassessed, maximally on-target paper — Badziahin's "Distance between cubics and rationals" (arXiv:2509.01105 / Results in Math. 2026), which studies cubic-irrational-vs-rational separation, the geometry directly underlying |z³ − 3^y|. NOT APPLICABLE: its bounds are conditional on abc/Hall and nontrivial only for good approximations 2 ≤ v ≤ 3; Kuromine cannot be cast there ("cube − square" needs y even but y is always odd in the family; "cube − cube" degenerates to a rational nearby integer = the old factorization; the 2^{2/3}-Thue casting realizes v_real ≈ 0.62 at the floor k_y=0 and **negative** for all k_y ≥ 1 — the approximation *diverges*). This sharpens Session 3: κ_real is 0.62 only at the family floor and goes negative (−1.75, −4.13, −6.51, …) for every k_y ≥ 1, so almost the whole family has z/W not approximating 2^{2/3} at all (Wolfram). Also assessed Bajpai's effective many-term S-unit thesis (Bajpai–Bennett, Acta Arith. 214 (2024)): NOT APPLICABLE — Baker-based (retired Session 5) and requires S-unit-controlled terms, which z³ and the constant 5 are not (= Session 8 obstruction). Three independent literature lines (irrationality measures S3, Bugeaud S10, Badziahin S11) now confirm the two-comparable-S-units barrier structurally. Added a Session-11 strengthening note to the RETIRED 2^{1/3} entry and a Session-11 assessment to the arXiv-survey [LOW] direction. Updated current_focus.md.
 - **2026-06-25 (Session 10):** No new directions retired; no new directions elevated. Literature watch: assessed the two newest Bugeaud "perfect-power minus integral S-unit" papers (arXiv:2604.27490, Apr 2026; arXiv:2503.22084, Mar 2025), the first 2026 results to bound exactly the Kuromine-shaped difference. NOT APPLICABLE: Option (1) z³−2^x = 3^y+5 fails the coprimality hypothesis (z even); Option (2) z³−3^y = 2^x+5 satisfies it (x odd ⇒ z coprime to 3) but gives no contradiction because |z³−3^y| = 2^x+5 ≈ z^{1.89} (log 230572 = 0.631·log z³, Wolfram), so it lands exactly on the Session-3 κ_real ≈ 0.63 two-comparable-S-units barrier; a contradiction needs an effective exponent κ < 1.107 while Baker-type bounds (which Bugeaud uses) give κ just below d=3. Resolved Session 9 Suggestion #1: made k_x ↦ A explicit as the 3-adic analytic function A(k_x) = (32·exp_3(k_x·L)+5)^{1/3} with g=2^332640, v_3(g−1)=4, L=log_3 g, v_3(L)=4 (Wolfram); by Theorem J it is a bijection Z_3→Z_3, so rationality of A at an integer k_x reduces to whether a specific s_a ∈ Z_3 lies in Z — 3-adically undetectable (Z dense in Z_3). No obstruction; last 3-adic stone turned. Added Session-10 addendum to the p-adic direction; updated arXiv survey notes; updated current_focus.md.
