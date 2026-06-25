@@ -1,59 +1,68 @@
 # Current Focus
 
-**Session:** 20260625_234500 (Session 11)
+**Session:** 20260625_235900 (Session 12)
 
-**Current direction:** Literature watch on a *new, previously-unassessed* target —
-the cubic-irrational-vs-rational *separation* geometry that directly underlies |z³ − 3^y|.
+**Current direction:** Literature watch — assessed the Zhou IUT effective abc paper
+(arXiv:2503.14510, March 2025) and a broad June 2026 arXiv sweep for any new tool in the
+two-comparable-S-units regime.
 
-**Why this direction:** Session 10 left literature watch as the primary standing path and
-declared the local/structural program saturated (Sessions 7–9). Rather than repeat the
-saturated computation, I searched for the closest unassessed 2024–2026 papers on the exact
-quantified target and found two: Badziahin's "Distance between cubics and rationals"
-(arXiv:2509.01105 / Results in Math. 2026) — the most on-target paper to date, studying how
-close a cubic can be to a rational — and Bajpai's effective many-term S-unit thesis.
+**Why this direction:** Session 11 declared the local/structural program saturated and the
+primary open target to be an unconditional effective bound with approximation exponent below
+~1.1 in the two-comparable-S-units regime. The most significant new item in the 2025–2026
+literature is Zhong-Peng Zhou's application of inter-universal Teichmüller theory (IUT) to
+obtain an effective abc inequality (arXiv:2503.14510), which was not assessed in any prior
+session. This required careful quantitative evaluation against Kuromine.
 
-## Session 11 main results
+## Session 12 main results
 
-1. **Badziahin arXiv:2509.01105 (Results in Math. 2026) — NOT APPLICABLE.**
-   - The paper bounds |ξ − p/q| for **cubic irrationals** ξ via root-separation of cubics;
-     its nontrivial range is **2 ≤ v ≤ 3**, and **all results are conditional on abc/Hall**
-     (under abc: interior of D_{3,1} is u > 10 − 3v).
-   - Kuromine cannot be cast into that regime. Three castings, all fail (Wolfram):
-     - "cube − square" (|z³ − 3^y|, Hall directly): needs y even; but y ≡ 1 (mod 2)
-       (indeed ≡ 3 mod 6) for **every** member of the Theorem-5 family. Fails.
-     - "cube − cube" (y = 3j): the nearby cubic 3^j is a *rational integer*, not a cubic
-       *irrational* — Badziahin's machinery degenerates. (= old factorization approach.)
-     - "Thue / 2^{2/3}" (the only casting giving a genuine cubic irrational): the realized
-       separation exponent v_real (|2^{2/3} − z/W| ~ W^{−v_real}) is **0.623 at the floor
-       k_y = 0** (= Session-3 κ_real, confirmed) and **NEGATIVE for every k_y ≥ 1**
-       (−1.75, −4.13, −6.51, …): z/W *diverges* from 2^{2/3}. Far below the v ≥ 2 needed.
+1. **Zhou IUT effective abc (arXiv:2503.14510, March 2025) — NOT APPLICABLE.**
+   - Zhou proves: for coprime a, b, c with a+b=c and log|abc| ≥ 700,
+     log|abc| ≤ 3 log rad(abc) + 8√(log|abc| · log log|abc|).
+   - This is an effective version of the abc conjecture (with additive correction
+     8√(log|abc|·log log|abc|) instead of the conjectured ε·log rad), but it still gives
+     a bound of quality ≤ 3 + tiny.
+   - For the Kuromine triple (a, b, c) = (2^x, 3^y+5, z^3): the abc-quality is ≈ 0.888
+     (Session 8, confirmed), far below 1. The triple already trivially satisfies the Zhou
+     bound: since quality < 1 means log c < log rad(abc), and Zhou gives log|abc| ≤ 3 log rad
+     + small, the constraint is loose by a factor ~2.4. No information is gained.
+   - Root cause: effective abc bounds (like Zhou's) are useful for triples where c ≫ rad
+     (quality > 1); they upper-bound quality. Kuromine's quality 0.888 < 1 means the triple
+     is never near an abc-extreme and no upper bound on quality can be violated.
+   - Additionally, the paper is a preprint (March 2025); its peer-review status is
+     unclear. But the non-applicability is structural (quality < 1), not a question of
+     proof validity.
 
-2. **Sharpening of Session 3:** κ_real is not a single ≈ 0.62; it is 0.62 only at the family
-   floor (k_y = 0) and goes negative for all k_y ≥ 1 — for almost the whole Theorem-5 family
-   the cubic approximation z/W to 2^{2/3} *diverges* (because 3^y grows faster than 2^x along
-   the progression). The two-S-units barrier is thus even more severe than recorded.
+2. **June 2026 arXiv sweep (math.NT) — no new applicable tool found.**
+   - Papers assessed: arXiv:2605.31114 (Jacobsthal perfect powers, modular method, NOT
+     APPLICABLE — fixed bases, no variable z); arXiv:2605.28449 (S-units + factorials
+     in ternary recurrences, Baker-based, NOT APPLICABLE — z³ not an S-unit, constant 5
+     not an S-unit); arXiv:2605.18348 (sum of consecutive powers = perfect power,
+     Koutsianas–Tzanakis, NOT APPLICABLE — fixed polynomial sum, no {2,3}-S-unit
+     structure); arXiv:2606.00466 (perfect powers in denominators of elliptic curves,
+     different structure); arXiv:2606.02244 (unit equation in cubic fields,
+     Khawaja–Siksek, NOT APPLICABLE — unit structure in rings of integers, not
+     exponential Diophantine).
+   - The Calegari–Dimitrov–Tang arithmetic holonomy bounds (arXiv:2510.04156, Oct 2025,
+     already assessed in Session 3/6) have no published follow-up improving the effective
+     irrationality measure for 2^{1/3} below the needed ~1.1 threshold. The October 2025
+     paper remains the state of the art for that school.
+   - No paper in May–June 2026 math.NT addresses an unconditional effective bound with
+     exponent below ~1.1 in the two-comparable-S-units regime.
 
-3. **Bajpai effective many-term S-unit equations — NOT APPLICABLE.** Method = Baker's linear
-   forms in logarithms (retired Session 5; v_p = 0 so no bound violable), and it requires all
-   terms to be S-units, which z³ and the constant 5 are not (= Session 8 obstruction).
+## Where things stand (updated after Session 12)
 
-## Where things stand (updated after Session 11)
-
-- All Baker variants, congruence/local methods, size/Thue methods, modular/Frey,
-  primitive-divisor, Skolem, ABC, the explicit 3-adic-analytic map, Bugeaud
-  perfect-power−S-unit bounds: RETIRED / ruled out (Sessions 1–10).
-- Session 11 adds the **cubic-vs-rational separation** avenue (Badziahin 2026) to the ruled-out
-  list: conditional on abc/Hall, nontrivial only for good approximations 2 ≤ v ≤ 3, and the
-  Kuromine cubic approximation realizes v_real < 1 (negative for almost all members).
-- abc itself gives no leverage: Kuromine's abc-quality ≈ 0.888 < 1 (Session 8), so even
-  granting abc the Badziahin bounds are vacuous here.
-
-**Honest assessment (Session 11):** No progress toward a proof; the fundamental barrier is
-unchanged. Three independent literature lines now confirm it structurally: effective
-irrationality measures (Session 3), Bugeaud perfect-power−S-unit differences (Session 10), and
-Badziahin cubic-vs-rational separation (Session 11). All collapse on the two-comparable-S-units
-regime (3^y ≈ z², κ_real ≈ 0.62 at the floor and divergent above it), and the relevant cubic
-results are additionally only conditional on abc/Hall. The precise open target is unchanged: an
-**unconditional effective bound with approximation exponent below ~1.1** in the
-two-comparable-S-units regime — nonexistent in the 2024–2026 literature. The research remains
-correctly positioned on literature watch for exactly this.
+- All known tools (Baker archimedean/p-adic, congruence/Skolem, factorization/Zsygmondy,
+  modular/Frey, irrationality measures, Bugeaud perfect-power−S-unit, Badziahin cubic
+  separation, Bajpai S-unit, Zhou IUT effective abc): NOT APPLICABLE or RETIRED.
+- The quantified open target is unchanged and now confirmed from four independent angles
+  (irrationality measures S3, Bugeaud S-unit bounds S10, Badziahin cubic separation S11,
+  Zhou effective abc S12): need an **unconditional effective bound with approximation
+  exponent below ~1.1** in the two-comparable-S-units regime — nonexistent in the
+  2025–2026 literature.
+- The Zhou IUT paper is the most significant new 2025 result assessed: it is an important
+  methodological advance (effective abc from IUT, constant reduced from 1.7·10³⁰ to 400)
+  but gives no Kuromine leverage because the triple's quality 0.888 is already far below 1.
+- Future sessions: continue literature watch; specifically track (a) improvements to the
+  Calegari–Dimitrov–Tang holonomy bounds, (b) effective results in the two-comparable-S-units
+  regime, (c) any unconditional result handling the "two dominant S-units summing to a cube"
+  structure without reducing to a single-irrationality Thue problem.
