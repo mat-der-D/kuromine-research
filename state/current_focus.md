@@ -1,57 +1,69 @@
 # Current Focus
 
-**Session:** 20260625_171142 (Session 7)
+**Session:** 20260625_213000 (Session 8)
 
-**Current direction:** Extension of 2-adic portrait of Theorem-5 solutions; correction to
-Session 2; computation of $A \pmod{16}$ universally and $B \pmod{27}$, $B \pmod{16}$.
+**Current direction:** Structural analysis of the 3-adic parametrization of A by k_x;
+12-branch CRT of A mod 20736; correction and completion of the (k_x, k_y) indexing
+of all branches; assessment of ABC conjecture and 2026 arXiv literature.
 
-**Why this direction:** Session 6 suggestion #4 (compute $z \pmod{128}$) was executed,
-revealing a correction to Session 2's $z \equiv 6 \pmod{32}$ claim and producing the
-cleaner universal result $z \equiv 6 \pmod{16}$.
+**Why this direction:** Session 7 suggestions #1 and #2 — correct the Session 6
+three-branch CRT and compute the 4-branch A mod 6912 (= lcm(256,27)). This session
+extended that to the full 12-branch A mod 20736 = lcm(256,81) with (k_x, k_y) indexing.
 
-## Session 7 main results
+## Session 8 main results
 
-1. **Correction to Session 2:** $z \equiv 6 \pmod{32}$ is NOT universal; it holds only for
-   $k_y$ even. The correct universal statement is $z \equiv 6 \pmod{16}$.
+1. **Theorem I (new):** The three branches of A mod 81 are indexed by k_x mod 3:
+   - k_x ≡ 0 (mod 3): A ≡ 49 (mod 81)
+   - k_x ≡ 1 (mod 3): A ≡ 22 (mod 81)
+   - k_x ≡ 2 (mod 3): A ≡ 76 (mod 81)
+   Proof: z^3 ≡ 2^x + 5 mod 243 (since 3^y ≡ 0 mod 243 for y ≥ 5), and
+   ord_243(2) = 162, gcd(332640, 162) = 54, so x mod 162 takes 3 values.
 
-2. **New universal congruences (Theorems E–H):**
-   - $y \equiv 13 \pmod{16}$ universally [$166317 \equiv 13$, $166320 \equiv 0 \pmod{16}$].
-   - $j \equiv 3 \pmod{4}$ universally [$55439 \equiv 3$, $55440 \equiv 0 \pmod{4}$].
-   - $z \equiv 6 \pmod{16}$ universally (corrects Session 2).
-   - $A \equiv 11 \pmod{16}$ universally. Proof: $z \equiv 6 \pmod{16}$,
-     $3^j \equiv 3^3 \equiv 11 \pmod{16}$ (from $j \equiv 3 \pmod{4}$),
-     so $A = z - 3^j \equiv 6 - 11 = -5 \equiv 11 \pmod{16}$.
+2. **Theorem J (new):** A mod 3^{n-1} is uniquely determined by k_x mod 3^{n-4} for all n ≥ 5.
+   Pattern: gcd(332640, ord_{3^n}(2)) = 54 for all n ≥ 5, giving period 3^{n-4}.
+   The full 3-adic expansion of A in Z_3 is determined by the 3-adic expansion of k_x.
 
-3. **Correction to Session 6 Theorem B:** $A \equiv 27 \pmod{32}$ was stated universally
-   but holds only for $k_y$ even. The $k_y$ odd sub-family has $A \equiv 11 \pmod{32}$.
-   Both sub-families have $A \equiv 11 \pmod{16}$.
+3. **Theorem K (new):** 12-branch characterization of A mod 20736 = lcm(81,256):
+   Indexed by (k_x mod 3, k_y mod 4). All 12 values:
+   {859, 1291, 3451, 5611, 7771, 8203, 10363, 12523, 14683, 15115, 17275, 19435}
+   The first Theorem-5 case (k_x=1, k_y=1) gives A ≡ 5611 (mod 20736).
 
-4. **New constraints on $B$:** $B \equiv 25 \pmod{27}$, $B \equiv 15 \pmod{16}$.
+4. **Correction: Session 6 three branches {1723, 859, 2587} confirmed for k_y even.**
+   The full 6-branch (k_y even/odd × k_x mod 3) picture mod 2592:
+   {427, 859, 1291, 1723, 2155, 2587} — these replace the erroneous "3 branches universal".
 
-5. **Updated CRT constraints (universal):**
-   - $A \equiv 427 \pmod{432}$ (was 3 separate branches mod 2592 in Session 6, now corrected to single universal mod 432).
-   - $B \equiv 79 \pmod{432}$.
-   - Product: $A \cdot B \equiv 37 \pmod{432}$, consistent with $2^x + 5 \equiv 37 \pmod{432}$.
+5. **ABC conjecture assessment:** ABC gives NO contradiction. The quality exponent for
+   Kuromine is q ≈ 0.888 < 1, meaning C ≪ rad(ABC), so ABC is never violated.
 
-6. **2-adic phantom separation:** $A_{\text{phantom}} = 3 \equiv 3 \pmod{16}$ vs.
-   $A_{\text{real}} \equiv 11 \pmod{16}$. Genuine distinction but not a contradiction
-   (the cube map on $\mathbb{Z}_2^\times$ is bijective; every value has a cube root).
+6. **3-adic parametrization insight:** The map k_x → A (in Z_3) is an injective
+   3-adic map: A ≡ 1 + 1·3 + 2·9 + (k_x mod 3)·27 + ... (first 3 universal digits of A in Z_3
+   are [1,1,2,...]; digit 3 encodes k_x mod 3 via a permutation of Z/3Z). This is a
+   bijection Z_3 → Z_3, confirming no 3-adic contradiction.
 
-7. **arXiv search 2026:** One new paper found (arXiv:2603.29831, cubic reciprocity for
-   polynomial equation), not applicable to Kuromine. No new unconditional methods.
+7. **2026 arXiv survey:**
+   - arXiv:2505.19141 (Dong-Shafrir/Karimov et al., 2025): decidability of linear-exponential
+     Diophantine over 2 primes. NOT APPLICABLE — z^3 is not an S-unit term.
+   - arXiv:2604.18991 (Miyazaki-Scott-Styer, April 2026): a^x+b^y=c^z. NOT APPLICABLE —
+     different structure (Kuromine's cube exponent is fixed, z is variable).
 
-## Where things stand (updated after Session 7)
+## Where things stand (updated after Session 8)
 
 - All Baker variants, all congruence/local methods, all size-based methods,
   modular/Frey, primitive-divisor, Skolem: RETIRED (Sessions 1–5).
-- Thue-Mahler [MEDIUM]: per-$k$ finiteness only; computationally intractable for $k \geq 1$.
-- Elliptic curve (fixed $x$) [MEDIUM]: same limitation.
-- New refined universal constraints: $A \equiv 427 \pmod{432}$, $B \equiv 79 \pmod{432}$,
-  $y \equiv 13 \pmod{16}$, $j \equiv 3 \pmod{4}$, $z \equiv 6 \pmod{16}$.
-- Session 2 result corrected: $z \equiv 6 \pmod{16}$ (not $32$) is the correct universal claim.
-- Literature: no new applicable tool found in 2026 arXiv (one irrelevant cubic reciprocity paper).
+- Thue-Mahler [MEDIUM]: per-k finiteness only; computationally intractable for k ≥ 1.
+- Elliptic curve (fixed x) [MEDIUM]: same limitation.
+- ABC conjecture: does not help (q ≈ 0.888 < 1; C ≪ rad(ABC)).
+- Linear-exponential decidability (Karimov et al.): not applicable (z^3 not an S-unit term).
+- Universal constraints (accumulation over sessions):
+  - z ≡ 6 (mod 16) [Session 7, corrects Session 2]
+  - A ≡ 427 (mod 432) [Session 7, universal]
+  - B ≡ 79 (mod 432) [Session 7]
+  - A ≡ 49/22/76 (mod 81) for k_x ≡ 0/1/2 (mod 3) respectively [Theorem I, Session 8]
+  - Full 12-branch A mod 20736 indexed by (k_x mod 3, k_y mod 4) [Theorem K, Session 8]
+  - 3-adic expansion of A determined digit-by-digit by k_x [Theorem J, Session 8]
 
-**Honest assessment (Session 7):** The new constraints are genuine addenda and the
-correction to Session 2 is important. But the fundamental barrier remains unchanged:
-everywhere local solvability, two-comparable-S-units regime ($\kappa_\text{real} \approx 0.62$),
-phantom obstruction. No proof technique is available.
+**Honest assessment (Session 8):** The structural picture is now very detailed and the
+(k_x, k_y) parametrization of all congruence branches has been completed. No contradiction
+has been found. The fundamental barrier (two-comparable-S-units regime, phantom obstruction,
+everywhere local solvability) is unchanged. The 3-adic structure shows A is a 3-adic integer
+injectively parametrized by k_x — consistent with existence but not proving it.
