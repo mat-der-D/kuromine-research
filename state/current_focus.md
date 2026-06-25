@@ -1,69 +1,54 @@
 # Current Focus
 
-**Session:** 20260625_213000 (Session 8)
+**Session:** 20260625_230000 (Session 9)
 
-**Current direction:** Structural analysis of the 3-adic parametrization of A by k_x;
-12-branch CRT of A mod 20736; correction and completion of the (k_x, k_y) indexing
-of all branches; assessment of ABC conjecture and 2026 arXiv literature.
+**Current direction:** Computed the full 3-adic congruence portrait of the integer
+factor B (Session 8 suggestion #1) — the B-analog of Theorems I/J for A — and formalized
+the accumulated structural theorems (I, J, K, L) into the knowledge base.
 
-**Why this direction:** Session 7 suggestions #1 and #2 — correct the Session 6
-three-branch CRT and compute the 4-branch A mod 6912 (= lcm(256,27)). This session
-extended that to the full 12-branch A mod 20736 = lcm(256,81) with (k_x, k_y) indexing.
+**Why this direction:** Session 8 left two concrete, tractable tasks: (1) push the B
+constraints to the same 3-adic depth already achieved for A; (2) formalize Theorems I–K
+(and now L) into `problem.md` plus a dedicated reference file. Both completed this session.
 
-## Session 8 main results
+## Session 9 main results
 
-1. **Theorem I (new):** The three branches of A mod 81 are indexed by k_x mod 3:
-   - k_x ≡ 0 (mod 3): A ≡ 49 (mod 81)
-   - k_x ≡ 1 (mod 3): A ≡ 22 (mod 81)
-   - k_x ≡ 2 (mod 3): A ≡ 76 (mod 81)
-   Proof: z^3 ≡ 2^x + 5 mod 243 (since 3^y ≡ 0 mod 243 for y ≥ 5), and
-   ord_243(2) = 162, gcd(332640, 162) = 54, so x mod 162 takes 3 values.
+1. **Theorem L (new):** Full 3-adic structure of B = (2^x+5)/A.
+   - B ≡ 25 (mod 27), universal (the B-analog of A ≡ 22 mod 27).
+   - B mod 81 indexed by k_x mod 3: k_x≡0 → 52, k_x≡1 → 79, k_x≡2 → 25 (mod 81).
+   - B mod 3^{n-1} is a function of k_x mod 3^{n-4} for n ≥ 5 (period 3^{n-4}),
+     inherited from Theorem J via B ≡ (2^x+5)·A^{-1} mod 3^n (A is a 3-adic unit).
+   - **Correction to Session 8 suggestion #1:** B mod 729 needs k_x mod **27**, not mod 9.
+     (Suggestion said "mod 9"; the true period at level 3^6 is 3^{7-4}=27. Theorem J
+     applies with n=7.) Full 27-branch (A,B) mod 729 table computed and verified
+     (A·B ≡ 2^x+5 mod 729 in every row).
+   - B is a 3-adic unit (v_3(B)=0, B ≡ 1 mod 3), 3-adic preamble [1,2,2]. This separates
+     the real solution from the phantom (B_phantom = 37/3, v_3 = -1), but the separation
+     is non-actionable (B is a valid 3-adic unit for every k_x).
 
-2. **Theorem J (new):** A mod 3^{n-1} is uniquely determined by k_x mod 3^{n-4} for all n ≥ 5.
-   Pattern: gcd(332640, ord_{3^n}(2)) = 54 for all n ≥ 5, giving period 3^{n-4}.
-   The full 3-adic expansion of A in Z_3 is determined by the 3-adic expansion of k_x.
+2. **Formalization (Session 8 suggestion #4):**
+   - Added Theorems I, J, K, L to `knowledge/problem.md` with statements and proof sketches.
+   - Created `knowledge/references/adic_structure_extended.md` with the full side-by-side
+     2-adic and 3-adic portraits of A and B, all tables, and the phantom non-actionability
+     discussion.
 
-3. **Theorem K (new):** 12-branch characterization of A mod 20736 = lcm(81,256):
-   Indexed by (k_x mod 3, k_y mod 4). All 12 values:
-   {859, 1291, 3451, 5611, 7771, 8203, 10363, 12523, 14683, 15115, 17275, 19435}
-   The first Theorem-5 case (k_x=1, k_y=1) gives A ≡ 5611 (mod 20736).
+3. **Cross-checks (Wolfram):** A·B ≡ 37 mod 81 universally; A ≡ 427, B ≡ 79 mod 432
+   (427·79 ≡ 37 mod 432); the three (A,B) mod 81 branches all multiply to 37. All verified.
 
-4. **Correction: Session 6 three branches {1723, 859, 2587} confirmed for k_y even.**
-   The full 6-branch (k_y even/odd × k_x mod 3) picture mod 2592:
-   {427, 859, 1291, 1723, 2155, 2587} — these replace the erroneous "3 branches universal".
+## Where things stand (updated after Session 9)
 
-5. **ABC conjecture assessment:** ABC gives NO contradiction. The quality exponent for
-   Kuromine is q ≈ 0.888 < 1, meaning C ≪ rad(ABC), so ABC is never violated.
+- All Baker variants, congruence/local methods, size methods, modular/Frey,
+  primitive-divisor, Skolem, ABC: RETIRED / ruled out (Sessions 1–8).
+- Thue-Mahler [MEDIUM], elliptic curve (fixed x) [MEDIUM]: per-k finiteness only; intractable.
+- The local (2-adic + 3-adic) portrait of a hypothetical Theorem-5 solution is now
+  COMPLETE for both factors A and B to arbitrary p-adic depth:
+  - A mod 3^{n-1} ← k_x mod 3^{n-4}; A mod 2^n ← k_y mod 2^{n-4}.
+  - B mod 3^{n-1} ← k_x mod 3^{n-4} (Theorem L, this session); B mod 2^n ← k_y.
+  - Universal CRT class: A ≡ 427 (mod 432), B ≡ 79 (mod 432), A·B ≡ 37 (mod 432).
+- Both k_x ↦ A and k_x ↦ B are bijections Z_3 → Z_3: no 3-adic obstruction, confirming
+  the phantom/"37 is a cube mod 3^n" wall from the factorization side on BOTH factors.
 
-6. **3-adic parametrization insight:** The map k_x → A (in Z_3) is an injective
-   3-adic map: A ≡ 1 + 1·3 + 2·9 + (k_x mod 3)·27 + ... (first 3 universal digits of A in Z_3
-   are [1,1,2,...]; digit 3 encodes k_x mod 3 via a permutation of Z/3Z). This is a
-   bijection Z_3 → Z_3, confirming no 3-adic contradiction.
-
-7. **2026 arXiv survey:**
-   - arXiv:2505.19141 (Dong-Shafrir/Karimov et al., 2025): decidability of linear-exponential
-     Diophantine over 2 primes. NOT APPLICABLE — z^3 is not an S-unit term.
-   - arXiv:2604.18991 (Miyazaki-Scott-Styer, April 2026): a^x+b^y=c^z. NOT APPLICABLE —
-     different structure (Kuromine's cube exponent is fixed, z is variable).
-
-## Where things stand (updated after Session 8)
-
-- All Baker variants, all congruence/local methods, all size-based methods,
-  modular/Frey, primitive-divisor, Skolem: RETIRED (Sessions 1–5).
-- Thue-Mahler [MEDIUM]: per-k finiteness only; computationally intractable for k ≥ 1.
-- Elliptic curve (fixed x) [MEDIUM]: same limitation.
-- ABC conjecture: does not help (q ≈ 0.888 < 1; C ≪ rad(ABC)).
-- Linear-exponential decidability (Karimov et al.): not applicable (z^3 not an S-unit term).
-- Universal constraints (accumulation over sessions):
-  - z ≡ 6 (mod 16) [Session 7, corrects Session 2]
-  - A ≡ 427 (mod 432) [Session 7, universal]
-  - B ≡ 79 (mod 432) [Session 7]
-  - A ≡ 49/22/76 (mod 81) for k_x ≡ 0/1/2 (mod 3) respectively [Theorem I, Session 8]
-  - Full 12-branch A mod 20736 indexed by (k_x mod 3, k_y mod 4) [Theorem K, Session 8]
-  - 3-adic expansion of A determined digit-by-digit by k_x [Theorem J, Session 8]
-
-**Honest assessment (Session 8):** The structural picture is now very detailed and the
-(k_x, k_y) parametrization of all congruence branches has been completed. No contradiction
-has been found. The fundamental barrier (two-comparable-S-units regime, phantom obstruction,
-everywhere local solvability) is unchanged. The 3-adic structure shows A is a 3-adic integer
-injectively parametrized by k_x — consistent with existence but not proving it.
+**Honest assessment (Session 9):** The structural/local portrait is now as complete as it
+can be — both coprime factors are fully characterized 2-adically and 3-adically, and both
+are bijective Z_3-images of k_x. This is a clean, finished piece of bookkeeping. It does
+not advance toward a proof: the fundamental barrier (phantom global rational cube,
+two-comparable-S-units regime, everywhere local solvability) is unchanged. No new tool.
