@@ -1,78 +1,57 @@
 # Current Focus
 
-**Session:** 20260625_200000 (Session 6)
+**Session:** 20260625_171142 (Session 7)
 
-**Current direction:** Literature survey of 2025-2026 arXiv; phantom-free neighbor analysis;
-descent investigation; derivation of new fine-grained constraints on A = z - 3^j.
+**Current direction:** Extension of 2-adic portrait of Theorem-5 solutions; correction to
+Session 2; computation of $A \pmod{16}$ universally and $B \pmod{27}$, $B \pmod{16}$.
 
-**Why this direction:** After Session 5 cleared the board of every known method, the
-remaining actionable items were: (a) scan the 2025-2026 literature for new tools in the
-"two-comparable-S-units" regime; (b) pursue the descent-on-A idea suggested in Session 5;
-(c) study phantom-free neighboring constants c to understand what makes c=5 uniquely hard.
+**Why this direction:** Session 6 suggestion #4 (compute $z \pmod{128}$) was executed,
+revealing a correction to Session 2's $z \equiv 6 \pmod{32}$ claim and producing the
+cleaner universal result $z \equiv 6 \pmod{16}$.
 
-## Session 6 main results
+## Session 7 main results
 
-1. **Literature survey: no new unconditional tools found.**
-   - arXiv:2510.11753 (Cai 2025): Handles only a^x + b = c^y (ONE exponential).
-     Not applicable.
-   - arXiv:2601.11376 (Müller–Taktikos 2026): Effective Roth/Ridout for cube roots,
-     conditional on ABC. Does not help the two-S-units regime unconditionally.
-   - arXiv:2602.19061 (Müller 2026): Gain bounds for diagonal superelliptic equations
-     under strong ABC. Conditional and structurally mismatched.
-   - arXiv:2506.20909 (Jun 2025): Reduces exponential Diophantine to ordinary via Lucas
-     sequences, but requires a specific form that Kuromine (with additive constant 5) does not
-     satisfy.
-   - The κ_real ≈ 0.62 gap (Session 3) remains the fundamental barrier; no 2025-2026
-     paper closes it.
+1. **Correction to Session 2:** $z \equiv 6 \pmod{32}$ is NOT universal; it holds only for
+   $k_y$ even. The correct universal statement is $z \equiv 6 \pmod{16}$.
 
-2. **New constraint: j ≡ 7 (mod 8) for all Theorem-5 solutions.**
-   From y = 166317 + 166320k, j = y/3 = 55439 + 55440k.
-   55439 mod 8 = 7, 55440 mod 8 = 0, so j ≡ 7 (mod 8) for all k.
+2. **New universal congruences (Theorems E–H):**
+   - $y \equiv 13 \pmod{16}$ universally [$166317 \equiv 13$, $166320 \equiv 0 \pmod{16}$].
+   - $j \equiv 3 \pmod{4}$ universally [$55439 \equiv 3$, $55440 \equiv 0 \pmod{4}$].
+   - $z \equiv 6 \pmod{16}$ universally (corrects Session 2).
+   - $A \equiv 11 \pmod{16}$ universally. Proof: $z \equiv 6 \pmod{16}$,
+     $3^j \equiv 3^3 \equiv 11 \pmod{16}$ (from $j \equiv 3 \pmod{4}$),
+     so $A = z - 3^j \equiv 6 - 11 = -5 \equiv 11 \pmod{16}$.
 
-3. **New constraint: A ≡ 27 (mod 32) for any Theorem-5 solution.**
-   Proof: z ≡ 6 (mod 32) [Session 2], j ≡ 7 (mod 8), so 3^j ≡ 3^7 ≡ 11 (mod 32).
-   B = z^2 + z·3^j + (3^j)^2 ≡ 36 + 66 + 121 = 223 ≡ 31 (mod 32).
-   2^x + 5 ≡ 5 (mod 32) for x ≥ 5.
-   A ≡ 5 · 31^{-1} ≡ 5 · 31 = 155 ≡ 27 (mod 32). (31^{-1} ≡ 31 mod 32.)
+3. **Correction to Session 6 Theorem B:** $A \equiv 27 \pmod{32}$ was stated universally
+   but holds only for $k_y$ even. The $k_y$ odd sub-family has $A \equiv 11 \pmod{32}$.
+   Both sub-families have $A \equiv 11 \pmod{16}$.
 
-4. **New constraint: A ≡ 4 (mod 9) for any Theorem-5 solution.**
-   Proof: z^3 ≡ 2^x + 3^y + 5 ≡ 10 (mod 27) [since 3^y ≡ 0 mod 27 for y ≥ 3,
-   and 2^x ≡ 2^5 = 32 ≡ 5 mod 27 for the Theorem-5 family].
-   Cube roots of 10 mod 27 are {4, 13, 22}, all ≡ 4 (mod 9).
-   Since 3^j ≡ 0 (mod 9) for j ≥ 2, A = z - 3^j ≡ z ≡ 4 (mod 9).
-   (Previously known: A ≡ {1, 4, 7} mod 9. Now pinned to exactly 4.)
+4. **New constraints on $B$:** $B \equiv 25 \pmod{27}$, $B \equiv 15 \pmod{16}$.
 
-5. **New constraint: A ≡ 22 (mod 27) for any Theorem-5 solution.**
-   From z^3 ≡ 37 (mod 81), cube roots are {22, 49, 76}. All ≡ 22 (mod 27).
+5. **Updated CRT constraints (universal):**
+   - $A \equiv 427 \pmod{432}$ (was 3 separate branches mod 2592 in Session 6, now corrected to single universal mod 432).
+   - $B \equiv 79 \pmod{432}$.
+   - Product: $A \cdot B \equiv 37 \pmod{432}$, consistent with $2^x + 5 \equiv 37 \pmod{432}$.
 
-6. **Combined CRT constraint: A ≡ {1723, 859, 2587} (mod 2592).**
-   Three branches from (A mod 81 ∈ {22, 49, 76}) combined with (A mod 32 = 27) via CRT,
-   with mod 2592 = lcm(81, 32). Each branch satisfies A ≡ 4 mod 9, A ≡ 22 mod 27.
+6. **2-adic phantom separation:** $A_{\text{phantom}} = 3 \equiv 3 \pmod{16}$ vs.
+   $A_{\text{real}} \equiv 11 \pmod{16}$. Genuine distinction but not a contradiction
+   (the cube map on $\mathbb{Z}_2^\times$ is bijective; every value has a cube root).
 
-7. **Phantom-free neighbor analysis.**
-   c=4, 6, 7, ... (all up to 221, excluding phantom values 5, 222, ...) have no rational
-   phantom at (x,y)=(5,-3). The equation for c=4 has solution (0,1,2) immediately.
-   The structure of the c=5 mod-9 sieve (survivors: x≡2,5 mod 6 for y≥2) is unchanged;
-   the phantom's special role is confirmed algebraically as a c=5-specific obstruction.
+7. **arXiv search 2026:** One new paper found (arXiv:2603.29831, cubic reciprocity for
+   polynomial equation), not applicable to Kuromine. No new unconditional methods.
 
-8. **Assessment of descent-on-A idea.**
-   The descent idea (force A | something small to get A=1) was investigated.
-   Result: A ≡ 3 (mod p) for every prime p ≡ 2 (mod 3) dividing 2^x+5 (confirmed).
-   A ≡ 4 (mod 9) distinguishes real solutions from phantom (phantom has A=3 ≡ 3 mod 9).
-   But this 3-adic distinction cannot be exploited (3^n wall, as before).
-   No mechanism found to force A=1 or any other specific value via descent.
-
-## Where things stand (updated)
+## Where things stand (updated after Session 7)
 
 - All Baker variants, all congruence/local methods, all size-based methods,
   modular/Frey, primitive-divisor, Skolem: RETIRED (Sessions 1–5).
-- Thue-Mahler [MEDIUM]: per-k finiteness only; computationally intractable for k≥1.
-- Elliptic curve (fixed x) [MEDIUM]: same limitation.
-- New refined constraints on A documented here, but do not resolve the problem.
-- Literature: no new applicable tool found in 2025-2026 arXiv.
+- Thue-Mahler [MEDIUM]: per-$k$ finiteness only; computationally intractable for $k \geq 1$.
+- Elliptic curve (fixed $x$) [MEDIUM]: same limitation.
+- New refined universal constraints: $A \equiv 427 \pmod{432}$, $B \equiv 79 \pmod{432}$,
+  $y \equiv 13 \pmod{16}$, $j \equiv 3 \pmod{4}$, $z \equiv 6 \pmod{16}$.
+- Session 2 result corrected: $z \equiv 6 \pmod{16}$ (not $32$) is the correct universal claim.
+- Literature: no new applicable tool found in 2026 arXiv (one irrelevant cubic reciprocity paper).
 
-**Honest assessment (sharpened, Session 6):** The problem remains beyond all known effective
-methods. The new constraints (A ≡ 27 mod 32, A ≡ 4 mod 9, A ≡ 22 mod 27) are genuine
-addenda to the picture of what a Theorem-5 solution would look like, but do not yield
-a contradiction. The fundamental gap (κ_real ≈ 0.62 in the two-S-units regime) is
-confirmed unchanged by the 2025-2026 literature.
+**Honest assessment (Session 7):** The new constraints are genuine addenda and the
+correction to Session 2 is important. But the fundamental barrier remains unchanged:
+everywhere local solvability, two-comparable-S-units regime ($\kappa_\text{real} \approx 0.62$),
+phantom obstruction. No proof technique is available.

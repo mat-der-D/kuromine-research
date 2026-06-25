@@ -28,16 +28,24 @@ $$v_2(z^3) = v_2(3^y + 5) = 3 \quad\Longrightarrow\quad v_2(z) = 1.$$
 So $z$ is exactly $2 \cdot(\text{odd})$. This is consistent with, and sharper than, the
 Session-1 result $z \equiv 6 \pmod 8$.
 
-## Sharper: $z \equiv 6 \pmod{32}$
+## Sharper: $z \equiv 6 \pmod{16}$ (universal), $z \equiv 6$ or $22 \pmod{32}$ (two sub-families)
+
+**[Session 7 correction]** The original Session 2 claim $z \equiv 6 \pmod{32}$ was computed
+only for $y = 166317$ ($k_y = 0$, which is even). The full family has $y = 166317 + 166320 k_y$
+with $k_y \geq 0$, and $166320 \equiv 16 \pmod{32}$, so $y \pmod{32}$ alternates between 13
+($k_y$ even) and 29 ($k_y$ odd). These give $z \equiv 6 \pmod{32}$ and $z \equiv 22 \pmod{32}$
+respectively. Both satisfy $z \equiv 6 \pmod{16}$.
+
+**Proof of $z \equiv 6 \pmod{16}$ (universal).** Since $166320 \equiv 0 \pmod{16}$, we have
+$y \equiv 166317 \equiv 13 \pmod{16}$ universally. Since $\mathrm{ord}_{64}(3) = 16$,
+$3^y \equiv 3^{13} \equiv 19 \pmod{64}$. Then $(3^y+5)/8 \equiv 24/8 = 3 \pmod{8}$.
+The unique odd $u$ with $u^3 \equiv 3 \pmod{8}$ is $u \equiv 3 \pmod{8}$, giving
+$z = 2u \equiv 6 \pmod{16}$. $\square$
 
 Working mod $2^x$ (with $x$ huge), $z^3 \equiv 3^y + 5 \pmod{2^x}$, and since the cube
-map is a bijection on $(\mathbb{Z}/2^n)^\*$ (because $\gcd(3, 2^{n-1}) = 1$), $z$ is
+map is a bijection on $(\mathbb{Z}/2^n)^*$ (because $\gcd(3, 2^{n-1}) = 1$), $z$ is
 **uniquely determined modulo $2^x$** by $3^y + 5$. Writing $z = 2u$ with $u$ odd,
 $8u^3 \equiv 3^y + 5 \pmod{2^x}$, so $u^3 \equiv (3^y+5)/8 \pmod{2^{x-3}}$.
-
-Computing the (unique) cube root mod a moderate power of 2 for $y = 166317$ gives
-$u \equiv 3 \pmod{16}$, hence
-$$z = 2u \equiv 6 \pmod{32}.$$
 
 ## Why this does NOT yield a contradiction (the soft-obstruction principle)
 
