@@ -52,3 +52,27 @@ In the ring $\mathbb{Z}[\omega]$ of Eisenstein integers ($\omega = e^{2\pi i/3}$
 For fixed $k$ (hence fixed $x$ and $N_k = 2^x + 5$), the equation $z^3 - w^3 = N_k$ with $w = 3^j$ is a special case of the Thue-Mahler equation: one seeks integer solutions $(z, j)$ to the norm form equation with the constraint that $w$ is a power of $3$. By the Thue-Mahler theorem (effective via Baker), for each fixed $N_k$, there are finitely many solutions. This gives finiteness for each individual $k$.
 
 **The remaining challenge:** Show that across all $k \geq 1$, no solutions exist (not just finiteness for each $k$).
+
+## The $A \equiv 3 \pmod p$ phenomenon and why the primitive-divisor congruence approach fails (Session 4)
+
+**Setup.** Because $332640 \equiv 0 \pmod 3$ and $166320 \equiv 0 \pmod 6$, the residues $x \bmod 3 \equiv 2$ and $y \bmod 6 \equiv 3$ are *constant* across the whole Theorem-5 family. Hence for any prime $p$ with $\operatorname{ord}_p(2)\mid 332640$ and $\operatorname{ord}_p(3)\mid 55440$ (and $\mid 166320$), the quantities $2^x \bmod p$, $3^y \bmod p$, and $w=3^j \bmod p$ are all *pinned* — the same for every solution in the family.
+
+**Observation (Wolfram, Session 4).** For every prime $p \equiv 2 \pmod 3$ satisfying the order conditions (checked $p = 11,17,23,29,41,71,89,113,281$), the cube map is a bijection mod $p$ (unique $z$), and one finds **$A = z - w \equiv 3 \pmod p$ in every case.** For primes $p\equiv1\pmod3$ (three cube roots), exactly one branch gives $A\equiv 3\pmod p$, and that branch gives $B\equiv 37/3 \pmod p$.
+
+**Explanation — this is the phantom, again.** The phantom solution $(x,y,z)=(5,-3,10/3)$ has
+$$A_{\text{phantom}} = z - w = \tfrac{10}{3} - 3^{-1} = \tfrac{10}{3}-\tfrac13 = 3, \qquad B_{\text{phantom}} = \left(\tfrac{10}{3}\right)^2 + \tfrac{10}{3}\cdot\tfrac13 + \tfrac19 = \tfrac{37}{3},$$
+with $A_{\text{phantom}}\,B_{\text{phantom}} = 3\cdot\tfrac{37}{3} = 37 = 2^5+5$. Since the family's $(z,w)$ reduces to the phantom's $(10/3,\,1/3)$ modulo every prime $p\neq3$, we get $A\equiv 3$ and $B\equiv 37/3 \pmod p$ automatically. **This is the soft-obstruction principle yet again:** any congruence statement about $A$ or $B$ is satisfied by the phantom, so no choice of prime $p$ (however large, however clever) can produce a contradiction by a purely local/congruence test on the factorization. The naive "find a prime $p\equiv1\bmod3$ that must/cannot divide $B$" attack is therefore dead for the same structural reason as all prior local attacks.
+
+## The genuine integrality distinction (real vs phantom) and why it is still blocked
+
+The phantom and an integer solution **do** differ, but only 3-adically (powers of 3 are the one place the soft obstruction does not apply):
+
+| quantity | integer (Theorem-5) solution | phantom |
+|---|---|---|
+| $w = 3^j$ | $v_3(w) = j \ge 2$ (large) | $v_3(w) = -1$ |
+| $A = z - w$ | $A \equiv 1 \pmod 3$, $v_3(A)=0$; $A\bmod 9 \in\{1,4,7\}$ | $A=3$, $v_3(A)=1$, $A\bmod9=3$ |
+| $B = z^2+zw+w^2$ | integer, $v_3(B)=0$, all prime factors $\equiv1\pmod3$ | $B=37/3$, $v_3(B)=-1$ |
+
+So an integer solution provably lives on a *different 3-adic branch* of $A$ than the phantom ($v_3(A)=0$ vs $1$; $A\bmod9\in\{1,4,7\}$ vs $3$). This is exactly the place a winning argument would have to exploit. **But it is blocked by the known $3^n$ wall:** $z^3\equiv 2^x+5 \equiv 1 \pmod 9$ has the self-consistent roots $z\equiv1,4,7\pmod9$, and more generally $37$ is a cubic residue mod $3^n$ for all $n$ (problem.md), so the real branch $A\bmod 3^n$ is never forced into a contradiction. The 3-adic distinction is real but non-actionable with congruences alone.
+
+**Net Session-4 conclusion on the primitive-divisor / congruence-on-factorization lead:** it cannot succeed by itself. A winning use of the factorization must be *global* (size or genuine algebraic-number-theory input on the integer factor $B$), not a congruence.

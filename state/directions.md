@@ -19,10 +19,19 @@ Directions are listed with a priority estimate and current status.
   is automatically consistent (gives $3^{3j}\equiv3^y\bmod q$, automatic since $y=3j$). So the
   factorization yields no new congruence — soft obstruction again.
 
+**Session 4 progress / downgrade:** The factorization's *congruence* content is now proven
+inert (soft obstruction: $A\equiv3\pmod p$, $B\equiv37/3\pmod p$ for all $p\ne3$, matching the
+phantom $A=3$, $B=37/3$). The only real-vs-phantom distinction is 3-adic ($v_3(A)=0$ vs $1$),
+blocked by the $3^n$ wall. $A$ is provably huge ($\sim2^{x/3}/3 \le A \le 1.587\cdot2^{x/3}$),
+so "$A=1$" is impossible for Theorem-5 — sub-question (c) is closed negatively. The direction
+survives **only** in its global/size form (sub-question (a)), which still needs a tool that
+does not yet exist. Effective priority is now **MEDIUM at best**, kept here as the cleanest
+single-equation reformulation rather than an active lead.
+
 Key sub-questions (remaining):
-- (a) Can we apply Thue-Mahler machinery to the reduced equation $A(A^2+3^{j+1}A+3^{2j+1}) = 2^x+5$ for fixed $x$? (Finiteness per $x$ known; uniformity over the $x$-progression open.)
-- (b) Can growth / primitive-divisor results (Zsygmondy, Bilu–Hanrot–Voutier) on $B = z^2+zw+w^2$ along the $x$-progression force a contradiction? **(elevated — see new MEDIUM-HIGH below)**
-- (c) Can $A = z - 3^{y/3} = 1$ (true for both real solutions) be shown necessary? No mechanism known to bound $A$, so this is aspirational.
+- (a) Can we apply Thue-Mahler machinery to the reduced equation $A(A^2+3^{j+1}A+3^{2j+1}) = 2^x+5$ for fixed $x$? (Finiteness per $x$ known; uniformity over the $x$-progression open — this is the entire difficulty, and no current tool delivers it.)
+- (b) [CLOSED, Session 4] growth / primitive-divisor (Zsygmondy/BHV): inapplicable — $B$ is not a Lucas/Lehmer sequence. See RETIRED entry below.
+- (c) [CLOSED negatively, Session 4] $A = z - 3^{y/3}$ cannot be forced to 1; it is provably $\sim2^{x/3}$ for any Theorem-5 solution.
 
 ### [RETIRED in Session 3] Effective Diophantine approximation to $2^{1/3}$
 
@@ -64,19 +73,30 @@ derived congruences support other directions.)
 
 Fixing $x = 5 + 332640k$ and studying $z^3 - 3^y = 2^x + 5$ as a family of curves. **Now linked to the factorization approach** above.
 
-### [MEDIUM-HIGH] Primitive divisor / growth arguments (Zsygmondy, Bilu–Hanrot–Voutier)
+### [RETIRED in Session 4] Primitive divisor / growth arguments (Zsygmondy, Bilu–Hanrot–Voutier)
 
-**Elevated in Session 3** to the most promising *non-size-based* lead, since size methods
-(Baker, irrationality measures) are now all shown too weak. The prime factors of
-$B = z^2+zw+w^2$ are all $\equiv 1 \pmod 3$ (Session 1). The hope: as $x$ runs over the
-progression $5+332640k$, the factor $B = (2^x+5)/(z-3^j)$ — a Lucas/Lehmer-type norm —
-should acquire *primitive* prime divisors, and a primitive prime $p\equiv1\bmod3$ of $B$
-imposes $z\equiv$ (cube-root data) mod $p$ that may clash with the 2-adic/3-adic
-constraints ($z\equiv6\pmod{32}$, $v_3(z^3-37)=4+v_3(k)$). Caveat: any such argument must
-*not* be purely local (the soft obstruction means it must use that $w=3^j$ is an integer
-power, e.g. via a growth/size estimate on $B$ itself). Concrete first step: study
-$v_p(z^2+zw+w^2)$ structure and whether a fixed small prime $\equiv1\bmod3$ can divide $B$
-for ALL $k$ (which Zsygmondy-type results would forbid past a bounded range).
+**Elevated in Session 3, RETIRED in Session 4.** Two sub-forms, both closed:
+- *Congruence form* (find a prime $p\equiv1\bmod3$ that must/cannot divide $B$): dead by the
+  soft obstruction. Session 4 showed $x\bmod3$, $y\bmod6$ are constant over the family, so
+  $2^x,3^y,w\pmod p$ are pinned, and $A=z-w\equiv3\pmod p$ for *every* prime $p\equiv2\bmod3$
+  tested — because the phantom has $A_{\text{phantom}}=3$, $B_{\text{phantom}}=37/3$, which
+  reduce mod every $p\ne3$. Every congruence on $A,B$ is satisfied by the phantom.
+- *Growth form* (primitive divisors of $B$ along the progression): no clean object —
+  $B=(2^x+5)/(z-3^j)$ is **not** a Lucas/Lehmer $a^n-b^n$ sequence ($z,j$ both vary
+  non-linearly in $x$), so Zsygmondy/BHV do not apply.
+
+The only genuine real-vs-phantom distinction is 3-adic ($v_3(A)=0$ vs $1$; $A\bmod9\in
+\{1,4,7\}$ vs $3$) and is blocked by the known "$37$ is a cube mod $3^n$" wall. Moved to
+`knowledge/dead_ends.md`; details in `knowledge/references/factorization_approach.md`.
+
+### [RETIRED in Session 4] Modular method / Frey curves
+
+**Tried and ruled out in Session 4 (structural).** The Frey-curve / modular method needs a
+*varying prime exponent* to carry the mod-$p$ Galois representation; the Kuromine equation
+has only a fixed small cube exponent, with $x,y$ on fixed small bases 2,3. No Frey curve can
+be built. The fixed-$y$ elliptic/Mordell route only re-derives the already-known per-$y$
+finiteness, giving no uniformity over the Theorem-5 family. See
+`knowledge/references/modular_method.md`. Moved to `knowledge/dead_ends.md`.
 
 ### [MEDIUM] Thue-Mahler equation approach
 
@@ -87,6 +107,13 @@ for ALL $k$ (which Zsygmondy-type results would forbid past a bounded range).
 ### [LOW] Numerical search with Theorem 5 filtering
 
 Verify computationally that no solutions exist for small $k$ (say $k \leq 5$). Not mathematically deep but can confirm the conjecture computationally and potentially reveal patterns in $2^x + 5 \pmod p$ for primes $p \equiv 1 \pmod 3$.
+
+**Session 4:** Exhaustive search over $0\le x,y\le 2000$ (Python, 14-prime cubic-residue
+sieve) confirms only the two known solutions; sieve survivors were
+$(1,0),(5,3),(1445,597),(1445,1677)$ with only the first two being cubes. The two near-miss
+survivors are non-cubes and outside the Theorem-5 class. The full Theorem-5 floor
+($x=332645$) remains far beyond brute force, so direct numerical refutation of the conjecture
+is infeasible — keep at LOW.
 
 ### [LOW] arXiv survey of exponential Diophantine equations
 
@@ -106,3 +133,4 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 - **2026-06-25 (Session 1):** Added [HIGH] Factorization approach. Added [MEDIUM] Thue-Mahler equation approach. Lowered Baker's method assessment from [MEDIUM] to [MEDIUM-LOW] but kept at [MEDIUM] pending p-adic Baker investigation. Elevated $p$-adic direction to [HIGH] (tied). Noted Session 1 discoveries.
 - **2026-06-25 (Session 2):** Downgraded standalone $p$-adic elimination from [HIGH] to [LOW/~RETIRED] after *proving* (not just observing) that local methods cannot obstruct the equation: the phantom is a global rational cube $(10/3)^3$, so every local condition is satisfiable. Added new [HIGH] direction "Effective Diophantine approximation to $2^{1/3}$" as the realistic global path. Completed the 2-adic structure analysis ($z\equiv6\pmod{32}$, $v_2(3^y+5)=3$). See `knowledge/references/two_adic_structure.md`.
 - **2026-06-25 (Session 3):** RETIRED "Effective Diophantine approximation to $2^{1/3}$" (was [HIGH]) with a proof that it is quantitatively dead: realized exponent $\kappa\approx0.62\ll\mu$, and the Thue value $3^y+5$ is too large by $\sim e^{138909}$ — root cause is the two-comparable-dominant-S-units regime ($3^y\approx z^2$). See `knowledge/references/irrationality_measure_obstruction.md`. Added Session-3 progress to the Factorization [HIGH] direction (reduced equation $2^x+5=A(A^2+3^{j+1}A+3^{2j+1})$, both real solutions have $A=z-3^{y/3}=1$, Eisenstein identity $4B-3w^2=(2z+w)^2$). Elevated primitive-divisor (Zsygmondy/BHV) direction to [MEDIUM-HIGH] as the best remaining non-size lead, since all size methods are now shown too weak.
+- **2026-06-25 (Session 4):** RETIRED the [MEDIUM-HIGH] primitive-divisor/growth direction: its congruence form is killed by the soft obstruction (showed $A\equiv3$, $B\equiv37/3\pmod p$ for all $p\ne3$, matching the phantom; $x\bmod3$, $y\bmod6$ constant over the family), and its growth form has no Lucas/Lehmer object ($B$ not an $a^n-b^n$ sequence). RETIRED the modular/Frey-curve method as structurally inapplicable (no varying prime exponent) — created `knowledge/references/modular_method.md`. Downgraded the Factorization [HIGH] direction toward MEDIUM: closed sub-questions (b) and (c) negatively ($A$ is provably $\sim2^{x/3}$, never 1), leaving only the global/size sub-question (a) for which no adequate tool exists. Added Session-4 progress note to `knowledge/references/factorization_approach.md`. Extended numerical verification to $x,y\le2000$ (only the two known solutions). Both retirements moved to `knowledge/dead_ends.md`.

@@ -1,69 +1,82 @@
 # Current Focus
 
-**Session:** 20260625_HHMMSS (Session 3)
+**Session:** 20260625_152000 (Session 4)
 
-**Current direction:** Tested the Session-2 [HIGH] lead — effective irrationality
-measure for 2^(1/3) applied to z^3 - 2^x = 3^y + 5 — to decide whether it can actually
-close the problem. **It cannot, for a structural reason**, now proven. Then probed the
-algebraic factorization route for a non-size-based contradiction; derived a clean
-equivalent reduction but found every consequence collapses to consistency (soft
-obstruction).
+**Current direction:** Pursued the Session-3 top lead — the primitive-divisor / congruence
+attack on the factor $B = z^2+zw+w^2$ in $2^x+5 = A\cdot B$ ($A=z-3^j$). Determined
+decisively that its *congruence* form is dead (soft obstruction strikes again, now on the
+factorization), pinned down the precise real-vs-phantom 3-adic distinction, extended the
+numerical verification, and assessed the modular/Frey-curve method (not applicable).
 
-**Why this direction:** Session 2 elevated effective approximation to 2^(1/3) to [HIGH]
-as "the realistic global path" but never carried out the quantitative check. Doing so was
-the highest-value next step: either it works (huge) or it is ruled out (clears the board).
+**Why this direction:** It was the [MEDIUM-HIGH] "best remaining non-size lead" after
+Session 3 retired all size-based methods. Settling whether it can work — and exactly why
+not — is the highest-value move, mirroring how Sessions 2–3 cleanly closed the local and
+irrationality-measure directions.
 
-## Session 3 main results
+## Session 4 main results
 
-1. **Effective irrationality measures for 2^(1/3) are provably useless here.** Writing
-   x = 3a+2, 2^x = 4(2^a)^3, the equation is the Thue form z^3 - 4W^3 = 3^y + 5 (W = 2^a),
-   so z/W approximates α = 2^(2/3). Two independent computations (Wolfram):
-   - The realized approximation exponent is κ_real ≈ **0.62 < 1**, far below any
-     effective μ ≥ 2. Irrationality measures (lower bounds) only bite on *good*
-     approximations (κ ≥ μ); z/W is a *bad* one. No information.
-   - As a Thue lower bound: a contradiction needs log(3^y+5) < (3-μ)·log max(z,W);
-     LHS ≈ 182718, RHS ≈ 43809, so LHS - RHS ≈ +138909 > 0. The form value 3^y+5 is
-     far too large.
-   Root cause: **3^y is not a small perturbation** — log(3^y)/log(2^a) ≈ 2.38, so
-   3^y ≈ z^2. This is the "two comparable dominant S-units" regime. The sharper 2025
-   holonomy bounds (arXiv:2510.04156) do not help: they only improve μ, but no μ rescues
-   a κ_real of 0.62. Documented in `knowledge/references/irrationality_measure_obstruction.md`.
+1. **The $A\equiv 3\pmod p$ phenomenon, explained.** Because $332640\equiv0\pmod3$ and
+   $166320\equiv0\pmod6$, the residues $x\bmod3\equiv2$, $y\bmod6\equiv3$ are *constant*
+   over the whole Theorem-5 family, so $2^x,3^y,w=3^j\pmod p$ are pinned for any prime $p$
+   with suitable multiplicative orders. Wolfram then shows $A=z-w\equiv 3\pmod p$ for
+   **every** tested prime $p\equiv2\pmod3$ ($p=11,17,23,29,41,71,89,113,281$), and the
+   phantom-matching branch for $p\equiv1\pmod3$ gives $A\equiv3$, $B\equiv37/3$. **Cause:**
+   the phantom has $A_{\text{phantom}}=\tfrac{10}3-\tfrac13=3$, $B_{\text{phantom}}=\tfrac{37}3$,
+   which reduce mod every $p\ne3$. So every congruence on the factorization is satisfied by
+   the phantom — the soft-obstruction principle, now confirmed on $A,B$. **The naive
+   primitive-divisor/congruence contradiction is therefore impossible.**
 
-2. **Clean equivalent reduction of the whole problem.** With A = z - 3^j, w = 3^j:
-   `2^x + 5 = A^3 + 3^{j+1} A^2 + 3^{2j+1} A = A·(A^2 + 3^{j+1}A + 3^{2j+1})`,
-   verified to recover BOTH known solutions by brute force (x≤40): (1,0,2) and (5,3,4),
-   both with **A = z - 3^{y/3} = 1**.
+2. **The genuine integrality distinction (real vs phantom) is 3-adic and blocked.**
+   Integer solution: $v_3(A)=0$, $A\equiv1\pmod3$, $A\bmod9\in\{1,4,7\}$, $B$ a genuine
+   integer with $v_3(B)=0$ and all prime factors $\equiv1\pmod3$. Phantom: $A=3$
+   ($v_3=1$, $\bmod9=3$), $B=37/3$ ($v_3=-1$). They differ only at powers of 3 — exactly
+   where the soft obstruction does not apply — but the difference is non-actionable because
+   $37$ is a cubic residue mod $3^n$ for all $n$ (the known $3^n$ wall): the real branch
+   $A\bmod3^n$ is never forced into a contradiction.
 
-3. **Eisenstein-norm identity:** 4B - 3w^2 = (2z+w)^2 (B = z^2+zw+w^2), i.e. the standard
-   `4·norm = square + 3·(...)`. Verified on (5,3,4): 4·37 - 3·9 = 121 = 11^2.
+3. **$B$ is not a Lucas/Lehmer sequence.** $B=(2^x+5)/(z-3^j)$ with both $z$ and $j$ varying
+   non-linearly in $x$, so Zsygmondy / Bilu–Hanrot–Voutier primitive-divisor theorems do
+   **not** apply. The "growth" form of the lead has no clean object to act on.
 
-4. **Negative algebraic finding:** the inert-prime condition (every prime q ≡ 2 mod 3
-   dividing 2^x+5 divides z - 3^j) is *automatically* consistent: q | z-3^j with the
-   equation gives 3^{3j} ≡ 3^y mod q, automatic because y = 3j. So the factorization
-   yields no new congruence — another instance of the soft-obstruction principle.
+4. **Modular / Frey-curve method: not applicable (structural).** It needs a *varying prime
+   exponent* for the mod-$p$ Galois representation; the Kuromine equation has only the fixed
+   small cube exponent, with $x,y$ on fixed small bases. No Frey curve can be built. The
+   fixed-$y$ elliptic route only re-derives the known per-$y$ finiteness. See
+   `knowledge/references/modular_method.md`.
 
-## Where things stand
+5. **Numerical verification extended.** Exhaustive search (Python, cubic-residue sieve mod
+   14 primes) over $0\le x,y\le 2000$ (~4M pairs) leaves only 4 sieve-survivors:
+   $(1,0),(5,3),(1445,597),(1445,1677)$; only the first two are actual cubes (the two known
+   solutions). The latter two are non-cubes outside the Theorem-5 class ($1445\not\equiv5
+   \bmod332640$). **No new solutions for $x,y\le 2000$.**
 
-- Local methods: provably insufficient (Session 2 — phantom is a global cube).
+## Where things stand (board state)
+
+- Local / congruence / $p$-adic: provably insufficient (Session 2; reconfirmed on the
+  factorization in Session 4 — phantom $A=3$, $B=37/3$ reduce everywhere).
 - Single irrationality measure / 2-term linear form: provably insufficient (Session 3).
-- Full 3-log Baker (Matveev): too weak by ~10^10 (Session 1, re-confirmed Session 3).
-- Algebraic factorization: produces only self-consistent identities so far; no
-  contradiction. The one genuinely suggestive fact is that both real solutions have
-  A = z - 3^{y/3} = 1 (maximally balanced), whereas any Theorem-5 solution would have
-  A ≈ z ≈ e^{76857} (maximally unbalanced). If one could prove A must be small, done —
-  but no mechanism to bound A is known.
+- Full 3-log Baker (Matveev): too weak by $\sim10^{10}$ (Sessions 1,3).
+- Primitive-divisor / congruence on factorization: dead in congruence form, no object in
+  growth form (Session 4).
+- Modular / Frey method: not applicable, structural (Session 4).
 
-**Honest assessment:** every *currently known effective* global tool is quantitatively
-too weak for the Theorem-5 parameter range, and every *local/algebraic* tool is defeated
-by the soft obstruction. The problem genuinely sits beyond current effective methods.
-This is now documented, not just suspected.
+**Honest assessment (unchanged, sharpened):** every currently known *effective* global tool
+is quantitatively too weak for the Theorem-5 parameter range, and every *local/algebraic/
+congruence* tool is defeated by the soft obstruction (the phantom $(10/3)^3$ is a global
+rational cube whose factorization data $A=3$, $B=37/3$ reduce mod every prime $\ne3$). The
+problem genuinely sits beyond present techniques for this range. The verification confirms
+the conjecture empirically far below the Theorem-5 floor ($x,y\le2000$).
 
-## Notes / still open
+## Notes / still open (least-implausible remaining angles)
 
-- The reduction `2^x+5 = A(A^2+3^{j+1}A+3^{2j+1})` is the cleanest single-equation form.
-  Worth attacking as a Thue-Mahler equation in (A, 3^j) for fixed x — but finiteness per
-  x is already known; the open part is uniformity over the infinite x-progression.
-- Possible fresh angle (untried): exploit that A·B = 2^x+5 with B = norm and the SPECIFIC
-  prime 2 — e.g. growth/primitive-divisor (Zsygmondy/Bilu-Hanrot-Voutier) constraints on
-  the factor B = z^2+zw+w^2 as x grows along the progression.
-- arXiv:2207.14492 (Thue-Mahler resolution) still un-executed for a concrete k=1 case.
+- The only place real solutions provably differ from the phantom is **3-adically**
+  ($v_3(A)=0$ vs $1$). Any winning argument must exploit this *together with a global/size
+  input* (since congruences mod $3^n$ alone are blocked). No mechanism is known, but this is
+  the sharpest formulation of the wall.
+- A genuinely new effective tool for "two comparable large $S$-units summing to a cube"
+  (beyond Matveev / cubic irrationality measures) would be required; none is presently known.
+  Worth watching the arithmetic-holonomy literature (arXiv:2510.04156 and successors) for a
+  *simultaneous* two-variable refinement, though §2-§3 of `irrationality_measure_obstruction.md`
+  suggest the $\kappa\approx0.62$ obstruction is structural.
+- arXiv:2207.14492 (Thue-Mahler resolution) still un-executed for a concrete $k=1$ case;
+  would only confirm per-case finiteness, not uniformity.
