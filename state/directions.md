@@ -13,9 +13,31 @@ Directions are listed with a priority estimate and current status.
 - (b) Does the norm form $N(z - \omega w) = B \mid 2^x + 5$ impose new constraints on $z$ modulo primes $\equiv 1 \pmod 3$?
 - (c) Is there a descent via the Eisenstein integer ring that links back to the original equation?
 
-### [HIGH] $p$-adic analysis of the phantom solution
+### [HIGH] Effective Diophantine approximation to $2^{1/3}$ (avoid paying height of $z$)
 
-The phantom solution $(5, -3, 10/3)$ is a 3-adic obstruction. Understanding why integer solutions are different from the phantom in the 3-adic sense may be the key. **Session 1 result:** $v_3(z^3 - 37) = 4 + v_3(k)$ gives a concrete 3-adic constraint. However, the phantom (37 is a cubic residue mod $3^n$ for all $n$) blocks pure 3-adic elimination. The next step is p-adic Baker / Yu's theorem applied to $3^y = z^3 - 2^x - 5$.
+**Elevated in Session 2.** The cleanest reframing is $z^3 - 2^x = 3^y + 5$: a cube very
+close to a power of 2 (gap $\log|\Lambda|\approx-47854$ for $\Lambda=3\log z-x\log2$).
+Standard Matveev fails only because the unknown base $z$ has height $\approx76857$,
+making the lower bound ($\approx-5.6\times10^{14}$) far too weak. The fix is a method
+that does **not** pay the full height of $z$: an effective irrationality measure
+$|2^{1/3} - p/q| > c/q^{\kappa}$ with $\kappa$ close to optimal, applied with $p/q$
+related to $z/2^{\lfloor x/3\rfloor}$, or the arithmetic-holonomy / hypergeometric
+bounds of Bennett and of arXiv:2510.04156 (2025). Sub-questions:
+- (a) Translate $z^3 - 2^x = 3^y+5$ into an approximation $|2^{1/3}-p/q|$ and read off the
+  exponent needed to force $3^y+5$ to be large, contradicting $3^y+5 \ll 2^x$.
+- (b) What effective $\kappa$ for $2^{1/3}$ is currently known, and is it good enough?
+
+### [LOW, ~RETIRED as standalone] $p$-adic analysis of the phantom solution
+
+**Downgraded in Session 2.** The phantom $2^5+3^{-3}+5 = (10/3)^3$ is a *global rational
+cube*, hence a cube modulo every prime $p\ne3$ and (constrained to 37) mod $3^n$ for all
+$n$. The cube map is a bijection mod $2^n$ and mod $3^n$ on the relevant residues, so the
+equation is **locally solvable at every prime**. Therefore no p-adic / congruence
+argument can *alone* refute a solution — proven, not just observed. The p-adic
+computations remain useful as auxiliary constraints feeding a global argument (e.g.
+$z\equiv6\pmod{32}$, $v_3(z^3-37)=4+v_3(k)$), but p-adic elimination on its own is a
+dead end. See `knowledge/references/two_adic_structure.md`. (Kept at LOW only because the
+derived congruences support other directions.)
 
 ### [MEDIUM] Baker's method / linear forms in logarithms
 
@@ -55,3 +77,4 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 ## History of Changes
 
 - **2026-06-25 (Session 1):** Added [HIGH] Factorization approach. Added [MEDIUM] Thue-Mahler equation approach. Lowered Baker's method assessment from [MEDIUM] to [MEDIUM-LOW] but kept at [MEDIUM] pending p-adic Baker investigation. Elevated $p$-adic direction to [HIGH] (tied). Noted Session 1 discoveries.
+- **2026-06-25 (Session 2):** Downgraded standalone $p$-adic elimination from [HIGH] to [LOW/~RETIRED] after *proving* (not just observing) that local methods cannot obstruct the equation: the phantom is a global rational cube $(10/3)^3$, so every local condition is satisfiable. Added new [HIGH] direction "Effective Diophantine approximation to $2^{1/3}$" as the realistic global path. Completed the 2-adic structure analysis ($z\equiv6\pmod{32}$, $v_2(3^y+5)=3$). See `knowledge/references/two_adic_structure.md`.
