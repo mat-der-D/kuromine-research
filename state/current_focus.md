@@ -1,8 +1,24 @@
 # Current Focus
 
-**Session:** 20260625_120000 (Session 2)
+**Session:** 20260625_(Session 3)
 
-**Current direction:** Establishing that local methods are *provably* insufficient, and pinning down why — so that future effort goes to global (size-based) methods. Completed the 2-adic mirror of the Session-1 3-adic analysis.
+**Current direction (Session 3):** Concretely tested the [HIGH] "effective irrationality
+measure for 2^(1/3)" direction. Reframed `z^3 - 2^x = 3^y+5` as a rational approximation
+`z/2^a` to `α = 2^(2/3) = 4^(1/3)` (using `x ≡ 2 mod 3`, so `2^x = 4·(2^a)^3`), via an
+**exact identity** (Wolfram-verified). Plugged in Bennett's best-known measure
+(`κ ≈ 2.4325`).
+
+**Headline result (Session 3):** Bennett's measure **proves no Theorem-5 solution exists
+with `x > 8.3787 y`** (the 2^x-dominant tail) — a genuine, rigorous reduction. But it is
+provably a *partial* tool: even an optimal measure (`κ → 2`) only reaches `x > 4.7549 y`,
+so the region `x ≤ 4.755 y` (containing the whole balanced & 3^y-dominant regime) is out of
+reach of any single-cube-root approximation. The method is structurally one-sided because
+`y = 3j` makes `3^y` an exact cube (`z/3^j → 1` rational — no fixed irrational to
+approximate). Full write-up: `knowledge/references/irrationality_measure_approach.md`.
+
+**Previous direction (Session 2):** Establishing that local methods are *provably*
+insufficient (phantom is a global rational cube), redirecting to global/size methods.
+Completed the 2-adic mirror of the Session-1 3-adic analysis.
 
 **Why this direction:** Session 1 left open whether some refined p-adic argument could break the phantom obstruction. Session 2 settled this: the phantom $2^5+3^{-3}+5 = (10/3)^3$ is a *global rational cube*, so the equation is locally solvable at every prime. No congruence/p-adic argument can ever obstruct it. The realistic path forward is effective Diophantine approximation that does not pay the full height of $z$.
 
@@ -28,6 +44,16 @@
 - Established the **soft-obstruction principle**: cube map is a bijection mod $2^n$ and mod $3^n$ (for the relevant residues), and the phantom is a global rational cube $(10/3)^3$. Hence the equation is locally solvable at every prime — no p-adic/congruence method can ever refute a solution. This *retires the hope* that a refined p-adic argument alone could work.
 - Size landscape: $2^x$ dominates $3^y$ by $e^{47854}$; $z/w \approx e^{15951}$. The factorization $(z-w)(z^2+zw+w^2)$ is maximally unbalanced — both factors large — so the "small factor" idea is void.
 - Confirmed by brute force: only $(1,0,2)$ and $(5,3,4)$ for $x\le40, y\le30$.
+
+**Session 3 additions:**
+- Exact identity `z/2^a - α = D/(2^(3a)·(…)) ` with `α=4^(1/3)`, `D=3^y+5`, verified in
+  Wolfram. So `z/2^a` approximates `2^(2/3)` with exponent `κ_actual = 3 - logD/logq`,
+  `logD = y log3`, `logq = a log2 = (x-2)/3 · log2`.
+- Contradiction iff `κ_actual > κ_thm`, i.e. `y < ((3-κ)/3)(log2/log3)(x-2)`. With Bennett
+  `κ=2.4325` ⟹ `x > 8.3787 y` eliminated. Best-possible `κ=2` ⟹ only `x > 4.7549 y`.
+- Practical handle for the next step: in the *surviving* region `x ≤ 8.379 y`, the height of
+  `z` is bounded by `log z = (x/3) log2 ≲ (8.379/3) y log2`, tying `height(z)` to `y`. This
+  is the most concrete reduction of the height-of-`z` blocker noted in Sessions 1–2.
 
 **Notes (still open from Session 1):**
 - Thue-Mahler connection: apply Baker-type bounds to $z^3 - w^3 = N_k$ for explicit bounds on $z,j$ in terms of $N_k = 2^x+5$ (still the best concrete lead).
