@@ -55,6 +55,16 @@ single cubic irrationality measure. See
 
 ### [LOW, ~RETIRED as standalone] $p$-adic analysis of the phantom solution
 
+**Session 10 addendum (Suggestion #1 resolved).** The map $k_x \mapsto A$ is now written
+explicitly as a 3-adic analytic function: with $g = 2^{332640}$ one has $v_3(g-1)=4$
+(Wolfram), so $2^x = 32\,g^{k_x} = 32\exp_3(k_x L)$ with $L=\log_3 g$, $v_3(L)=4$, and
+$A(k_x) = (32\exp_3(k_x L)+5)^{1/3}$ (the $z\equiv1\bmod3$ branch) is 3-adic analytic. By
+Theorem J it is a **bijection** $\mathbb{Z}_3\to\mathbb{Z}_3$; hence for each integer target
+$a\equiv22\pmod{27}$ there is a unique $s_a\in\mathbb{Z}_3$ with $A(s_a)=a$, and "$A(k_x)$
+rational at integer $k_x$" reduces to "$s_a\in\mathbb{Z}\subset\mathbb{Z}_3$", which is
+**3-adically undetectable** ($\mathbb{Z}$ dense in $\mathbb{Z}_3$). No analytic obstruction.
+This was the last untried 3-adic idea; it is empty. Keep at LOW/~RETIRED.
+
 **Downgraded in Session 2.** The phantom $2^5+3^{-3}+5 = (10/3)^3$ is a *global rational
 cube*, hence a cube modulo every prime $p\ne3$ and (constrained to 37) mod $3^n$ for all
 $n$. The cube map is a bijection mod $2^n$ and mod $3^n$ on the relevant residues, so the
@@ -132,6 +142,23 @@ is infeasible — keep at LOW.
 - arXiv:2506.20909 (Jun 2025): Reduces exponential Diophantine to ordinary via Lucas sequences; requires a structure Kuromine (with additive constant 5) does not have.
 - **No new unconditional method for the two-comparable-S-units regime found.** The κ_real ≈ 0.62 barrier (Session 3) remains open.
 
+**Session 10 update:** Assessed the two newest 2026 Bugeaud papers, which are the first
+to directly bound the *difference* between a perfect power and an integral S-unit (the
+Kuromine shape):
+- arXiv:2604.27490 (Bugeaud, Apr 2026): effective lower bound for |z^d − q1^a1···qt^at|
+  and its greatest prime factor, → ∞ with z^d, for z coprime to the q_i, d ≥ 2.
+- arXiv:2503.22084 (Bugeaud, Mar 2025): the d = 2 (squares) case; greatest prime factor
+  of |x² − S-unit| → ∞.
+- **Assessment: NOT APPLICABLE.** Option (1) z³−2^x = 3^y+5 fails the hypothesis (z is
+  even, gcd(z,2)≠1). Option (2) z³−3^y = 2^x+5 satisfies it (x odd ⇒ z coprime to 3) but
+  gives no contradiction: |z³−3^y| = 2^x+5 ≈ z^{1.89} (log 230572 = 0.631·log z³), so a
+  contradiction needs an *effective* exponent κ < 1.107, whereas Baker-type bounds (which
+  Bugeaud uses) give κ just below d=3. The 0.631 figure is exactly the Session-3 κ_real
+  barrier, now seen from the cube-vs-3^y side. Bugeaud's "→ ∞ with z^d" is trivially met
+  by 2^x+5 → ∞.
+- Holonomy bounds (2510.04156) re-checked: still effective irrationality measure > 2 for
+  2^{1/3}, far above κ < 1.107. No new unconditional tool in the two-S-units regime.
+
 **Session 8 update:** Assessed two additional 2026 papers:
 - arXiv:2505.19141 (Dong-Shafrir / Karimov et al., 2025): Decidability of linear-exponential Diophantine equations over two primes {p,q}. These are equations Σ a_i · p^{x_i} · q^{y_i} = 0. NOT APPLICABLE: Kuromine has z^3 as a term, and z is not an S-unit (not of the form 2^a·3^b). The decidability result requires all terms to be S-units in {p,q}; z^3 falls outside this class.
 - arXiv:2604.18991 (Miyazaki-Scott-Styer, April 2026): Handles a^x + b^y = c^z (purely exponential, all three bases fixed). NOT APPLICABLE: Kuromine has z^3 with z as the variable, not c^z with c fixed.
@@ -158,3 +185,5 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 - **2026-06-25 (Session 9):** No new directions retired; no new directions elevated. Completed the 3-adic portrait of the integer factor B (Theorem L), mirroring Theorems I/J for A: B ≡ 25 (mod 27) universal; B mod 81 indexed by k_x mod 3 (52/79/25 for k_x ≡ 0/1/2); B mod 3^{n-1} a function of k_x mod 3^{n-4} for n ≥ 5, inherited from Theorem J via B ≡ (2^x+5)·A^{-1} (A a 3-adic unit). Corrected Session 8 suggestion #1: B mod 729 needs k_x mod 27 (not mod 9); full 27-branch (A,B) mod 729 table computed and verified (A·B ≡ 2^x+5 mod 729 in every row). B is a 3-adic unit (v_3(B)=0), separating it from the phantom (B_phantom=37/3, v_3=-1) but non-actionably. Formalized Theorems I, J, K, L into knowledge/problem.md and created knowledge/references/adic_structure_extended.md (full 2-adic + 3-adic portraits of A and B side by side). The local portrait of a Theorem-5 solution is now complete for both coprime factors at arbitrary p-adic depth; no contradiction; fundamental barrier unchanged. Updated current_focus.md.
 
 - **2026-06-25 (Session 8):** No new directions retired; no new directions elevated. Completed the (k_x, k_y) indexing of all A-congruence branches. Theorem I: the three branches of A mod 81 are indexed by k_x mod 3 (k_x≡0 → A≡49, k_x≡1 → A≡22, k_x≡2 → A≡76 mod 81). Theorem J: A mod 3^{n-1} uniquely determined by k_x mod 3^{n-4} for n≥5 (gcd(332640, ord_{3^n}(2))=54 for all n≥5). Theorem K: full 12-branch A mod 20736=lcm(81,256) indexed by (k_x mod 3, k_y mod 4), all 12 values listed. Corrected and completed Session 6's three-branch CRT to a six-branch CRT mod 2592 indexed by (k_x mod 3, k_y mod 2). Assessed ABC conjecture: no contradiction (quality exponent q≈0.888<1, ABC is never violated). Assessed two new 2026 arXiv papers: arXiv:2505.19141 (S-unit decidability, two primes) and arXiv:2604.18991 (a^x+b^y=c^z); both NOT APPLICABLE to Kuromine. Noted that the 3-adic expansion of A is determined digit-by-digit by k_x, confirming it is a bijection Z_3→Z_3 (no contradiction). Updated current_focus.md.
+
+- **2026-06-25 (Session 10):** No new directions retired; no new directions elevated. Literature watch: assessed the two newest Bugeaud "perfect-power minus integral S-unit" papers (arXiv:2604.27490, Apr 2026; arXiv:2503.22084, Mar 2025), the first 2026 results to bound exactly the Kuromine-shaped difference. NOT APPLICABLE: Option (1) z³−2^x = 3^y+5 fails the coprimality hypothesis (z even); Option (2) z³−3^y = 2^x+5 satisfies it (x odd ⇒ z coprime to 3) but gives no contradiction because |z³−3^y| = 2^x+5 ≈ z^{1.89} (log 230572 = 0.631·log z³, Wolfram), so it lands exactly on the Session-3 κ_real ≈ 0.63 two-comparable-S-units barrier; a contradiction needs an effective exponent κ < 1.107 while Baker-type bounds (which Bugeaud uses) give κ just below d=3. Resolved Session 9 Suggestion #1: made k_x ↦ A explicit as the 3-adic analytic function A(k_x) = (32·exp_3(k_x·L)+5)^{1/3} with g=2^332640, v_3(g−1)=4, L=log_3 g, v_3(L)=4 (Wolfram); by Theorem J it is a bijection Z_3→Z_3, so rationality of A at an integer k_x reduces to whether a specific s_a ∈ Z_3 lies in Z — 3-adically undetectable (Z dense in Z_3). No obstruction; last 3-adic stone turned. Added Session-10 addendum to the p-adic direction; updated arXiv survey notes; updated current_focus.md.
