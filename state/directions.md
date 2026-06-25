@@ -65,9 +65,11 @@ $z\equiv6\pmod{32}$, $v_3(z^3-37)=4+v_3(k)$), but p-adic elimination on its own 
 dead end. See `knowledge/references/two_adic_structure.md`. (Kept at LOW only because the
 derived congruences support other directions.)
 
-### [MEDIUM] Baker's method / linear forms in logarithms
+### [RETIRED in Session 5] Baker's method / linear forms in logarithms (all variants)
 
-**Session 1 assessment:** Matveev's bound is too weak for the Theorem 5 parameter range (minimum $x = 332645$, $y = 166317$). The bound allows $|\Lambda|$ to be as small as $\exp(-5.6 \times 10^{14})$, while the actual size is only $\exp(-47854)$. No contradiction. A refined version using Yu's p-adic Baker theorem might do better. Priority lowered pending literature search for better bounds.
+**Session 1 assessment:** Matveev's archimedean bound is too weak (bound $\exp(-5.6\times10^{14})$ vs actual $\exp(-47854)$, no contradiction).
+
+**Session 5 retirement:** Yu's p-adic Baker theorem also fails, for a *structural* reason not a quantitative one. For the 3-adic linear form $\Lambda_3 = x\log_3(2) - 3\log_3(z)$: $v_3(\Lambda_3) = v_3(-(3^y+5)) = 0$ (since $5 \equiv 2 \pmod 3$). For the 2-adic form: $v_2(\Lambda_2) = v_2(-(3^y+5)) - v_2(z^3) = 3 - 3 = 0$. Yu's theorem gives an *upper* bound on $v_p(\Lambda_p)$; a contradiction requires actual $v_p$ to exceed the upper bound. With $v_p = 0$, this is trivially impossible regardless of constants. **All Baker-type methods — archimedean and p-adic — are now retired.** Root cause: the "two comparable dominant S-units" regime ($3^y \approx z^2$) means no linear form of the expected type is small in any metric. See `knowledge/references/baker_method.md` and `knowledge/dead_ends.md`.
 
 ### [MEDIUM] Elliptic curve approach (fix one variable)
 
@@ -115,9 +117,13 @@ survivors are non-cubes and outside the Theorem-5 class. The full Theorem-5 floo
 ($x=332645$) remains far beyond brute force, so direct numerical refutation of the conjecture
 is infeasible — keep at LOW.
 
+### [RETIRED in Session 5] Skolem's method / Bertók-Hajdu algorithm
+
+**Session 5 assessment:** Inapplicable by the same phantom obstruction. The Bertók-Hajdu/Miyazaki infinite-family approach (arXiv:2503.00843, 2508.17601) requires the equation to be *locally unsolvable* somewhere — the algorithm finds a modulus $N$ with no solution mod $N$ and concludes no integer solution exists. The Kuromine equation is locally solvable at every prime (proven in Session 2: the phantom $(10/3)^3$ is a global rational cube). Therefore the algorithm can never find a blocking modulus. The search would run indefinitely without result. Moved to dead ends.
+
 ### [LOW] arXiv survey of exponential Diophantine equations
 
-**Partially done in Session 1.** Found literature on Baker's method, S-unit equations, and Thue-Mahler equations. Next: search specifically for $z^3 - 3^y = C$ or $z^3 = 2^x + 3^y + C$ type results.
+**Partially done in Session 1.** Found literature on Baker's method, S-unit equations, and Thue-Mahler equations. Session 5 adds: Miyazaki (2503.00843) solves infinite families of 4-term purely exponential equations using Baker+p-adic Baker+Skolem, but all rely on local non-solvability. The Kuromine equation's phantom blocks this route. Next: watch for new methods in the "two-comparable-S-units" regime.
 
 ---
 
@@ -134,3 +140,4 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 - **2026-06-25 (Session 2):** Downgraded standalone $p$-adic elimination from [HIGH] to [LOW/~RETIRED] after *proving* (not just observing) that local methods cannot obstruct the equation: the phantom is a global rational cube $(10/3)^3$, so every local condition is satisfiable. Added new [HIGH] direction "Effective Diophantine approximation to $2^{1/3}$" as the realistic global path. Completed the 2-adic structure analysis ($z\equiv6\pmod{32}$, $v_2(3^y+5)=3$). See `knowledge/references/two_adic_structure.md`.
 - **2026-06-25 (Session 3):** RETIRED "Effective Diophantine approximation to $2^{1/3}$" (was [HIGH]) with a proof that it is quantitatively dead: realized exponent $\kappa\approx0.62\ll\mu$, and the Thue value $3^y+5$ is too large by $\sim e^{138909}$ — root cause is the two-comparable-dominant-S-units regime ($3^y\approx z^2$). See `knowledge/references/irrationality_measure_obstruction.md`. Added Session-3 progress to the Factorization [HIGH] direction (reduced equation $2^x+5=A(A^2+3^{j+1}A+3^{2j+1})$, both real solutions have $A=z-3^{y/3}=1$, Eisenstein identity $4B-3w^2=(2z+w)^2$). Elevated primitive-divisor (Zsygmondy/BHV) direction to [MEDIUM-HIGH] as the best remaining non-size lead, since all size methods are now shown too weak.
 - **2026-06-25 (Session 4):** RETIRED the [MEDIUM-HIGH] primitive-divisor/growth direction: its congruence form is killed by the soft obstruction (showed $A\equiv3$, $B\equiv37/3\pmod p$ for all $p\ne3$, matching the phantom; $x\bmod3$, $y\bmod6$ constant over the family), and its growth form has no Lucas/Lehmer object ($B$ not an $a^n-b^n$ sequence). RETIRED the modular/Frey-curve method as structurally inapplicable (no varying prime exponent) — created `knowledge/references/modular_method.md`. Downgraded the Factorization [HIGH] direction toward MEDIUM: closed sub-questions (b) and (c) negatively ($A$ is provably $\sim2^{x/3}$, never 1), leaving only the global/size sub-question (a) for which no adequate tool exists. Added Session-4 progress note to `knowledge/references/factorization_approach.md`. Extended numerical verification to $x,y\le2000$ (only the two known solutions). Both retirements moved to `knowledge/dead_ends.md`.
+- **2026-06-25 (Session 5):** RETIRED Baker's method (all variants, including Yu's p-adic Baker): p-adic linear forms have $v_p = 0$ for $p \in \{2,3\}$ — p-adic units — so no Baker upper bound can ever be violated. RETIRED Skolem/Bertók-Hajdu: inapplicable because the phantom makes the equation locally solvable everywhere. Added A=1 sub-theorem proof (exactly $(1,0,2)$ and $(5,3,4)$ satisfy $A=1$). Documented the algebraic origin of the phantom: $c=5$ is the smallest positive integer for which $865+27c$ is a perfect cube. Checked $z\bmod37$ structure: three branches cycle over Theorem-5 family, no contradiction. Added Session-5 history entry, retired Baker and Skolem to dead ends.

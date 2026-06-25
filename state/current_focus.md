@@ -1,82 +1,85 @@
 # Current Focus
 
-**Session:** 20260625_152000 (Session 4)
+**Session:** 20260625_180000 (Session 5)
 
-**Current direction:** Pursued the Session-3 top lead — the primitive-divisor / congruence
-attack on the factor $B = z^2+zw+w^2$ in $2^x+5 = A\cdot B$ ($A=z-3^j$). Determined
-decisively that its *congruence* form is dead (soft obstruction strikes again, now on the
-factorization), pinned down the precise real-vs-phantom 3-adic distinction, extended the
-numerical verification, and assessed the modular/Frey-curve method (not applicable).
+**Current direction:** Assessed p-adic Baker (Yu's theorem) quantitatively; analyzed the
+algebraic structure of the constant c=5; proved the A=1 sub-theorem; assessed
+Skolem/Bertók-Hajdu method; investigated z mod 37 structure.
 
-**Why this direction:** It was the [MEDIUM-HIGH] "best remaining non-size lead" after
-Session 3 retired all size-based methods. Settling whether it can work — and exactly why
-not — is the highest-value move, mirroring how Sessions 2–3 cleanly closed the local and
-irrationality-measure directions.
+**Why this direction:** After Session 4 retired the last active non-size lead, the
+remaining [MEDIUM] directions were Baker/Yu's p-adic Baker (never computed
+quantitatively), the Thue-Mahler approach, and the "constant 5" speculative angle from
+Session 4's next suggestions. These were the highest-value remaining moves.
 
-## Session 4 main results
+## Session 5 main results
 
-1. **The $A\equiv 3\pmod p$ phenomenon, explained.** Because $332640\equiv0\pmod3$ and
-   $166320\equiv0\pmod6$, the residues $x\bmod3\equiv2$, $y\bmod6\equiv3$ are *constant*
-   over the whole Theorem-5 family, so $2^x,3^y,w=3^j\pmod p$ are pinned for any prime $p$
-   with suitable multiplicative orders. Wolfram then shows $A=z-w\equiv 3\pmod p$ for
-   **every** tested prime $p\equiv2\pmod3$ ($p=11,17,23,29,41,71,89,113,281$), and the
-   phantom-matching branch for $p\equiv1\pmod3$ gives $A\equiv3$, $B\equiv37/3$. **Cause:**
-   the phantom has $A_{\text{phantom}}=\tfrac{10}3-\tfrac13=3$, $B_{\text{phantom}}=\tfrac{37}3$,
-   which reduce mod every $p\ne3$. So every congruence on the factorization is satisfied by
-   the phantom — the soft-obstruction principle, now confirmed on $A,B$. **The naive
-   primitive-divisor/congruence contradiction is therefore impossible.**
+1. **p-adic Baker (Yu's theorem): definitively retired.** For both relevant p-adic linear
+   forms (p=2 and p=3), the actual p-adic valuation is 0 — these are p-adic *units*.
+   - $v_3(2^x - z^3) = v_3(-(3^y+5)) = 0$ (since $5 \equiv 2 \pmod 3$, $v_3(5)=0$).
+   - $v_2(2^x - z^3) - v_2(z^3) = v_2(-(3^y+5)) - 3 = 3-3 = 0$.
+   Yu's theorem gives an *upper* bound on $v_p(\Lambda_p)$; a contradiction requires the
+   actual $v_p$ to exceed that upper bound. With $v_p = 0$, no upper bound can ever be
+   violated. This is the same root cause as the archimedean failure: all linear forms
+   (archimedean and p-adic) are far from zero in the "two comparable S-units" regime.
 
-2. **The genuine integrality distinction (real vs phantom) is 3-adic and blocked.**
-   Integer solution: $v_3(A)=0$, $A\equiv1\pmod3$, $A\bmod9\in\{1,4,7\}$, $B$ a genuine
-   integer with $v_3(B)=0$ and all prime factors $\equiv1\pmod3$. Phantom: $A=3$
-   ($v_3=1$, $\bmod9=3$), $B=37/3$ ($v_3=-1$). They differ only at powers of 3 — exactly
-   where the soft obstruction does not apply — but the difference is non-actionable because
-   $37$ is a cubic residue mod $3^n$ for all $n$ (the known $3^n$ wall): the real branch
-   $A\bmod3^n$ is never forced into a contradiction.
+2. **A=1 sub-theorem proved.** The equation $2^x + 5 = 1 + 3^{j+1} + 3^{2j+1}$ (i.e.,
+   $A = z - 3^j = 1$) has *exactly* two non-negative integer solutions:
+   - $j=0$: $2^x = 2$, $x=1$ giving solution $(1,0,2)$.
+   - $j=1$: $2^x = 32$, $x=5$ giving solution $(5,3,4)$.
+   For $j \geq 2$ even: $v_2(\text{value}) = 1 \neq v_2(\text{value})$ for any power of 2
+   (value $\gg 2$). For $j \geq 3$ odd: $v_2(\text{value}) = 3$, value $= 8 \cdot (\text{odd})$
+   with odd part $\gg 1$. In both cases the value cannot be a pure power of 2. This
+   confirms and provides a clean proof for the two known solutions being the only A=1 cases.
 
-3. **$B$ is not a Lucas/Lehmer sequence.** $B=(2^x+5)/(z-3^j)$ with both $z$ and $j$ varying
-   non-linearly in $x$, so Zsygmondy / Bilu–Hanrot–Voutier primitive-divisor theorems do
-   **not** apply. The "growth" form of the lead has no clean object to act on.
+3. **Constant c=5 algebraically characterized.** The equation $2^x + 3^y + c = z^3$ has
+   a rational phantom solution $(5, -3, z_0)$ at $(x,y) = (5,-3)$ if and only if
+   $865 + 27c$ is a perfect cube. The smallest positive $c$ satisfying this is $c=5$
+   (giving $10^3 = 1000$). The sequence is $c \in \{-32, 5, 222, 781, 1844, \ldots\}$
+   (corresponding to cube root $n \equiv 1 \pmod 9$: $n = 1, 10, 19, 28, 37, \ldots$).
+   For all other small positive $c$ (e.g., $c=4, 6, 7, \ldots$), no rational phantom exists
+   at $(5,-3)$ and congruence methods may succeed. This is the precise algebraic reason
+   $c=5$ is maximally obstructed: it is the first small positive integer generating a global
+   rational cube phantom.
 
-4. **Modular / Frey-curve method: not applicable (structural).** It needs a *varying prime
-   exponent* for the mod-$p$ Galois representation; the Kuromine equation has only the fixed
-   small cube exponent, with $x,y$ on fixed small bases. No Frey curve can be built. The
-   fixed-$y$ elliptic route only re-derives the known per-$y$ finiteness. See
-   `knowledge/references/modular_method.md`.
+4. **Skolem/Bertók-Hajdu: inapplicable.** The Bertók-Hajdu algorithm requires the equation
+   to be *locally unsolvable* somewhere (no local solution implies no global solution).
+   The Kuromine equation is locally solvable at every prime (Session 2). Therefore the
+   Bertók-Hajdu/Miyazaki infinite-family approach cannot confirm absence of solutions.
 
-5. **Numerical verification extended.** Exhaustive search (Python, cubic-residue sieve mod
-   14 primes) over $0\le x,y\le 2000$ (~4M pairs) leaves only 4 sieve-survivors:
-   $(1,0),(5,3),(1445,597),(1445,1677)$; only the first two are actual cubes (the two known
-   solutions). The latter two are non-cubes outside the Theorem-5 class ($1445\not\equiv5
-   \bmod332640$). **No new solutions for $x,y\le 2000$.**
+5. **Thue-Mahler for k=1: computationally intractable.** $N_1 = 2^{332645}+5$ has
+   approximately 100,133 decimal digits. No algorithm can explicitly resolve the Thue-Mahler
+   equation for this input.
+
+6. **z mod 37 structure.** $37 \mid N_k = 2^x + 5$ for all $k \geq 1$ (since $\mathrm{ord}_{37}(2) = 36 \mid 332640$). The Theorem-5 family has z mod 37 cycling through all three branches
+   ({21, 25, 28}) as $k$ varies (verified for $k=0,\ldots,5$). This confirms no fixed
+   branch contradiction is possible via 37-adic data alone. The phantom is in the $z \equiv
+   28 \pmod{37}$ branch.
 
 ## Where things stand (board state)
 
-- Local / congruence / $p$-adic: provably insufficient (Session 2; reconfirmed on the
-  factorization in Session 4 — phantom $A=3$, $B=37/3$ reduce everywhere).
-- Single irrationality measure / 2-term linear form: provably insufficient (Session 3).
-- Full 3-log Baker (Matveev): too weak by $\sim10^{10}$ (Sessions 1,3).
-- Primitive-divisor / congruence on factorization: dead in congruence form, no object in
-  growth form (Session 4).
-- Modular / Frey method: not applicable, structural (Session 4).
+- Local / congruence / p-adic (standalone): RETIRED (Session 2)
+- Single irrationality measure / 2-term linear form: RETIRED (Session 3)
+- Full 3-log Baker (Matveev, archimedean): RETIRED (Sessions 1, 3)
+- p-adic Baker (Yu's theorem): RETIRED (this session)
+- Primitive-divisor / Zsygmondy: RETIRED (Session 4)
+- Modular / Frey-curve method: RETIRED (Session 4)
+- Skolem / Bertók-Hajdu: RETIRED (this session)
+- Thue-Mahler (theoretical): [MEDIUM] — per-k finiteness only; uniformity open; computationally intractable
+- Elliptic curve (fixed x): [MEDIUM] — same limitation
 
-**Honest assessment (unchanged, sharpened):** every currently known *effective* global tool
-is quantitatively too weak for the Theorem-5 parameter range, and every *local/algebraic/
-congruence* tool is defeated by the soft obstruction (the phantom $(10/3)^3$ is a global
-rational cube whose factorization data $A=3$, $B=37/3$ reduce mod every prime $\ne3$). The
-problem genuinely sits beyond present techniques for this range. The verification confirms
-the conjecture empirically far below the Theorem-5 floor ($x,y\le2000$).
+**Honest assessment (sharpened):** Every known effective global tool (all Baker variants,
+all approximation measures) and every local/algebraic/combinatorial tool (congruences,
+factorization, Skolem, modular method) has now been assessed and found insufficient, with
+explicit quantitative or structural reasons for each failure. The board is now essentially
+cleared of plausible near-term attacks. A breakthrough would require either:
+(a) A new effective method for "two comparable large S-units summing to a cube" (the
+    simultaneous approximation regime $3^y \approx z^2$), or
+(b) A coupling of the 3-adic integrality distinction ($v_3(A)=0$ for real solutions vs
+    $v_3(A_{\text{phantom}})=1$) to a global size bound — mechanism presently unknown.
 
-## Notes / still open (least-implausible remaining angles)
+## Notes on remaining positive/structural results
 
-- The only place real solutions provably differ from the phantom is **3-adically**
-  ($v_3(A)=0$ vs $1$). Any winning argument must exploit this *together with a global/size
-  input* (since congruences mod $3^n$ alone are blocked). No mechanism is known, but this is
-  the sharpest formulation of the wall.
-- A genuinely new effective tool for "two comparable large $S$-units summing to a cube"
-  (beyond Matveev / cubic irrationality measures) would be required; none is presently known.
-  Worth watching the arithmetic-holonomy literature (arXiv:2510.04156 and successors) for a
-  *simultaneous* two-variable refinement, though §2-§3 of `irrationality_measure_obstruction.md`
-  suggest the $\kappa\approx0.62$ obstruction is structural.
-- arXiv:2207.14492 (Thue-Mahler resolution) still un-executed for a concrete $k=1$ case;
-  would only confirm per-case finiteness, not uniformity.
+- The A=1 sub-theorem gives a clean characterization of the two known solutions.
+- The c=5 characterization explains the phantom's origin algebraically.
+- The problem is now documented with six independent reference files, one for each retired
+  method cluster.

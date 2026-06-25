@@ -59,6 +59,29 @@ is not an $a^n-b^n$ Lucas/Lehmer sequence (both $z$ and $j$ vary non-linearly wi
 Zsygmondy / Bilu–Hanrot–Voutier primitive-divisor theorems do not apply. Documented in
 `knowledge/references/factorization_approach.md`.
 
+## p-adic Baker / Yu's theorem (Session 5)
+
+**Status:** Definitively closed. Do not pursue p-adic Baker in any form.
+
+**What was tried:** Applied Yu's p-adic Baker theorem to both the 2-adic and 3-adic linear forms arising from the equation.
+
+- 3-adic form: $\Lambda_3 = x\log_3(2) - 3\log_3(z)$ has $v_3(\Lambda_3) = v_3(2^x - z^3) = v_3(-(3^y+5)) = 0$, since $5 \equiv 2 \pmod 3$ so $v_3(3^y + 5) = 0$.
+- 2-adic form: $v_2(\Lambda_2) = v_2(2^x - z^3) - v_2(z^3) = v_2(-(3^y+5)) - 3 = 3-3 = 0$.
+
+**Why it fails:** Yu's theorem gives an *upper* bound: $v_p(\Lambda_p) \leq C(n,p,\ldots)\cdot\log B$. A contradiction requires the actual $v_p$ to *exceed* this upper bound. Since both actual $v_p$ values are 0, the condition $0 \leq C\cdot\log B$ is trivially satisfied for any positive $C$. No information is obtained.
+
+**Root cause:** Same as the archimedean Baker failure — the "two comparable dominant S-units" regime ($3^y \approx z^2$) means no linear form (in any metric, archimedean or p-adic) is forced to be small. This rules out every Baker-type method. Improvement in constants cannot help.
+
+## Skolem's method / Bertók-Hajdu algorithm (Session 5)
+
+**Status:** Inapplicable. Same phantom obstruction.
+
+**What was tried:** The Bertók-Hajdu algorithm (and its application in Miyazaki's infinite-family results, e.g., arXiv:2503.00843) finds a modulus $N$ such that the equation has no solution mod $N$, concluding no integer solution exists. Searched the 2025-2026 literature for applicable methods.
+
+**Why it fails:** The Kuromine equation $2^x + 3^y + 5 = z^3$ is *locally solvable at every prime* (proven in Session 2: the phantom $(10/3)^3$ is a global rational cube, so it is a cube modulo every prime $p \neq 3$, and 37 is a cube modulo $3^n$ for all $n$). The Bertók-Hajdu algorithm requires local non-solvability to terminate with a "no solutions" conclusion. Since the equation is everywhere locally solvable, the algorithm would never find a blocking modulus.
+
+**Consequence:** Any method relying on a local-global Hasse-type principle for exponential equations is blocked by the phantom obstruction. This includes all variants of Skolem's p-adic method in its standard form.
+
 ## Modular method / Frey curves (Session 4)
 
 **Status:** Not applicable. Structural mismatch, not a quantitative gap.
