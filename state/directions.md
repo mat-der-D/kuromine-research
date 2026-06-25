@@ -8,24 +8,41 @@ Directions are listed with a priority estimate and current status.
 
 ### [HIGH] Factorization approach via $z^3 - w^3 = 2^x + 5$
 
-**Discovered in Session 1 (2026-06-25).** For all Theorem 5 solutions, $y = 3j$ and the equation factors as $(z-w)(z^2+zw+w^2) = 2^x + 5$ with $\gcd = 1$ and $z^2+zw+w^2$ having only prime factors $\equiv 1 \pmod 3$. This is a norm form equation in $\mathbb{Z}[\omega]$ (Eisenstein integers). Key sub-questions:
-- (a) Can we apply Thue-Mahler machinery to $z^3 - w^3 = 2^x + 5$ with $w = 3^j$?
-- (b) Does the norm form $N(z - \omega w) = B \mid 2^x + 5$ impose new constraints on $z$ modulo primes $\equiv 1 \pmod 3$?
-- (c) Is there a descent via the Eisenstein integer ring that links back to the original equation?
+**Discovered in Session 1 (2026-06-25).** For all Theorem 5 solutions, $y = 3j$ and the equation factors as $(z-w)(z^2+zw+w^2) = 2^x + 5$ with $\gcd = 1$ and $z^2+zw+w^2$ having only prime factors $\equiv 1 \pmod 3$. This is a norm form equation in $\mathbb{Z}[\omega]$ (Eisenstein integers).
 
-### [HIGH] Effective Diophantine approximation to $2^{1/3}$ (avoid paying height of $z$)
+**Session 3 progress:**
+- Clean equivalent single equation, with $A = z - 3^j$:
+  $$2^x + 5 = A^3 + 3^{j+1}A^2 + 3^{2j+1}A = A\,(A^2 + 3^{j+1}A + 3^{2j+1}).$$
+  Brute force ($x\le40$) recovers BOTH known solutions, each with **$A = z-3^{y/3} = 1$**.
+- Eisenstein-norm identity $4B - 3w^2 = (2z+w)^2$ (verified on $(5,3,4)$: $148-27=121$).
+- **Negative:** the inert-prime condition ($q\equiv2\bmod3$, $q\mid2^x+5 \Rightarrow q\mid z-3^j$)
+  is automatically consistent (gives $3^{3j}\equiv3^y\bmod q$, automatic since $y=3j$). So the
+  factorization yields no new congruence — soft obstruction again.
 
-**Elevated in Session 2.** The cleanest reframing is $z^3 - 2^x = 3^y + 5$: a cube very
-close to a power of 2 (gap $\log|\Lambda|\approx-47854$ for $\Lambda=3\log z-x\log2$).
-Standard Matveev fails only because the unknown base $z$ has height $\approx76857$,
-making the lower bound ($\approx-5.6\times10^{14}$) far too weak. The fix is a method
-that does **not** pay the full height of $z$: an effective irrationality measure
-$|2^{1/3} - p/q| > c/q^{\kappa}$ with $\kappa$ close to optimal, applied with $p/q$
-related to $z/2^{\lfloor x/3\rfloor}$, or the arithmetic-holonomy / hypergeometric
-bounds of Bennett and of arXiv:2510.04156 (2025). Sub-questions:
-- (a) Translate $z^3 - 2^x = 3^y+5$ into an approximation $|2^{1/3}-p/q|$ and read off the
-  exponent needed to force $3^y+5$ to be large, contradicting $3^y+5 \ll 2^x$.
-- (b) What effective $\kappa$ for $2^{1/3}$ is currently known, and is it good enough?
+Key sub-questions (remaining):
+- (a) Can we apply Thue-Mahler machinery to the reduced equation $A(A^2+3^{j+1}A+3^{2j+1}) = 2^x+5$ for fixed $x$? (Finiteness per $x$ known; uniformity over the $x$-progression open.)
+- (b) Can growth / primitive-divisor results (Zsygmondy, Bilu–Hanrot–Voutier) on $B = z^2+zw+w^2$ along the $x$-progression force a contradiction? **(elevated — see new MEDIUM-HIGH below)**
+- (c) Can $A = z - 3^{y/3} = 1$ (true for both real solutions) be shown necessary? No mechanism known to bound $A$, so this is aspirational.
+
+### [RETIRED in Session 3] Effective Diophantine approximation to $2^{1/3}$
+
+**Elevated in Session 2, RETIRED in Session 3 with a proof.** The reframing
+$z^3 - 4W^3 = 3^y+5$ ($W=2^a$, $x=3a+2$) makes $z/W$ a rational approximation to
+$2^{2/3}$. The session computed (Wolfram, two independent ways) that this approach
+*cannot* work:
+- The realized approximation exponent is $\kappa_{\text{real}}\approx0.62<1$, far below
+  any effective irrationality measure $\mu\ge2$. Irrationality measures are *lower*
+  bounds; they only constrain *good* approximations ($\kappa\ge\mu$). $z/W$ is a *bad*
+  approximation, so no measure (however sharp, including arXiv:2510.04156) gives
+  information.
+- As a Thue lower bound a contradiction needs $\log(3^y+5)<(3-\mu)\log\max(z,W)$, but
+  LHS $\approx182718$, RHS $\approx43809$ ⟹ off by $+138909$. The form value $3^y+5$ is
+  far too large.
+
+**Root cause:** $3^y$ is *not* a small perturbation of $2^x$ — $\log3^y/\log2^a\approx2.38$,
+so $3^y\approx z^2$. This is the "two comparable dominant S-units" regime, beyond any
+single cubic irrationality measure. See
+`knowledge/references/irrationality_measure_obstruction.md`. Moved toward dead_ends.
 
 ### [LOW, ~RETIRED as standalone] $p$-adic analysis of the phantom solution
 
@@ -47,9 +64,19 @@ derived congruences support other directions.)
 
 Fixing $x = 5 + 332640k$ and studying $z^3 - 3^y = 2^x + 5$ as a family of curves. **Now linked to the factorization approach** above.
 
-### [MEDIUM] Primitive divisor arguments (Zsygmondy)
+### [MEDIUM-HIGH] Primitive divisor / growth arguments (Zsygmondy, Bilu–Hanrot–Voutier)
 
-May constrain the prime factorization of $z^3 - 5$ in ways that conflict with $2^x + 3^y$. **Connection found in Session 1:** The prime factors of $z^2+zw+w^2$ are all $\equiv 1 \pmod 3$. This is a primitive divisor-type constraint on the factorization of $2^x + 5$.
+**Elevated in Session 3** to the most promising *non-size-based* lead, since size methods
+(Baker, irrationality measures) are now all shown too weak. The prime factors of
+$B = z^2+zw+w^2$ are all $\equiv 1 \pmod 3$ (Session 1). The hope: as $x$ runs over the
+progression $5+332640k$, the factor $B = (2^x+5)/(z-3^j)$ — a Lucas/Lehmer-type norm —
+should acquire *primitive* prime divisors, and a primitive prime $p\equiv1\bmod3$ of $B$
+imposes $z\equiv$ (cube-root data) mod $p$ that may clash with the 2-adic/3-adic
+constraints ($z\equiv6\pmod{32}$, $v_3(z^3-37)=4+v_3(k)$). Caveat: any such argument must
+*not* be purely local (the soft obstruction means it must use that $w=3^j$ is an integer
+power, e.g. via a growth/size estimate on $B$ itself). Concrete first step: study
+$v_p(z^2+zw+w^2)$ structure and whether a fixed small prime $\equiv1\bmod3$ can divide $B$
+for ALL $k$ (which Zsygmondy-type results would forbid past a bounded range).
 
 ### [MEDIUM] Thue-Mahler equation approach
 
@@ -78,3 +105,4 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 
 - **2026-06-25 (Session 1):** Added [HIGH] Factorization approach. Added [MEDIUM] Thue-Mahler equation approach. Lowered Baker's method assessment from [MEDIUM] to [MEDIUM-LOW] but kept at [MEDIUM] pending p-adic Baker investigation. Elevated $p$-adic direction to [HIGH] (tied). Noted Session 1 discoveries.
 - **2026-06-25 (Session 2):** Downgraded standalone $p$-adic elimination from [HIGH] to [LOW/~RETIRED] after *proving* (not just observing) that local methods cannot obstruct the equation: the phantom is a global rational cube $(10/3)^3$, so every local condition is satisfiable. Added new [HIGH] direction "Effective Diophantine approximation to $2^{1/3}$" as the realistic global path. Completed the 2-adic structure analysis ($z\equiv6\pmod{32}$, $v_2(3^y+5)=3$). See `knowledge/references/two_adic_structure.md`.
+- **2026-06-25 (Session 3):** RETIRED "Effective Diophantine approximation to $2^{1/3}$" (was [HIGH]) with a proof that it is quantitatively dead: realized exponent $\kappa\approx0.62\ll\mu$, and the Thue value $3^y+5$ is too large by $\sim e^{138909}$ — root cause is the two-comparable-dominant-S-units regime ($3^y\approx z^2$). See `knowledge/references/irrationality_measure_obstruction.md`. Added Session-3 progress to the Factorization [HIGH] direction (reduced equation $2^x+5=A(A^2+3^{j+1}A+3^{2j+1})$, both real solutions have $A=z-3^{y/3}=1$, Eisenstein identity $4B-3w^2=(2z+w)^2$). Elevated primitive-divisor (Zsygmondy/BHV) direction to [MEDIUM-HIGH] as the best remaining non-size lead, since all size methods are now shown too weak.
