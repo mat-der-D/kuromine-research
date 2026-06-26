@@ -256,3 +256,37 @@ decidability angle collapses onto an existing wall, and its in-class engine (Bak
 itself structurally dead for Kuromine (Session 5, $v_p(\Lambda_p)=0$). Eleventh independent
 confirmation of the barrier. Full detail in `knowledge/references/linear_exponential_decidability.md`
 and `log/20260626_HHMMSS.md` (Session 22).
+
+## Differential Progression Framework (Session 24)
+
+**Status:** RETIRED. The 3-adic Taylor analysis of the bijection $k_x \mapsto A(k_x)$
+is equivalent to the existing Theorem-J lifting law. No new information produced. Do not
+rebuild without a genuinely new archimedean handle.
+
+**What was tried (Session 24):** Studied the 3-adic analytic curve
+$\mathcal{K}: A^3 = 32\exp_3(kL)+5$ over $\mathbb{Z}_3$ with $L = \log_3(2^{332640})$,
+$v_3(L) = 4$. Computed the tangent speed via implicit differentiation:
+$$\tau(k) = \frac{dA}{dk} = \frac{32 g^k L}{3 A^2}, \quad v_3(\tau) = 3.$$
+The second derivative has $v_3(A'') = 6$. The Taylor expansion gives
+$A(k+1) - A(k) \equiv \tau(k) \pmod{3^6}$, so consecutive integer inputs differ by a
+multiple of $3^3 = 27$ in 3-adic value. The archimedean gap $|A(k+1) - A(k)| \approx
+(332640 \log 2/3) \cdot A(k)$ is proportional to $A(k)$ — enormous but unremarkable.
+
+**Why it fails:** The 3-adic Taylor coefficients of $A(k_x)$ at any integer point $k_0$
+ARE exactly the Theorem-J lifting-law data (Sessions 6–10). The differential framework
+is a repackaging of Theorems I–L, not a new tool. In particular, $v_3(\tau) = 3$
+implies $A(k_0) \equiv A(k_1) \pmod{27}$ for any two integer inputs — exactly the
+universal residue $A \equiv 22 \pmod{27}$ (Theorem I). The second-order term gives the
+branching at depth 81 (Theorem I, three branches) — exactly already known. No constraint
+beyond Theorem-J is produced at any order of the Taylor expansion.
+
+**Root cause:** 3-adic analyticity of $A$ was already fully exploited in Session 10
+(bijection $\mathbb{Z}_3 \to \mathbb{Z}_3$) and Sessions 6–10 (complete modular portrait).
+Any further 3-adic computation reduces to the same data. **Fourth independent confirmation
+that 3-adic data alone cannot bridge the gap to an archimedean size constraint.**
+
+**Positive residual (kept):** Clean formulation of the Kuromine curve
+$\mathcal{K}: A^3 = 32\exp_3(kL)+5$ over $\mathbb{Z}_3$ with explicit tangent speed
+formula $\tau = (A^3-5)L/(3A^2)$. Compact new encoding of existing data.
+
+See `log/20260626_120100.md` for full derivation.
