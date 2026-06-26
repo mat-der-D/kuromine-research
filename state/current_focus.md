@@ -1,6 +1,48 @@
 # Current Focus
 
-**Session:** 20260628_000000 (Session 28)
+**Session:** 20260626_180946 (Session 29)
+
+## Session 29 main result (WATCH confirmed negative; Eisenstein-norm condition on $B$ proved AUTOMATIC, Wolfram-verified)
+
+This session ran the mandated arXiv watch (**seventeenth confirmation, negative**) and then,
+rather than re-deriving a fourth framework destined to collapse onto an existing attack face
+(explicitly forbidden by the Session-28 state), executed a concrete **Wolfram density
+experiment** on the one remaining multiplicative handle — the requirement that the Eisenstein
+factor $B = z^2 + z\,3^j + 3^{2j}$ have **all prime factors $\equiv 1 \pmod 3$**.
+
+**New finding (Wolfram, recordable, but inert — confirms not breaches the wall).** The
+"all prime factors of $B$ are $\equiv 1 \pmod 3$" condition is **NOT** an independent constraint
+that a genuine solution must satisfy by chance: it is **forced automatically** by
+$\gcd(z, 3^j) = 1$ (which holds for the family since $z \equiv 1 \pmod 3$, so
+$\gcd(z, 3^j)=1$). Concretely (Wolfram):
+- For *arbitrary* $z \equiv 1$, $w \equiv 0 \pmod 3$ **without** the coprimality, the condition
+  **fails frequently** (6 of 8 random samples) — a prime $p \equiv 2 \pmod 3$ dividing
+  $\gcd(z,w)$ enters $B$ to odd power.
+- With $\gcd(z,w) = 1$ enforced, the condition holds in **12 of 12** samples — classical:
+  primitive values of the principal Eisenstein form $z^2+zw+w^2$ are products of split primes
+  ($\equiv 1 \bmod 3$) only.
+
+So the $B$-norm condition reduces to $\gcd(z, 3^j)=1$, which is automatic on the family.
+This is a **fresh, multiplicative/density-side confirmation** of the Session-4 "soft
+obstruction" verdict (previously argued congruence-side): the factorization $2^x+5 = A\cdot B$
+imposes **no** new global constraint. The phantom ($A=3$, $B=37/3$) again sits on the inert side
+($37/3$ is the non-integral image, but every *integer* congruence on $B$ is phantom-compatible).
+
+**Confirmed separations (re-verified, non-actionable).** The genuine $A \equiv 427 \pmod{432}$
+($22 \bmod 27$, $11 \bmod 16$) vs the phantom $A = 3$ (an exact integer, $3 \bmod$ everything):
+a real 2-adic + 3-adic separation, but $A$ ranges bijectively as a 2-adic and 3-adic unit
+(Sessions 6–10), so no finite/$p$-adic congruence pins it off a genuine value.
+
+**Quantitative open-target re-anchor (Wolfram).** Independently re-derived at the near-boundary
+surviving pair $(k_x,k_y) = (84180, 159334)$: minimal nonnegative $D = 0.53667$, and the
+realized gap exponent $E = \log(2^x+5)/\log(z^3) = 0.66666666672\ldots \to 2/3^+$ — far below the
+necessary-and-sufficient $\kappa>1$. Frame constants re-confirmed to 20 digits
+($3-3\log_3 2 = 1.10721\ldots$, $3\log2/\log3 = 1.89279\ldots$, $2\log3/(3\log2) = 1.05664\ldots$).
+
+**Net.** No new direction; the experiment confirms (does not breach) the wall and is recorded as
+a sharpening of the factorization soft-obstruction. WATCH remains the sole active priority. No
+framework built this session: per the Session-28 inventory-complete verdict, a fourth framework
+would collapse onto the factorization/soft-obstruction face (exactly what the experiment shows).
 
 ## Session 28 main result (Lemma C REFUTED, Cubic-Transversality framework RETIRED, Wolfram-verified)
 

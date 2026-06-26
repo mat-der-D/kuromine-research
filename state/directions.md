@@ -83,6 +83,19 @@ survives **only** in its global/size form (sub-question (a)), which still needs 
 does not yet exist. Effective priority is now **MEDIUM at best**, kept here as the cleanest
 single-equation reformulation rather than an active lead.
 
+**Session 29 sharpening (Wolfram density experiment, confirms inertness from a new side).**
+Tested directly whether the Eisenstein constraint on $B$ — "all prime factors of
+$B=z^2+z\,3^j+3^{2j}$ are $\equiv 1 \pmod 3$" — is an independent condition a genuine solution
+must meet. **It is not:** it is forced automatically by $\gcd(z,3^j)=1$ (which holds on the
+family, $z\equiv1\bmod3$). Wolfram: for arbitrary $z\equiv1$, $w\equiv0\bmod3$ *without*
+coprimality the condition fails 6/8 of the time (a prime $p\equiv2\bmod3$ in $\gcd(z,w)$ enters
+$B$ to odd power); with $\gcd(z,w)=1$ it holds 12/12 (classical: primitive principal-Eisenstein
+form values are products of split primes only). This is the **multiplicative/density-side**
+confirmation of the Session-4 congruence-side soft obstruction: the factorization imposes no new
+global constraint, and the phantom remains on the inert side. **No priority change** (the
+direction's only live content remains the global/size sub-question (a), which needs the
+unavailable $\kappa>1$ tool).
+
 **Session 15 progress (Theorem N).** New exact 3-adic valuation identity:
 $2^x + 5 - A^3 = 3^{j+1}A(A+3^j)$, hence $v_3(2^x+5-A^3) = j+1$ (using $\gcd(A,3)=1$ from
 Theorem I). This re-proves cleanly, via valuation, that $A$ is no fixed small integer (for
@@ -528,6 +541,26 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 ---
 
 ## History of Changes
+
+- **2026-06-26 (Session 29):** WATCH-phase session. arXiv watch **negative (seventeenth
+  confirmation):** Bugeaud 2503.22084/2604.27490 still only "$\to\infty$ with $z^d$" (no
+  power-saving $\kappa>1$); CDT holonomy (2510.04156, ICM proceedings) still gives effective
+  $\mu(2^{1/3})>2$, no follow-up below $\sim1.1$; KLNOW/Dong–Shafrir (2505.19141, STOC 2026
+  proceedings) decidability still two-prime / degree-$\le1$, arbitrary $T$ = "major
+  breakthrough." **No theory-building** (per Session-28 inventory-complete verdict: a fourth
+  framework would collapse onto an existing face). Instead ran a concrete **Wolfram density
+  experiment** on the last multiplicative handle and **proved the Eisenstein-norm condition on
+  $B$ is AUTOMATIC**: "all prime factors of $B=z^2+z\,3^j+3^{2j}$ are $\equiv1\bmod3$" is forced
+  by $\gcd(z,3^j)=1$ (Wolfram: fails 6/8 without coprimality, holds 12/12 with it). This is the
+  **multiplicative/density-side confirmation** of the Session-4 congruence-side soft obstruction
+  — the factorization imposes no new global constraint, the phantom stays inert. Re-anchored the
+  open target (Wolfram): at $(k_x,k_y)=(84180,159334)$, $D=0.53667$, realized gap exponent
+  $E=\log(2^x+5)/\log(z^3)=0.6\overline{6}\to2/3^+$, far below the needed $\kappa>1$. Frame
+  constants re-confirmed to 20 digits. Re-verified the genuine-vs-phantom $A$ separation
+  ($A\equiv427\bmod432$ vs phantom $A=3$; real but non-actionable, $A$ a bijective 2-/3-adic
+  unit). No direction retired/elevated/added; added Session-29 sharpening to the Factorization
+  [HIGH] entry; created `log/20260626_180946.md`; updated `current_focus.md`. WATCH remains the
+  sole active priority.
 
 - **2026-06-26 (Session 28):** Attempted **Lemma C** (the unproven crux) of the
   Cubic-Transversality / Dial–Lattice framework and **RETIRED the framework** (Lemma C refuted
