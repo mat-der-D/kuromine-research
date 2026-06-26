@@ -126,39 +126,58 @@ finiteness, giving no uniformity over the Theorem-5 family. See
 
 **References:** arXiv:2207.14492 (Efficient resolution of Thue-Mahler equations).
 
-### [LOW] Greatest prime factor reformulation: gpf($z^3 - 5$)
+### [RETIRED in Session 14] Greatest prime factor reformulation: gpf($z^3 - 5$)
 
-**Identified in Session 13.** The equation $2^x + 3^y + 5 = z^3$ requires $z^3 - 5 = 2^x + 3^y$
-to be a $\{2, 3\}$-integer (i.e., have no prime factors other than 2 and 3). For large $z$, the
-value $z^3 - 5$ will generically have large prime factors, and the "greatest prime factor tends
-to infinity" theme (cf. Bugeaud Session 10, Stormer–Lehmer theory) may be exploitable.
+**Identified in Session 13. Retired in Session 14 (fundamental conflation).**
 
-**Key question:** Is there an *effective* lower bound for gpf($z^3 - 5$) in terms of $z$?
-If gpf($z^3 - 5$) > 3 for all sufficiently large $z$ (which is almost certainly true), and
-if this can be proved *effectively*, then only finitely many $z$ can satisfy $z^3 - 5 \in
-\{2^a 3^b : a,b \geq 0\}$ — which is exactly the Kuromine condition.
+The original claim was: if gpf($z^3-5$) grows with $z$, then only finitely many $z$
+can satisfy $z^3-5 \in \{2^a 3^b\}$, which is "exactly the Kuromine condition."
 
-**Relation to prior work:** Bugeaud's Session-10 result gives gpf($z^3 - 3^y$) → ∞
-effectively. But $3^y$ varies; here $5$ is fixed, and the equation $z^3 - 5 = 2^x + 3^y$
-forces a $\{2,3\}$-integer. The question is whether $z^3 - 5$ being a $\{2,3\}$-integer
-is provably impossible for large $z$ (not just unlikely). This is a variant of the
-Størmer–Lehmer smooth-number problem for cubics.
+**Why this is wrong (Session 14):** The Kuromine condition is $z^3 - 5 = 2^x + 3^y$
+(sum-representability), NOT $z^3 - 5 \in \{2^a 3^b\}$ ($\{2,3\}$-smoothness). These
+are entirely different. The known solution $z=4$ gives $z^3-5=59$ (prime, gpf=59 >> 3),
+yet $59 = 2^5 + 3^3$ is a valid decomposition. gpf growth does NOT prevent sum
+representations.
 
-**Connection to known results:** The equation $z^3 - 5 = 2^a 3^b$ is a generalized
-Ramanujan–Nagell equation (a single exponential Diophantine equation with fixed polynomial
-on the left) — a form for which Baker's method and Modular Chabauty (per Zehavi's paper)
-can in principle give complete finiteness results, since this involves only S-integer points
-on the algebraic curve $u = z^3 - 5$ with $u \in \{2^a 3^b\}$. The condition "$u$ is a
-$\{2,3\}$-integer" IS encodable in the Modular Chabauty framework (unlike the full Kuromine
-equation), since it does not require specifying which power of 2 or 3. Zehavi's method
-applied to $\{z : z^3 - 5 \in \mathbb{Z}[1/6]\}$ (the set of $z$ making $z^3 - 5$ a
-$\{2,3\}$-integer) might be tractable.
+The reformulation as $z^3-5 = 2^a 3^b$ (a different equation) has a different solution
+set: Wolfram check shows $z=2$ gives $z^3-5=3=3^1$ (the ONLY $z \leq 1000$ with
+$z^3-5$ being $\{2,3\}$-smooth). That equation ($z^3-5=2^a 3^b$) has at most finitely
+many solutions by Runge's method / Baker's theorem, but resolving it does not resolve
+the original Kuromine problem.
 
-**Next step:** Use Wolfram to check whether $z^3 - 5$ is ever a $\{2,3\}$-integer for
-small $z$ (beyond $z = 2$: $2^3 - 5 = 3 = 3^1$; $z=4$: $64-5=59$, not {2,3}; $z=6$:
-$216-5=211$, prime, not {2,3}). Assess whether a complete resolution by Modular Chabauty
-is feasible (i.e., whether the Effective Shafarevich step is tractable for the {2,3}-S-unit
-equation $z^3 - 5 = 2^a 3^b$ within Zehavi's framework).
+**Conclusion:** The direction conflates two distinct mathematical conditions. Retired.
+Moved to `knowledge/dead_ends.md`.
+
+### [MEDIUM] Theorem M and the size-partitioned Theorem-5 family
+
+**New direction, Session 14.** Proved:
+
+**Theorem M (new, elementary):** If $y = 3j$ and $3^{2j+1} > 2^x + 4$, then
+$2^x + 3^y + 5$ is NOT a perfect cube.
+
+*Proof:* The integer target lies strictly between consecutive cubes $(3^j)^3$ and
+$(3^j+1)^3$, which are spaced $3^{2j+1}+3^{j+1}+1$ apart. $\square$
+
+**Application to Theorem-5:** With $x = 5+332640\,k_x$ and $j = 55439+55440\,k_y$:
+
+$$\text{Ruled out: } k_y \geq \left\lceil \frac{x\log 2/\log 3 - 110879}{110880} \right\rceil \approx \lceil 1.893\,k_x - 1.107 \rceil.$$
+
+For $k_x=1$: all $k_y \geq 1$ ruled out (only $k_y=0$ survives).
+For $k_x=2$: $k_y \geq 3$ ruled out (only $k_y \in \{0,1,2\}$ survive).
+In general: the surviving pairs satisfy $k_y/k_x < 3\log_3 2 - 1 \approx 0.893$.
+
+**Scope and limits:** Theorem M eliminates the "$3^y \gg 2^x$" regime. The surviving
+cases are exactly the two-comparable-S-units regime ($2^x \geq 3^y$) — which is
+precisely where all known analytic tools (Baker, Bugeaud, Badziahin, Chabauty-Kim)
+also fail. Theorem M alone does NOT resolve the conjecture.
+
+**Open sub-questions:**
+- (a) Can the boundary case $A = z - 3^j \approx 1$ (where $2^x \approx 3^{2j+1}$)
+  be further analyzed using the congruence structure of $A$ (Theorems I–L)?
+- (b) Is there a companion "from-above" Theorem M that rules out the deep interior
+  ($2^x \gg 3^y$) using different methods?
+- (c) Can Theorem M be combined with a quantitative lower bound on $z^3 - w^3$ to
+  get a further restriction?
 
 ### [LOW] Numerical search with Theorem 5 filtering
 
@@ -297,3 +316,4 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 - **2026-06-25 (Session 10):** No new directions retired; no new directions elevated. Literature watch: assessed the two newest Bugeaud "perfect-power minus integral S-unit" papers (arXiv:2604.27490, Apr 2026; arXiv:2503.22084, Mar 2025), the first 2026 results to bound exactly the Kuromine-shaped difference. NOT APPLICABLE: Option (1) z³−2^x = 3^y+5 fails the coprimality hypothesis (z even); Option (2) z³−3^y = 2^x+5 satisfies it (x odd ⇒ z coprime to 3) but gives no contradiction because |z³−3^y| = 2^x+5 ≈ z^{1.89} (log 230572 = 0.631·log z³, Wolfram), so it lands exactly on the Session-3 κ_real ≈ 0.63 two-comparable-S-units barrier; a contradiction needs an effective exponent κ < 1.107 while Baker-type bounds (which Bugeaud uses) give κ just below d=3. Resolved Session 9 Suggestion #1: made k_x ↦ A explicit as the 3-adic analytic function A(k_x) = (32·exp_3(k_x·L)+5)^{1/3} with g=2^332640, v_3(g−1)=4, L=log_3 g, v_3(L)=4 (Wolfram); by Theorem J it is a bijection Z_3→Z_3, so rationality of A at an integer k_x reduces to whether a specific s_a ∈ Z_3 lies in Z — 3-adically undetectable (Z dense in Z_3). No obstruction; last 3-adic stone turned. Added Session-10 addendum to the p-adic direction; updated arXiv survey notes; updated current_focus.md.
 - **2026-06-25 (Session 12):** No new directions retired; no new directions elevated. Literature watch: assessed Zhou's effective IUT abc paper (arXiv:2503.14510, Mar 2025) — the most significant new 2025 number-theory preprint found to date, giving an effective abc bound log|abc| ≤ 3 log rad(abc) + 8√(log|abc|·log log|abc|). NOT APPLICABLE to Kuromine: the Kuromine triple (a,b,c)=(2^x, 3^y+5, z^3) has quality ≈ 0.888 < 1 (Session 8), so the Zhou bound is trivially satisfied (it upper-bounds quality at ≤ 3+ε, and Kuromine already satisfies quality < 1). Effective abc bounds help only when c ≫ rad(abc) (quality > 1); Kuromine is the opposite regime. Also did a broad June 2026 arXiv sweep: five additional papers assessed (2605.31114, 2605.28449, 2605.18348, 2606.00466, 2606.02244); none applicable. The Calegari–Dimitrov–Tang holonomy school (2510.04156) has no published follow-up below the ~1.1 exponent threshold. Four independent lines (S3/S10/S11/S12) now confirm the two-comparable-S-units barrier. Added Session-12 notes to the arXiv-survey [LOW] direction. Updated current_focus.md.
 - **2026-06-26 (Session 13):** RETIRED new direction "Chabauty-Kim / algebraic geometry methods" (added and immediately retired — assessed the full cluster of 2025–2026 papers: Affine Chabauty I/II arXiv:2511.15949/2602.05643, Modular Chabauty arXiv:2505.12947, Cubic Chabauty arXiv:2604.20662). All NOT APPLICABLE for the same categorical reason: Kuromine's variables $x,y$ are exponents of fixed bases, not algebraic coordinates; Chabauty-Kim methods apply to algebraic curves and cannot encode the constraint "$u = 2^x$ for integer $x$". Established **fifth categorical barrier**: Chabauty-Kim in all forms is categorically inapplicable to two-exponential Diophantine equations. Added new [LOW] direction suggestion: "greatest prime factor of $z^3 - 5$" reformulation — if gpf($z^3-5$) grows effectively with $z$, then only finitely many $z$ can have $z^3-5$ a $\{2,3\}$-integer. June/July 2026 arXiv sweep: no new applicable paper. The Calegari–Dimitrov–Tang holonomy school has no new follow-up. Updated current_focus.md and directions.md.
+- **2026-06-26 (Session 14):** RETIRED the [LOW] gpf($z^3-5$) direction (fundamental conflation: $\{2,3\}$-smoothness of $z^3-5$ is different from sum-representability as $2^x+3^y$; the known solution $z=4$ has $z^3-5=59$, prime, not $\{2,3\}$-smooth, yet $59=2^5+3^3$; moved to dead_ends.md). Proved and documented **Theorem M** (new elementary theorem): if $y=3j$ and $3^{2j+1} > 2^x+4$, then $2^x+3^y+5$ is not a perfect cube. This rigorously eliminates all Theorem-5 pairs with $k_y \geq \lceil 1.893\,k_x - 1.107\rceil$. For $k_x=1$: only $k_y=0$ survives. The surviving pairs satisfy $k_y/k_x < 3\log_3 2 - 1 \approx 0.893$, i.e., exactly the two-comparable-S-units regime ($2^x \geq 3^y$) where Baker and all analytic tools also fail. Extended numerical verification to $z \leq 10000$ (no new solutions). Added new [MEDIUM] direction entry for "Theorem M and size-partitioned Theorem-5 family." Updated current_focus.md and directions.md.

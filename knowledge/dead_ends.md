@@ -93,3 +93,27 @@ exponents $x,y$ sit on the fixed small bases 2,3 with an additive constant. Ther
 varying prime exponent anywhere, so no Frey curve / Frey representation can be built. The
 fixed-$y$ elliptic/Mordell route only re-proves the already-known finiteness per fixed $y$ and
 says nothing about the infinite Theorem-5 family. See `knowledge/references/modular_method.md`.
+
+## gpf($z^3-5$) reformulation (Session 14)
+
+**Status:** Retired due to a fundamental conflation. Do not pursue.
+
+**What was proposed (Session 13):** If the greatest prime factor of $z^3-5$ grows effectively
+with $z$, then only finitely many $z$ can have $z^3-5$ a $\{2,3\}$-integer (meaning all prime
+factors $\leq 3$), which was claimed to be "exactly the Kuromine condition."
+
+**Why the conflation is fatal:** The Kuromine condition is $z^3-5 = 2^x + 3^y$ —
+sum-representability as a specific two-term exponential sum — NOT $z^3-5$ being a $\{2,3\}$-smooth
+integer (i.e., $z^3-5 = 2^a 3^b$). These are entirely different conditions:
+
+- $z=4$: $z^3-5 = 59$ (prime). gpf($59$) = 59, which is NOT $\leq 3$. So $59$ is NOT a
+  $\{2,3\}$-smooth integer. Yet $59 = 32 + 27 = 2^5 + 3^3$, which IS the Kuromine condition —
+  and $(x,y,z)=(5,3,4)$ is a known Kuromine solution.
+
+The gpf-smoothness approach addresses the equation $z^3-5 = 2^a 3^b$ (a different equation),
+which IS a standard Ramanujan-Nagell type and has at most finitely many solutions by Baker's
+method. But resolving THAT equation does not resolve the Kuromine equation $2^x + 3^y + 5 = z^3$.
+
+**Wolfram check:** Among $z \leq 1000$, only $z=2$ gives $z^3-5=3=3^1$ (a $\{2,3\}$-smooth
+integer). The equation $z^3-5=2^a 3^b$ is trivially finite. But this says nothing about the
+original problem.

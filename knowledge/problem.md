@@ -84,3 +84,46 @@ $$B \equiv 25 \pmod{27}\ \text{(universal)};\qquad k_x \equiv 0,1,2 \pmod 3 \Rig
 The full 27-branch table of $B \bmod 729$ (and the $A\cdot B \equiv 37 \pmod{81}$ identity) is in the reference file. $B$ is a 3-adic **unit** ($v_3(B)=0$, $B \equiv 1 \bmod 3$), with 3-adic preamble $[1,2,2]$ ($25 \bmod 27$). This separates the real solution from the **phantom**, for which $B_{\text{phantom}} = 37/3$ has $v_3(B)=-1$. The separation is genuine but, like all the others, non-actionable: $B$ is a perfectly valid 3-adic unit for every $k_x$.
 
 **Proof of Theorem L.** Since $\gcd(A,B)=1$ and $A \equiv 22 \pmod{27}$ is a 3-adic unit, $B \equiv (2^x+5)\,A^{-1} \pmod{3^n}$ is determined to the same 3-adic depth as $A$; the lifting law and period $3^{n-4}$ are inherited from Theorem J. Direct Hensel computation (Wolfram, Session 9) confirms $B \equiv 25 \pmod{27}$ universally and the three $B \bmod 81$ branches $52/79/25$ for $k_x \equiv 0/1/2$, with $A\cdot B \equiv 37 \pmod{81}$ in every branch. $\square$
+
+## Theorem M: Elementary Size-Based Elimination (Session 14)
+
+Let $x, y \geq 0$ be integers with $y = 3j$ for some non-negative integer $j$. If
+
+$$3^{2j+1} + 3^{j+1} + 1 > 2^x + 5$$
+
+(equivalently, $3^{2j+1} > 2^x + 4$), then there is **no** integer $z$ satisfying $z^3 = 2^x + 3^y + 5$.
+
+**Proof.** Set $w = 3^j$, so $3^y = w^3$. Since $2^x + 5 > 0$, we have $w^3 < 2^x + 3^y + 5$. The hypothesis states that $(w+1)^3 - w^3 = 3w^2 + 3w + 1 = 3^{2j+1} + 3^{j+1} + 1 > 2^x + 5$, which gives
+
+$$(w+1)^3 = w^3 + (3^{2j+1} + 3^{j+1} + 1) > w^3 + (2^x + 5) = 2^x + 3^y + 5.$$
+
+Therefore $w^3 < 2^x + 3^y + 5 < (w+1)^3$: the target lies strictly between two consecutive perfect cubes and hence is not itself a perfect cube. $\square$
+
+**Verification on known solutions.**
+- $(x,y) = (5,3)$: $j=1$, $w=3$. Gap $= 3^3 + 3^2 + 1 = 37$; RHS $= 2^5 + 5 = 37$. Hypothesis $37 > 37$ is FALSE, so Theorem M correctly does not rule out this solution.
+- $(x,y) = (1,0)$: $j=0$, $w=1$. Gap $= 3 + 3 + 1 = 7$; RHS $= 2^1 + 5 = 7$. Hypothesis $7 > 7$ is FALSE, so Theorem M correctly does not rule out this solution.
+
+**Application to the Theorem-5 family.** For $x = 5 + 332640\,k_x$ and $j = 55439 + 55440\,k_y$, the condition $3^{2j+1} > 2^x + 4$ simplifies (since $2^x \gg 4$ and $3^{j+1} \gg 1$) to:
+
+$$(2j+1)\log 3 > x \log 2$$
+
+$$\Longleftrightarrow \quad k_y > \frac{x \cdot \log_3 2 - 110879}{110880} \approx \frac{3\log 2}{\log 3}\,k_x - 1 \approx 1.893\,k_x - 1.107.$$
+
+The threshold values (Wolfram, Session 14):
+
+| $k_x$ | Threshold | $k_y$ values ruled out by Theorem M |
+|--------|-----------|--------------------------------------|
+| 1      | 0.893     | $k_y \geq 1$ (all but $k_y = 0$)    |
+| 2      | 2.786     | $k_y \geq 3$                         |
+| 3      | 4.678     | $k_y \geq 5$                         |
+| 4      | 6.571     | $k_y \geq 7$                         |
+| 5      | 8.464     | $k_y \geq 9$                         |
+
+Among $k_x \in [1,100]$ and $k_y \in [0,200]$, exactly 53% of the 20100 parameter pairs are ruled out by Theorem M (Wolfram).
+
+**Structural interpretation.** The critical ratio $k_y/k_x = 3\log_3 2 - 1 \approx 0.893$ corresponds exactly to $x\log 2 = (2j+1)\log 3$, i.e., $2^x \approx 3^y$ — the two-comparable-S-units boundary.
+
+- If $k_y/k_x > 3\log_3 2 - 1$ (i.e., $3^y \gg 2^x$): **Theorem M eliminates** the case.
+- If $k_y/k_x \leq 3\log_3 2 - 1$ (i.e., $2^x \gtrsim 3^y$): **Theorem M does not apply**; these are exactly the cases in the two-comparable-S-units regime where Baker-type and all known analytic tools are also blocked.
+
+Thus Theorem M cleanly partitions the Theorem-5 parameter space at the two-S-units boundary, eliminating the half where $3^y$ dominates. The surviving half — where $2^x$ dominates — remains the core open case.
