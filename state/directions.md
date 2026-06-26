@@ -6,6 +6,38 @@ Directions are listed with a priority estimate and current status.
 
 ## Active Directions
 
+### [LOW — NEW, Session 27, theory-building] Cubic-Transversality / Dial–Lattice framework
+
+**Built in Session 27 (2026-06-27)** under the SPECIAL DIRECTIVE after a negative arXiv watch.
+A genuinely **archimedean-first** framework, logically distinct from the two retired
+3-adic-only theory-building frameworks (Coupling-Height S20–21, Differential-Progression S24).
+Full write-up: `knowledge/references/cubic_transversality_framework.md`.
+
+**New handle (Wolfram-verified).** Genuine solution = *integer* cube root ($z\in\mathbb Z$);
+phantom = *denominator-exactly-3 rational* cube root ($z=10/3$). With $W:=3z$ the equation
+becomes the **dial form** $W^3 = 27\cdot 2^x + 3^{\,y+3} + 135$. A real/rational distinction,
+not a $p$-adic one.
+
+- **Lemma D — PROVED (clean output).** On the survival sheet $y\ge0$, any cube hit
+  $W^3=27(2^x+3^y+5)$ has $27\mid W^3\Rightarrow 3\mid W\Rightarrow z\in\mathbb Z$. So the
+  phantom's denominator-3 escape is **confined to $y<0$, OFF the Theorem-5 lattice**. This is
+  the first formulation in which the phantom is provably ABSENT from the relevant sheet (not
+  merely soft-obstructing). The conjecture on $\mathcal L$ reduces to **pure transversality with
+  no phantom to dodge**.
+- **Lemma C — UNPROVEN crux.** Effective resonance-exclusion: the exponential dial orbit
+  $R_y(x)=(27\cdot2^x+3^{y+3}+135)^{1/3}$ (velocity $\theta'\asymp2^{x/3}$, Wolfram ✓) never
+  lands exactly on $3\mathbb Z$ on the survival wedge. As a naive gap bound it is **vacuous**
+  (= the original $27|2^x+3^y+5-z^3|$); its only route is an **effective equidistribution/
+  discrepancy** bound for the dial orbit. **Honest expectation:** the two-comparable-S-units
+  degeneracy likely re-surfaces here (the orbit's effective equidistribution rate is governed
+  by the same Diophantine quantity that makes Baker give $v_p=0$). The framework **relocates**
+  the wall to an archimedean equidistribution question; it does not yet breach it.
+
+**Priority rationale.** Kept at LOW (not retired) because (i) Lemma D is a genuine, proved
+clarification — the phantom does not obstruct the survival sheet in this formulation — and
+(ii) Lemma C is the one untried *archimedean* angle. Next step: test whether effective
+equidistribution can exclude a single lattice hit, or confirm it collapses to the same barrier.
+
 ### [HIGH] Factorization approach via $z^3 - w^3 = 2^x + 5$
 
 **Discovered in Session 1 (2026-06-25).** For all Theorem 5 solutions, $y = 3j$ and the equation factors as $(z-w)(z^2+zw+w^2) = 2^x + 5$ with $\gcd = 1$ and $z^2+zw+w^2$ having only prime factors $\equiv 1 \pmod 3$. This is a norm form equation in $\mathbb{Z}[\omega]$ (Eisenstein integers).
@@ -473,6 +505,21 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 ---
 
 ## History of Changes
+
+- **2026-06-27 (Session 27):** Negative arXiv watch (fifteenth confirmation) + SPECIAL
+  DIRECTIVE theory-building. **Watch finding:** Bugeaud **arXiv:2604.27490** (Apr 2026, "On the
+  difference between perfect powers and integral S-units") gives effective lower bounds for
+  $|z^d - \text{S-unit}|$ that "**tend to infinity with $z^d$**" — the *trivially-met* form
+  (Kuromine gap $=2^x+5\to\infty$ already), NOT a power-saving $\kappa>1$. Wolfram-re-verified
+  $E\to2/3^+$ at the near-boundary surviving pair ($k_x=84180$, $D=0.53667$). **New direction
+  added:** the **Cubic-Transversality / Dial–Lattice framework** [LOW], a genuinely
+  *archimedean* framework distinct from the two retired 3-adic-only ones. Dial form
+  $W^3=27\cdot2^x+3^{y+3}+135$ ($W=3z$); **Lemma D PROVED** (phantom's denominator-3 escape
+  confined to $y<0$, so the survival sheet is phantom-free — first such formulation);
+  **Lemma C UNPROVEN crux** (effective resonance-exclusion of the dial orbit from $3\mathbb Z$;
+  naive gap bound vacuous; only route is effective equidistribution, where the barrier likely
+  re-surfaces). No direction retired this session. New reference
+  `knowledge/references/cubic_transversality_framework.md`.
 
 - **2026-06-26 (Session 26):** WATCH-phase **target-audit pass** (Wolfram). No direction
   retired/elevated/added; no theory-building (per standing DO-NOT-ATTEMPT). Independently

@@ -1,6 +1,40 @@
 # Current Focus
 
-**Session:** 20260626_150517 (Session 26)
+**Session:** 20260627_180000 (Session 27)
+
+## Session 27 main result (negative watch + new ARCHIMEDEAN framework, Wolfram-verified)
+
+This session executed the SPECIAL DIRECTIVE Theory-Building Protocol after a conclusively
+**negative arXiv watch** (fifteenth confirmation). Decisive watch finding: the April-2026
+Bugeaud paper **arXiv:2604.27490 ("On the difference between perfect powers and integral
+S-units")** gives effective lower bounds for $|z^d - q_1^{a_1}\cdots q_t^{a_t}|$ "that **tend
+to infinity with $z^d$**" — exactly the *trivially-satisfied* form (the Kuromine gap
+$|z^3-3^y|=2^x+5\to\infty$ already), NOT a power-saving $\kappa>1$. Re-verified (Wolfram) that
+at the near-boundary surviving pair ($k_x=84180$, $D=0.53667$) the realized gap exponent
+$E=\log(2^x+5)/\log z^3 = 0.6666666667\to 2/3^+$, far below the needed $\kappa>1$. KLNOW/
+Dong–Shafrir still degree-$\le1$/two-prime; CDT holonomy still $\mu>2$ and sub-Dirichlet-blind.
+
+**New framework built (genuinely new ARCHIMEDEAN handle, distinct from all 4 retired
+frameworks).** The **Cubic-Transversality / Dial–Lattice framework**
+(`knowledge/references/cubic_transversality_framework.md`):
+
+- **New handle (verified):** a genuine solution is an *integer* cube root ($z\in\mathbb Z$);
+  the phantom is a *denominator-exactly-3 rational* cube root ($z=10/3$). With $W:=3z$, the
+  equation becomes (Wolfram ✓) $W^3 = 27\cdot 2^x + 3^{\,y+3} + 135$. This is a **real/rational**
+  distinction, NOT a $p$-adic one — outside every retired (place-by-place) framework.
+- **Lemma D (PROVED, the clean output):** on the survival sheet $y\ge0$, any cube hit
+  $W^3=27(2^x+3^y+5)$ has $27\mid W^3\Rightarrow 3\mid W\Rightarrow z\in\mathbb Z$. So the
+  phantom's denominator-3 escape is **structurally confined to $y<0$**, OFF the Theorem-5
+  lattice. **First formulation in which the phantom is provably ABSENT from the relevant sheet**
+  (rather than soft-obstructing every test). The conjecture on $\mathcal L$ becomes pure
+  transversality with *no phantom to dodge*.
+- **Lemma C (UNPROVEN crux):** an effective resonance-exclusion — the exponential dial orbit
+  $R_y(x)=(27\cdot2^x+3^{y+3}+135)^{1/3}$ (velocity $\theta'\asymp 2^{x/3}$, Wolfram ✓) never
+  lands exactly on $3\mathbb Z$ on the survival wedge. As a naive gap bound it is vacuous
+  (= the original $27|2^x+3^y+5-z^3|$); its only route is an **effective equidistribution/
+  discrepancy** bound for the dial orbit — where the two-comparable-S-units degeneracy is
+  expected to re-surface in a new disguise. **The framework relocates the wall to an
+  archimedean equidistribution question; it does not yet breach it.**
 
 ## Session 26 main result (target-framing correction, Wolfram-verified)
 
@@ -102,14 +136,24 @@ framework can bridge this gap.
 
 ## Next priority
 
-1. **[WATCH — sole active priority]** Monitor arXiv for (a) an unconditional **effective gap
+1. **[WATCH — primary]** Monitor arXiv for (a) an unconditional **effective gap
    bound** $|z^3-3^y| > C(z^3)^{\kappa}$ with any fixed $\kappa>1$ in the regime $3^y \approx
    2^x \approx z^3$ — watch for genuinely new *separation/gap* techniques (the auxiliary
    $2^{2/3}$-Thue casting is sub-Dirichlet, so measure improvements alone do not reach it); OR
    (b) any extension of the
    linear-exponential decidability results (KLNOW / Dong–Shafrir) to a single free
-   higher-degree term, OR the $k\ge3$-prime case. Watch CDT (2510.04156), Bugeaud, and
-   STOC/LICS 2026 follow-ups.
+   higher-degree term, OR the $k\ge3$-prime case. Watch CDT (2510.04156), Bugeaud
+   (2503.22084 / **2604.27490** — both only "$\to\infty$ with $z^d$", trivially met), and
+   STOC/LICS 2026 follow-ups. **Also now watch: effective equidistribution / discrepancy bounds
+   for exponential orbits $\{2^{x/3}\bmod \text{lattice}\}$** (the new Lemma-C frontier).
+2. **[LOW — new, theory-building]** Attempt **Lemma C (Defect Quantization)** of the new
+   Cubic-Transversality framework: can the exponential dial orbit
+   $R_y(x)=(27\cdot2^x+3^{y+3}+135)^{1/3}$ be proved transversal to $3\mathbb Z$ on the survival
+   wedge via an *effective equidistribution/discrepancy* bound? Honest expectation: the
+   two-comparable-S-units degeneracy likely re-surfaces here; but the formulation is genuinely
+   new (archimedean, phantom-free on $y\ge0$ by the proved Lemma D) and is the one untried
+   angle. A clean negative (the discrepancy rate is exactly the same Diophantine quantity that
+   makes Baker give $v_p=0$) would retire it and confirm the barrier is place-independent.
 2. **[DO NOT ATTEMPT]** Any further 3-adic-only theory-building — the 3-adic portrait is
    complete (Theorems I–N, all now Wolfram-verified) and any such framework reduces to
    Theorem-J. New theory must introduce a genuinely new archimedean handle.
