@@ -142,6 +142,15 @@ fire. This is the **metric face of the two-comparable-S-units barrier**: the fam
 the $2^x = 3^y$ boundary in exponent *slope* but never in absolute log-*distance*, and $A$
 measures exactly that distance.
 
+**NOTE (corrected Session 21):** The "$D \approx 55$ floor over $k_x \leq 5000$" is a
+finite-range artifact, NOT a true lower bound. Since $P/Q = 3\log2/\log3$ is irrational,
+Weyl equidistribution gives $\inf_{k_x} D_{\ge0} = 0$ (Wolfram, Session 21: $D$ falls to
+$0.537$ at $k_x=84180$ and keeps decreasing). This does NOT revive bounded-$A$ elimination:
+the small-$D$ pairs occur at enormous $k_x$ with $j$ enormous, so $A \approx 3e^D = O(1)$
+would then need a *fixed* small value at depth $j+1$ — still blocked by the Theorem-N
+corollary (fixed small $a \Rightarrow$ bounded $v_3$, contradicting $j+1$). The dead-end
+stands; only the "$D$ bounded away from 0" interpretation was wrong. See `log/20260627_120000.md`.
+
 **Consequence:** Theorem N re-proves (cleanly, via valuation) that $A$ is huge, but provides
 no contradiction. Closeness-to-boundary cannot be exploited. Documented in
 `knowledge/problem.md` (Theorem N) and `log/20260626_174500.md`.
@@ -177,3 +186,44 @@ uniformity across the infinite $y$-progression — the actual open content.
   (phantom is a cube mod $37^n$ for all $n$, verified mod $37^3$; deeper residues vary across
   the family). Documented in `knowledge/references/thue_mahler_approach.md` and
   `log/20260626_230000.md`.
+
+## Coupling-Height / Moving-Filtration framework (Session 20 build, Session 21 retirement)
+
+**Status:** RETIRED. The Session-20 theory-building framework rested on two candidate
+lemmas; Session 21 (Wolfram) resolved both negatively. Do not rebuild without a genuinely
+new external "depth $\Rightarrow$ size" transfer inequality.
+
+**The framework.** A non-additive arithmetic height coupling the archimedean place and the
+place 3 along the Theorem-5 progression: principal 3-adic cube root $\beta(x)$ of
+$N(x)=2^x+5$; moving depth $\delta_x(a)=v_3(2^x+5-a^3)$ and depth filtration; size class
+$\sigma_x(a)=3\log_2 a/x$; Coupling Height $\widehat H_x(a)=\sigma_x(a)(1+\delta_x(a))\mathbf1[\text{gate}]$.
+Designed to exploit the one non-degenerate handle (genuine depth $j+1\to\infty$ vs phantom
+depth 0). Its two load-bearing lemmas:
+
+- **Lemma A (Depth–Size Incompatibility) — REFUTED as circular.** Claimed:
+  $\delta_x(a)\ge j+1\Rightarrow|\sigma_x(a)-1|\ge c_0(j+1)/x$, giving a contradiction with
+  the genuine band for $k_y\ge1$. The supporting mechanism — "smallest integer of depth
+  $\ge d$ is $\approx 3^{d-2}$, hence off the size band" — holds for the **fixed** target
+  $N=37$ (Wolfram: smallest $a$ of depth $d$ runs $1,4,22,49,211,697,2155,\ldots$;
+  $\sigma_5\approx0.95(d-2)$; implied $c_0\in[0.33,3.5]$), **but is a property of the fixed
+  target only.** Decisive surrogate: the moving-style target $N=22^3+3^{10}\cdot7$ has its
+  smallest depth-10 integer equal to the *small* number 22. For the real moving target
+  $2^x+5$, "a small deep cube-root ($A$, size $2^{x/3}$, depth $j+1$) exists" is *exactly the
+  Kuromine question*. So Lemma A is circular — provable only via an effective irrationality
+  measure (the unavailable tool). See `log/20260627_120000.md`.
+
+- **Lemma B′ (Lattice Rigidity) — REFUTED as false.** Claimed: minimal nonnegative
+  $D=x\log2-(2j+1)\log3$ over the $D$-lattice is bounded below by a positive constant. False:
+  $D=c_0+k_xP-k_yQ$ with $P/Q=3\log2/\log3=1.8927892607\ldots$ **irrational**, so (Weyl
+  equidistribution) $\inf_{k_x}D_{\ge0}=0$. Wolfram: minimal nonnegative $D$ falls
+  $98.5\to0.537$ by $k_x=84180$ and keeps decreasing. **Session 15's "$D\approx55$ floor"
+  was a finite-range artifact** ($k_x\le5000$). The $D$-lattice approaches $D=0$ arbitrarily
+  closely. This does NOT revive bounded-$A$ elimination: small $D$ at huge $k_x$ gives $O(1)$
+  genuine $A$ only with $j$ enormous, so the Theorem-N corollary still blocks it.
+
+**Why it fails (root cause).** The unique non-degenerate handle (3-adic depth $j+1$) is real
+but **non-transferable** to an archimedean size constraint without an effective irrationality
+measure for $2^{1/3}$ below $\sim1.1$ — exactly the missing tool. The coupling height is a
+faithful repackaging of the obstruction, not a way around it. Third independent confirmation
+of the P1–P4 conjunction barrier (after the metric face S15 and the analytic face
+S3/S10/S11). Full detail in `log/20260627_120000.md`.
