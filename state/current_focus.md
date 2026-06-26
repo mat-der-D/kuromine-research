@@ -1,8 +1,43 @@
 # Current Focus
 
-**Session:** 20260626_HHMMSS (Session 25)
+**Session:** 20260626_150517 (Session 26)
 
-**Current direction:** WATCH-phase (sole active priority). This session was a Wolfram-enabled
+## Session 26 main result (target-framing correction, Wolfram-verified)
+
+This session was a WATCH-phase **target-audit pass**: I independently re-derived, with
+Wolfram, the precise exponent threshold on which the *entire* reduction rests, and found
+that the long-standing framing of the open target was **imprecisely stated** (conflating two
+different normalizations). The substantive impasse is unchanged, but the open target is now
+stated correctly and more favorably.
+
+**Corrected open target.** For any surviving Theorem-5 solution, $|z^3 - 3^y| = 2^x + 5$, and
+the *realized* exponent of this gap measured against $z^3$,
+$$E(k_x,k_y) = \frac{\log(2^x+5)}{\log(z^3)} \in \left(\tfrac23,\,1\right),$$
+is **strictly below 1 everywhere on the surviving family** (Wolfram): it tends to $2/3$ at the
+two-S-units survival boundary ($2^x \approx 3^{2j+1} \approx z^3$, where $3^y \approx z^3$, NOT
+$z^2$) and up to $1^-$ at $k_y=0$ (where it equals $1 - e^{-47854}/\log z^3$ for $k_x=1$ — the
+classic $e^{-47854}$ near-coincidence). Therefore:
+
+> **Any** unconditional *effective* lower bound $|z^3 - 3^y| > C\,(z^3)^{\kappa}$ with a fixed
+> $\kappa > 1$ (e.g. $\kappa = 1.107$, or even $\kappa = 1+\varepsilon$) resolves the whole
+> surviving family. The value $\kappa < 1.107 = 3 - 3\log_3 2 = 3\log_3(3/2)$ recorded since
+> Session 3 is a **sufficient margin**, not a necessary ceiling; the **necessary and
+> sufficient** requirement is $\kappa > 1$ (strictly; $\kappa = 1$ exactly is just barely
+> insufficient because $E \to 1^-$ at $k_y=0$).
+
+**Why this does not break the impasse.** The available Baker-type machinery gives $v_p(\Lambda_p)=0$
+(Session 5), i.e. no effective gap bound with **any** $\kappa > 1$ exists — the realized
+exponent sitting at $1 - e^{-47854}$ is exactly the two-comparable-S-units coincidence. So the
+gap between "available" ($\kappa$ effectively $\le 1$, in fact no positive effective gap bound)
+and "needed" ($\kappa > 1$) is genuine. The correction makes the *target* cleaner ($\kappa>1$
+rather than the mis-stated $\kappa<1.107$-vs-$z^3$) but the *wall* is identical.
+
+**Framing note for future sessions.** The "$3^y \approx z^2$" regime description in older logs
+is imprecise: at the actual hard boundary $3^y \approx z^3$ (both S-units comparable to the
+cube), with $3^y/z^2$ in log-ratio $=1.5$. The "$z^2$" only appears in the auxiliary
+$2^{2/3}$-Thue casting (Session 3), not in the direct $z^3 - 3^y$ gap.
+
+## Session 25 main results (prior)
 **verification-and-consolidation pass**: the MCP tool was available, so the session resolved
 ALL pending Wolfram verifications flagged in Sessions 20 and 24 (which had run with MCP
 unavailable), and added one genuinely new *structural sharpening* of the open target. No new
@@ -45,13 +80,21 @@ re-confirmed four times that 3-adic-only data cannot bridge to an archimedean co
    degree-$\le 1$ free terms; arbitrary base / free higher-degree term still "major
    breakthrough in number theory." No 2026 follow-up reaches the Kuromine regime.
 
-## Where things stand (unchanged in substance since Session 21)
+## Where things stand (substance unchanged since Session 21; target framing corrected S26)
 
-The conjecture is reduced to a single unconditional open target:
-$$|z^3 - 3^y| > C\cdot(z^3)^{\kappa}, \quad \kappa < 1.107, \qquad (3^y \approx z^2),$$
-a tool that does not currently exist — and (sharpened this session) **cannot be supplied by
-any irrationality measure**, since $\kappa < 1.107 < 2$ is below the Dirichlet floor. The
-target is a sub-Dirichlet gap inequality. Two structurally distinct frontiers gate it:
+The conjecture is reduced to a single unconditional open target. **Corrected statement
+(Session 26, Wolfram):**
+$$|z^3 - 3^y| > C\cdot(z^3)^{\kappa}, \quad \kappa > 1 \text{ (effective)}, \qquad (3^y \approx z^3 \text{ at the hard boundary}),$$
+i.e. **any** fixed effective $\kappa>1$ suffices uniformly (the realized exponent of the gap
+vs $z^3$ lies in $(2/3,1)$, strictly below 1). The previously-recorded "$\kappa<1.107$ vs
+$z^3$, in the $3^y\approx z^2$ regime" was an imprecise framing (it conflated the gap-vs-$z^3$
+and gap-vs-$3^y$ normalizations, and mislabeled the boundary regime). The value
+$1.107 = 3-3\log_3 2$ is a safe *sufficient* margin, not a necessary ceiling.
+
+This is a tool that does not currently exist. Note (sharpened S25) it **cannot be supplied by
+any irrationality measure** of $2^{1/3}$ (those are sub-Dirichlet considerations on the
+auxiliary $2^{2/3}$-Thue casting; in the direct gap framing the obstruction is that Baker
+gives $v_p(\Lambda_p)=0$, hence no positive effective $\kappa$). Two structurally distinct frontiers gate it:
 the metric/analytic two-comparable-S-units barrier and the degree-3 free-cube barrier to
 decidability methods. Both rest on Baker being inapplicable. Two theory-building attempts
 (S20–21 Coupling-Height, S24 Differential-Progression) have confirmed that no 3-adic-only
@@ -59,10 +102,11 @@ framework can bridge this gap.
 
 ## Next priority
 
-1. **[WATCH — sole active priority]** Monitor arXiv for (a) an unconditional **sub-Dirichlet
-   gap bound** $|z^3-3^y| > C(z^3)^{\kappa<1.107}$ in the $3^y \approx z^2$ regime — note this
-   is NOT an irrationality measure (it is below the $\mu\ge2$ floor), so watch for genuinely
-   new *separation/gap* techniques, not measure improvements; OR (b) any extension of the
+1. **[WATCH — sole active priority]** Monitor arXiv for (a) an unconditional **effective gap
+   bound** $|z^3-3^y| > C(z^3)^{\kappa}$ with any fixed $\kappa>1$ in the regime $3^y \approx
+   2^x \approx z^3$ — watch for genuinely new *separation/gap* techniques (the auxiliary
+   $2^{2/3}$-Thue casting is sub-Dirichlet, so measure improvements alone do not reach it); OR
+   (b) any extension of the
    linear-exponential decidability results (KLNOW / Dong–Shafrir) to a single free
    higher-degree term, OR the $k\ge3$-prime case. Watch CDT (2510.04156), Bugeaud, and
    STOC/LICS 2026 follow-ups.

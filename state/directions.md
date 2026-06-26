@@ -474,6 +474,27 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 
 ## History of Changes
 
+- **2026-06-26 (Session 26):** WATCH-phase **target-audit pass** (Wolfram). No direction
+  retired/elevated/added; no theory-building (per standing DO-NOT-ATTEMPT). Independently
+  re-derived the exponent threshold on which the entire reduction rests and **corrected a
+  long-standing imprecise framing** of the open target. Wolfram-verified: for surviving
+  Theorem-5 pairs the realized exponent of the gap $|z^3-3^y| = 2^x+5$ **measured against
+  $z^3$** is $E = \log(2^x+5)/\log(z^3) \in (2/3, 1)$, **strictly below 1 everywhere** —
+  it $\to 2/3$ at the survival boundary (where $2^x \approx 3^{2j+1} \approx z^3$, so
+  $3^y \approx z^3$, log-ratio $3^y/z^2 = 1.5$, NOT $3^y\approx z^2$) and $\to 1^-$ at
+  $k_y=0$ (equal to $1 - e^{-47854}/\log z^3$ for $k_x=1$). **Consequence:** the
+  necessary-and-sufficient open target is *any* fixed **effective** $\kappa>1$ in
+  $|z^3-3^y|>C(z^3)^\kappa$ (the recorded $\kappa<1.107 = 3-3\log_3 2 = 3\log_3(3/2)$ is a
+  *sufficient margin*, not a necessary ceiling; $\kappa=1$ exactly is just barely
+  insufficient). The "$3^y\approx z^2$" regime label in older logs is imprecise (the $z^2$
+  arises only in the auxiliary $2^{2/3}$-Thue casting, not the direct gap). The substantive
+  impasse is unchanged — Baker gives $v_p(\Lambda_p)=0$ so no positive effective $\kappa$
+  exists. Verified the three frame-constants again to 30 digits ($3-3\log_3 2 = 1.107210739\ldots
+  = 3\log_3(3/2)$; $2\log3/(3\log2)=1.056641667\ldots$; $3\log2/\log3=1.892789261\ldots$).
+  Updated `current_focus.md` (corrected target framing) and this file. Created
+  `log/20260626_150517.md`. No change to `knowledge/problem.md` or `dead_ends.md`
+  (a framing correction, not a new theorem or dead end).
+
 - **2026-06-26 (Session 25):** WATCH-phase, executed as a **Wolfram-enabled
   verification-and-consolidation pass** (MCP was available this session, unlike Sessions 20
   and 24 which left numerical verifications pending). **Resolved all pending Wolfram anchors
