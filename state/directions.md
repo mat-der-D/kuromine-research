@@ -551,6 +551,23 @@ list:** item (b) is **narrowed** — watch only for a *special-structure* Kuromi
 finiteness argument, not a general degree-3 decidability theorem (which is now provably
 impossible). Eighteenth confirmation of the wall.
 
+**Session 31 update (open-target exponent range pinned — Wolfram):** arXiv watch **negative
+(nineteenth confirmation)**: Bugeaud (2503.22084 / 2604.27490) still only "$\to\infty$ with
+$z^d$"; decidability over $k\ge3$ primes still "an outstanding open problem" (Dong–Shafrir
+2505.19141, STOC 2026); CDT 2510.04156 and Badziahin 2301.02391 effective $\mu(2^{1/3})>2\gg
+1.107$, sub-Dirichlet-blind; no LICS/STOC 2026 follow-up reaches the regime. **New recordable
+sharpening (Wolfram, no framework):** computed the realized gap exponent
+$E=\log(2^x+5)/\log(z^3)$ at the largest surviving $k_y$ for several $k_x$: $E$ **decreases
+monotonically to $2/3^+$** as surviving pairs approach the boundary $D\to0^+$ ($k_x=84180$:
+$E=0.66666666672$) and equals $1^-$ at the floor $k_y=0$. Since $\inf D_{\ge0}=0$ (S21
+equidistribution), $E$ **densely fills $(2/3,1)$ and floors at exactly $2/3$** (Wolfram `Limit`:
+$\lim_{j\to\infty}(2j+1)/(3j)=2/3$, the boundary identity $3^y\approx z^3$, $2^x+5\approx z^2$).
+**Consequence (sharpens the WATCH target):** any fixed effective $\kappa$ with $2/3<\kappa<1$ is
+*violated* at near-boundary surviving pairs ($E<\kappa$ there), and $E<1$ everywhere, so only a
+uniform $\kappa>1$ resolves the family — the necessary-and-sufficient requirement is now seen to
+be sharp because the realized-exponent *range* is exactly the half-open $(2/3,1)$. Confirms (does
+not breach) the wall. No priority change.
+
 ---
 
 ## Retired Directions
@@ -561,6 +578,17 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 ---
 
 ## History of Changes
+
+- **2026-06-26 (Session 31):** WATCH-phase session + concrete Wolfram experiment (no framework,
+  per the Session-28 inventory-complete verdict). arXiv watch **negative (nineteenth
+  confirmation)** — all frontiers unchanged (Bugeaud "$\to\infty$"; $k\ge3$-prime decidability
+  still open; CDT/Badziahin $\mu(2^{1/3})>2$). **New recordable sharpening (Wolfram):** the
+  realized gap exponent $E=\log(2^x+5)/\log(z^3)$ over surviving Theorem-5 pairs **densely fills
+  $(2/3,1)$ and floors at exactly $2/3$** (monotone $\to2/3^+$ as $D\to0^+$, $=1^-$ at $k_y=0$;
+  boundary limit $(2j+1)/(3j)\to2/3$ Wolfram-verified). This pins the open-target exponent
+  *range* to the half-open $(2/3,1)$, making the "$\kappa>1$ necessary-and-sufficient" framing
+  sharp: any $\kappa<1$ is violated at near-boundary pairs. Confirms (does not breach) the wall.
+  No direction retired/elevated; no new theorem.
 
 - **2026-06-26 (Session 30):** Pure WATCH-phase session. arXiv watch **negative (eighteenth
   confirmation)**, but surfaced **one genuinely new, previously-unassessed paper:**

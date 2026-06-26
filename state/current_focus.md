@@ -1,6 +1,57 @@
 # Current Focus
 
-**Session:** 20260629_000000 (Session 30)
+**Session:** 20260630_000000 (Session 31)
+
+## Session 31 main result (WATCH negative, 19th confirmation; new Wolfram sharpening of the open-target exponent — E densely fills (2/3,1) and floors at 2/3)
+
+This was a WATCH-phase session followed by a concrete Wolfram experiment (no new framework,
+per the Session-28 inventory-complete verdict).
+
+**arXiv watch (nineteenth confirmation, negative).** All frontiers unchanged:
+- Bugeaud arXiv:2503.22084 (squares) / 2604.27490 (degree-d): effective lower bounds for
+  $|z^d - S\text{-unit}|$ and its greatest prime factor still only **"tend to infinity with
+  $z^d$"** — trivially met by the Kuromine gap $2^x+5\to\infty$; NOT a power-saving $\kappa>1$.
+- Decidability of linear-exponential systems over $k\ge3$ primes is still confirmed
+  (Dong–Shafrir, arXiv:2505.19141, STOC 2026 page) to be "**an outstanding open problem in
+  number theory**"; settled only for $\le2$ primes / degree-$\le1$ free terms. Degree-3 free
+  terms remain blocked (and arXiv:2510.00759, S30, proves no *general* degree-3 decidability
+  theorem can exist). No LICS/STOC 2026 follow-up reaches the Kuromine regime.
+- CDT holonomy arXiv:2510.04156 and Badziahin (2301.02391) effective measures for $2^{1/3}$
+  still $\mu>2 \gg 1.107$; and the target is sub-Dirichlet, so measures categorically cannot
+  reach it. No 2026 follow-up below $\sim1.1$.
+
+**New Wolfram sharpening of the open target (recordable, confirms not breaches the wall).**
+Computed the realized gap exponent $E=\log(2^x+5)/\log(z^3)$ at the *largest surviving* $k_y$
+for several $k_x$ (Wolfram, 40-digit):
+
+| $k_x$ | $k_y$ | $D=x\log2-(2j+1)\log3$ | $E=\log(2^x+5)/\log(z^3)$ |
+|------|------|------|------|
+| 1     | 0      | $108759$ | $1$ (i.e. $1-e^{-47854}$) |
+| 2     | 2      | $95699$  | $0.84125\ldots$ |
+| 3     | 4      | $82639$  | $0.75712\ldots$ |
+| 1054  | 1993   | $121804$ | $0.66700\ldots$ |
+| 4729  | 8950   | $54.99$  | $0.6666667\ldots$ |
+| 84180 | 159334 | $0.5367$ | $0.66666666672\ldots$ |
+
+As the surviving pairs approach the two-comparable-S-units boundary $D\to0^+$ (which they do
+arbitrarily, $\inf D_{\ge0}=0$ by Weyl equidistribution, S21), $E$ **decreases monotonically to
+$2/3^+$**; at the family floor $k_y=0$, $E=1^-$. So $E$ **densely fills $(2/3,1)$ and floors at
+exactly $2/3$**. Wolfram-confirmed the floor symbolically: at the boundary $2^x\approx3^{2j+1}$,
+$3^y\approx z^3$, so $E\to\lim_{j\to\infty}(2j+1)/(3j)=2/3$ (`Limit` = 2/3). This makes the
+"necessary-and-sufficient $\kappa>1$" framing sharp and unbridgeable: **any** fixed effective
+$\kappa$ with $2/3<\kappa<1$ is *violated* at near-boundary surviving pairs (where $E<\kappa$),
+and $E<1$ everywhere, so only a uniform $\kappa>1$ resolves the family — exactly the tool that
+does not exist. The realized-exponent *range* is now pinned to the half-open interval
+$(2/3,1)$ with both endpoints as limit points.
+
+**Frame constants re-confirmed to 25 digits (Wolfram):** $3-3\log_3 2=1.1072107392856\ldots$,
+$3\log2/\log3=1.8927892607143\ldots$, $2\log3/(3\log2)=1.0566416671474\ldots$. Near-boundary
+minimal nonnegative $D$ over $k_x\le200000$ is $0.53666886633\ldots$ at $(k_x,k_y)=(84180,159334)$.
+
+**Net.** No new direction; the experiment sharpens (does not breach) the wall by pinning the
+realized-exponent range to $(2/3,1)$. WATCH remains the sole active priority. No framework built.
+
+## Session 30 main result (WATCH negative, 18th confirmation; new paper arXiv:2510.00759 sharpens the degree-3 decidability barrier — Wolfram-verified re-anchor)
 
 ## Session 30 main result (WATCH negative, 18th confirmation; new paper arXiv:2510.00759 sharpens the degree-3 decidability barrier — Wolfram-verified re-anchor)
 
