@@ -1,6 +1,46 @@
 # Current Focus
 
-**Session:** 20260626_180946 (Session 29)
+**Session:** 20260629_000000 (Session 30)
+
+## Session 30 main result (WATCH negative, 18th confirmation; new paper arXiv:2510.00759 sharpens the degree-3 decidability barrier — Wolfram-verified re-anchor)
+
+This was a pure WATCH-phase session. The arXiv watch surfaced **one genuinely new, previously
+unassessed paper** and the rest of the frontier was re-confirmed unchanged.
+
+**New paper: arXiv:2510.00759 (Feb 2026), "Cubic incompleteness: Hilbert's tenth problem begins
+at degree three"** — satisfiability of a *single* Diophantine equation of **total degree ≤ 3**
+over $\mathbb N$ is **Σ⁰₁-complete (undecidable)**. **Assessment (confirms, does not breach, the
+S22 decidability/degree face):** the S22 barrier recorded that KLNOW/Dong–Shafrir decidability
+(2505.19141) is settled only for ≤2 primes and degree-≤1 free terms, with the hope of a future
+extension to degree-≥2/degree-3 free terms. 2510.00759 shows that hope is **impossible in
+general** — degree 3 is exactly where *universal* undecidability begins, so no *general*
+decidability extension to degree-3 free terms can exist. Any decidability route to Kuromine must
+therefore be a **bespoke special-structure argument** (two fixed-base exponentials + one cube),
+never a general decision procedure. Stated honestly: this does **NOT** make Kuromine itself
+undecidable (Kuromine is one structured family, not the universal cubic class); it **sharpens
+why** the S22 face is closed and removes "await a general degree-3 decidability theorem" from the
+WATCH list. **Eighteenth confirmation of the wall (negative).**
+
+**Other frontiers unchanged:** Bugeaud 2503.22084 / 2604.27490 still only "$\to\infty$ with
+$z^d$" (no power-saving $\kappa>1$); Baker $\mu(2^{1/3})\le2.955$, Voutier $\kappa<2$ only for
+$(c+1)/c$ roots near 1 (not $2^{1/3}$), CDT 2510.04156 still $\mu(2^{1/3})>2\gg1.107$; and the
+target is sub-Dirichlet ($E\to2/3$), so measures categorically cannot reach it.
+
+**Wolfram re-anchor (high precision, this session).** At the near-boundary surviving pair
+$(k_x,k_y)=(84180,159334)$: minimal nonnegative $D=0.53666886633\ldots$ (minimal nonneg over
+$k_x\le200000$); $\log2^x=1.94093\times10^{10}$,
+$\log3^y=2.91139\times10^{10}$ (so $3^y$ dominates $z^3$); realized gap exponent
+$E=\log(2^x+5)/\log(z^3)=\mathbf{0.66666666670696\ldots}\to2/3^+$, far below the needed
+$\kappa>1$. Frame constants re-confirmed to **25 digits**: $3-3\log_3 2=1.1072107392856277\ldots$,
+$3\log2/\log3=1.8927892607143723\ldots$, $2\log3/(3\log2)=1.0566416671474375\ldots$.
+Structural check (Wolfram `Factor`): $z^3-n$ is irreducible over $\mathbb Q[z]$ — Kuromine's free
+term is genuinely degree 3, sitting exactly at the 2510.00759 undecidability threshold; known
+solution $z=4$ for $(5,3)$ verified.
+
+**Net.** No new direction; the new paper closes a sub-hope on the already-mature S22 face. WATCH
+remains the sole active priority (item (b) narrowed: only a *special-structure* Kuromine
+decidability argument, not a general degree-3 theorem). No framework built (Session-28
+inventory-complete verdict).
 
 ## Session 29 main result (WATCH confirmed negative; Eisenstein-norm condition on $B$ proved AUTOMATIC, Wolfram-verified)
 
@@ -217,10 +257,13 @@ framework can bridge this gap.
    bound** $|z^3-3^y| > C(z^3)^{\kappa}$ with any fixed $\kappa>1$ in the regime $3^y \approx
    2^x \approx z^3$ — the necessary-and-sufficient tool; watch for genuinely new *separation/gap*
    techniques (the auxiliary $2^{2/3}$-Thue casting is sub-Dirichlet, so measure improvements
-   alone do not reach it); OR (b) any extension of the linear-exponential decidability results
-   (KLNOW / Dong–Shafrir) to a single free higher-degree term, OR the $k\ge3$-prime case. Watch
+   alone do not reach it); OR (b) **[narrowed, Session 30]** a *special-structure* decidability/
+   finiteness argument for the specific Kuromine family (two fixed-base exponentials + one cube),
+   OR the $k\ge3$-prime case — but **NOT** a *general* degree-3 decidability theorem, which
+   arXiv:2510.00759 (Feb 2026) now proves cannot exist (degree 3 is the universal-undecidability
+   threshold, Σ⁰₁-complete; Kuromine's $z^3$ is genuinely degree 3, Wolfram-verified). Watch
    CDT (2510.04156), Bugeaud (2503.22084 / **2604.27490** — both only "$\to\infty$ with $z^d$",
-   trivially met), and STOC/LICS 2026 follow-ups. **Effective equidistribution / discrepancy
+   trivially met), KLNOW / Dong–Shafrir (2505.19141), and STOC/LICS 2026 follow-ups. **Effective equidistribution / discrepancy
    bounds for scalar exponential orbits modulo a fixed lattice are now understood (Session 28
    identity) to be equivalent to (a), hence equally hard** — watch only for results that beat
    the Dirichlet floor on the $2^{2/3}$ approximation.

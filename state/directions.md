@@ -531,6 +531,26 @@ the exact quantified target found so far. Both NOT APPLICABLE:
 
 **Session 21 update:** WebSearch (June 2026) for unconditional effective κ<1.107 bounds and CDT follow-ups. Negative (tenth confirmation of the two-comparable-S-units barrier). Calegari–Dimitrov–Tang (arXiv:2510.04156) remains the frontier: gives effective irrationality measures for high-order roots and algorithmic resolution of two-variable S-unit / Thue–Mahler / superelliptic equations, but the effective measure for 2^{1/3} is still > 2 ≫ 1.107, and per-equation resolution gives no uniformity across the infinite Theorem-5 family. No 2026 follow-up below the ~1.1 threshold.
 
+**Session 30 update (decidability/degree face sharpened — important):** New paper
+**arXiv:2510.00759 (Feb 2026), "Cubic incompleteness: Hilbert's tenth problem begins at degree
+three"** (also "Proof by Mechanization: Cubic Diophantine Equation Satisfiability is
+Σ⁰₁-Complete"). Result: satisfiability of a *single* Diophantine equation of total degree ≤ 3
+over ℕ (number of variables in the input) is **Σ⁰₁-complete**, hence undecidable. **Assessment —
+this CONFIRMS/SHARPENS the S22 decidability barrier, it does NOT breach it.** The S22 face
+recorded that KLNOW/Dong–Shafrir decidability (arXiv:2505.19141) is settled only for ≤2 primes
+and degree-≤1 free terms, with the open hope of an extension to degree-≥2/degree-3 free terms.
+2510.00759 proves that hope is **impossible in general**: degree 3 is exactly the
+universal-undecidability threshold, so no *general* decidability theorem can ever cover degree-3
+free terms (and Kuromine's free term $z^3$ is genuinely degree 3 — Wolfram-verified $z^3-n$
+irreducible over ℚ[z]). Consequently **any** decidability/finiteness route to Kuromine must be a
+*bespoke special-structure* argument exploiting the two-fixed-base-exponentials-plus-one-cube
+form — never a general decision procedure. Honest caveat: undecidability of the *general* cubic
+class does NOT make Kuromine itself undecidable (Kuromine is one structured family, not the
+universal class), so this neither resolves nor refutes the conjecture. **Net effect on the WATCH
+list:** item (b) is **narrowed** — watch only for a *special-structure* Kuromine decidability/
+finiteness argument, not a general degree-3 decidability theorem (which is now provably
+impossible). Eighteenth confirmation of the wall.
+
 ---
 
 ## Retired Directions
@@ -541,6 +561,29 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 ---
 
 ## History of Changes
+
+- **2026-06-26 (Session 30):** Pure WATCH-phase session. arXiv watch **negative (eighteenth
+  confirmation)**, but surfaced **one genuinely new, previously-unassessed paper:**
+  **arXiv:2510.00759 (Feb 2026), "Cubic incompleteness: Hilbert's tenth problem begins at degree
+  three"** — satisfiability of a single Diophantine equation of total degree ≤ 3 is
+  **Σ⁰₁-complete (undecidable)**. **Assessment:** this **sharpens/confirms** the S22
+  decidability/degree barrier rather than breaching it. The S22 hope of a *general* decidability
+  extension to degree-≥2 / degree-3 free terms is now **provably impossible** (degree 3 = the
+  universal-undecidability threshold). Any decidability route to Kuromine must be a *bespoke
+  special-structure* argument, never a general decision procedure. It does **NOT** make Kuromine
+  itself undecidable (Kuromine is one structured family, not the universal cubic class). **WATCH
+  item (b) narrowed accordingly** (see below). Other frontiers unchanged: Bugeaud
+  2503.22084/2604.27490 still only "$\to\infty$ with $z^d$"; Baker $\mu(2^{1/3})\le2.955$,
+  Voutier $\kappa<2$ only for $(c+1)/c$ near 1, CDT 2510.04156 still $\mu>2\gg1.107$;
+  target sub-Dirichlet ($E\to2/3$). **Wolfram re-anchor (high precision):** at
+  $(k_x,k_y)=(84180,159334)$, $D=0.53666886633\ldots$ (min nonneg over $k_x\le200000$),
+  realized gap exponent $E=\log(2^x+5)/\log(z^3)=0.66666666670696\ldots\to2/3^+$ ($3^y$ dominates
+  $z^3$ here); frame constants re-confirmed to **25 digits**. Structural check (Wolfram): $z^3-n$
+  irreducible over $\mathbb Q[z]$ — free term genuinely degree 3, at the 2510.00759 threshold;
+  $z=4$ for $(5,3)$ verified. **No theory-building** (Session-28 inventory-complete verdict
+  re-affirmed). No direction retired/elevated/added; added this assessment to the arXiv-survey
+  [LOW] direction; created `log/20260629_000000.md`; updated `current_focus.md`. WATCH remains
+  the sole active priority.
 
 - **2026-06-26 (Session 29):** WATCH-phase session. arXiv watch **negative (seventeenth
   confirmation):** Bugeaud 2503.22084/2604.27490 still only "$\to\infty$ with $z^d$" (no
