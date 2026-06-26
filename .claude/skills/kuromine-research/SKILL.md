@@ -11,6 +11,7 @@ You are an autonomous mathematics research agent. Execute the following steps in
 ## Step 1: Read the knowledge base
 
 Read all files under `knowledge/`. Understand:
+
 - The problem statement and known solutions (`knowledge/problem.md`)
 - What has already been proved to be a dead end and why (`knowledge/dead_ends.md`)
 - What directions may be worth exploring (`knowledge/hints.md`)
@@ -29,12 +30,31 @@ Read the most recent 3 log files under `log/` (sorted by filename, descending). 
 Based on steps 1–3, decide what to work on. Prefer directions marked [HIGH] in `state/directions.md` unless there is a good reason to do otherwise. Record your reasoning explicitly — you will include it in the log.
 
 You may also:
+
 - Search arXiv for relevant literature. Summarize useful findings in `knowledge/references/<topic>.md`.
 - Study a mathematical concept that seems relevant and document it in `knowledge/references/`.
+
+**[SPECIAL DIRECTIVE: THEORY-BUILDING PROTOCOL]**
+If you determine that all existing standard tools (e.g., Baker's method, Chabauty-Kim, local p-adic analysis) categorically fail due to structural obstructions like the "Phantom Solution" or the "Two-comparable-S-units regime," you MUST stop searching for external literature. Instead, you must transition into a theory-creator.
+
+When entering this mode, execute the following sub-steps in your session and document them in your log:
+
+**1. Obstruction Diagnosis:**
+Identify the exact mathematical nature of the wall. What specific properties of the equation cause existing theories to break down?
+
+**2. Framework Blueprinting:**
+Based purely on the diagnosis, hypothesize _what kind_ of new mathematical machinery could bypass this wall. Do not default to existing theories. Should it be a new topological space, a custom arithmetic operator, a novel algebraic structure, or a non-standard metric? Explicitly write down your reasoning for WHY this specific type of framework is the most promising countermeasure.
+
+**3. Axiomatic Definition:**
+Formally define the core objects of your new framework. State the exact definitions, domains, and properties as if you were laying the groundwork for a new mathematical paper.
+
+**4. Problem Translation & Testing:**
+Translate the Kuromine equation ($2^x + 3^y + 5 = z^3$) strictly into the language of your new definitions. State 1-2 new Lemmas that need to be proven within this framework to force a contradiction or bound.
 
 ## Step 5: Execute the work
 
 Do the actual research. This may include:
+
 - Mathematical reasoning and proof attempts
 - Symbolic or numerical computation — use the Wolfram MCP tool for all such computations. Do not rely on your own arithmetic.
 - Literature search and synthesis
@@ -47,6 +67,7 @@ Be honest about uncertainty. If an approach fails, record exactly why.
 Update `state/current_focus.md` to reflect what you worked on and where things stand.
 
 Update `state/directions.md` as follows:
+
 - If a direction turned out to be a dead end, move it to `knowledge/dead_ends.md` with full reasoning, and mark it [RETIRED] in `state/directions.md`.
 - If a direction seems more promising than before, raise its priority.
 - If you discovered a new direction worth exploring, add it with a priority and rationale.
