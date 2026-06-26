@@ -6,7 +6,30 @@ Directions are listed with a priority estimate and current status.
 
 ## Active Directions
 
-### [LOW — NEW, Session 27, theory-building] Cubic-Transversality / Dial–Lattice framework
+### [RETIRED in Session 28] Cubic-Transversality / Dial–Lattice framework (theory-building)
+
+**Built in Session 27, RETIRED in Session 28 — Lemma C (the crux) refuted.**
+
+**Session 28 resolution (Wolfram).** The crux Lemma C collapses onto already-settled ground via
+an exact identity (`Simplify` = 0):
+$$\operatorname{dist}\big(R_y(x),\,3\mathbb Z\big) = 3\cdot\operatorname{dist}\big((2^x+3^y+5)^{1/3},\,\mathbb Z\big).$$
+The dial-orbit discrepancy from $3\mathbb Z$ is exactly 3 times the **original cube-root
+distance** — the $\times27$ / $W=3z$ rescaling is undone by the cube root, so the "new
+archimedean object" is the original cube-distance. Since the family has $x\equiv2\bmod3$
+(Wolfram), $2^x=4M^3$ ($M=2^{(x-2)/3}$) and the discrepancy is governed by the rational
+approximation of $2^{2/3}=4^{1/3}$ by $m/M$ — **the Session-3 $2^{2/3}$-Thue quantity**. Wolfram:
+the discrepancy descends toward 0 along deep $2^{2/3}$-convergents (e.g. $\operatorname{dist}
+\approx0.0026$ at $x=35$), so it has **no positive constant lower bound**; the realized
+approximation exponent is sub-Dirichlet ($\kappa\le1.21$, negative for most pairs), so no
+irrationality measure can act. Lemma C's effective-equidistribution route IS the
+two-comparable-S-units barrier in archimedean clothing. **Sixth independent confirmation that the
+barrier is place-independent.** Lemma D (phantom confined to $y<0$, survival sheet phantom-free)
+is **kept** as a correct structural clarification in the reference file. Moved to
+`knowledge/dead_ends.md`. **DO NOT REOPEN** — Lemma C is equivalent to the open target itself.
+
+---
+
+#### Original Session-27 entry (superseded by the retirement above)
 
 **Built in Session 27 (2026-06-27)** under the SPECIAL DIRECTIVE after a negative arXiv watch.
 A genuinely **archimedean-first** framework, logically distinct from the two retired
@@ -505,6 +528,29 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 ---
 
 ## History of Changes
+
+- **2026-06-26 (Session 28):** Attempted **Lemma C** (the unproven crux) of the
+  Cubic-Transversality / Dial–Lattice framework and **RETIRED the framework** (Lemma C refuted
+  as a route). **Decisive Wolfram finding — exact identity:** $\operatorname{dist}(R_y(x),
+  3\mathbb Z) = 3\operatorname{dist}((2^x+3^y+5)^{1/3},\mathbb Z)$, i.e. the dial-orbit
+  discrepancy from $3\mathbb Z$ IS three times the original cube-root distance (the $\times27$ /
+  $W=3z$ rescaling is undone by the cube root). Since the family has $x\equiv2\bmod3$ (so
+  $2^x=4M^3$, $M=2^{(x-2)/3}$), the discrepancy is governed by the rational approximation of
+  $2^{2/3}$ by $m/M$ — **exactly the Session-3 $2^{2/3}$-Thue quantity**. Wolfram: discrepancy
+  descends toward 0 along deep $2^{2/3}$-convergents ($\operatorname{dist}\approx0.0026$ at
+  $x=35$) → **no positive constant lower bound**; realized approximation exponent sub-Dirichlet
+  ($\kappa\le1.21$, negative for most pairs) → no irrationality measure acts. Lemma C's only
+  non-trivial route (effective equidistribution) IS the two-comparable-S-units barrier in
+  archimedean clothing. **Sixth independent confirmation** that the barrier is place-independent;
+  attack-face inventory now complete (metric S15, analytic/irrationality S3/10/11,
+  3-adic-coupling S20–21/S24, decidability/degree S22, archimedean-equidistribution S27–28).
+  **Lemma D kept** (phantom confined to $y<0$, survival sheet phantom-free — a clarification, not
+  a proof step). arXiv watch negative (sixteenth confirmation): effective-equidistribution
+  literature is homogeneous-dynamics, not the scalar-orbit question; Bugeaud 2604.27490 still
+  only "$\to\infty$". Moved the framework to RETIRED in this file; added dead-end entry to
+  `knowledge/dead_ends.md`; appended Session-28 resolution to
+  `knowledge/references/cubic_transversality_framework.md`; created `log/20260628_000000.md`;
+  updated `current_focus.md`. WATCH is now the sole active priority.
 
 - **2026-06-27 (Session 27):** Negative arXiv watch (fifteenth confirmation) + SPECIAL
   DIRECTIVE theory-building. **Watch finding:** Bugeaud **arXiv:2604.27490** (Apr 2026, "On the

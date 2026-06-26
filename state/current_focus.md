@@ -1,6 +1,41 @@
 # Current Focus
 
-**Session:** 20260627_180000 (Session 27)
+**Session:** 20260628_000000 (Session 28)
+
+## Session 28 main result (Lemma C REFUTED, Cubic-Transversality framework RETIRED, Wolfram-verified)
+
+This session attacked **Lemma C** — the unproven crux of the Session-27 Cubic-Transversality /
+Dial–Lattice framework — and **refuted it as a route**, retiring the framework. The decisive
+finding is an **exact identity** (Wolfram `Simplify` = 0):
+$$\operatorname{dist}\big(R_y(x),\,3\mathbb Z\big) \;=\; 3\cdot
+\operatorname{dist}\big((2^x+3^y+5)^{1/3},\,\mathbb Z\big),\qquad
+R_y(x)=(27\cdot2^x+3^{y+3}+135)^{1/3}.$$
+The dial-orbit discrepancy from $3\mathbb Z$ is **exactly 3 times the original cube-root
+distance** of $z=(2^x+3^y+5)^{1/3}$ from $\mathbb Z$ — the $\times27$ / $W=3z$ rescaling is
+undone by the cube root, so the "new archimedean object" is the original cube-distance.
+
+Because the Theorem-5 family has $x\equiv 2\pmod 3$ (Wolfram: $5\equiv2$, $332640\equiv0$),
+$2^x=4M^3$ with $M=2^{(x-2)/3}$, and the discrepancy is governed by the rational approximation
+of $2^{2/3}=4^{1/3}$ by $m/M$ ($M$ a power of two) — **exactly the Session-3 auxiliary
+$2^{2/3}$-Thue quantity**. Wolfram confirmed: (i) the discrepancy descends toward 0 along deep
+$2^{2/3}$-convergents (e.g. $\operatorname{dist}\approx0.0026$ at $x=35$), so it has **no
+positive constant lower bound**; (ii) the realized approximation exponent on the family is
+**sub-Dirichlet** ($\kappa\le1.21$, negative for most pairs). An effective lower bound would
+require an effective irrationality measure $\mu(2^{2/3})<3$ acting on *these* approximations,
+but they are sub-Dirichlet, so **no measure acts**. The barrier re-surfaces exactly as
+Session 27 predicted. **Sixth independent confirmation** that the barrier is place-independent
+(archimedean-equidistribution face). The attack-face inventory is now **complete**: metric
+(S15), analytic/irrationality (S3/10/11), 3-adic-coupling (S20–21, S24), decidability/degree
+(S22), archimedean-equidistribution (S27–28) — all return the same two-comparable-S-units wall.
+
+**Kept (Lemma D, proved S27):** in the dial form the phantom's denominator-3 escape is confined
+to $y<0$, so the survival sheet is phantom-free. This remains a correct structural
+clarification (retained in the reference file), but is not a step toward a proof.
+
+**arXiv watch (sixteenth confirmation, negative):** effective-equidistribution literature
+(Einsiedler–Margulis–Venkatesh; W. Kim 2110.00706) is homogeneous-dynamics on
+$\mathrm{SL}_n/\mathrm{SL}_n(\mathbb Z)$, not the scalar-exponential-orbit question (which by
+the S28 identity is the same wall). Bugeaud 2604.27490 still only "$\to\infty$ with $z^d$".
 
 ## Session 27 main result (negative watch + new ARCHIMEDEAN framework, Wolfram-verified)
 
@@ -136,26 +171,31 @@ framework can bridge this gap.
 
 ## Next priority
 
-1. **[WATCH — primary]** Monitor arXiv for (a) an unconditional **effective gap
+1. **[WATCH — sole active priority]** Monitor arXiv for (a) an unconditional **effective gap
    bound** $|z^3-3^y| > C(z^3)^{\kappa}$ with any fixed $\kappa>1$ in the regime $3^y \approx
-   2^x \approx z^3$ — watch for genuinely new *separation/gap* techniques (the auxiliary
-   $2^{2/3}$-Thue casting is sub-Dirichlet, so measure improvements alone do not reach it); OR
-   (b) any extension of the
-   linear-exponential decidability results (KLNOW / Dong–Shafrir) to a single free
-   higher-degree term, OR the $k\ge3$-prime case. Watch CDT (2510.04156), Bugeaud
-   (2503.22084 / **2604.27490** — both only "$\to\infty$ with $z^d$", trivially met), and
-   STOC/LICS 2026 follow-ups. **Also now watch: effective equidistribution / discrepancy bounds
-   for exponential orbits $\{2^{x/3}\bmod \text{lattice}\}$** (the new Lemma-C frontier).
-2. **[LOW — new, theory-building]** Attempt **Lemma C (Defect Quantization)** of the new
-   Cubic-Transversality framework: can the exponential dial orbit
-   $R_y(x)=(27\cdot2^x+3^{y+3}+135)^{1/3}$ be proved transversal to $3\mathbb Z$ on the survival
-   wedge via an *effective equidistribution/discrepancy* bound? Honest expectation: the
-   two-comparable-S-units degeneracy likely re-surfaces here; but the formulation is genuinely
-   new (archimedean, phantom-free on $y\ge0$ by the proved Lemma D) and is the one untried
-   angle. A clean negative (the discrepancy rate is exactly the same Diophantine quantity that
-   makes Baker give $v_p=0$) would retire it and confirm the barrier is place-independent.
-2. **[DO NOT ATTEMPT]** Any further 3-adic-only theory-building — the 3-adic portrait is
-   complete (Theorems I–N, all now Wolfram-verified) and any such framework reduces to
-   Theorem-J. New theory must introduce a genuinely new archimedean handle.
-3. **[VERY LOW / likely empty]** Near-boundary small-$D$ pairs — Theorem-N corollary still
+   2^x \approx z^3$ — the necessary-and-sufficient tool; watch for genuinely new *separation/gap*
+   techniques (the auxiliary $2^{2/3}$-Thue casting is sub-Dirichlet, so measure improvements
+   alone do not reach it); OR (b) any extension of the linear-exponential decidability results
+   (KLNOW / Dong–Shafrir) to a single free higher-degree term, OR the $k\ge3$-prime case. Watch
+   CDT (2510.04156), Bugeaud (2503.22084 / **2604.27490** — both only "$\to\infty$ with $z^d$",
+   trivially met), and STOC/LICS 2026 follow-ups. **Effective equidistribution / discrepancy
+   bounds for scalar exponential orbits modulo a fixed lattice are now understood (Session 28
+   identity) to be equivalent to (a), hence equally hard** — watch only for results that beat
+   the Dirichlet floor on the $2^{2/3}$ approximation.
+
+2. **[RETIRED, Session 28]** **Lemma C of the Cubic-Transversality framework — REFUTED.** The
+   exact identity $\operatorname{dist}(R_y(x),3\mathbb Z)=3\operatorname{dist}((2^x+3^y+5)^{1/3},
+   \mathbb Z)$ shows the dial-orbit discrepancy IS (three times) the original cube-distance, and
+   (via $x\equiv2\bmod3\Rightarrow2^x=4M^3$) is governed by the Session-3 sub-Dirichlet
+   $2^{2/3}$-approximation quantity. The discrepancy has no positive constant lower bound
+   (descends to 0 along $2^{2/3}$-convergents). Framework retired; moved to `dead_ends.md`.
+   Lemma D (phantom confined to $y<0$) kept as a clarification in the reference file.
+
+3. **[DO NOT ATTEMPT]** Any further theory-building that reduces to an existing attack face. The
+   inventory is complete: metric (S15), analytic/irrationality (S3/10/11), 3-adic-coupling
+   (S20–21, S24), decidability/degree (S22), archimedean-equidistribution (S27–28) — six
+   confirmations, all the same wall. New theory must beat the Dirichlet floor on the $2^{2/3}$
+   approximation or supply a power-saving $\kappa>1$ gap bound directly; nothing short reaches it.
+
+4. **[VERY LOW / likely empty]** Near-boundary small-$D$ pairs — Theorem-N corollary still
    blocks; logged for completeness only.

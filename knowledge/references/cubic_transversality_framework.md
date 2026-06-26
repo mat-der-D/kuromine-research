@@ -234,3 +234,54 @@ unproven part is the honest open frontier. **No false claim of resolution.**
   $E=\log(2^x+5)/\log z^3 = 0.6666666667\to 2/3^+$. ✓
 - Threshold $3-3\log_3 2 = 1.10721$; wedge slope $3\log_3 2-1=0.89279$. ✓
 - Only cube hits for $x\le60,y\le40$: $(1,0)$ and $(5,3)$. ✓
+
+---
+
+## 7. Session 28 resolution — Lemma C REFUTED (framework retired; Lemma D kept)
+
+**Verdict: Lemma C is refuted as a route. The framework is RETIRED. Lemma D is kept as a correct
+structural clarification.** All claims below are Wolfram-verified (Session 28).
+
+**7.1 The decisive exact identity.** Wolfram `Simplify` gives, for all $x,y\ge0$,
+$$\big(27\cdot 2^x + 3^{y+3} + 135\big)^{1/3} \;=\; 3\,\big(2^x + 3^y + 5\big)^{1/3}\quad
+\Longrightarrow\quad
+\boxed{\ \Theta(x,y)=\operatorname{dist}\big(R_y(x),3\mathbb Z\big)=3\cdot
+\operatorname{dist}\big((2^x+3^y+5)^{1/3},\mathbb Z\big).\ }$$
+The dial-orbit discrepancy from $3\mathbb Z$ is **exactly 3 times the original cube-root
+distance** of $z=(2^x+3^y+5)^{1/3}$ from $\mathbb Z$. The $\times27$ / $W=3z$ rescaling that
+*defined* the dial form is undone by the cube root: $R_y=3z$, so $\operatorname{dist}(R_y,
+3\mathbb Z)=3\operatorname{dist}(z,\mathbb Z)$. **The "new archimedean object" is the original
+cube-distance.** This is the single decisive finding: the dial reformulation does not produce a
+genuinely new analytic quantity.
+
+**7.2 Reduction to the Session-3 $2^{2/3}$ quantity.** On the Theorem-5 lattice
+$x=5+332640\,k_x$, $x\equiv2\pmod3$ universally (Wolfram: $5\equiv2$, $332640\equiv0\bmod3$), so
+$2^x=4M^3$ with $M=2^{(x-2)/3}\in\mathbb Z$. In the $2^x$-dominant survival wedge,
+$N=2^x+3^y+5=4M^3+(3^y+5)$, and for the nearest integer $m\approx 2^{2/3}M$,
+$$\operatorname{dist}(z,\mathbb Z)\approx\frac{|N-m^3|}{3N^{2/3}}
+=\frac{|m^3-4M^3-(3^y+5)|}{3N^{2/3}},$$
+whose minimal numerator is governed by $|m^3-4M^3|$ — the rational approximation of
+$2^{2/3}=4^{1/3}$ by $m/M$ ($M$ a power of two). **This is exactly the Session-3 auxiliary
+$2^{2/3}$-Thue casting** ($z^3-4W^3$, $W=2^a$).
+
+**7.3 No positive constant lower bound (Wolfram).** Sweeping $m=\operatorname{round}(2^{2/3}\,
+2^a)$: at deep convergents of $2^{2/3}$ the gap $|m^3-2^{3a+2}|$ is anomalously small (e.g.
+$a=11$, $x=35$: $m=3251$, gap $=83883$, $\log_M(\text{gap})=1.487$, $\operatorname{dist}\approx
+0.00265$; smaller along deeper convergents). The discrepancy demonstrably descends toward 0 — it
+is **not** bounded below by any positive constant. For $x\equiv0\bmod3$ (NOT the family residue)
+$2^x$ is itself a cube and the distance plunges to $\sim10^{-7}$, an extreme illustration.
+
+**7.4 Sub-Dirichlet exponent (Wolfram).** The realized approximation exponent of $m/M\to2^{2/3}$
+along the family is $\kappa\le1.21$ and negative for most pairs ($-0.377,+0.811,+1.208,+0.415,
+\ldots$), strictly below the Dirichlet floor 2 — reproducing the Session-3/11 record. So no
+irrationality measure can act (measures only bound *good* approximations, exponent $\ge2$), and
+no effective lower bound $\operatorname{dist}\gg N^{-c}$ ($c<2/3$) is available.
+
+**7.5 Conclusion.** Lemma C's only non-trivial route — an effective equidistribution/discrepancy
+bound excluding a single exact lattice hit — IS, by §7.1–7.4, the Session-3 sub-Dirichlet
+$2^{2/3}$-approximation obstruction in archimedean clothing (the same Diophantine quantity that
+makes Baker give $v_p=0$). The framework **relocated** the wall and, on inspection, the new
+location is the same wall. **Sixth independent confirmation that the barrier is
+place-independent.** Lemma D (§4, phantom confined to $y<0$, survival sheet phantom-free) remains
+a correct clarification and is kept; it is not a step toward a proof. Framework retired; see
+`knowledge/dead_ends.md` and `log/20260628_000000.md`.

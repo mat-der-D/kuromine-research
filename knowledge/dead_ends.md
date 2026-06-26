@@ -290,3 +290,59 @@ $\mathcal{K}: A^3 = 32\exp_3(kL)+5$ over $\mathbb{Z}_3$ with explicit tangent sp
 formula $\tau = (A^3-5)L/(3A^2)$. Compact new encoding of existing data.
 
 See `log/20260626_120100.md` for full derivation.
+
+## Cubic-Transversality / Dial–Lattice framework (Session 27 build, Session 28 retirement)
+
+**Status:** RETIRED. The archimedean theory-building framework rested on the unproven crux
+Lemma C; Session 28 (Wolfram) refuted Lemma C as a route. Do not reopen — Lemma C is provably
+equivalent to the open target itself. **Lemma D is kept** as a correct structural clarification
+(retained in `knowledge/references/cubic_transversality_framework.md`).
+
+**The framework (Session 27).** Reformulate via $W=3z$: $W^3 = 27\cdot2^x + 3^{y+3} + 135$ (the
+"dial form"). A genuine solution is an integer cube root ($z\in\mathbb Z$, i.e. $W\in3\mathbb Z$);
+the phantom is a denominator-3 rational cube root ($z=10/3$, $W=10$). Regard $2^x$ as a
+continuous dial sweeping $R_y(t)=(27\cdot2^t+3^{y+3}+135)^{1/3}$ across the lattice $3\mathbb Z$;
+the cubic defect is $\Theta(x,y)=\operatorname{dist}(R_y(x),3\mathbb Z)$, with $\Theta=0$ iff a
+solution. Two load-bearing lemmas:
+
+- **Lemma D (Denominator Rigidity) — PROVED, KEPT.** On the survival sheet $y\ge0$, any cube hit
+  $W^3=27(2^x+3^y+5)$ has $27\mid W^3\Rightarrow3\mid W\Rightarrow z\in\mathbb Z$. So the
+  phantom's denominator-3 escape is structurally confined to $y<0$, OFF the Theorem-5 lattice —
+  the first formulation in which the phantom is provably ABSENT from the relevant sheet. A
+  genuine clarification, but not a step toward a proof (it removes the phantom from the survival
+  sheet; the remaining transversality content is Lemma C).
+
+- **Lemma C (Defect Quantization, the crux) — REFUTED as a route (Session 28).** Claimed: an
+  effective resonance-exclusion / equidistribution bound forcing the dial orbit off $3\mathbb Z$.
+
+**Why it fails (Wolfram, Session 28).** The decisive finding is an **exact identity**
+(`Simplify` returns 0):
+$$\operatorname{dist}\big(R_y(x),\,3\mathbb Z\big) \;=\; 3\cdot
+\operatorname{dist}\big((2^x+3^y+5)^{1/3},\,\mathbb Z\big).$$
+The dial-orbit discrepancy from $3\mathbb Z$ is *exactly* 3 times the **original cube-root
+distance** of $z=(2^x+3^y+5)^{1/3}$ from $\mathbb Z$: the $\times27$ / $W=3z$ rescaling is undone
+by the cube root, so the "new archimedean object" is the original cube-distance, not a new one.
+Because the Theorem-5 family has $x\equiv2\pmod3$ (Wolfram: $5\equiv2$, $332640\equiv0$),
+$2^x=4M^3$ with $M=2^{(x-2)/3}$, and in the $2^x$-dominant survival wedge
+$$\operatorname{dist}\big((2^x+3^y+5)^{1/3},\mathbb Z\big)\approx
+\frac{|m^3-4M^3-(3^y+5)|}{3N^{2/3}},\qquad m=\operatorname{round}(2^{2/3}M),$$
+whose minimal numerator is governed by $|m^3-4M^3|$ — the rational approximation of
+$2^{2/3}=4^{1/3}$ by $m/M$, **exactly the Session-3 auxiliary $2^{2/3}$-Thue quantity**. Wolfram
+confirmed: (i) the discrepancy descends toward 0 along deep $2^{2/3}$-convergents (e.g.
+$m=3251$, $m^3-2^{35}=83883$, $\operatorname{dist}\approx0.00265$ at $x=35$; smaller deeper), so
+it has **no positive constant lower bound**; (ii) the realized approximation exponent of $m/M\to
+2^{2/3}$ on the family is **sub-Dirichlet** ($\kappa\le1.21$, negative for most pairs:
+$-0.377,+0.811,+1.208,+0.415,\dots$, reproducing the Session-3/11 record). An effective lower
+bound $\operatorname{dist}\gg N^{-c}$ would require an effective irrationality measure
+$\mu(2^{2/3})<3$ acting on *these* approximations — but they are sub-Dirichlet, so **no measure
+acts** (measures only bound good approximations, exponent $\ge2$). Lemma C's only non-trivial
+route (effective equidistribution) IS the two-comparable-S-units barrier in a new disguise.
+
+**Root cause.** The dial reformulation relocated the wall to an archimedean equidistribution
+question, but the cube root undoes the rescaling, returning the *identical* Session-3
+sub-Dirichlet $2^{2/3}$-approximation obstruction. **Sixth independent confirmation that the
+barrier is place-independent**; the attack-face inventory is now complete — metric (S15),
+analytic/irrationality (S3/10/11), 3-adic-coupling (S20–21, S24), decidability/degree (S22),
+and archimedean-equidistribution (S27–28) — all returning the same wall. Full detail in
+`log/20260628_000000.md`. **DO NOT REOPEN** without a tool that beats the Dirichlet floor on the
+$2^{2/3}$ approximation (equivalently, supplies a power-saving $\kappa>1$ gap bound).
