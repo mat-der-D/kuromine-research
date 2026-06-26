@@ -145,3 +145,35 @@ measures exactly that distance.
 **Consequence:** Theorem N re-proves (cleanly, via valuation) that $A$ is huge, but provides
 no contradiction. Closeness-to-boundary cannot be exploited. Documented in
 `knowledge/problem.md` (Theorem N) and `log/20260626_174500.md`.
+
+## Thue-Mahler / norm-form approach (Session 18)
+
+**Status:** RETIRED. No casting of the Kuromine equation as a single Thue-Mahler equation
+$F(X,Y) = (\text{S-unit})$ exists; every candidate is broken by the additive constant 5.
+
+**What was tried (Wolfram, Session 18):** Four distinct castings to a binary-form-equals-
+S-unit (= Thue-Mahler) structure:
+1. $z^3 - 4W^3 = 3^y + 5$ ($W=2^a$): RHS not a $\{2\}$-S-unit (the $+5$). Broken.
+2. $z^3 - w^3 = 2^x + 5$ ($w=3^j$): RHS not a $\{3\}$-S-unit (the $+5$). Broken.
+3. Eisenstein norm form $N_{\mathbb{Q}(\omega)}(z-w\omega) = B$, $A\cdot B = 2^x+5$:
+   genuine norm form but $A$ varies independently; congruence content phantom-blocked
+   (Session 4). Broken as a uniformity source.
+4. $N_{\mathbb{Q}(5^{1/3})}(z - 5^{1/3}) = z^3-5 = 2^x + 3^y$ ($x^3-5$ irreducible, Wolfram):
+   RHS is a *sum* of two S-units, not one, and uncontrolled. Broken.
+
+**Why it fails:** The additive constant 5 (equivalently the two-term RHS) always prevents
+the right-hand side from being a single S-unit. This is the Thue-Mahler face of the phantom
+obstruction. The per-fixed-$y$ Thue equation $z^3-4W^3=3^y+5$ is finite (Wolfram: $W=2^a$
+occurs only at $y=3$, the known solution), but Thue-Mahler theory gives only finiteness
+*per equation* (bound via unit rank of $\mathbb{Q}(2^{1/3})$, which is $1$, and $|S|$), never
+uniformity across the infinite $y$-progression — the actual open content.
+
+**Genuine new facts produced (kept, non-actionable):**
+- Symmetric reframing of the hard case: $z^3 - 4(2^a)^3 - (3^j)^3 = 5$ (verified on $(5,3,4)$).
+- $v_{37}(2^x+5) = 1$ exactly and universally ($x\equiv5\pmod{36}=\mathrm{ord}_{37}(2)$,
+  $2^x\equiv-5$), hence $37 \| B$. Since $37$ splits in $\mathbb{Z}[\omega]$, the mod-37 cube
+  equation $z^3\equiv11$ has 3 roots $\{21,25,28\}$; the constraint $37\mid B$ (not $A$)
+  selects $z\in\{21,28\}$; the phantom sits on the $z\equiv28$ branch. All soft-obstructed
+  (phantom is a cube mod $37^n$ for all $n$, verified mod $37^3$; deeper residues vary across
+  the family). Documented in `knowledge/references/thue_mahler_approach.md` and
+  `log/20260626_230000.md`.
