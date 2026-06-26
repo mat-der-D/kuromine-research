@@ -251,24 +251,37 @@ any POSITIVE constraint that could be exploited? So far it has only been an OBST
 
 See `knowledge/references/function_field_analog.md` for full analysis. **Retired.**
 
-### [LOW] Cyclotomic phantom family
+### [RETIRED in Session 19] Cyclotomic phantom family
 
-**New direction, Session 17.**
+**New direction, Session 17. Concretely analyzed and RETIRED in Session 19.**
 
 The general $y = -3$ phantom family for $2^x + 3^y + c = z^3$ is parametrized by:
 $$c_m = 27m^3 + 9m^2 + m - 32, \quad z_m = \frac{9m+1}{3}, \quad m \geq 1.$$
 
 First values: $c_1 = 5$ ($z_1 = 10/3$), $c_2 = 222$ ($z_2 = 19/3$), $c_3 = 781$ ($z_3 = 28/3$).
 
-**Question:** Is $c = 5$ special within this family, beyond being smallest? For each $c_m$,
-the equation $2^x + 3^y + c_m = z^3$ has the same phantom obstruction. Do the equations
-for $m \geq 2$ have finitely many solutions (provable by other methods, since $c_m$ is
-larger and the phantom denominator $z_m$ has the same structure)? Comparing the difficulty
-of the $c_m$ cases might reveal what specific arithmetic of $c_1 = 5$ (the smallest case)
-makes it uniquely resistant.
+**Session 19 deep analysis (analytic, Wolfram unavailable), result negative:**
 
-**Priority:** LOW. Speculative; concrete comparison of equations in the family might
-reveal what input is needed for the integer $c = 5$ case.
+1. **Parity partition (Theorem O):** $c_m$ odd iff $m$ odd. Odd-$m$ equations have $z$ even;
+   even-$m$ equations have $z$ odd. New structural fact, non-actionable.
+
+2. **Uniqueness of $c_1=5$ confirmed:** $2^5 + c_1 = 37$ is the UNIQUE case where
+   $2^5 + c_m$ is prime $\equiv 1 \pmod 3$. For $m \geq 2$, $2^5 + c_m$ is composite with
+   extraneous small-prime factors ($2$ for $m=2$, $3$ for $m=3$, etc.). $c_1 = 5$ is the
+   EASIEST case in the phantom family.
+
+3. **Forced-factor analogy:** 37's role for $c_1$ is played by 127 ($\mathrm{ord}_{127}(2)=7$)
+   for $c_2$. But $37 \mid c_2$ (since $222 = 6 \cdot 37$), so $37 \nmid 2^x + c_2$ for any
+   $x$ — the "forced $37 \| B$" fact is absent for $c_2$.
+
+4. **Soft obstruction universal:** Every equation $2^x + 3^y + c_m = z^3$ is locally solvable
+   at every $p \neq 3$ (phantom is a global rational cube). No modular method works for any $c_m$.
+
+5. **No new approach:** Studying $c_m$ for $m \geq 2$ does not yield a technique applicable
+   to $c_1 = 5$. The family comparison is a closed exercise.
+
+**Conclusion:** The direction produces structural insight (parity partition, uniqueness of $c_1$'s
+prime pivot) but no actionable new approach. Retired. Details in `log/20260627_000000.md`.
 
 ### [LOW] Numerical search with Theorem 5 filtering
 
@@ -410,5 +423,6 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 - **2026-06-26 (Session 14):** RETIRED the [LOW] gpf($z^3-5$) direction (fundamental conflation: $\{2,3\}$-smoothness of $z^3-5$ is different from sum-representability as $2^x+3^y$; the known solution $z=4$ has $z^3-5=59$, prime, not $\{2,3\}$-smooth, yet $59=2^5+3^3$; moved to dead_ends.md). Proved and documented **Theorem M** (new elementary theorem): if $y=3j$ and $3^{2j+1} > 2^x+4$, then $2^x+3^y+5$ is not a perfect cube. This rigorously eliminates all Theorem-5 pairs with $k_y \geq \lceil 1.893\,k_x - 1.107\rceil$. For $k_x=1$: only $k_y=0$ survives. The surviving pairs satisfy $k_y/k_x < 3\log_3 2 - 1 \approx 0.893$, i.e., exactly the two-comparable-S-units regime ($2^x \geq 3^y$) where Baker and all analytic tools also fail. Extended numerical verification to $z \leq 10000$ (no new solutions). Added new [MEDIUM] direction entry for "Theorem M and size-partitioned Theorem-5 family." Updated current_focus.md and directions.md.
 - **2026-06-26 (Session 15):** Pursued the Session-14 bounded-$A$ / boundary-case exploration (Theorem M sub-question (a), Factorization sub-question (a)). Proved and documented **Theorem N** (new exact 3-adic valuation identity): $2^x+5-A^3 = 3^{j+1}A(A+3^j)$, hence $v_3(2^x+5-A^3) = j+1$, using $\gcd(A,3)=1$ from Theorem I. Corollary: $A$ is no fixed small integer (for fixed $a$ coprime to 3, $v_3(2^x+5-a^3)$ is a bounded constant $\leq 3$, contradicting $j+1\geq 55440$; the $A=1$ band gives $v_3(2^x+4)=2$ by LTE, forcing $j=1$ = known solution). **CLOSED negatively** the bounded-$A$ elimination strategy: $A$ is small only at the Theorem-M boundary $D=x\log2-(2j+1)\log3\approx0$, but the Theorem-5 lattice never lands within $O(1)$ log-distance of it (Wolfram: closest surviving $D\approx55$ over $k_x\leq5000$, $A\gtrsim10^{24}$; closest overall $D\approx10$ on the eliminated side). This is the **metric face** of the two-comparable-S-units barrier. Added Theorem N to `knowledge/problem.md`; added the bounded-$A$ dead end to `knowledge/dead_ends.md`; closed Factorization sub-question (a) and Theorem-M sub-question (a); **promoted** Theorem-M sub-question (b) (the power-of-2 / narrow-$z$-band angle for $A<3^j$ cases) as the best concrete next lead. Updated current_focus.md and directions.md.
 - **2026-06-26 (Session 17):** Pursued the two [LOW] directions: (1) function-field analog / Mason-Stothers, (2) special role of $c = 5$. For the function-field direction: proved that the equation *without* the constant ($P^x + Q^y = H^3$) is completely resolved by Mason-Stothers (only finitely many non-constant solutions, bounded by $\deg P + \deg Q$); proved that the equation *with* the constant ($P^x + Q^y + c = H^3$, $c \neq 0$) is NOT resolved by Mason-Stothers because $\text{rad}(P^x + c)$ has full degree (squarefree polynomial) — the function-field phantom obstruction. **RETIRED** the function-field direction (provably as hard as the integer case). For the $c = 5$ direction: derived the cyclotomic characterization $37 = \Phi_3(10)/3$ (3rd cyclotomic polynomial); parametrized the full phantom family $c_m = 27m^3 + 9m^2 + m - 32$, $z_m = (9m+1)/3$ ($c_1 = 5$, $c_2 = 222$, $c_3 = 781$); derived new universal congruence $z^3 \equiv 11 \pmod{37}$ for all Theorem-5 solutions (non-contradictory). Added new [LOW] direction: cyclotomic phantom family. Literature watch: negative. Six independent confirmations of the two-comparable-S-units barrier. Created `knowledge/references/function_field_analog.md`.
+- **2026-06-27 (Session 19):** Pursued and **RETIRED** the [LOW] Cyclotomic phantom family direction. Systematically compared $c_m = 27m^3+9m^2+m-32$ for $m=1,2,3$ (giving $c_1=5, c_2=222, c_3=781$). New: **Theorem O (parity partition)**: $c_m$ odd iff $m$ odd, hence $z$ even for odd-$m$ equations, $z$ odd for even-$m$ equations. Confirmed $c_1=5$ is uniquely special (only $c_m$ with $2^5+c_m$ prime $\equiv 1\pmod3$; all others composite with extra small-prime factors); $c_1=5$ is the EASIEST case in the family. Soft obstruction is universal (phantom is global rational cube for all $m$). No new attack strategy. Also conducted arXiv watch (negative; eighth confirmation of two-comparable-S-units barrier). **ALL non-watch directions now exhausted.** Research enters pure monitoring phase.
 - **2026-06-26 (Session 18):** Deeply explored and **RETIRED** the [MEDIUM] Thue-Mahler equation approach (identified Session 1, never analyzed in depth). Enumerated all four candidate Thue-Mahler/norm-form castings and proved (Wolfram) each is broken by the additive constant 5 — the RHS is never a single S-unit. Established the symmetric reframing of the hard case $z^3 - 4(2^a)^3 - (3^j)^3 = 5$ (cube minus two S-unit-cubes = 5; verified on $(5,3,4)$). Proved $v_{37}(2^x+5)=1$ exactly and universally, hence $37\|B$; analyzed the 3-way mod-37 cube branch $z\in\{21,25,28\}$ (37 splits in $\mathbb{Z}[\omega]$), all soft-obstructed (phantom is a cube mod $37^n$ for all $n$, verified mod $37^3$; deeper 37-adic residues vary across the family). Confirmed per-fixed-$y$ Thue equation $z^3-4W^3=3^y+5$ is finite (Wolfram: $W=2^a$ only at $y=3$ = known solution) but Thue-Mahler theory gives no uniformity over the infinite progression (unit rank of $\mathbb{Q}(2^{1/3})$ is 1). **Also marked the [MEDIUM] Elliptic-curve direction as ~RETIRED** (same per-fixed-variable Mordell/Thue wall; no uniformity; $N_{k_x}\approx 10^5$ digits). arXiv watch: holonomy school (2510.04156) still $\mu>2$ for $2^{1/3}$, no new applicable 2026 follow-up (seventh confirmation of the two-S-units barrier). Created `knowledge/references/thue_mahler_approach.md`; added the Thue-Mahler dead end to `knowledge/dead_ends.md`. Updated current_focus.md and directions.md.
 - **2026-06-26 (Session 16):** Pursued Theorem-M sub-question (b) — the "companion from-above" / narrow-$z$-band analysis. Derived the **Case II window** $A \in (e^D/7, e^D/3)$ for surviving pairs with $A < 3^j$ (i.e., $z \in (3^j, 2\cdot3^j)$). Width $\sim 0.19e^D$, exponentially large (for $k_x=1$, $k_y=0$: width $\approx 10^{3799}$). Confirmed: 2-adic analysis non-obstructive (2-adic cube bijection, Session 2); 3-adic analysis non-obstructive (3-adic bijection, Sessions 9–10); norm-form constraint (primes $p\equiv2\pmod3$ with odd $v_p$ in $2^x+5$ must divide $A$) phantom-compatible. **CLOSED negatively** sub-question (b). Conducted June 2026 arXiv watch: no new applicable paper; Calegari–Dimitrov–Tang (arXiv:2510.04156) has no new follow-up below $\mu\approx2$; Gherga–Siksek (arXiv:2207.14492, published ANT 2025) practical only for moderate $N$, not for $N\approx2^{332645}$. Five independent literature confirmations of the two-S-units barrier (S3/S10/S11/S12/S16). The Theorem-M direction is now **fully exhausted** (both sub-questions closed). Added new [LOW] direction suggestions: (1) special role of $c=5$ and the phantom; (2) function-field analog / Mason-Stothers inspiration. Updated current_focus.md and directions.md.
