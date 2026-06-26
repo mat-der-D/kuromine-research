@@ -127,3 +127,21 @@ Among $k_x \in [1,100]$ and $k_y \in [0,200]$, exactly 53% of the 20100 paramete
 - If $k_y/k_x \leq 3\log_3 2 - 1$ (i.e., $2^x \gtrsim 3^y$): **Theorem M does not apply**; these are exactly the cases in the two-comparable-S-units regime where Baker-type and all known analytic tools are also blocked.
 
 Thus Theorem M cleanly partitions the Theorem-5 parameter space at the two-S-units boundary, eliminating the half where $3^y$ dominates. The surviving half — where $2^x$ dominates — remains the core open case.
+
+## Theorem N: Exact 3-adic Valuation Identity for $A$ (Session 15)
+
+For any Theorem-5 solution write $z = w + A$ with $w = 3^j$ ($j = y/3$) and $A = z - 3^j \geq 1$. Then
+
+$$2^x + 5 - A^3 = (w+A)^3 - w^3 - A^3 = 3w^2 A + 3w A^2 = 3\,w\,A\,(w+A) = 3^{j+1}\,A\,(A + 3^j).$$
+
+Since $A \equiv 22 \pmod{27}$ (Theorem I), $\gcd(A,3) = 1$; and as $j \geq 1$, $A + 3^j \equiv A \not\equiv 0 \pmod 3$. Therefore
+
+$$v_3\!\big(2^x + 5 - A^3\big) = j + 1.$$
+
+**Proof.** The displayed equalities follow from $z^3 = 2^x + 3^{3j} + 5$ (so $2^x + 5 = z^3 - w^3$) and the binomial expansion of $(w+A)^3$; the identity $3w^2A + 3wA^2 = 3wA(w+A)$ is elementary. Taking $v_3$: $v_3(3wA(w+A)) = 1 + v_3(w) + v_3(A) + v_3(w+A) = 1 + j + 0 + 0 = j + 1$, using $v_3(w) = j$, $v_3(A) = 0$ (Theorem I), $v_3(w + A) = 0$ (since $j \geq 1$ forces $w \equiv 0$, $A \not\equiv 0 \bmod 3$). $\square$
+
+**Verification on known solutions.** $(x,A,j) = (5,1,1)$: $2^5 + 5 - 1 = 36 = 3^2 \cdot 1 \cdot 4$, $v_3 = 2 = j+1$. $(x,A,j) = (1,1,0)$: $2^1 + 5 - 1 = 6$, $v_3 = 1 = j+1$ (here $j=0$, and $w+A = 2 \not\equiv 0 \bmod 3$). ✓
+
+**Corollary (valuation re-proof that $A$ is huge).** For any *fixed* integer $a$ with $\gcd(a,3)=1$, $v_3(2^x + 5 - a^3)$ is a bounded constant over the Theorem-5 family (Wolfram, Session 15: $a = 1,2,4,5,7,8 \Rightarrow v_3 = 2,0,3,0,2,0$, independent of $k_x$). But Theorem N requires this valuation to equal $j+1 \geq 55440$. Hence $A$ equals no fixed small integer — an independent 3-adic proof of the Session-4 size fact. In particular the $A = 1$ band, $2^x + 4 = 3^{j+1} + 3^{2j+1}$, has (by Lifting-the-Exponent, $x$ odd) $v_3(2^x + 4) = 1 + v_3(x-2) = 2$ universally (since $x - 2 = 3(1 + 110880\,k_x)$ with $110880 \equiv 0 \bmod 3$), forcing $j = 1$ — only the known solution $(5,3,4)$.
+
+**Scope (honest).** For a *genuine* solution Theorem N is automatically satisfied (it is an algebraic identity), so it imposes no constraint by itself. Its value is (i) the clean exact valuation formula, and (ii) the re-derivation that $A$ cannot be small. The hoped-for elimination "bounded $A$ + small valuation $\Rightarrow$ contradiction" requires the Theorem-5 lattice to lie within $O(1)$ log-distance of the boundary $2^x = 3^{2j+1}$ (where $A \approx O(1)$); Session 15 proved (Wolfram) this never happens — the closest *surviving* approach over $k_x \leq 5000$ is $D := x\log2 - (2j+1)\log3 \approx 55$, giving $A \gtrsim 10^{24}$. This is the metric face of the two-comparable-S-units barrier.

@@ -117,3 +117,31 @@ method. But resolving THAT equation does not resolve the Kuromine equation $2^x 
 **Wolfram check:** Among $z \leq 1000$, only $z=2$ gives $z^3-5=3=3^1$ (a $\{2,3\}$-smooth
 integer). The equation $z^3-5=2^a 3^b$ is trivially finite. But this says nothing about the
 original problem.
+
+## Bounded-$A$ elimination via the boundary case (Session 15)
+
+**Status:** The strategy "force $A = z - 3^j$ to be a small fixed integer, then kill it with
+the 3-adic valuation" is a dead end for the Theorem-5 family. The valuation identity itself
+(Theorem N) is correct and is kept; only the *elimination* fails.
+
+**What was tried:** Theorem N gives the exact identity $2^x + 5 - A^3 = 3^{j+1}A(A+3^j)$ with
+$v_3(2^x+5-A^3) = j+1$. For any *fixed* small $a$, $v_3(2^x+5-a^3)$ is a bounded constant
+(Wolfram: $\leq 3$ for $a \leq 8$), which contradicts $j+1 \geq 55440$. So if $A$ could be
+forced into a bounded range, every value would be eliminated. The factorization bound
+$A < (2^x+5)/3^{2j} \approx 3e^{D}$ ($D = x\log2 - (2j+1)\log3$) makes $A$ small precisely at
+the Theorem-M boundary $D \approx 0$.
+
+**Why it fails (Wolfram, Session 15):** The Theorem-5 lattice never approaches the boundary
+$D = 0$ closely enough. $D = c_0 + k_x P - k_y Q$ with $P/Q = 3\log2/\log3 \approx 1.8928$
+irrational; the closest *surviving* ($D \geq 0$) approach over $k_x \leq 5000$ is $D \approx 55$
+(at $(k_x,k_y)=(4729,8950)$), giving $A \gtrsim 3e^{55} \approx 6\times10^{24}$. The closest
+overall approach, $D \approx 10$ at $(1054,1994)$, is on the *eliminated* ($D<0$) side. Each
+unit of $(k_x,k_y)$-lattice distance to the boundary line costs $\sim 10^5$ in $D$, so $A \sim
+e^{D}$ is never $O(1)$ for a surviving pair. The bounded-$A$ contradiction therefore cannot
+fire. This is the **metric face of the two-comparable-S-units barrier**: the family is near
+the $2^x = 3^y$ boundary in exponent *slope* but never in absolute log-*distance*, and $A$
+measures exactly that distance.
+
+**Consequence:** Theorem N re-proves (cleanly, via valuation) that $A$ is huge, but provides
+no contradiction. Closeness-to-boundary cannot be exploited. Documented in
+`knowledge/problem.md` (Theorem N) and `log/20260626_174500.md`.

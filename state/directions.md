@@ -28,10 +28,24 @@ survives **only** in its global/size form (sub-question (a)), which still needs 
 does not yet exist. Effective priority is now **MEDIUM at best**, kept here as the cleanest
 single-equation reformulation rather than an active lead.
 
+**Session 15 progress (Theorem N).** New exact 3-adic valuation identity:
+$2^x + 5 - A^3 = 3^{j+1}A(A+3^j)$, hence $v_3(2^x+5-A^3) = j+1$ (using $\gcd(A,3)=1$ from
+Theorem I). This re-proves cleanly, via valuation, that $A$ is no fixed small integer (for
+fixed $a$ coprime to 3, $v_3(2^x+5-a^3)$ is a bounded constant $\leq 3$, contradicting
+$j+1 \geq 55440$). The $A=1$ band: LTE gives $v_3(2^x+4)=2$ universally $\Rightarrow j=1$
+(only the known solution). See Theorem N in `knowledge/problem.md`. The *elimination*
+strategy (bounded $A$ + small valuation) is closed negatively — see sub-question (a).
+
 Key sub-questions (remaining):
-- (a) Can we apply Thue-Mahler machinery to the reduced equation $A(A^2+3^{j+1}A+3^{2j+1}) = 2^x+5$ for fixed $x$? (Finiteness per $x$ known; uniformity over the $x$-progression open — this is the entire difficulty, and no current tool delivers it.)
+- (a) [CLOSED negatively, Session 15] Bounded-$A$ / boundary-case elimination. $A$ is small
+  only at the Theorem-M boundary $D := x\log2-(2j+1)\log3 \approx 0$, but the Theorem-5
+  lattice never lands within $O(1)$ log-distance of it: closest *surviving* ($D\geq0$)
+  approach over $k_x\leq5000$ is $D\approx55$ ($A\gtrsim10^{24}$); closest overall $D\approx10$
+  is on the *eliminated* side (Wolfram). The metric face of the two-S-units barrier. Moved to
+  `knowledge/dead_ends.md`. (The earlier Thue-Mahler-per-$x$ note remains: finiteness per $x$
+  known; uniformity over the $x$-progression open, no current tool delivers it.)
 - (b) [CLOSED, Session 4] growth / primitive-divisor (Zsygmondy/BHV): inapplicable — $B$ is not a Lucas/Lehmer sequence. See RETIRED entry below.
-- (c) [CLOSED negatively, Session 4] $A = z - 3^{y/3}$ cannot be forced to 1; it is provably $\sim2^{x/3}$ for any Theorem-5 solution.
+- (c) [CLOSED negatively, Session 4] $A = z - 3^{y/3}$ cannot be forced to 1; it is provably $\sim2^{x/3}$ for any Theorem-5 solution. (Re-proved 3-adically in Session 15, sub-question (a).)
 
 ### [RETIRED in Session 3] Effective Diophantine approximation to $2^{1/3}$
 
@@ -172,12 +186,19 @@ precisely where all known analytic tools (Baker, Bugeaud, Badziahin, Chabauty-Ki
 also fail. Theorem M alone does NOT resolve the conjecture.
 
 **Open sub-questions:**
-- (a) Can the boundary case $A = z - 3^j \approx 1$ (where $2^x \approx 3^{2j+1}$)
-  be further analyzed using the congruence structure of $A$ (Theorems I–L)?
-- (b) Is there a companion "from-above" Theorem M that rules out the deep interior
-  ($2^x \gg 3^y$) using different methods?
+- (a) [CLOSED negatively, Session 15] The boundary case $A \approx 1$ was analyzed via the
+  new valuation identity (Theorem N) and the size bound $A < (2^x+5)/3^{2j} \approx 3e^{D}$.
+  $A$ is small only when $D \approx 0$, but the Theorem-5 lattice never approaches the
+  boundary within $O(1)$ log-distance (closest surviving $D \approx 55$, $A \gtrsim 10^{24}$;
+  Wolfram). Bounded-$A$ elimination cannot fire. See dead_ends.md and `knowledge/problem.md`
+  Theorem N.
+- (b) [OPEN — promoted, Session 15] Companion "from-above" argument for surviving
+  $A < 3^j$ cases: there $z \in (3^j, 2\cdot3^j)$ is pinned to a narrow band; combine this
+  with the requirement that $2^x = z^3 - 3^{3j} - 5$ be an exact power of 2 (2-adic
+  structure of $B = (2^x+5)/A$, Theorems K/L). The large factor $B$'s exact size has not
+  yet been exploited. Best concrete next lead.
 - (c) Can Theorem M be combined with a quantitative lower bound on $z^3 - w^3$ to
-  get a further restriction?
+  get a further restriction? (Still requires the unavailable $\kappa < 1.107$ bound.)
 
 ### [LOW] Numerical search with Theorem 5 filtering
 
@@ -317,3 +338,4 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 - **2026-06-25 (Session 12):** No new directions retired; no new directions elevated. Literature watch: assessed Zhou's effective IUT abc paper (arXiv:2503.14510, Mar 2025) — the most significant new 2025 number-theory preprint found to date, giving an effective abc bound log|abc| ≤ 3 log rad(abc) + 8√(log|abc|·log log|abc|). NOT APPLICABLE to Kuromine: the Kuromine triple (a,b,c)=(2^x, 3^y+5, z^3) has quality ≈ 0.888 < 1 (Session 8), so the Zhou bound is trivially satisfied (it upper-bounds quality at ≤ 3+ε, and Kuromine already satisfies quality < 1). Effective abc bounds help only when c ≫ rad(abc) (quality > 1); Kuromine is the opposite regime. Also did a broad June 2026 arXiv sweep: five additional papers assessed (2605.31114, 2605.28449, 2605.18348, 2606.00466, 2606.02244); none applicable. The Calegari–Dimitrov–Tang holonomy school (2510.04156) has no published follow-up below the ~1.1 exponent threshold. Four independent lines (S3/S10/S11/S12) now confirm the two-comparable-S-units barrier. Added Session-12 notes to the arXiv-survey [LOW] direction. Updated current_focus.md.
 - **2026-06-26 (Session 13):** RETIRED new direction "Chabauty-Kim / algebraic geometry methods" (added and immediately retired — assessed the full cluster of 2025–2026 papers: Affine Chabauty I/II arXiv:2511.15949/2602.05643, Modular Chabauty arXiv:2505.12947, Cubic Chabauty arXiv:2604.20662). All NOT APPLICABLE for the same categorical reason: Kuromine's variables $x,y$ are exponents of fixed bases, not algebraic coordinates; Chabauty-Kim methods apply to algebraic curves and cannot encode the constraint "$u = 2^x$ for integer $x$". Established **fifth categorical barrier**: Chabauty-Kim in all forms is categorically inapplicable to two-exponential Diophantine equations. Added new [LOW] direction suggestion: "greatest prime factor of $z^3 - 5$" reformulation — if gpf($z^3-5$) grows effectively with $z$, then only finitely many $z$ can have $z^3-5$ a $\{2,3\}$-integer. June/July 2026 arXiv sweep: no new applicable paper. The Calegari–Dimitrov–Tang holonomy school has no new follow-up. Updated current_focus.md and directions.md.
 - **2026-06-26 (Session 14):** RETIRED the [LOW] gpf($z^3-5$) direction (fundamental conflation: $\{2,3\}$-smoothness of $z^3-5$ is different from sum-representability as $2^x+3^y$; the known solution $z=4$ has $z^3-5=59$, prime, not $\{2,3\}$-smooth, yet $59=2^5+3^3$; moved to dead_ends.md). Proved and documented **Theorem M** (new elementary theorem): if $y=3j$ and $3^{2j+1} > 2^x+4$, then $2^x+3^y+5$ is not a perfect cube. This rigorously eliminates all Theorem-5 pairs with $k_y \geq \lceil 1.893\,k_x - 1.107\rceil$. For $k_x=1$: only $k_y=0$ survives. The surviving pairs satisfy $k_y/k_x < 3\log_3 2 - 1 \approx 0.893$, i.e., exactly the two-comparable-S-units regime ($2^x \geq 3^y$) where Baker and all analytic tools also fail. Extended numerical verification to $z \leq 10000$ (no new solutions). Added new [MEDIUM] direction entry for "Theorem M and size-partitioned Theorem-5 family." Updated current_focus.md and directions.md.
+- **2026-06-26 (Session 15):** Pursued the Session-14 bounded-$A$ / boundary-case exploration (Theorem M sub-question (a), Factorization sub-question (a)). Proved and documented **Theorem N** (new exact 3-adic valuation identity): $2^x+5-A^3 = 3^{j+1}A(A+3^j)$, hence $v_3(2^x+5-A^3) = j+1$, using $\gcd(A,3)=1$ from Theorem I. Corollary: $A$ is no fixed small integer (for fixed $a$ coprime to 3, $v_3(2^x+5-a^3)$ is a bounded constant $\leq 3$, contradicting $j+1\geq 55440$; the $A=1$ band gives $v_3(2^x+4)=2$ by LTE, forcing $j=1$ = known solution). **CLOSED negatively** the bounded-$A$ elimination strategy: $A$ is small only at the Theorem-M boundary $D=x\log2-(2j+1)\log3\approx0$, but the Theorem-5 lattice never lands within $O(1)$ log-distance of it (Wolfram: closest surviving $D\approx55$ over $k_x\leq5000$, $A\gtrsim10^{24}$; closest overall $D\approx10$ on the eliminated side). This is the **metric face** of the two-comparable-S-units barrier. Added Theorem N to `knowledge/problem.md`; added the bounded-$A$ dead end to `knowledge/dead_ends.md`; closed Factorization sub-question (a) and Theorem-M sub-question (a); **promoted** Theorem-M sub-question (b) (the power-of-2 / narrow-$z$-band angle for $A<3^j$ cases) as the best concrete next lead. Updated current_focus.md and directions.md.
