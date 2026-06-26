@@ -42,8 +42,11 @@ Key sub-questions (remaining):
   lattice never lands within $O(1)$ log-distance of it: closest *surviving* ($D\geq0$)
   approach over $k_x\leq5000$ is $D\approx55$ ($A\gtrsim10^{24}$); closest overall $D\approx10$
   is on the *eliminated* side (Wolfram). The metric face of the two-S-units barrier. Moved to
-  `knowledge/dead_ends.md`. (The earlier Thue-Mahler-per-$x$ note remains: finiteness per $x$
-  known; uniformity over the $x$-progression open, no current tool delivers it.)
+  `knowledge/dead_ends.md`. [Session 21 note: the "$D\approx55$ floor" is a finite-range
+  artifact; in fact $\inf D_{\ge0}=0$ by equidistribution — but this does NOT revive the
+  elimination; the Theorem-N corollary still blocks. See dead_ends.md.] (The earlier
+  Thue-Mahler-per-$x$ note remains: finiteness per $x$ known; uniformity over the
+  $x$-progression open, no current tool delivers it.)
 - (b) [CLOSED, Session 4] growth / primitive-divisor (Zsygmondy/BHV): inapplicable — $B$ is not a Lucas/Lehmer sequence. See RETIRED entry below.
 - (c) [CLOSED negatively, Session 4] $A = z - 3^{y/3}$ cannot be forced to 1; it is provably $\sim2^{x/3}$ for any Theorem-5 solution. (Re-proved 3-adically in Session 15, sub-question (a).)
 
@@ -157,7 +160,7 @@ The original claim was: if gpf($z^3-5$) grows with $z$, then only finitely many 
 can satisfy $z^3-5 \in \{2^a 3^b\}$, which is "exactly the Kuromine condition."
 
 **Why this is wrong (Session 14):** The Kuromine condition is $z^3 - 5 = 2^x + 3^y$
-(sum-representability), NOT $z^3 - 5 \in \{2^a 3^b\}$ ($\{2,3\}$-smoothness). These
+(sum-representability), NOT $z^3-5 \in \{2^a 3^b\}$ ($\{2,3\}$-smoothness). These
 are entirely different. The known solution $z=4$ gives $z^3-5=59$ (prime, gpf=59 >> 3),
 yet $59 = 2^5 + 3^3$ is a valid decomposition. gpf growth does NOT prevent sum
 representations.
@@ -251,7 +254,48 @@ any POSITIVE constraint that could be exploited? So far it has only been an OBST
 
 See `knowledge/references/function_field_analog.md` for full analysis. **Retired.**
 
-### [LOW — new, Session 20] Coupling-Height / Moving-Filtration framework (theory-building)
+### [RETIRED in Session 21] Coupling-Height / Moving-Filtration framework (theory-building)
+
+**Built in Session 20, RETIRED in Session 21 — both candidate lemmas resolved negatively.**
+
+**Session 21 (Wolfram numerical test + equidistribution argument):**
+
+- **Lemma A (Depth–Size Incompatibility, the crux) — REFUTED as circular.** The mechanism
+  Lemma A needs is "the smallest integer of 3-adic depth $\ge d$ relative to $N$ is
+  $\approx 3^{d-2}$, hence pushed off the size band $\sigma\approx1$." Wolfram verified this
+  law holds for the **fixed** target $N=37$ ($x_0=5$): smallest $a$ of depth $d$ is
+  $1,4,22,49,211,697,2155,\ldots\approx 3^{d-2}$, giving $\sigma_5(a)\approx0.95(d-2)$,
+  growing linearly and leaving $\sigma=1$ for $d\ge4$; implied $c_0\in[0.33,3.5]$. **BUT**
+  the decisive surrogate test — a constructed *moving-style* target
+  $N=22^3+3^{10}\cdot7$ — has its smallest depth-10 integer equal to the *small* number 22.
+  So the "$3^{d-2}$ law" is a property of the fixed target, **not** universal. For the actual
+  moving target $N(x)=2^x+5$, "a small deep cube-root ($A$) exists" is *precisely the
+  Kuromine question*; Lemma A is therefore circular and cannot be proved without
+  re-importing an effective irrationality measure (the unavailable tool). At the first
+  surviving pair ($k_x=k_y=1$: $x=332645$, $n=j+1=110880$) the genuine $A$ has
+  $\log_2 A=x/3\approx110882 < (n-2)\log_2 3\approx175737$ — smaller than the fixed-target
+  law allows, which is exactly the desired contradiction *if* the law transferred; it does
+  not.
+
+- **Lemma B′ (Lattice Rigidity) — REFUTED as false.** $D(k_x,k_y)=c_0+k_xP-k_yQ$ with
+  $c_0=5\log2-110879\log3=-121809.57$, $P=332640\log2=230568.48$, $Q=110880\log3=121814.13$,
+  $P/Q=3\log2/\log3=1.8927892607\ldots$ **irrational** (CF $[1;1,8,3,18,2,7,2,8,\ldots]$,
+  infinite). By Weyl equidistribution $\{k_xP/Q+c_0/Q\}$ is dense in $[0,1)$, so
+  $\inf_{k_x}D_{\ge0}=0$. Wolfram: minimal nonnegative $D$ falls $98.5\to0.537$ by
+  $k_x=84180$ and keeps decreasing. **Session 15's "$D\approx55$ floor" was a finite-range
+  ($k_x\le5000$) artifact.** The $D$-lattice does approach $D=0$ arbitrarily closely. This
+  does **not** revive bounded-$A$ elimination: small $D$ at huge $k_x$ gives $O(1)$ genuine
+  $A$ only with $j$ enormous, so the Theorem-N corollary (fixed small $a\Rightarrow$ bounded
+  $v_3$, contradicting $j+1$) still blocks it — already known.
+
+**Conclusion:** Framework retired. Diagnostic residue: the unique non-degenerate handle
+(3-adic depth $j+1$ vs phantom depth 0) is real but **non-transferable** to an archimedean
+size constraint without an effective irrationality measure — a third independent
+confirmation (after the metric face S15, the analytic face S3/S10/S11) of the P1–P4
+conjunction barrier. Moved to `knowledge/dead_ends.md`. Full detail in
+`log/20260627_120000.md`. **DO NOT REOPEN** without a new external transfer inequality.
+
+### [SUPERSEDED] Coupling-Height / Moving-Filtration framework — original Session-20 entry
 
 **New framework, Session 20 (theory-creator mode).** Built from the obstruction diagnosis
 (the wall is a four-fold structural degeneracy P1–P4 with one non-degenerate handle: 3-adic
@@ -268,24 +312,11 @@ by the Theorem-5 progression. Core objects (full definitions in `log/20260627_07
   forced large on genuine solutions (depth $j+1$).
 - **Progression-rigidity** $\rho=|D|$, $D=x\log2-(2j+1)\log3$ (the two-S-units log-distance).
 
-**Candidate lemmas (stated, NOT proven):**
+**Candidate lemmas (stated, NOT proven) — BOTH refuted in Session 21 (see RETIRED entry above):**
 - **Lemma A (Depth–Size Incompatibility) — the crux.** $\delta_x(a)\ge j+1 \Rightarrow
-  |\sigma_x(a)-1|\ge c_0(j+1)/x$. If true, incompatible with the genuine size band $O(1/x)$
-  for $k_y\ge1$ — contradiction. A new "3-adic depth ⟹ real distance" transfer; **no existing
-  measure addresses it; it may be false** (the phantom shows depth/size can decouple at depth 0).
-- **Lemma B/B′ (Lattice Rigidity).** Naive "$\rho$ grows with depth" is FALSE (Dirichlet:
-  linear forms shrink with height). Correct form **B′**: the minimal nonnegative $D$ over the
-  Theorem-5 $D$-lattice (spacing $\approx121800$) is bounded below independent of depth.
-  Partially verified by Session 15's $D\approx55$ floor; handles the $k_y=0$ case.
-
-**Why promising / why LOW:** It is the only construction sidestepping all four killers
-(non-additive across places defeats P2/P4; no curve/varying-exponent needed, P1; ignores
-additive quality, P3). But Lemma A is unproven and possibly false; the framework is a
-*blueprint* identifying where a proof could live, not a proof. Priority LOW (speculative).
-
-**Next concrete test:** numerically (Wolfram) check Lemma A on a fixed $x$ — does large
-$\delta_x(a)$ empirically push integers off the size band $\sigma_x\approx1$? Positive ⟹
-pursue; negative ⟹ retire framework, return to WATCH.
+  |\sigma_x(a)-1|\ge c_0(j+1)/x$. Refuted as circular (Session 21).
+- **Lemma B/B′ (Lattice Rigidity).** Relativized form claimed minimal nonnegative $D$ over
+  the $D$-lattice bounded below. Refuted as false (Session 21; $\inf D_{\ge0}=0$).
 
 ### [RETIRED in Session 19] Cyclotomic phantom family
 
@@ -430,6 +461,8 @@ the exact quantified target found so far. Both NOT APPLICABLE:
 - arXiv:2604.18991 (Miyazaki-Scott-Styer, April 2026): Handles a^x + b^y = c^z (purely exponential, all three bases fixed). NOT APPLICABLE: Kuromine has z^3 with z as the variable, not c^z with c fixed.
 - ABC conjecture assessment (Session 8): No contradiction from ABC. The radical grows as rad(2^x·(3^y+5)·z^3) ~ 2·(3^y/8)·z, giving quality q = log(z^3)/log(rad) ≈ 1/1.126 ≈ 0.888 < 1. ABC is satisfied (not violated) for all Kuromine solutions.
 
+**Session 21 update:** WebSearch (June 2026) for unconditional effective κ<1.107 bounds and CDT follow-ups. Negative (tenth confirmation of the two-comparable-S-units barrier). Calegari–Dimitrov–Tang (arXiv:2510.04156) remains the frontier: gives effective irrationality measures for high-order roots and algorithmic resolution of two-variable S-unit / Thue–Mahler / superelliptic equations, but the effective measure for 2^{1/3} is still > 2 ≫ 1.107, and per-equation resolution gives no uniformity across the infinite Theorem-5 family. No 2026 follow-up below the ~1.1 threshold.
+
 ---
 
 ## Retired Directions
@@ -441,6 +474,7 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 
 ## History of Changes
 
+- **2026-06-27 (Session 21):** Executed the Session-20 next-suggestions: numerically tested (Wolfram) the two candidate lemmas of the **Coupling-Height / Moving-Filtration framework** and **RETIRED the framework** (both lemmas resolved negatively). **Lemma A (Depth–Size Incompatibility, the crux) REFUTED as circular:** the "smallest integer of 3-adic depth $\ge d$ is $\approx 3^{d-2}$, hence off the size band" law (verified for the fixed target $N=37$: smallest $a$ of depth $d$ runs $1,4,22,49,211,697,2155,\ldots$, $\sigma_5\approx0.95(d-2)$, implied $c_0\in[0.33,3.5]$) is a property of the *fixed* target only — a constructed moving-style surrogate $N=22^3+3^{10}\cdot7$ has its smallest depth-10 integer equal to the small number 22. For the real moving target $2^x+5$, "a small deep cube-root exists" *is* the Kuromine question, so Lemma A cannot be proved without an effective irrationality measure (unavailable). **Lemma B′ (Lattice Rigidity) REFUTED as false:** $D=c_0+k_xP-k_yQ$ with $P/Q=3\log2/\log3=1.89278926\ldots$ irrational (CF infinite) $\Rightarrow$ Weyl equidistribution $\Rightarrow\inf D_{\ge0}=0$; Wolfram running-min of nonnegative $D$ falls $98.5\to0.537$ by $k_x=84180$ and keeps decreasing — Session 15's "$D\approx55$ floor" was a finite-range ($k_x\le5000$) artifact; the $D$-lattice does approach $D=0$ (does NOT revive bounded-$A$ elimination — Theorem-N corollary still blocks). arXiv watch negative (tenth confirmation; CDT 2510.04156 still frontier, measure for $2^{1/3}$ $>2$, no $\kappa<1.107$, no family uniformity). Net: the last constructed framework is exhausted; the depth handle is real but **non-transferable** without an effective irrationality measure. Research returns to pure WATCH. Moved Coupling-Height direction to RETIRED; added it to `knowledge/dead_ends.md`; created `log/20260627_120000.md`; updated `current_focus.md`.
 - **2026-06-25 (Session 1):** Added [HIGH] Factorization approach. Added [MEDIUM] Thue-Mahler equation approach. Lowered Baker's method assessment from [MEDIUM] to [MEDIUM-LOW] but kept at [MEDIUM] pending p-adic Baker investigation. Elevated $p$-adic direction to [HIGH] (tied). Noted Session 1 discoveries.
 - **2026-06-25 (Session 2):** Downgraded standalone $p$-adic elimination from [HIGH] to [LOW/~RETIRED] after *proving* (not just observing) that local methods cannot obstruct the equation: the phantom is a global rational cube $(10/3)^3$, so every local condition is satisfiable. Added new [HIGH] direction "Effective Diophantine approximation to $2^{1/3}$" as the realistic global path. Completed the 2-adic structure analysis ($z\equiv6\pmod{32}$, $v_2(3^y+5)=3$). See `knowledge/references/two_adic_structure.md`.
 - **2026-06-25 (Session 3):** RETIRED "Effective Diophantine approximation to $2^{1/3}$" (was [HIGH]) with a proof that it is quantitatively dead: realized exponent $\kappa\approx0.62\ll\mu$, and the Thue value $3^y+5$ is too large by $\sim e^{138909}$ — root cause is the two-comparable-dominant-S-units regime ($3^y\approx z^2$). See `knowledge/references/irrationality_measure_obstruction.md`. Added Session-3 progress to the Factorization [HIGH] direction (reduced equation $2^x+5=A(A^2+3^{j+1}A+3^{2j+1})$, both real solutions have $A=z-3^{y/3}=1$, Eisenstein identity $4B-3w^2=(2z+w)^2$). Elevated primitive-divisor (Zsygmondy/BHV) direction to [MEDIUM-HIGH] as the best remaining non-size lead, since all size methods are now shown too weak.
@@ -459,7 +493,7 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 - **2026-06-26 (Session 14):** RETIRED the [LOW] gpf($z^3-5$) direction (fundamental conflation: $\{2,3\}$-smoothness of $z^3-5$ is different from sum-representability as $2^x+3^y$; the known solution $z=4$ has $z^3-5=59$, prime, not $\{2,3\}$-smooth, yet $59=2^5+3^3$; moved to dead_ends.md). Proved and documented **Theorem M** (new elementary theorem): if $y=3j$ and $3^{2j+1} > 2^x+4$, then $2^x+3^y+5$ is not a perfect cube. This rigorously eliminates all Theorem-5 pairs with $k_y \geq \lceil 1.893\,k_x - 1.107\rceil$. For $k_x=1$: only $k_y=0$ survives. The surviving pairs satisfy $k_y/k_x < 3\log_3 2 - 1 \approx 0.893$, i.e., exactly the two-comparable-S-units regime ($2^x \geq 3^y$) where Baker and all analytic tools also fail. Extended numerical verification to $z \leq 10000$ (no new solutions). Added new [MEDIUM] direction entry for "Theorem M and size-partitioned Theorem-5 family." Updated current_focus.md and directions.md.
 - **2026-06-26 (Session 15):** Pursued the Session-14 bounded-$A$ / boundary-case exploration (Theorem M sub-question (a), Factorization sub-question (a)). Proved and documented **Theorem N** (new exact 3-adic valuation identity): $2^x+5-A^3 = 3^{j+1}A(A+3^j)$, hence $v_3(2^x+5-A^3) = j+1$, using $\gcd(A,3)=1$ from Theorem I. Corollary: $A$ is no fixed small integer (for fixed $a$ coprime to 3, $v_3(2^x+5-a^3)$ is a bounded constant $\leq 3$, contradicting $j+1\geq 55440$; the $A=1$ band gives $v_3(2^x+4)=2$ by LTE, forcing $j=1$ = known solution). **CLOSED negatively** the bounded-$A$ elimination strategy: $A$ is small only at the Theorem-M boundary $D=x\log2-(2j+1)\log3\approx0$, but the Theorem-5 lattice never lands within $O(1)$ log-distance of it (Wolfram: closest surviving $D\approx55$ over $k_x\leq5000$, $A\gtrsim10^{24}$; closest overall $D\approx10$ on the eliminated side). This is the **metric face** of the two-comparable-S-units barrier. Added Theorem N to `knowledge/problem.md`; added the bounded-$A$ dead end to `knowledge/dead_ends.md`; closed Factorization sub-question (a) and Theorem-M sub-question (a); **promoted** Theorem-M sub-question (b) (the power-of-2 / narrow-$z$-band angle for $A<3^j$ cases) as the best concrete next lead. Updated current_focus.md and directions.md.
 - **2026-06-26 (Session 17):** Pursued the two [LOW] directions: (1) function-field analog / Mason-Stothers, (2) special role of $c = 5$. For the function-field direction: proved that the equation *without* the constant ($P^x + Q^y = H^3$) is completely resolved by Mason-Stothers (only finitely many non-constant solutions, bounded by $\deg P + \deg Q$); proved that the equation *with* the constant ($P^x + Q^y + c = H^3$, $c \neq 0$) is NOT resolved by Mason-Stothers because $\text{rad}(P^x + c)$ has full degree (squarefree polynomial) — the function-field phantom obstruction. **RETIRED** the function-field direction (provably as hard as the integer case). For the $c = 5$ direction: derived the cyclotomic characterization $37 = \Phi_3(10)/3$ (3rd cyclotomic polynomial); parametrized the full phantom family $c_m = 27m^3 + 9m^2 + m - 32$, $z_m = (9m+1)/3$ ($c_1 = 5$, $c_2 = 222$, $c_3 = 781$); derived new universal congruence $z^3 \equiv 11 \pmod{37}$ for all Theorem-5 solutions (non-contradictory). Added new [LOW] direction: cyclotomic phantom family. Literature watch: negative. Six independent confirmations of the two-comparable-S-units barrier. Created `knowledge/references/function_field_analog.md`.
-- **2026-06-27 (Session 20):** SPECIAL DIRECTIVE — **theory-creator mode** (all standard tools proven dead). Executed the mandatory four-step Theory-Building Protocol. **(1) Obstruction Diagnosis:** characterized the wall as the *conjunction* of four structural degeneracies — (P1) two-exponential/no-curve (kills modular & Chabauty-Kim), (P2) two-comparable-S-units (no distinguished small quantity; effective-exponent gap $0.631<\kappa<1.107$; kills Baker & irrationality measures), (P3) additive constant 5 (quality $0.888<1$; kills Thue-Mahler & ABC), (P4) phantom global rational cube (locally solvable everywhere; kills congruence/local) — with **one non-degenerate handle**: 3-adic depth $v_3(2^x+5-A^3)=j+1\to\infty$ (Theorem N) vs phantom depth 0. **(2) Framework Blueprinting:** argued the minimal bypassing machinery is a *non-additive arithmetic height coupling the archimedean place and the place 3* along the Theorem-5 progression. **(3) Axiomatic Definition:** defined the **Coupling-Height / Moving-Filtration framework** (principal 3-adic cube root $\beta(x)$, moving depth $\delta_x$ + depth filtration $\mathcal F$, size class $\sigma_x$, the non-additive Coupling Height $\widehat H_x=\sigma_x\cdot(1+\delta_x)\cdot\mathbf1[\text{gate}]$, progression-rigidity $\rho=|D|$, separation invariant $\mathrm{Sep}=j+1$). **(4) Translation & Testing:** recast a Theorem-5 solution as an integer $A$ satisfying (T-real)∧(T-adic)∧(T-gate)∧(T-couple); stated **Lemma A (Depth–Size Incompatibility, the crux, UNPROVEN, possibly false)** — a "3-adic depth ⟹ real distance" transfer that forces a contradiction for $k_y\ge1$ — and **Lemma B/B′ (Lattice Rigidity)** — naive form false, relativized to $D$-lattice spacing $\approx121800$ (partially verified by Session 15's $D\approx55$ floor), handles $k_y=0$. Added the new **[LOW] Coupling-Height framework** direction. arXiv watch: negative (ninth confirmation; CDT 2510.04156 no follow-up, Bugeaud 2604.27490 still trivially met). No direction retired/elevated; WATCH remains primary. Wolfram re-verified the anchors $3\log2/\log3=1.8928$ and $2\log3/(3\log2)=1.0566$.
+- **2026-06-27 (Session 20):** SPECIAL DIRECTIVE — **theory-creator mode** (all standard tools proven dead). Executed the mandatory four-step Theory-Building Protocol. **(1) Obstruction Diagnosis:** characterized the wall as the *conjunction* of four structural degeneracies — (P1) two-exponential/no-curve (kills modular & Chabauty-Kim), (P2) two-comparable-S-units (no distinguished small quantity; effective-exponent gap $0.631<\kappa<1.107$; kills Baker & irrationality measures), (P3) additive constant 5 (quality $0.888<1$; kills Thue-Mahler & ABC), (P4) phantom global rational cube (locally solvable everywhere; kills congruence/local) — with **one non-degenerate handle**: 3-adic depth $v_3(2^x+5-A^3)=j+1\to\infty$ (Theorem N) vs phantom depth 0. **(2) Framework Blueprinting:** argued the minimal bypassing machinery is a *non-additive arithmetic height coupling the archimedean place and the place 3* along the Theorem-5 progression. **(3) Axiomatic Definition:** defined the **Coupling-Height / Moving-Filtration framework**. **(4) Translation & Testing:** recast a Theorem-5 solution as an integer $A$ satisfying (T-real)∧(T-adic)∧(T-gate)∧(T-couple); stated **Lemma A** (Depth–Size Incompatibility, the crux, UNPROVEN) and **Lemma B/B′** (Lattice Rigidity). [Both refuted in Session 21.] arXiv watch: negative (ninth confirmation). Wolfram re-verified the anchors $3\log2/\log3=1.8928$ and $2\log3/(3\log2)=1.0566$.
 - **2026-06-27 (Session 19):** Pursued and **RETIRED** the [LOW] Cyclotomic phantom family direction. Systematically compared $c_m = 27m^3+9m^2+m-32$ for $m=1,2,3$ (giving $c_1=5, c_2=222, c_3=781$). New: **Theorem O (parity partition)**: $c_m$ odd iff $m$ odd, hence $z$ even for odd-$m$ equations, $z$ odd for even-$m$ equations. Confirmed $c_1=5$ is uniquely special (only $c_m$ with $2^5+c_m$ prime $\equiv 1\pmod3$; all others composite with extra small-prime factors); $c_1=5$ is the EASIEST case in the family. Soft obstruction is universal (phantom is global rational cube for all $m$). No new attack strategy. Also conducted arXiv watch (negative; eighth confirmation of two-comparable-S-units barrier). **ALL non-watch directions now exhausted.** Research enters pure monitoring phase.
 - **2026-06-26 (Session 18):** Deeply explored and **RETIRED** the [MEDIUM] Thue-Mahler equation approach (identified Session 1, never analyzed in depth). Enumerated all four candidate Thue-Mahler/norm-form castings and proved (Wolfram) each is broken by the additive constant 5 — the RHS is never a single S-unit. Established the symmetric reframing of the hard case $z^3 - 4(2^a)^3 - (3^j)^3 = 5$ (cube minus two S-unit-cubes = 5; verified on $(5,3,4)$). Proved $v_{37}(2^x+5)=1$ exactly and universally, hence $37\|B$; analyzed the 3-way mod-37 cube branch $z\in\{21,25,28\}$ (37 splits in $\mathbb{Z}[\omega]$), all soft-obstructed (phantom is a cube mod $37^n$ for all $n$, verified mod $37^3$; deeper 37-adic residues vary across the family). Confirmed per-fixed-$y$ Thue equation $z^3-4W^3=3^y+5$ is finite (Wolfram: $W=2^a$ only at $y=3$ = known solution) but Thue-Mahler theory gives no uniformity over the infinite progression (unit rank of $\mathbb{Q}(2^{1/3})$ is 1). **Also marked the [MEDIUM] Elliptic-curve direction as ~RETIRED** (same per-fixed-variable Mordell/Thue wall; no uniformity; $N_{k_x}\approx 10^5$ digits). arXiv watch: holonomy school (2510.04156) still $\mu>2$ for $2^{1/3}$, no new applicable 2026 follow-up (seventh confirmation of the two-S-units barrier). Created `knowledge/references/thue_mahler_approach.md`; added the Thue-Mahler dead end to `knowledge/dead_ends.md`. Updated current_focus.md and directions.md.
 - **2026-06-26 (Session 16):** Pursued Theorem-M sub-question (b) — the "companion from-above" / narrow-$z$-band analysis. Derived the **Case II window** $A \in (e^D/7, e^D/3)$ for surviving pairs with $A < 3^j$ (i.e., $z \in (3^j, 2\cdot3^j)$). Width $\sim 0.19e^D$, exponentially large (for $k_x=1$, $k_y=0$: width $\approx 10^{3799}$). Confirmed: 2-adic analysis non-obstructive (2-adic cube bijection, Session 2); 3-adic analysis non-obstructive (3-adic bijection, Sessions 9–10); norm-form constraint (primes $p\equiv2\pmod3$ with odd $v_p$ in $2^x+5$ must divide $A$) phantom-compatible. **CLOSED negatively** sub-question (b). Conducted June 2026 arXiv watch: no new applicable paper; Calegari–Dimitrov–Tang (arXiv:2510.04156) has no new follow-up below $\mu\approx2$; Gherga–Siksek (arXiv:2207.14492, published ANT 2025) practical only for moderate $N$, not for $N\approx2^{332645}$. Five independent literature confirmations of the two-S-units barrier (S3/S10/S11/S12/S16). The Theorem-M direction is now **fully exhausted** (both sub-questions closed). Added new [LOW] direction suggestions: (1) special role of $c=5$ and the phantom; (2) function-field analog / Mason-Stothers inspiration. Updated current_focus.md and directions.md.
