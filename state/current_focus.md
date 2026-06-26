@@ -1,6 +1,53 @@
 # Current Focus
 
-**Session:** 20260630_000000 (Session 31)
+**Session:** 20260701_000000 (Session 32)
+
+## Session 32 main result (WATCH negative, 20th confirmation; NEW Theorem P = 2-adic mirror law for $A$, + Observation Q = variable separation, Wolfram-verified)
+
+WATCH-phase session plus a concrete Wolfram computation filling a real gap in the documented
+$p$-adic portrait of $A = z - 3^j$. The 3-adic side was fully developed (Theorems I/J/K/L:
+$A \bmod 3^n$ determined by $k_x \bmod 3^{n-4}$, bijection $\mathbb Z_3\to\mathbb Z_3$), but the
+2-adic side was recorded only as the static fact $A \equiv 11 \pmod{16}$ (Theorem K). This
+session computed the full 2-adic lifting law.
+
+**arXiv watch (twentieth confirmation, negative).** Unchanged: Bugeaud 2503.22084 / 2604.27490
+still only "$\to\infty$ with $z^d$" (not power-saving $\kappa>1$); $k\ge3$-prime decidability
+(Dong–Shafrir 2505.19141, STOC 2026) still "an outstanding open problem"; degree-3 free terms
+blocked (2510.00759); CDT/Badziahin $\mu(2^{1/3})>2\gg1.107$ and sub-Dirichlet-blind.
+
+**Theorem P (NEW, Wolfram-verified) — 2-adic mirror law for $A$.** With $z = 2u$ ($u$ odd,
+$v_2(z)=1$ since $v_2(3^y+5)=3$ universally on the family, $y$ odd):
+1. $A \equiv 11 \pmod{16}$ universally (fixed 2-adic preamble $[1,1,0,1]$).
+2. For $n\ge5$, $A \bmod 2^n$ is determined by **$k_y \bmod 2^{n-4}$** (period exactly $2^{n-4}$,
+   independent of $k_x$); distinct-value count is $2^{n-4}$ (Wolfram, $n=5..11$).
+3. $k_y \mapsto A$ is a **bijection $\mathbb Z_2 \to 11+16\mathbb Z_2$** — no 2-adic obstruction.
+The "$-4$" offset comes from $v_2(166320)=4$, exactly mirroring the 3-adic $v_3(2^{332640}-1)=4$.
+Both periods carry the same $-4$ (coincidence of the specific moduli $332640=2^5 3^3 5\cdot7\cdot11$,
+$166320=2^4 3^3 5\cdot7\cdot11$). See Theorem P in `knowledge/problem.md`.
+
+**Observation Q (NEW) — variable separation.** The 3-adic digits of $A$ are a bijective function
+of $k_x$ **alone**; the 2-adic digits of $A$ are a bijective function of $k_y$ **alone** (Wolfram
+$3\times3$ grid). The constant 5 couples the two places only through the archimedean size
+$A \approx 2^{x/3}$. This is the sharpest $p$-adic statement of *why* all congruence/$p$-adic
+methods fail: $A$ is simultaneously a free 2-adic unit (in $k_y$) and a free 3-adic unit
+(in $k_x$); no congruence (at 2, at 3, or jointly by CRT) can pin it off a genuine value. The
+"2 integer parameters vs 3 independent matching conditions" over-determination is a **heuristic,
+not a proof** ($p$-adic conditions are satisfiable in $\mathbb Z_2,\mathbb Z_3$, not forced into
+$\mathbb Z$) — the $p$-adic-side restatement of the two-comparable-S-units wall.
+
+**Net.** No new direction; a genuinely new structural theorem (Theorem P) completes the $p$-adic
+portrait and gives the cleanest positive statement of the obstruction's $p$-adic face. Confirms,
+does not breach, the wall (twenty-first structural confirmation). WATCH remains the sole active
+priority. No framework built (Session-28 inventory-complete verdict).
+
+---
+
+## Session 31 main result (WATCH negative, 19th confirmation; new Wolfram sharpening of the open-target exponent — E densely fills (2/3,1) and floors at 2/3)
+**(prior session — retained below)**
+
+## Session 31 main result (prior) — original heading preserved
+
+**Session (prior):** 20260630_000000 (Session 31)
 
 ## Session 31 main result (WATCH negative, 19th confirmation; new Wolfram sharpening of the open-target exponent — E densely fills (2/3,1) and floors at 2/3)
 

@@ -96,6 +96,20 @@ global constraint, and the phantom remains on the inert side. **No priority chan
 direction's only live content remains the global/size sub-question (a), which needs the
 unavailable $\kappa>1$ tool).
 
+**Session 32 progress (Theorem P + Observation Q — 2-adic mirror law, completes the $p$-adic
+portrait).** Computed (Wolfram) the previously-undocumented 2-adic lifting law for $A = z-3^j$:
+with $v_2(3^y+5)=3$ universal ($y$ odd on the family) $\Rightarrow v_2(z)=1$, $z=2u$ ($u$ odd);
+$A \equiv 11 \pmod{16}$ universally; for $n\ge5$, $A \bmod 2^n$ is determined by
+$k_y \bmod 2^{n-4}$ (period exactly $2^{n-4}$, independent of $k_x$), so $k_y\mapsto A$ is a
+**bijection $\mathbb Z_2 \to 11+16\mathbb Z_2$** — no 2-adic obstruction. The "$-4$" offset
+mirrors the 3-adic $v_3(2^{332640}-1)=4$ via $v_2(166320)=4$. **Observation Q (variable
+separation):** 3-adic digits of $A$ $\Leftrightarrow k_x$ alone (Theorem J), 2-adic digits of $A$
+$\Leftrightarrow k_y$ alone (Theorem P); the two places are independent free bijective
+parameters, coupled only by the archimedean size $A\approx2^{x/3}$. Sharpest $p$-adic statement
+of the soft obstruction: no congruence (at 2, 3, or CRT-joint) pins $A$ off a genuine value.
+Confirms (does not breach) the wall. **No priority change.** See Theorems P, Q in
+`knowledge/problem.md` and `log/20260701_000000.md`.
+
 **Session 15 progress (Theorem N).** New exact 3-adic valuation identity:
 $2^x + 5 - A^3 = 3^{j+1}A(A+3^j)$, hence $v_3(2^x+5-A^3) = j+1$ (using $\gcd(A,3)=1$ from
 Theorem I). This re-proves cleanly, via valuation, that $A$ is no fixed small integer (for
@@ -568,6 +582,21 @@ uniform $\kappa>1$ resolves the family — the necessary-and-sufficient requirem
 be sharp because the realized-exponent *range* is exactly the half-open $(2/3,1)$. Confirms (does
 not breach) the wall. No priority change.
 
+**Session 32 update (2-adic mirror law — $p$-adic portrait completed; twentieth confirmation):**
+arXiv watch **negative (twentieth confirmation)**: Bugeaud (2503.22084 / 2604.27490) still only
+"$\to\infty$ with $z^d$"; decidability over $k\ge3$ primes still "an outstanding open problem"
+(Dong–Shafrir 2505.19141, STOC 2026); degree-3 free terms blocked (2510.00759). **New recordable
+structural theorem (Wolfram, no framework):** computed the 2-adic lifting law for $A=z-3^j$,
+previously documented only as the static $A\equiv11\pmod{16}$. **Theorem P:** $v_2(3^y+5)=3$
+universal ($y$ odd) $\Rightarrow v_2(z)=1$; $A\equiv11\pmod{16}$ universal; for $n\ge5$,
+$A\bmod2^n$ determined by $k_y\bmod2^{n-4}$ (period exactly $2^{n-4}$, independent of $k_x$);
+$k_y\mapsto A$ a bijection $\mathbb Z_2\to11+16\mathbb Z_2$ — no 2-adic obstruction. The "$-4$"
+offset mirrors the 3-adic $v_3(2^{332640}-1)=4$ via $v_2(166320)=4$. **Observation Q:** 3-adic
+digits of $A\Leftrightarrow k_x$ alone, 2-adic digits of $A\Leftrightarrow k_y$ alone — the two
+places are independent free bijective parameters, coupled only by the archimedean size
+$A\approx2^{x/3}$. This is the sharpest $p$-adic statement of the soft obstruction; confirms (does
+not breach) the wall. Recorded in `knowledge/problem.md` (Theorems P, Q). No priority change.
+
 ---
 
 ## Retired Directions
@@ -578,6 +607,21 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 ---
 
 ## History of Changes
+
+- **2026-06-26 (Session 32):** WATCH-phase session + concrete Wolfram computation (no framework,
+  per the Session-28 inventory-complete verdict). arXiv watch **negative (twentieth
+  confirmation)** — frontiers unchanged (Bugeaud "$\to\infty$"; $k\ge3$-prime decidability still
+  "an outstanding open problem"; degree-3 blocked by 2510.00759; CDT/Badziahin $\mu(2^{1/3})>2$).
+  **New recordable structural theorem (Wolfram):** **Theorem P (2-adic mirror law for $A$)** —
+  $v_2(3^y+5)=3$ universal ($y$ odd) $\Rightarrow v_2(z)=1$; $A\equiv11\pmod{16}$ universal; for
+  $n\ge5$, $A\bmod2^n$ determined by $k_y\bmod2^{n-4}$ (period exactly $2^{n-4}$, independent of
+  $k_x$); $k_y\mapsto A$ a bijection $\mathbb Z_2\to11+16\mathbb Z_2$ (no 2-adic obstruction);
+  "$-4$" offset $=v_2(166320)$, mirroring 3-adic $v_3(2^{332640}-1)=4$. **Observation Q (variable
+  separation):** 3-adic digits of $A\Leftrightarrow k_x$ alone, 2-adic digits $\Leftrightarrow
+  k_y$ alone; coupled only by archimedean size $A\approx2^{x/3}$. Completes the $p$-adic portrait
+  of $A$ and gives the sharpest $p$-adic statement of the soft obstruction. Confirms (does not
+  breach) the wall — twenty-first structural confirmation. Added Theorems P, Q to
+  `knowledge/problem.md`. No direction retired/elevated.
 
 - **2026-06-26 (Session 31):** WATCH-phase session + concrete Wolfram experiment (no framework,
   per the Session-28 inventory-complete verdict). arXiv watch **negative (nineteenth

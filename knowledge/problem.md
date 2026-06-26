@@ -145,3 +145,36 @@ $$v_3\!\big(2^x + 5 - A^3\big) = j + 1.$$
 **Corollary (valuation re-proof that $A$ is huge).** For any *fixed* integer $a$ with $\gcd(a,3)=1$, $v_3(2^x + 5 - a^3)$ is a bounded constant over the Theorem-5 family (Wolfram, Session 15: $a = 1,2,4,5,7,8 \Rightarrow v_3 = 2,0,3,0,2,0$, independent of $k_x$). But Theorem N requires this valuation to equal $j+1 \geq 55440$. Hence $A$ equals no fixed small integer — an independent 3-adic proof of the Session-4 size fact. In particular the $A = 1$ band, $2^x + 4 = 3^{j+1} + 3^{2j+1}$, has (by Lifting-the-Exponent, $x$ odd) $v_3(2^x + 4) = 1 + v_3(x-2) = 2$ universally (since $x - 2 = 3(1 + 110880\,k_x)$ with $110880 \equiv 0 \bmod 3$), forcing $j = 1$ — only the known solution $(5,3,4)$.
 
 **Scope (honest).** For a *genuine* solution Theorem N is automatically satisfied (it is an algebraic identity), so it imposes no constraint by itself. Its value is (i) the clean exact valuation formula, and (ii) the re-derivation that $A$ cannot be small. The hoped-for elimination "bounded $A$ + small valuation $\Rightarrow$ contradiction" requires the Theorem-5 lattice to lie within $O(1)$ log-distance of the boundary $2^x = 3^{2j+1}$ (where $A \approx O(1)$); Session 15 proved (Wolfram) this never happens — the closest *surviving* approach over $k_x \leq 5000$ is $D := x\log2 - (2j+1)\log3 \approx 55$, giving $A \gtrsim 10^{24}$. This is the metric face of the two-comparable-S-units barrier.
+
+## Theorem P: 2-adic Mirror Law for $A$ (Session 32)
+
+This is the exact 2-adic counterpart of the 3-adic Theorem J, completing the $p$-adic portrait of $A = z - 3^j$. Throughout, $x = 5 + 332640\,k_x$, $y = 166317 + 166320\,k_y$, $j = y/3 = 55439 + 55440\,k_y$.
+
+**2-adic setup.** $y$ is odd on the entire family (since $166317$ is odd and $166320$ is even), so $3^y \equiv 3 \pmod 8$ and $v_2(3^y+5) = 3$ **universally** (Wolfram, $k_y = 0..6$). As $v_2(2^x) = x \gg 3$, this gives $v_2(N) = 3$, hence $v_2(z) = 1$: $z \equiv 2 \pmod 4$, $z = 2u$ with $u$ odd, $u^3 = N/8$. (This pins $v_2(z) = 1$ exactly and re-derives "$z$ even.") Since $2^x \equiv 0 \pmod{2^n}$ for $x \gg n$, $u$ is the unique odd cube root of $(3^y+5)/8 \pmod{2^n}$ and $A \equiv 2u - 3^j \pmod{2^n}$.
+
+**Statement (Wolfram-verified).**
+1. $A \equiv 11 \pmod{16}$ **universally** (independent of $k_x, k_y$) — the fixed 2-adic preamble, digits $[1,1,0,1]$. (Re-confirms Theorem K's $A \equiv 11 \pmod{16}$.)
+2. For $n \geq 5$, $A \bmod 2^n$ is determined by **$k_y \bmod 2^{n-4}$** and is independent of $k_x$. The number of distinct values of $A \bmod 2^n$ over $k_y$ is exactly $2^{n-4}$, and the period is **exactly** $2^{n-4}$: the shift $k_y \mapsto k_y + 2^{n-4}$ preserves $A \bmod 2^n$ while $k_y \mapsto k_y + 2^{n-5}$ does not (Wolfram, $n = 6..10$).
+3. Therefore the map $k_y \mapsto A$ is a **bijection $\mathbb Z_2 \to 11 + 16\,\mathbb Z_2$**; hence **no 2-adic obstruction exists** — the exact 2-adic analogue of Theorem J's 3-adic non-obstruction.
+
+**Origin of the "$-4$" offset.** $\operatorname{ord}_{2^n}(3) = 2^{n-2}$ ($n \geq 3$) and $v_2(166320) = v_2(55440) = 4$, so the period of $3^y \bmod 2^n$ in $k_y$ is $2^{n-2}/2^4 = 2^{n-6}$, lifted to $2^{n-4}$ for $A$ by the cube-root and $j$-shift. This mirrors the 3-adic offset, which traces to $v_3(2^{332640}-1) = 4$. **Both periods carry the same "$-4$"** — a coincidence of the specific moduli $332640 = 2^5\,3^3\,5\,7\,11$ and $166320 = 2^4\,3^3\,5\,7\,11$ (Wolfram).
+
+**Sample table ($A \bmod 2^n$, $k_y = 0,1,2,3,4,5$):**
+
+| $n$ | mod | $k_y=0$ | $1$ | $2$ | $3$ | $4$ | $5$ |
+|----|----|----|----|----|----|----|----|
+| 5 | 32 | 27 | 11 | 27 | 11 | 27 | 11 |
+| 6 | 64 | 59 | 43 | 27 | 11 | 59 | 43 |
+| 7 | 128 | 123 | 43 | 91 | 11 | 59 | 107 |
+| 8 | 256 | 251 | 43 | 91 | 139 | 187 | 235 |
+
+## Observation Q: Variable Separation of the $(2,3)$-adic Portrait of $A$ (Session 32)
+
+Combining Theorem J (3-adic) and Theorem P (2-adic), the two exponential parameters control the two places of $A$ **independently** (Wolfram, $3\times3$ grid):
+
+- $A \bmod 3^n$ is a **bijective function of $k_x$ alone** (independent of $k_y$): e.g. $A \bmod 729 = 211, 22, 76$ for $k_x \equiv 0,1,2$, identical across all $k_y$.
+- $A \bmod 2^n$ is a **bijective function of $k_y$ alone** (independent of $k_x$): e.g. $A \bmod 128 = 123, 43, 91$ for $k_y \equiv 0,1,2$, identical across all $k_x$.
+
+The additive constant $5$ couples the two places **only** through the single archimedean size relation $A \approx 2^{x/3}$ (which involves both $k_x$ and $k_y$).
+
+**Consequence (the sharpest $p$-adic statement of the obstruction).** Because each place is a free bijective parameter, **no** congruence/$p$-adic condition — at 2, at 3, or jointly by CRT — can pin $A$ off a genuine value: for any target integer $a \equiv 11 \pmod{16}$, $\equiv 22 \pmod{27}$, there exist $k_y \in \mathbb Z_2$ (2-adically) and $k_x \in \mathbb Z_3$ (3-adically) realizing $A = a$ in each place. The only relation tying $k_x$ to $k_y$ is the archimedean size $A \approx 2^{x/3}$ — exactly the missing power-saving $\kappa > 1$ gap bound. The "2 integer parameters vs 3 independent matching conditions (2-adic, 3-adic, archimedean)" over-determination is a **heuristic, not a proof**: the $p$-adic conditions are satisfiable in $\mathbb Z_2, \mathbb Z_3$ (not forced into $\mathbb Z$). This is the $p$-adic-side restatement of the two-comparable-S-units wall.
