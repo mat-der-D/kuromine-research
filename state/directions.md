@@ -315,6 +315,22 @@ also fail. Theorem M alone does NOT resolve the conjecture.
 Sub-question (c) is blocked pending the open target. The Theorem-M direction has been
 fully explored; no further active sub-questions remain.
 
+**Session 34 progress (Theorem S — Convergent–Depth Trade-off Law; explicit metric law behind
+sub-question (a)).** Sharpened (Wolfram) the metric structure of sub-question (a) from the
+qualitative S21 statement ($\inf D_{\ge0}=0$ by Weyl) to an explicit law: the record minima of the
+boundary distance $D=x\log2-(2j+1)\log3$ over the lattice occur at the **convergent denominators
+$q_n$ of $\rho=3\log2/\log3$** (9, 513, 7891, 16836, …) and their small integer multiples
+(three-distance pattern); $\rho$ has irrationality measure (numerically) $=2$ (bounded partial
+quotients, $q_n\theta_n\in(0.02,0.70)$, $\mu_n$ flat near 2), so $D\to0$ at the Dirichlet rate
+($D$ small only at $k_x\sim1/D$). Since $A\in[e^D/3,3e^D]$, small $D\Rightarrow$ small $A$, but
+small $D\Rightarrow$ large $k_x=q_n\Rightarrow$ huge depth $j+1$, the two coupled by $\rho$.
+**Decisive concrete instance** $k_x=16836,k_y=31866$: $D=3.7588$, $A\in[43,129]$ (genuinely small),
+yet $v_3(2^x+5-a^3)\le7$ for all $a\in[40,130]$ while $j+1=1{,}766{,}706{,}480$ — Theorem-N exclusion
+with $\sim10^9$ margin. This is the **first concrete lattice point at which bounded-$A$ is realized**
+and shown excluded (S21 argued it only abstractly). Confirms (does not breach) the wall; sub-question
+(a) remains CLOSED negatively, now with an explicit metric law and a verified instance. **No priority
+change.** See Theorem S in `knowledge/problem.md` and `log/20260703_000000.md`.
+
 ### [LOW] Special role of $c = 5$ and the phantom
 
 **New direction, Session 16. Cyclotomic characterization derived, Session 17.**
@@ -622,6 +638,28 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 ---
 
 ## History of Changes
+
+- **2026-06-26 (Session 34):** WATCH-phase session + concrete Wolfram computation (no framework,
+  per the Session-28 inventory-complete verdict). arXiv watch **negative (twenty-third
+  confirmation)** — frontiers unchanged (Bugeaud "$\to\infty$ with $z^d$"; $k\ge3$-prime
+  decidability still "an outstanding open problem"; two new 2026 Skolem papers 2504.14413 /
+  2510.27603 are linear-recurrence zero-detection, NOT the Kuromine gap; degree-3 blocked by
+  2510.00759; CDT/Badziahin $\mu(2^{1/3})>2$). **New recordable structural theorem (Wolfram):**
+  **Theorem S (Convergent–Depth Trade-off Law for the boundary distance $D$)** — record minima of
+  $\min_{k_y}D_{\ge0}$ over $k_x$ sit at the convergent denominators $q_n$ of $\rho=3\log2/\log3$
+  (9, 513, 7891, 16836, …) and their small integer multiples; $\rho$ has irrationality measure
+  (numerically) $=2$ (bounded partial quotients, $q_n\theta_n\in(0.02,0.70)$, $\mu_n$ flat), so
+  $D\to0$ at the Dirichlet rate; small $D\Rightarrow$ small $A\in[e^D/3,3e^D]$ but $\Rightarrow$
+  large $k_x=q_n\Rightarrow$ huge depth $j+1$, coupled by $\rho$. **Decisive concrete instance**
+  $k_x=16836,k_y=31866$: $D=3.7588$, $A\in[43,129]$ (genuinely small), yet $v_3(2^x+5-a^3)\le7$ for
+  all $a\in[40,130]$ (Wolfram via $2^x\bmod3^{80}$) while $j+1=1{,}766{,}706{,}480$ — Theorem-N
+  exclusion with $\sim10^9$ margin: **the first concrete realization of bounded-$A$** (S21 argued it
+  only abstractly). Metric-face analogue of the $p$-adic Theorems J/P/R; completes the portrait
+  across all three places (metric $\mu(\rho)=2$; 2-adic tangent val 4; 3-adic tangent val 3).
+  Confirms (does not breach) the wall. Added Theorem S to `knowledge/problem.md`; added a Session-34
+  note to the [MEDIUM] Theorem-M direction (sub-question (a)); created `log/20260703_000000.md`;
+  updated `current_focus.md`; updated the bounded-$A$ cross-reference in `dead_ends.md`. No
+  direction retired/elevated.
 
 - **2026-06-26 (Session 33):** WATCH-phase session + concrete Wolfram computation (no framework,
   per the Session-28 inventory-complete verdict). arXiv watch **negative (twenty-second

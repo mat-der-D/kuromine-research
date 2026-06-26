@@ -155,6 +155,17 @@ stands; only the "$D$ bounded away from 0" interpretation was wrong. See `log/20
 no contradiction. Closeness-to-boundary cannot be exploited. Documented in
 `knowledge/problem.md` (Theorem N) and `log/20260626_174500.md`.
 
+**NOTE (concrete instance, Session 34 — Theorem S).** Sessions 15/21 argued the closure of this
+dead end *abstractly* (small $D$ at huge $k_x$ gives $O(1)$ genuine $A$ but the Theorem-N corollary
+still blocks). Session 34 (Wolfram) made it **concrete** via the Convergent–Depth Trade-off Law:
+the record minima of $D$ sit at the convergent denominators $q_n$ of $\rho=3\log2/\log3$ ($\mu(\rho)
+=2$ numerically). At the sharpest feasible convergent $k_x=q_n=16836$ ($k_y=31866$), $D=3.7588$
+forces the integer $A=z-3^j$ into the band $\approx[43,129]$ — **bounded-$A$ is actually realized at
+a lattice point**. Yet $v_3(2^x+5-a^3)\le7$ for every $a\in[40,130]$ while a genuine solution would
+need $v_3=j+1=1{,}766{,}706{,}480$: Theorem-N exclusion with a $\sim10^9$ margin, *with the small $A$
+explicitly present*. The dead end stands, now with a verified concrete witness. See Theorem S in
+`knowledge/problem.md` and `log/20260703_000000.md`.
+
 ## Thue-Mahler / norm-form approach (Session 18)
 
 **Status:** RETIRED. No casting of the Kuromine equation as a single Thue-Mahler equation

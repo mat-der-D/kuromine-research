@@ -1,6 +1,53 @@
 # Current Focus
 
-**Session:** 20260702_000000 (Session 33)
+**Session:** 20260703_000000 (Session 34)
+
+## Session 34 main result (WATCH negative, 23rd confirmation; NEW Theorem S = Convergent–Depth Trade-off Law for the boundary distance $D$, Wolfram-verified)
+
+WATCH-phase session plus a concrete Wolfram computation sharpening the **metric** face (Session 15,
+last touched S21) from a qualitative "$\inf D_{\ge0}=0$ by Weyl" statement to an explicit law tying
+the record-minima of the boundary distance $D=x\log2-(2j+1)\log3$ to the **convergent denominators
+of $\rho=3\log2/\log3$**, and — decisively — exhibiting the **first concrete lattice point where the
+integer cube-root distance $A$ is genuinely small ($O(10^2)$)** yet excluded by Theorem N.
+
+**arXiv watch (twenty-third confirmation, negative).** Unchanged: Bugeaud 2503.22084 / 2604.27490
+still only "$\to\infty$ with $z^d$" (not power-saving $\kappa>1$); $k\ge3$-prime decidability still
+"an outstanding open problem" (Dong–Shafrir 2505.19141, STOC 2026); two newly-surfaced 2026
+Skolem-problem papers (2504.14413 $p$-adic Skolem, 2510.27603 positive-characteristic Skolem) are
+linear-recurrence zero-detection, **NOT** the Kuromine cube-vs-S-unit gap; degree-3 free terms
+blocked (2510.00759); CDT 2510.04156 / Badziahin $\mu(2^{1/3})>2\gg1.107$, sub-Dirichlet-blind.
+
+**Theorem S (NEW, Wolfram-verified) — Convergent–Depth Trade-off Law.** With
+$D=c_0+k_xP_c-k_yQ_c$, $\rho=P_c/Q_c=3\log2/\log3$:
+1. Record minima of $\min_{k_y}D_{\ge0}$ over $k_x$ occur at the **convergent denominators $q_n$ of
+   $\rho$** (9, 513, 7891, 16836, …) and their small integer multiples (three-distance pattern).
+2. $\rho$ has irrationality measure (numerically) $=2$: bounded partial quotients (max 166 / first
+   100; mean $\approx7.1$), $q_n\theta_n\in(0.02,0.70)$, local exponents $\mu_n\in[2.0,2.9]$ flat.
+   So $\inf D_{\ge0}=0$ at the **Dirichlet rate**: $D$ small only at $k_x\sim1/D$.
+3. **Trade-off:** $A\in[e^D/3,3e^D]$ so small $D\Rightarrow$ small $A$; but small $D\Rightarrow$
+   large $k_x=q_n\Rightarrow$ huge depth $j+1=55440k_y+55440$. Coupled by $\rho$; no regime makes
+   both $A$ and $j$ small.
+4. **Decisive instance** $k_x=16836,k_y=31866$: $D=3.7588$, $A\in[43,129]$ (genuinely small), but
+   $v_3(2^x+5-a^3)\le7$ for all $a\in[40,130]$ (Wolfram via $2^x\bmod3^{80}$) while
+   $j+1=1{,}766{,}706{,}480$ — Theorem-N exclusion with $\sim10^9$ margin. **First concrete
+   realization of bounded-$A$**, turning the abstract S21 argument into a verified instance.
+
+**Net.** No new direction; Theorem S is the metric-face analogue of the $p$-adic Theorems J/P/R and
+completes the portrait across all three places (metric $\mu(\rho)=2$; 2-adic tangent valuation 4;
+3-adic tangent valuation 3). The only thing tying the free parameters to a genuine solution is the
+archimedean size $A\approx2^{x/3}$ — the missing $\kappa>1$ gap. Confirms, does not breach, the wall
+(twenty-third structural confirmation). WATCH remains the sole active priority. No framework built
+(Session-28 inventory-complete verdict). See Theorem S in `knowledge/problem.md` and
+`log/20260703_000000.md`.
+
+---
+
+## Session 33 main result (WATCH negative, 22nd confirmation; NEW Theorem R = 2-adic Newton/tangent expansion of the $k_y\mapsto A$ bijection, Wolfram-verified)
+**(prior session — retained below)**
+
+## Session 33 main result (prior heading preserved)
+
+**Session (prior):** 20260702_000000 (Session 33)
 
 ## Session 33 main result (WATCH negative, 22nd confirmation; NEW Theorem R = 2-adic Newton/tangent expansion of the $k_y\mapsto A$ bijection, Wolfram-verified)
 
