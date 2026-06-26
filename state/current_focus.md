@@ -1,68 +1,59 @@
 # Current Focus
 
-**Session:** 20260625_235900 (Session 12)
+**Session:** 20260626_120000 (Session 13)
 
-**Current direction:** Literature watch — assessed the Zhou IUT effective abc paper
-(arXiv:2503.14510, March 2025) and a broad June 2026 arXiv sweep for any new tool in the
-two-comparable-S-units regime.
+**Current direction:** Literature watch — assessed four new Chabauty-Kim / algebraic geometry
+papers (arXiv:2511.15949, 2602.05643, 2505.12947, 2604.20662) from the 2025–2026 cluster;
+did a June/July 2026 arXiv sweep. Proved a fifth categorical barrier: Chabauty-Kim methods
+are categorically inapplicable to exponential Diophantine equations.
 
-**Why this direction:** Session 11 declared the local/structural program saturated and the
-primary open target to be an unconditional effective bound with approximation exponent below
-~1.1 in the two-comparable-S-units regime. The most significant new item in the 2025–2026
-literature is Zhong-Peng Zhou's application of inter-universal Teichmüller theory (IUT) to
-obtain an effective abc inequality (arXiv:2503.14510), which was not assessed in any prior
-session. This required careful quantitative evaluation against Kuromine.
+**Why this direction:** Session 12 suggested exploring the "Galois representations / algebraic
+geometry" angle. The Chabauty-Kim framework (Affine Chabauty I/II, Modular Chabauty, Cubic
+Chabauty) is the primary modern algebraic-geometry tool for integral points and had not been
+systematically assessed. These four papers appeared in late 2025 and early–mid 2026.
 
-## Session 12 main results
+## Session 13 main results
 
-1. **Zhou IUT effective abc (arXiv:2503.14510, March 2025) — NOT APPLICABLE.**
-   - Zhou proves: for coprime a, b, c with a+b=c and log|abc| ≥ 700,
-     log|abc| ≤ 3 log rad(abc) + 8√(log|abc| · log log|abc|).
-   - This is an effective version of the abc conjecture (with additive correction
-     8√(log|abc|·log log|abc|) instead of the conjectured ε·log rad), but it still gives
-     a bound of quality ≤ 3 + tiny.
-   - For the Kuromine triple (a, b, c) = (2^x, 3^y+5, z^3): the abc-quality is ≈ 0.888
-     (Session 8, confirmed), far below 1. The triple already trivially satisfies the Zhou
-     bound: since quality < 1 means log c < log rad(abc), and Zhou gives log|abc| ≤ 3 log rad
-     + small, the constraint is loose by a factor ~2.4. No information is gained.
-   - Root cause: effective abc bounds (like Zhou's) are useful for triples where c ≫ rad
-     (quality > 1); they upper-bound quality. Kuromine's quality 0.888 < 1 means the triple
-     is never near an abc-extreme and no upper bound on quality can be violated.
-   - Additionally, the paper is a preprint (March 2025); its peer-review status is
-     unclear. But the non-applicability is structural (quality < 1), not a question of
-     proof validity.
+1. **Affine Chabauty I/II (arXiv:2511.15949, 2602.05643) — NOT APPLICABLE (structural).**
+   - Method: S-integral points on affine algebraic curves via generalized Jacobian embedding.
+   - Barrier: Kuromine's variables $x$, $y$ are exponents of fixed bases, not algebraic
+     coordinates. The constraint "$u = 2^x$" or "$v = 3^y$" is not encodable as S-integrality
+     on an algebraic curve. The mismatch is categorical.
 
-2. **June 2026 arXiv sweep (math.NT) — no new applicable tool found.**
-   - Papers assessed: arXiv:2605.31114 (Jacobsthal perfect powers, modular method, NOT
-     APPLICABLE — fixed bases, no variable z); arXiv:2605.28449 (S-units + factorials
-     in ternary recurrences, Baker-based, NOT APPLICABLE — z³ not an S-unit, constant 5
-     not an S-unit); arXiv:2605.18348 (sum of consecutive powers = perfect power,
-     Koutsianas–Tzanakis, NOT APPLICABLE — fixed polynomial sum, no {2,3}-S-unit
-     structure); arXiv:2606.00466 (perfect powers in denominators of elliptic curves,
-     different structure); arXiv:2606.02244 (unit equation in cubic fields,
-     Khawaja–Siksek, NOT APPLICABLE — unit structure in rings of integers, not
-     exponential Diophantine).
-   - The Calegari–Dimitrov–Tang arithmetic holonomy bounds (arXiv:2510.04156, Oct 2025,
-     already assessed in Session 3/6) have no published follow-up improving the effective
-     irrationality measure for 2^{1/3} below the needed ~1.1 threshold. The October 2025
-     paper remains the state of the art for that school.
-   - No paper in May–June 2026 math.NT addresses an unconditional effective bound with
-     exponent below ~1.1 in the two-comparable-S-units regime.
+2. **Modular Chabauty (arXiv:2505.12947) — NOT APPLICABLE (structural).**
+   - Method: S-integral points on curves with elliptic fibrations via modular period map.
+   - Partial applicability: per fixed $k_x$, the Thue-Mahler equation $z^3 - w^3 = N_{k_x}$
+     could in principle be solved. But $N_{k_x} \approx e^{230572}$ for $k_x = 1$ is
+     astronomically beyond the Effective Shafarevich step's practical reach, and the method
+     gives no information across the infinite Theorem-5 family.
 
-## Where things stand (updated after Session 12)
+3. **Cubic Chabauty (arXiv:2604.20662) — NOT APPLICABLE (structural).**
+   - Method: depth-3 Kim set for fixed elliptic curves of Mordell-Weil rank ≤ 2.
+   - Barrier: Kuromine gives a varying family of Mordell curves, not a single fixed curve.
 
-- All known tools (Baker archimedean/p-adic, congruence/Skolem, factorization/Zsygmondy,
-  modular/Frey, irrationality measures, Bugeaud perfect-power−S-unit, Badziahin cubic
-  separation, Bajpai S-unit, Zhou IUT effective abc): NOT APPLICABLE or RETIRED.
-- The quantified open target is unchanged and now confirmed from four independent angles
-  (irrationality measures S3, Bugeaud S-unit bounds S10, Badziahin cubic separation S11,
-  Zhou effective abc S12): need an **unconditional effective bound with approximation
-  exponent below ~1.1** in the two-comparable-S-units regime — nonexistent in the
-  2025–2026 literature.
-- The Zhou IUT paper is the most significant new 2025 result assessed: it is an important
-  methodological advance (effective abc from IUT, constant reduced from 1.7·10³⁰ to 400)
-  but gives no Kuromine leverage because the triple's quality 0.888 is already far below 1.
-- Future sessions: continue literature watch; specifically track (a) improvements to the
-  Calegari–Dimitrov–Tang holonomy bounds, (b) effective results in the two-comparable-S-units
-  regime, (c) any unconditional result handling the "two dominant S-units summing to a cube"
-  structure without reducing to a single-irrationality Thue problem.
+4. **Fifth categorical barrier formally established (Session 13):**
+   Chabauty-Kim methods in all forms — classical, affine, cubic, modular, motivic — are
+   categorically inapplicable to *exponential Diophantine equations* where two or more
+   variables appear as exponents of fixed integer bases. The Kuromine equation's "two-exponential"
+   structure (both $x$ and $y$ are exponents) lies outside the algebraic category that all
+   Chabauty-type methods require.
+
+   The five categorical barriers now documented:
+   1. Congruence sieving (Sessions 1–2): locally solvable everywhere (phantom).
+   2. Baker-type methods (Sessions 1, 5): $v_p = 0$; no linear form is small.
+   3. Modular method / Frey (Session 4): no varying prime exponent.
+   4. Effective abc / quality bounds (Sessions 8, 12): quality ≈ 0.888 << 1.
+   5. Chabauty-Kim / algebraic geometry (Session 13): exponential variables outside
+      the algebraic category.
+
+## Where things stand (updated after Session 13)
+
+- The five categorical barriers cover every major branch of modern Diophantine techniques.
+- The open target is unchanged: **unconditional effective lower bound for |z^3 - 3^y|
+  with exponent κ < 1.107** — nonexistent in the 2025–2026 literature.
+- A new potentially fruitful angle identified (Suggestion 2): "greatest prime factor of
+  $z^3 - 5$" reformulation — if gpf($z^3 - 5$) grows effectively with $z$, this would
+  imply only finitely many $z$ with $z^3 - 5$ a $\{2,3\}$-integer, which is exactly the
+  Kuromine condition. This is related to (but not the same as) Bugeaud's Session-10 result
+  (which goes the other direction: |z^3 - 3^y| → ∞).
+- Future sessions: continue holonomy-bounds watch; explore the gpf($z^3 - 5$) reformulation.

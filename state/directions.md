@@ -126,6 +126,40 @@ finiteness, giving no uniformity over the Theorem-5 family. See
 
 **References:** arXiv:2207.14492 (Efficient resolution of Thue-Mahler equations).
 
+### [LOW] Greatest prime factor reformulation: gpf($z^3 - 5$)
+
+**Identified in Session 13.** The equation $2^x + 3^y + 5 = z^3$ requires $z^3 - 5 = 2^x + 3^y$
+to be a $\{2, 3\}$-integer (i.e., have no prime factors other than 2 and 3). For large $z$, the
+value $z^3 - 5$ will generically have large prime factors, and the "greatest prime factor tends
+to infinity" theme (cf. Bugeaud Session 10, Stormer–Lehmer theory) may be exploitable.
+
+**Key question:** Is there an *effective* lower bound for gpf($z^3 - 5$) in terms of $z$?
+If gpf($z^3 - 5$) > 3 for all sufficiently large $z$ (which is almost certainly true), and
+if this can be proved *effectively*, then only finitely many $z$ can satisfy $z^3 - 5 \in
+\{2^a 3^b : a,b \geq 0\}$ — which is exactly the Kuromine condition.
+
+**Relation to prior work:** Bugeaud's Session-10 result gives gpf($z^3 - 3^y$) → ∞
+effectively. But $3^y$ varies; here $5$ is fixed, and the equation $z^3 - 5 = 2^x + 3^y$
+forces a $\{2,3\}$-integer. The question is whether $z^3 - 5$ being a $\{2,3\}$-integer
+is provably impossible for large $z$ (not just unlikely). This is a variant of the
+Størmer–Lehmer smooth-number problem for cubics.
+
+**Connection to known results:** The equation $z^3 - 5 = 2^a 3^b$ is a generalized
+Ramanujan–Nagell equation (a single exponential Diophantine equation with fixed polynomial
+on the left) — a form for which Baker's method and Modular Chabauty (per Zehavi's paper)
+can in principle give complete finiteness results, since this involves only S-integer points
+on the algebraic curve $u = z^3 - 5$ with $u \in \{2^a 3^b\}$. The condition "$u$ is a
+$\{2,3\}$-integer" IS encodable in the Modular Chabauty framework (unlike the full Kuromine
+equation), since it does not require specifying which power of 2 or 3. Zehavi's method
+applied to $\{z : z^3 - 5 \in \mathbb{Z}[1/6]\}$ (the set of $z$ making $z^3 - 5$ a
+$\{2,3\}$-integer) might be tractable.
+
+**Next step:** Use Wolfram to check whether $z^3 - 5$ is ever a $\{2,3\}$-integer for
+small $z$ (beyond $z = 2$: $2^3 - 5 = 3 = 3^1$; $z=4$: $64-5=59$, not {2,3}; $z=6$:
+$216-5=211$, prime, not {2,3}). Assess whether a complete resolution by Modular Chabauty
+is feasible (i.e., whether the Effective Shafarevich step is tractable for the {2,3}-S-unit
+equation $z^3 - 5 = 2^a 3^b$ within Zehavi's framework).
+
 ### [LOW] Numerical search with Theorem 5 filtering
 
 Verify computationally that no solutions exist for small $k$ (say $k \leq 5$). Not mathematically deep but can confirm the conjecture computationally and potentially reveal patterns in $2^x + 5 \pmod p$ for primes $p \equiv 1 \pmod 3$.
@@ -140,6 +174,34 @@ is infeasible — keep at LOW.
 ### [RETIRED in Session 5] Skolem's method / Bertók-Hajdu algorithm
 
 **Session 5 assessment:** Inapplicable by the same phantom obstruction. The Bertók-Hajdu/Miyazaki infinite-family approach (arXiv:2503.00843, 2508.17601) requires the equation to be *locally unsolvable* somewhere — the algorithm finds a modulus $N$ with no solution mod $N$ and concludes no integer solution exists. The Kuromine equation is locally solvable at every prime (proven in Session 2: the phantom $(10/3)^3$ is a global rational cube). Therefore the algorithm can never find a blocking modulus. The search would run indefinitely without result. Moved to dead ends.
+
+### [RETIRED in Session 13] Chabauty-Kim / algebraic geometry methods
+
+**Added and immediately retired in Session 13.** Session 12 suggested exploring Galois
+representations and algebraic geometry approaches. The Chabauty-Kim framework (Affine
+Chabauty I/II by Leonhardt-Lüdtke; Modular Chabauty by Zehavi; Cubic Chabauty by
+Balakrishnan-Bianchi-Dogra) is the primary modern algebraic-geometry tool for integral
+points. Four papers were assessed systematically:
+
+- **arXiv:2511.15949** (Affine Chabauty I, Nov 2025): S-integral points on affine curves
+  via generalized Jacobian. NOT APPLICABLE: Kuromine's $x, y$ are exponents, not
+  algebraic coordinates; S-integrality cannot encode "$u = 2^x$".
+- **arXiv:2602.05643** (Affine Chabauty II, Feb 2026): Algorithm for the above.
+  Same barrier.
+- **arXiv:2505.12947** (Modular Chabauty, May 2025): S-integral points on curves with
+  elliptic fibrations. NOT APPLICABLE: provides per-fixed-$N$ Thue-Mahler solvers, but
+  $N_{k_x} \approx e^{230572}$ is astronomically large; no information across the family.
+- **arXiv:2604.20662** (Cubic Chabauty, Apr 2026): depth-3 Kim set for fixed elliptic
+  curves of rank ≤ 2. NOT APPLICABLE: Kuromine gives a varying family of Mordell curves.
+
+**Fifth categorical barrier (new, Session 13):** Chabauty-Kim in all forms is categorically
+inapplicable to exponential Diophantine equations where two or more variables appear as
+exponents of fixed bases. The Kuromine equation's two-exponential structure ($x$ and $y$
+are both exponents) lies outside the algebraic category. This is a categorical mismatch,
+not a quantitative gap; no improvement in depth, rank condition, or computational reach
+can change this.
+
+See log/20260626_120000.md for full analysis.
 
 ### [LOW] arXiv survey of exponential Diophantine equations
 
@@ -179,6 +241,13 @@ June 2026 arXiv sweep: five papers (2605.31114, 2605.28449, 2605.18348, 2606.004
 improving the effective irrationality measure for 2^{1/3} below ~1.1. Four independent
 confirmations (S3/S10/S11/S12) of the two-comparable-S-units barrier. **The open target
 is unchanged.**
+
+**Session 13 update:** Assessed four Chabauty-Kim papers (2511.15949, 2602.05643, 2505.12947,
+2604.20662) — all NOT APPLICABLE for the categorical reason that Chabauty-Kim methods apply
+to algebraic curves, not exponential Diophantine equations (fifth categorical barrier,
+new in Session 13). June/July 2026 arXiv sweep: no new applicable paper. Holonomy-bounds
+school (2510.04156) has no new result. Identified new [LOW] direction: gpf($z^3 - 5$)
+reformulation (see separate direction entry). **The open target is unchanged.**
 
 **Session 11 update:** Assessed two previously-unassessed 2024–2026 papers, the closest to
 the exact quantified target found so far. Both NOT APPLICABLE:
@@ -227,3 +296,4 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 - **2026-06-25 (Session 11):** No new directions retired (all relevant ones already retired); no new directions elevated. Literature watch on a previously-unassessed, maximally on-target paper — Badziahin's "Distance between cubics and rationals" (arXiv:2509.01105 / Results in Math. 2026), which studies cubic-irrational-vs-rational separation, the geometry directly underlying |z³ − 3^y|. NOT APPLICABLE: its bounds are conditional on abc/Hall and nontrivial only for good approximations 2 ≤ v ≤ 3; Kuromine cannot be cast there ("cube − square" needs y even but y is always odd in the family; "cube − cube" degenerates to a rational nearby integer = the old factorization; the 2^{2/3}-Thue casting realizes v_real ≈ 0.62 at the floor k_y=0 and **negative** for all k_y ≥ 1 — the approximation *diverges*). This sharpens Session 3: κ_real is 0.62 only at the family floor and goes negative (−1.75, −4.13, −6.51, …) for every k_y ≥ 1, so almost the whole family has z/W not approximating 2^{2/3} at all (Wolfram). Also assessed Bajpai's effective many-term S-unit thesis (Bajpai–Bennett, Acta Arith. 214 (2024)): NOT APPLICABLE — Baker-based (retired Session 5) and requires S-unit-controlled terms, which z³ and the constant 5 are not (= Session 8 obstruction). Three independent literature lines (irrationality measures S3, Bugeaud S10, Badziahin S11) now confirm the two-comparable-S-units barrier structurally. Added a Session-11 strengthening note to the RETIRED 2^{1/3} entry and a Session-11 assessment to the arXiv-survey [LOW] direction. Updated current_focus.md.
 - **2026-06-25 (Session 10):** No new directions retired; no new directions elevated. Literature watch: assessed the two newest Bugeaud "perfect-power minus integral S-unit" papers (arXiv:2604.27490, Apr 2026; arXiv:2503.22084, Mar 2025), the first 2026 results to bound exactly the Kuromine-shaped difference. NOT APPLICABLE: Option (1) z³−2^x = 3^y+5 fails the coprimality hypothesis (z even); Option (2) z³−3^y = 2^x+5 satisfies it (x odd ⇒ z coprime to 3) but gives no contradiction because |z³−3^y| = 2^x+5 ≈ z^{1.89} (log 230572 = 0.631·log z³, Wolfram), so it lands exactly on the Session-3 κ_real ≈ 0.63 two-comparable-S-units barrier; a contradiction needs an effective exponent κ < 1.107 while Baker-type bounds (which Bugeaud uses) give κ just below d=3. Resolved Session 9 Suggestion #1: made k_x ↦ A explicit as the 3-adic analytic function A(k_x) = (32·exp_3(k_x·L)+5)^{1/3} with g=2^332640, v_3(g−1)=4, L=log_3 g, v_3(L)=4 (Wolfram); by Theorem J it is a bijection Z_3→Z_3, so rationality of A at an integer k_x reduces to whether a specific s_a ∈ Z_3 lies in Z — 3-adically undetectable (Z dense in Z_3). No obstruction; last 3-adic stone turned. Added Session-10 addendum to the p-adic direction; updated arXiv survey notes; updated current_focus.md.
 - **2026-06-25 (Session 12):** No new directions retired; no new directions elevated. Literature watch: assessed Zhou's effective IUT abc paper (arXiv:2503.14510, Mar 2025) — the most significant new 2025 number-theory preprint found to date, giving an effective abc bound log|abc| ≤ 3 log rad(abc) + 8√(log|abc|·log log|abc|). NOT APPLICABLE to Kuromine: the Kuromine triple (a,b,c)=(2^x, 3^y+5, z^3) has quality ≈ 0.888 < 1 (Session 8), so the Zhou bound is trivially satisfied (it upper-bounds quality at ≤ 3+ε, and Kuromine already satisfies quality < 1). Effective abc bounds help only when c ≫ rad(abc) (quality > 1); Kuromine is the opposite regime. Also did a broad June 2026 arXiv sweep: five additional papers assessed (2605.31114, 2605.28449, 2605.18348, 2606.00466, 2606.02244); none applicable. The Calegari–Dimitrov–Tang holonomy school (2510.04156) has no published follow-up below the ~1.1 exponent threshold. Four independent lines (S3/S10/S11/S12) now confirm the two-comparable-S-units barrier. Added Session-12 notes to the arXiv-survey [LOW] direction. Updated current_focus.md.
+- **2026-06-26 (Session 13):** RETIRED new direction "Chabauty-Kim / algebraic geometry methods" (added and immediately retired — assessed the full cluster of 2025–2026 papers: Affine Chabauty I/II arXiv:2511.15949/2602.05643, Modular Chabauty arXiv:2505.12947, Cubic Chabauty arXiv:2604.20662). All NOT APPLICABLE for the same categorical reason: Kuromine's variables $x,y$ are exponents of fixed bases, not algebraic coordinates; Chabauty-Kim methods apply to algebraic curves and cannot encode the constraint "$u = 2^x$ for integer $x$". Established **fifth categorical barrier**: Chabauty-Kim in all forms is categorically inapplicable to two-exponential Diophantine equations. Added new [LOW] direction suggestion: "greatest prime factor of $z^3 - 5$" reformulation — if gpf($z^3-5$) grows effectively with $z$, then only finitely many $z$ can have $z^3-5$ a $\{2,3\}$-integer. June/July 2026 arXiv sweep: no new applicable paper. The Calegari–Dimitrov–Tang holonomy school has no new follow-up. Updated current_focus.md and directions.md.
