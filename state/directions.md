@@ -251,7 +251,48 @@ any POSITIVE constraint that could be exploited? So far it has only been an OBST
 
 See `knowledge/references/function_field_analog.md` for full analysis. **Retired.**
 
-### [LOW — new, Session 20] Coupling-Height / Moving-Filtration framework (theory-building)
+### [RETIRED in Session 21] Coupling-Height / Moving-Filtration framework (theory-building)
+
+**Built in Session 20, RETIRED in Session 21 — both candidate lemmas resolved negatively.**
+
+**Session 21 (Wolfram numerical test + equidistribution argument):**
+
+- **Lemma A (Depth–Size Incompatibility, the crux) — REFUTED as circular.** The mechanism
+  Lemma A needs is "the smallest integer of 3-adic depth $\ge d$ relative to $N$ is
+  $\approx 3^{d-2}$, hence pushed off the size band $\sigma\approx1$." Wolfram verified this
+  law holds for the **fixed** target $N=37$ ($x_0=5$): smallest $a$ of depth $d$ is
+  $1,4,22,49,211,697,2155,\ldots\approx 3^{d-2}$, giving $\sigma_5(a)\approx0.95(d-2)$,
+  growing linearly and leaving $\sigma=1$ for $d\ge4$; implied $c_0\in[0.33,3.5]$. **BUT**
+  the decisive surrogate test — a constructed *moving-style* target
+  $N=22^3+3^{10}\cdot7$ — has its smallest depth-10 integer equal to the *small* number 22.
+  So the "$3^{d-2}$ law" is a property of the fixed target, **not** universal. For the actual
+  moving target $N(x)=2^x+5$, "a small deep cube-root ($A$) exists" is *precisely the
+  Kuromine question*; Lemma A is therefore circular and cannot be proved without
+  re-importing an effective irrationality measure (the unavailable tool). At the first
+  surviving pair ($k_x=k_y=1$: $x=332645$, $n=j+1=110880$) the genuine $A$ has
+  $\log_2 A=x/3\approx110882 < (n-2)\log_2 3\approx175737$ — smaller than the fixed-target
+  law allows, which is exactly the desired contradiction *if* the law transferred; it does
+  not.
+
+- **Lemma B′ (Lattice Rigidity) — REFUTED as false.** $D(k_x,k_y)=c_0+k_xP-k_yQ$ with
+  $c_0=5\log2-110879\log3=-121809.57$, $P=332640\log2=230568.48$, $Q=110880\log3=121814.13$,
+  $P/Q=3\log2/\log3=1.8927892607\ldots$ **irrational** (CF $[1;1,8,3,18,2,7,2,8,\ldots]$,
+  infinite). By Weyl equidistribution $\{k_xP/Q+c_0/Q\}$ is dense in $[0,1)$, so
+  $\inf_{k_x}D_{\ge0}=0$. Wolfram: minimal nonnegative $D$ falls $98.5\to0.537$ by
+  $k_x=84180$ and keeps decreasing. **Session 15's "$D\approx55$ floor" was a finite-range
+  ($k_x\le5000$) artifact.** The $D$-lattice does approach $D=0$ arbitrarily closely. This
+  does **not** revive bounded-$A$ elimination: small $D$ at huge $k_x$ gives $O(1)$ genuine
+  $A$ only with $j$ enormous, so the Theorem-N corollary (fixed small $a\Rightarrow$ bounded
+  $v_3$, contradicting $j+1$) still blocks it — already known.
+
+**Conclusion:** Framework retired. Diagnostic residue: the unique non-degenerate handle
+(3-adic depth $j+1$ vs phantom depth 0) is real but **non-transferable** to an archimedean
+size constraint without an effective irrationality measure — a third independent
+confirmation (after the metric face S15, the analytic face S3/S10/S11) of the P1–P4
+conjunction barrier. Moved to `knowledge/dead_ends.md`. Full detail in
+`log/20260627_120000.md`. **DO NOT REOPEN** without a new external transfer inequality.
+
+### [SUPERSEDED] Coupling-Height / Moving-Filtration framework — original Session-20 entry
 
 **New framework, Session 20 (theory-creator mode).** Built from the obstruction diagnosis
 (the wall is a four-fold structural degeneracy P1–P4 with one non-degenerate handle: 3-adic
@@ -441,6 +482,7 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 
 ## History of Changes
 
+- **2026-06-27 (Session 21):** Executed the Session-20 next-suggestions: numerically tested (Wolfram) the two candidate lemmas of the **Coupling-Height / Moving-Filtration framework** and **RETIRED the framework** (both lemmas resolved negatively). **Lemma A (Depth–Size Incompatibility, the crux) REFUTED as circular:** the "smallest integer of 3-adic depth $\ge d$ is $\approx 3^{d-2}$, hence off the size band" law (verified for the fixed target $N=37$: smallest $a$ of depth $d$ runs $1,4,22,49,211,697,2155,\ldots$, $\sigma_5\approx0.95(d-2)$, implied $c_0\in[0.33,3.5]$) is a property of the *fixed* target only — a constructed moving-style surrogate $N=22^3+3^{10}\cdot7$ has its smallest depth-10 integer equal to the small number 22. For the real moving target $2^x+5$, "a small deep cube-root exists" *is* the Kuromine question, so Lemma A cannot be proved without an effective irrationality measure (unavailable). **Lemma B′ (Lattice Rigidity) REFUTED as false:** $D=c_0+k_xP-k_yQ$ with $P/Q=3\log2/\log3=1.89278926\ldots$ irrational (CF infinite) $\Rightarrow$ Weyl equidistribution $\Rightarrow\inf D_{\ge0}=0$; Wolfram running-min of nonnegative $D$ falls $98.5\to0.537$ by $k_x=84180$ and keeps decreasing — Session 15's "$D\approx55$ floor" was a finite-range ($k_x\le5000$) artifact; the $D$-lattice does approach $D=0$ (does NOT revive bounded-$A$ elimination — Theorem-N corollary still blocks). arXiv watch negative (tenth confirmation; CDT 2510.04156 still frontier, measure for $2^{1/3}$ $>2$, no $\kappa<1.107$, no family uniformity). Net: the last constructed framework is exhausted; the depth handle is real but **non-transferable** without an effective irrationality measure. Research returns to pure WATCH. Moved Coupling-Height direction to RETIRED; added it to `knowledge/dead_ends.md`; created `log/20260627_120000.md`; updated `current_focus.md`.
 - **2026-06-25 (Session 1):** Added [HIGH] Factorization approach. Added [MEDIUM] Thue-Mahler equation approach. Lowered Baker's method assessment from [MEDIUM] to [MEDIUM-LOW] but kept at [MEDIUM] pending p-adic Baker investigation. Elevated $p$-adic direction to [HIGH] (tied). Noted Session 1 discoveries.
 - **2026-06-25 (Session 2):** Downgraded standalone $p$-adic elimination from [HIGH] to [LOW/~RETIRED] after *proving* (not just observing) that local methods cannot obstruct the equation: the phantom is a global rational cube $(10/3)^3$, so every local condition is satisfiable. Added new [HIGH] direction "Effective Diophantine approximation to $2^{1/3}$" as the realistic global path. Completed the 2-adic structure analysis ($z\equiv6\pmod{32}$, $v_2(3^y+5)=3$). See `knowledge/references/two_adic_structure.md`.
 - **2026-06-25 (Session 3):** RETIRED "Effective Diophantine approximation to $2^{1/3}$" (was [HIGH]) with a proof that it is quantitatively dead: realized exponent $\kappa\approx0.62\ll\mu$, and the Thue value $3^y+5$ is too large by $\sim e^{138909}$ — root cause is the two-comparable-dominant-S-units regime ($3^y\approx z^2$). See `knowledge/references/irrationality_measure_obstruction.md`. Added Session-3 progress to the Factorization [HIGH] direction (reduced equation $2^x+5=A(A^2+3^{j+1}A+3^{2j+1})$, both real solutions have $A=z-3^{y/3}=1$, Eisenstein identity $4B-3w^2=(2z+w)^2$). Elevated primitive-divisor (Zsygmondy/BHV) direction to [MEDIUM-HIGH] as the best remaining non-size lead, since all size methods are now shown too weak.
