@@ -1,6 +1,46 @@
 # Current Focus
 
-**Session:** 20260701_000000 (Session 32)
+**Session:** 20260702_000000 (Session 33)
+
+## Session 33 main result (WATCH negative, 22nd confirmation; NEW Theorem R = 2-adic Newton/tangent expansion of the $k_y\mapsto A$ bijection, Wolfram-verified)
+
+WATCH-phase session plus a concrete Wolfram computation sharpening the 2-adic portrait from a
+*period statement* (Theorem P) to an explicit **2-adic analytic Mahler expansion** of the
+bijection $k_y\mapsto A$ — the 2-adic counterpart of the Session-24 3-adic tangent-speed result.
+
+**arXiv watch (twenty-second confirmation, negative).** Unchanged: Bugeaud 2503.22084 / 2604.27490
+still only "$\to\infty$ with $z^d$" (not power-saving $\kappa>1$); decidability over $k\ge3$ primes
+still "an outstanding open problem in number theory" (Dong–Shafrir 2505.19141, STOC 2026); degree-3
+free terms blocked (2510.00759); CDT 2510.04156 / Badziahin effective $\mu(2^{1/3})>2\gg1.107$,
+sub-Dirichlet-blind. No new applicable 2026 paper.
+
+**Theorem R (NEW, Wolfram-verified) — 2-adic Newton/tangent expansion.** Writing the Theorem-P
+bijection $k_y\mapsto A$ in Mahler form $A(k_y)=c_0+c_1 k_y+c_2\binom{k_y}{2}+\cdots$:
+$c_0\equiv11\pmod{16}$; $v_2(c_1)=4$, $v_2(c_2)=8$ — the leading-coefficient law $v_2(c_k)=4k$
+(verified $k=1,2$ at moduli $2^{12},2^{16},2^{24}$; $k=3$ consistent with 12 but crowded the modulus
+before the Wolfram endpoint went down — recorded honestly). So $A(k_y)$ is **2-adic analytic with
+tangent valuation 4**, re-deriving Theorem P's "$-4$" period offset from the slope; the affine
+approximation $A\equiv A_0+s\,k_y$ ($v_2(s)=4$) is **exact up to depth $n=8$**, the $\binom{k_y}{2}$
+term ($v_2=8$) first breaking it at $n=9$. The **same expansion holds for $z$** ($z\equiv102-16k_y
+\pmod{256}$, step $v_2=4$). This completes the symmetry with the Session-24 3-adic tangent
+valuation 3.
+
+**Subtlety pinned (Wolfram).** $N=2^x+3^y+5\equiv1\pmod9$ universally and has **three** 3-adic
+cube-root branches $\equiv1\pmod3$; the genuine $z$ is selected among them **archimedeanly** (it is
+the actual integer cube root), not by any congruence — a clean restatement of *why* the obstruction
+is archimedean: the $p$-adic data leave a bijective 3-adic branch ambiguity that only the size
+relation $A\approx2^{x/3}$ resolves. Also: since $3^j\equiv0\pmod{3^n}$, $z\equiv A\pmod{3^n}$, so
+$z$ inherits Theorem J's 3-adic portrait exactly and Observation Q's variable-separation holds for
+$z$ as well as $A$.
+
+**Net.** No new direction; a genuinely new structural theorem (Theorem R) sharpens Theorem P and
+completes the 2-adic/3-adic tangent-valuation symmetry (2-adic slope $v_2=4$ vs 3-adic slope
+$v_3=3$). Confirms, does not breach, the wall (twenty-second structural confirmation). WATCH remains
+the sole active priority. No framework built (Session-28 inventory-complete verdict).
+
+---
+
+## Session 32 main result (WATCH negative, 20th confirmation; NEW Theorem P = 2-adic mirror law for $A$, + Observation Q = variable separation, Wolfram-verified)
 
 ## Session 32 main result (WATCH negative, 20th confirmation; NEW Theorem P = 2-adic mirror law for $A$, + Observation Q = variable separation, Wolfram-verified)
 

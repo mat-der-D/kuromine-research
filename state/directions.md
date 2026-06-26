@@ -110,6 +110,21 @@ of the soft obstruction: no congruence (at 2, 3, or CRT-joint) pins $A$ off a ge
 Confirms (does not breach) the wall. **No priority change.** See Theorems P, Q in
 `knowledge/problem.md` and `log/20260701_000000.md`.
 
+**Session 33 progress (Theorem R — 2-adic Newton/tangent expansion; completes the
+tangent-valuation symmetry).** Sharpened (Wolfram) Theorem P from a period statement to an explicit
+2-adic analytic Mahler expansion of the bijection $k_y\mapsto A$: $A(k_y)=c_0+c_1k_y+c_2\binom{k_y}{2}
++\cdots$ with $c_0\equiv11\pmod{16}$, $v_2(c_1)=4$, $v_2(c_2)=8$ (leading-coefficient law
+$v_2(c_k)=4k$; verified $k=1,2$ at moduli $2^{12},2^{16},2^{24}$). So $k_y\mapsto A$ is **2-adic
+analytic with tangent valuation 4**, re-deriving Theorem P's "$-4$" offset from the slope; the
+affine form is exact up to depth $n=8$. The **same holds for $z$** ($z\equiv102-16k_y\pmod{256}$,
+step $v_2=4$); and since $3^j\equiv0\pmod{3^n}$, $z\equiv A\pmod{3^n}$, so Observation Q's variable
+separation holds for $z$ too. New subtlety: $N\equiv1\pmod9$ has **three** 3-adic cube-root branches
+$\equiv1\pmod3$; the genuine $z$ is selected archimedeanly, not congruentially — a clean restatement
+of why the obstruction is archimedean. This completes the symmetry with the Session-24 3-adic
+tangent valuation 3 (2-adic slope $v_2=4$ via $v_2(166320)=4$; 3-adic slope $v_3=3$). Confirms (does
+not breach) the wall. **No priority change.** See Theorem R in `knowledge/problem.md` and
+`log/20260702_000000.md`.
+
 **Session 15 progress (Theorem N).** New exact 3-adic valuation identity:
 $2^x + 5 - A^3 = 3^{j+1}A(A+3^j)$, hence $v_3(2^x+5-A^3) = j+1$ (using $\gcd(A,3)=1$ from
 Theorem I). This re-proves cleanly, via valuation, that $A$ is no fixed small integer (for
@@ -607,6 +622,25 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 ---
 
 ## History of Changes
+
+- **2026-06-26 (Session 33):** WATCH-phase session + concrete Wolfram computation (no framework,
+  per the Session-28 inventory-complete verdict). arXiv watch **negative (twenty-second
+  confirmation)** — frontiers unchanged (Bugeaud "$\to\infty$ with $z^d$"; $k\ge3$-prime
+  decidability still "an outstanding open problem"; degree-3 blocked by 2510.00759; CDT/Badziahin
+  $\mu(2^{1/3})>2$). **New recordable structural theorem (Wolfram):** **Theorem R (2-adic
+  Newton/tangent expansion of $k_y\mapsto A$)** — Mahler form $A(k_y)=c_0+c_1k_y+c_2\binom{k_y}{2}
+  +\cdots$ with $c_0\equiv11\pmod{16}$, $v_2(c_1)=4$, $v_2(c_2)=8$ (law $v_2(c_k)=4k$, verified
+  $k=1,2$ at $2^{12},2^{16},2^{24}$); so the Theorem-P bijection is 2-adic analytic with tangent
+  valuation 4, re-deriving the "$-4$" offset from the slope; affine-exact up to depth $n=8$. Same
+  expansion for $z$; $z\equiv A\pmod{3^n}$ so variable separation (Obs Q) extends to $z$. Pinned a
+  new subtlety: $N\equiv1\pmod9$ has three 3-adic cube-root branches $\equiv1\pmod3$, with the
+  genuine $z$ selected archimedeanly (not congruentially) — a clean statement of why the wall is
+  archimedean. Completes the 2-adic/3-adic tangent-valuation symmetry ($v_2=4$ vs Session-24
+  $v_3=3$). Confirms (does not breach) the wall. Added Theorem R to `knowledge/problem.md`; added a
+  Session-33 note to the factorization [HIGH] direction; created `log/20260702_000000.md`; updated
+  `current_focus.md`. No direction retired/elevated. (Note: the Wolfram MCP endpoint returned
+  intermittent 502 gateway errors late in the session; the $k=3$ coefficient confirmation
+  ($v_2(c_3)=12$ expected) was left pending — recorded honestly as $\ge11$/expected-12.)
 
 - **2026-06-26 (Session 32):** WATCH-phase session + concrete Wolfram computation (no framework,
   per the Session-28 inventory-complete verdict). arXiv watch **negative (twentieth
