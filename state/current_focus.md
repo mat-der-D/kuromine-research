@@ -1,59 +1,65 @@
 # Current Focus
 
-**Session:** 20260627_120000 (Session 21)
+**Session:** 20260626_HHMMSS (Session 22)
 
-**Current direction:** Numerical test / refutation of the two candidate lemmas of the
-Session-20 **Coupling-Height / Moving-Filtration framework** (Lemma A — Depth–Size
-Incompatibility; Lemma B′ — Lattice Rigidity), plus arXiv watch. Outcome: **both lemmas
-refuted; framework RETIRED.** Research returns to pure WATCH.
+**Current direction:** WATCH-phase arXiv reconnaissance, with a focused assessment of the
+2025–2026 **decidability frontier for linear-exponential Diophantine systems** (KLNOW 2025;
+Dong–Shafrir arXiv:2505.19141, STOC 2026). Question: does the newly-proven decidability for
+linear-exponential systems **over two primes** reach the Kuromine equation, whose exponential
+part lives over exactly the two primes $\{2,3\}$? Outcome: **No — blocked by a degree
+obstruction (the free cube $z^3$). Eleventh independent confirmation of the barrier.**
 
-## Session 21 main results
+## Session 22 main results
 
-1. **Lemma A REFUTED (circular / unprovable).** The depth$\Rightarrow$size correlation
-   that Lemma A needs ("smallest integer of 3-adic depth $\ge d$ relative to $N$ is
-   $\approx 3^{d-2}$, hence off the size band $\sigma\approx1$") is a property of the
-   **fixed** target $N=37$ only. Wolfram exhibited an explicit **moving-target surrogate**
-   $N = 22^3 + 3^{10}\cdot7$ whose smallest depth-10 integer is the *small* number 22.
-   For the actual moving target $N(x)=2^x+5$, "a small deep cube-root exists" is *exactly
-   the Kuromine question*. Lemma A cannot be established without re-importing an effective
-   irrationality measure — the unavailable tool. The crux lemma fails; the framework
-   provides no proof.
+1. **Decidability frontier located precisely relative to Kuromine (new, sharp).**
+   - KLNOW (2025): solvability of **linear-exponential** Diophantine systems (free variables
+     at degree $\le 1$ outside exponents) **over two primes** is **decidable** — and the
+     proof **relies on Baker's theorem**.
+   - Dong–Shafrir (arXiv:2505.19141, STOC 2026): S-unit equations over modules reduce
+     (Turing-equivalently) to linear-exponential systems over the primes dividing $T$;
+     decidable for $T$ with $\le 2$ prime divisors; arbitrary $T$ would be "a major
+     breakthrough in number theory."
+   - **Kuromine** $2^x+3^y+5=z^3$: exponential part is over **exactly two primes** ($T=6$),
+     i.e. squarely inside the prime-count frontier — BUT the term $z^3$ has $z$ **free at
+     degree 3** (Wolfram: $z=3^j+A \Rightarrow z^3 = 3^{3j}+3^{1+2j}A+3^{1+j}A^2+A^3$, the
+     free cube $A^3$). The decidable class allows degree $\le 1$. **Kuromine is two
+     polynomial degrees above the frontier.**
 
-2. **Lemma B′ REFUTED (false).** $D(k_x,k_y)=c_0+k_xP-k_yQ$ with $P/Q=3\log2/\log3$
-   irrational $\Rightarrow$ (Weyl) $\{k_x\,P/Q+c_0/Q\}$ equidistributes $\Rightarrow$
-   $\inf_{k_x}D_{\ge0}=0$. Numerics: minimal nonnegative $D$ falls $98.5\to0.537$ by
-   $k_x=84180$ and keeps decreasing. Session 15's "$D\approx55$ floor" was a finite-range
-   ($k_x\le5000$) artifact. The $D$-lattice **does** approach the boundary $D=0$. (This
-   does not revive bounded-$A$ elimination: small $D$ at huge $k_x$ gives $O(1)$ genuine
-   $A$ only with $j$ enormous, so the Theorem-N corollary still blocks it — already known.)
+2. **The degree obstruction = the known per-fixed-variable wall.** A free degree-3 term per
+   fixed RHS is a Mordell/Thue cubic — exactly the retired elliptic-curve / Thue-Mahler
+   dead end: finite per fixed $x$, **no uniformity** across the Theorem-5 family. So the new
+   decidability angle collapses onto an existing wall, AND its in-class engine (Baker) is
+   already structurally dead for Kuromine (Session 5, $v_p(\Lambda_p)=0$).
 
-3. **arXiv watch negative (tenth confirmation).** No unconditional effective $\kappa<1.107$
-   tool. CDT (2510.04156) still frontier (measure for $2^{1/3}$ $>2$; per-equation, no
-   family uniformity). No 2026 follow-up below $\sim1.1$.
+3. **arXiv watch otherwise negative (eleventh confirmation).** No unconditional effective
+   $\kappa<1.107$ tool. Calegari–Dimitrov–Tang (2510.04156) still the irrationality-measure
+   frontier (measure for $2^{1/3}$ still $>2$). No 2026 result placing a single free
+   quadratic/cubic term inside the linear-exponential decidable class.
 
-## Where things stand (updated after Session 21)
+## Where things stand (updated after Session 22)
 
-**Every named approach (Sessions 1–19) AND the Session-20 theory-building framework are now
-exhausted.** Session 21 resolved both Coupling-Height lemmas negatively and retired the
-framework. The diagnostic value remains: the unique non-degenerate handle — 3-adic depth
-$v_3(2^x+5-A^3)=j+1\to\infty$ vs phantom depth 0 — is real but **non-transferable** to an
-archimedean size constraint without an effective irrationality measure. Third independent
-confirmation of this (after the metric face S15 and the analytic face S3/S10/S11), now from
-the cross-place-coupling angle.
+**Every named approach (Sessions 1–19), the Session-20 theory-building framework (retired
+S21), and now the linear-exponential-decidability frontier (S22) are exhausted/blocked.** The
+new placement is the most precise diagnostic yet: Kuromine sits **one prime within but two
+polynomial degrees above** the proven decidability frontier, and the degree gap is the same
+per-fixed-variable Thue/Mordell wall already on record. Two structurally distinct barriers now
+pinned: (i) the metric/analytic two-comparable-S-units barrier (need effective $\kappa<1.107$),
+and (ii) the degree-3 free-cube barrier to decidability methods. Both rest, at their core, on
+Baker being inapplicable here.
 
 **The unique remaining open target (unchanged):**
 $$|z^3 - 3^y| > C \cdot (z^3)^{\kappa}, \quad \kappa < 1.107, \qquad (3^y \approx z^2).$$
-No reformulation removes the need for this effective bound; the Coupling-Height
-reformulation (Lemma A) was the last candidate and is circular.
 
 ## Next priority
 
-1. **[WATCH — sole active priority]** Monitor arXiv for an unconditional effective
-   $\kappa<1.107$ bound for $|z^3-3^y|$ (or effective irrationality measure for $2^{1/3}$
-   below $\sim1.1$), or any new method for two-comparable-S-units exponential Diophantine
-   equations. Watch CDT-school (2510.04156) follow-ups and new Bugeaud papers.
-2. **[VERY LOW / likely empty]** Re-examine whether near-boundary small-$D$ pairs (now known
-   to exist at large $k_x$) admit an explicit "small $A$ vs depth $j+1$" contradiction —
-   almost certainly already covered by the Theorem-N corollary; logged for completeness.
-3. **[DO NOT REOPEN]** The Coupling-Height framework — do not rebuild without a genuinely
-   new external transfer inequality.
+1. **[WATCH — sole active priority]** Monitor arXiv for (a) an unconditional effective
+   $\kappa<1.107$ bound for $|z^3-3^y|$ / effective irrationality measure for $2^{1/3}$ below
+   $\sim1.1$; OR (b) any extension of the linear-exponential decidability results (KLNOW /
+   Dong–Shafrir school) to systems containing a single free **higher-degree** (quadratic or
+   cubic) term, which would be the genuinely new development that could touch Kuromine. Watch
+   Karimov–Luca–Nieuwveld–Ouaknine–Worrell follow-ups, Dong–Shafrir, CDT (2510.04156),
+   new Bugeaud papers.
+2. **[VERY LOW / likely empty]** Near-boundary small-$D$ pairs (Theorem-N corollary) — logged
+   for completeness only.
+3. **[DO NOT REOPEN]** The Coupling-Height framework, and any Baker-based decidability route
+   (Baker is structurally dead here).

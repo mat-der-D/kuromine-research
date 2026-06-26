@@ -227,3 +227,32 @@ measure for $2^{1/3}$ below $\sim1.1$ — exactly the missing tool. The coupling
 faithful repackaging of the obstruction, not a way around it. Third independent confirmation
 of the P1–P4 conjunction barrier (after the metric face S15 and the analytic face
 S3/S10/S11). Full detail in `log/20260627_120000.md`.
+
+## Linear-exponential decidability frontier — blocked by the free cube (Session 22)
+
+**Status:** Does NOT reach Kuromine. The 2025–2026 decidability results for
+linear-exponential Diophantine systems are blocked by a **degree obstruction**. Do not
+pursue a decidability/Skolem-style route unless someone extends the class to a free
+higher-degree term.
+
+**What was checked (Wolfram + arXiv watch, Session 22):** The KLNOW (2025) result makes
+solvability of **linear-exponential** Diophantine systems **over two primes** decidable
+(variables appear in exponents of fixed bases and at most **linearly**, degree 1, as
+polynomial terms; proof **uses Baker's theorem**). Dong–Shafrir (arXiv:2505.19141, STOC
+2026) reduce module S-unit equations to such systems, giving decidability when the base
+$T$ has $\le 2$ prime divisors (arbitrary $T$ = "major breakthrough in number theory").
+
+Kuromine's exponential skeleton $2^x + 3^y + 5$ is over **exactly two primes** ($T=6$) —
+inside the prime-count frontier. **But the term $z^3$ has $z$ free at degree 3**, outside
+the decidable (degree $\le 1$) class. After the Theorem-5 factoring $z = 3^j + A$ (Wolfram):
+$z^3 = 3^{3j} + 3^{1+2j}A + 3^{1+j}A^2 + A^3$ — the free cube $A^3$ persists; $z$ is not
+$\{2,3\}$-smooth in general, so it cannot be re-encoded as a monomial. Kuromine sits **one
+prime within but two polynomial degrees above** the frontier.
+
+**Why it fails (root cause).** A free degree-3 term per fixed RHS is a Mordell/Thue cubic —
+exactly the **per-fixed-variable wall** already retired (elliptic-curve and Thue-Mahler dead
+ends): finite/effective per fixed $x$, **no uniformity** across the infinite family. So the
+decidability angle collapses onto an existing wall, and its in-class engine (Baker) is
+itself structurally dead for Kuromine (Session 5, $v_p(\Lambda_p)=0$). Eleventh independent
+confirmation of the barrier. Full detail in `knowledge/references/linear_exponential_decidability.md`
+and `log/20260626_HHMMSS.md` (Session 22).
