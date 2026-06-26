@@ -474,6 +474,29 @@ See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this meth
 
 ## History of Changes
 
+- **2026-06-26 (Session 25):** WATCH-phase, executed as a **Wolfram-enabled
+  verification-and-consolidation pass** (MCP was available this session, unlike Sessions 20
+  and 24 which left numerical verifications pending). **Resolved all pending Wolfram anchors
+  — first direct machine verification:** $v_3(2^{332640}-1)=4$ exactly (so $v_3(\log_3 g)=4$);
+  Theorem I exact ($A\bmod81 = 49/22/76$ for $k_x\equiv0/1/2\pmod3$); Theorem L exact
+  ($B\bmod81 = 52/79/25$); tangent-speed valuation $v_3(\tau)=v_3((A^3-5)L/(3A^2))=3$ (Session
+  24 anchor); $\operatorname{ord}_{3^n}(2)=2\cdot3^{n-1}$; and the three frame-constants to 15
+  digits ($3-3\log_32=1.10721\ldots$, $2\log3/(3\log2)=1.05664\ldots$,
+  $3\log2/\log3=1.89279\ldots$). The numerical record is now self-consistent and
+  machine-checked. **New diagnostic sharpening (kept, non-actionable):** the open target
+  $\kappa<1.107$ for $|z^3-3^y|>C(z^3)^\kappa$ lies **below the Dirichlet floor $\mu\ge2$**, so
+  it is categorically NOT an irrationality-measure statement — improving the effective measure
+  for $2^{1/3}$ (the CDT-school program) can never reach it, regardless of sharpness, because
+  measures only constrain *good* approximations (exponent $\ge2$). Wolfram (50-digit)
+  reconfirmed the realized approximation exponent of $z/W$ to $2^{2/3}$ is **negative** for all
+  $k_y\ge1$ ($-0.585,-1.377,-2.170$): $z/W$ is an *anti*-approximation. The target is a
+  **sub-Dirichlet gap/separation inequality**, outside the measure paradigm. **arXiv watch
+  negative (fourteenth confirmation):** CDT (2510.04156) measure for $2^{1/3}$ still $\gg2$
+  (explicit bound large since $a=2$ is far from 1); KLNOW/Dong–Shafrir (2505.19141) decidability
+  still only $\le2$-prime bases, degree-$\le1$ free terms. No direction retired/elevated/added;
+  WATCH remains sole active priority. Created `log/20260626_140741.md`; updated
+  `current_focus.md`.
+
 - **2026-06-26 (Session 24):** WATCH-phase reconnaissance (thirteenth arXiv watch, negative)
   plus mandatory theory-building attempt 2 (Special Directive). **Built and immediately
   retired the Differential Progression Framework:** studied the 3-adic analytic curve
