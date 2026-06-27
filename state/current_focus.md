@@ -1,43 +1,40 @@
 # Current Focus
 
-**Session:** 20260627_Session36 (Session 36)
+**Session:** 20260627_041229 (Session 37)
 
-## Session 36 main result (WATCH negative, 25th confirmation; NEW Theorem U = 5-adic portrait of $z$ on the survival sub-lattice; Python-verified due to Wolfram MCP unavailability)
+## Session 37 main results (WATCH negative, 26th confirmation; CORRECTION to Theorem R; NEW Theorem V; Python-verified)
 
-WATCH-phase session plus a concrete computation extending the 5-adic analysis of Session 35
-(Theorem T) to its natural completion: the 5-adic portrait of $z$ itself on the survival
-sub-lattice, a scan for any other primes giving a valuation sieve, and an iterated sieve
-analysis to four 5-adic depths.
+WATCH-phase session with: (1) arXiv watch (negative); (2) a Python-based correction to
+Session-33's Theorem R (the exact law $v_2(c_k)=4k$ is FALSE; $v_2(c_3)=11$, not $12$);
+(3) a new structural theorem (Theorem V) showing that the sharpest Theorem-T-surviving
+near-boundary pair is eliminated by Theorem P alone (2-adic route), and the Session-34
+witness is eliminated by Theorem T alone.
 
-**arXiv watch (twenty-fifth confirmation, negative).** Unchanged: Bugeaud 2503.22084 /
-2604.27490 still only "$\to\infty$ with $z^d$" (not power-saving $\kappa>1$); $k\ge3$-prime
-decidability (Dong–Shafrir 2505.19141) still "outstanding open problem"; Badziahin 2509.01105
-is a conditional effective irrationality measure for cube roots, NOT an unconditional gap
-bound (and sub-Dirichlet: measures don't reach the needed $\kappa>1$ in the sub-Dirichlet
-regime $E\to2/3$). No new applicable paper.
+**arXiv watch (twenty-sixth confirmation, negative).** Unchanged: Bugeaud 2604.27490 still
+only "$\to\infty$ with $z^d$" (not power-saving $\kappa>1$); $k\ge3$-prime decidability
+(Dong–Shafrir 2505.19141) still "outstanding open problem"; no new irrationality-measure
+improvement below $\mu=2$. No new applicable paper.
 
-**Theorem U (NEW, Python-verified; Wolfram MCP unavailable) — 5-adic portrait of $z$.**
-On the generic $v_5(N)=3$ part of the survival sub-lattice ($k_y\equiv k_x-1\pmod5$):
-1. **$v_5(z)=1$ universally** (since $v_5(z^3)=v_5(N)=3$, so $3v_5(z)=3$, $v_5(z)=1$):
-   equivalently $z\equiv0\pmod5$, $z\not\equiv0\pmod{25}$.
-2. **$z'=z/5 \bmod 5^n$ is a bijective function of $(k_x,k_y)$** on the survival diagonal
-   (concrete sample: four generic diagonal pairs give $z'\bmod5\in\{1,2,3,4\}$).
-3. **No other prime $\ell\leq5000$ gives a valuation sieve**: Python scan over 57 compatible
-   primes shows only $\ell=5$ universally divides $N$; for all others $v_\ell(N)=0$ on the
-   survival diagonal. Prime 5 is the unique source.
-4. **Iterated survival fractions converge to $\approx16.13\%$** (levels 1–4: $16.0\%$,
-   $16.16\%$, $16.11\%$, $16.13\%$), confirming soft obstruction quantitatively.
-5. **Combined CRT portrait**: $z\equiv3910\pmod{4320}$ for the $k_y=0$ case, combining the
-   2-adic ($z\equiv6\pmod{32}$), 3-adic ($z\equiv22\pmod{27}$), and 5-adic ($z\equiv0\pmod5$)
-   conditions.
-6. **Soft-obstructed**: phantom $z_{\text{phantom}}=10/3$ has $v_5(10/3)=1$ (passes), and
-   $z'/5 \bmod 5$ is nonzero for the phantom. The sieve cannot terminate.
+**Correction to Theorem R (Session 33, Python-verified):**
+The claim "leading-coefficient law $v_2(c_k) = 4k$" is FALSE for $k \ge 3$.
+Python at depth $n \le 200$: $v_2(c_3) = 11$ (not $12$), $v_2(c_4) = 17$ (not $16$),
+$|v_2(c_k) - 4k| \le 2$ for all $k \le 50$, and $\liminf v_2(c_k)/k = 4$.
+Corrected Theorem R: $k_y \mapsto A(k_y)$ is 2-adic analytic with slope 4 and O(1) coefficient fluctuations.
+The slope and analyticity claims remain correct; the exact-law claim is withdrawn.
 
-**Net.** Theorem U is the natural 5-adic completion of Theorem T, and produces the sharpest
-combined portrait of $z$ across three primes. It confirms (does not breach) the wall: soft
-obstruction holds at every 5-adic depth ($\approx16.13\%$ survival, bounded away from 0).
-Twenty-fifth structural confirmation. WATCH remains the sole active priority. No framework
-built (Session-28 inventory-complete verdict). See Theorem U in `knowledge/problem.md`.
+**Theorem V (NEW, Python-verified):**
+1. Session-34 witness $(k_x=16836, k_y=31866, D=3.76)$: $k_y \not\equiv k_x-1 \pmod5$,
+   so **Theorem T eliminates it** independently (before Theorem N is needed).
+2. The unique T-surviving pair with $D < \log(11/3) \approx 1.299$ and $k_x \le 300000$ is
+   $(k_x, k_y) = (84180, 159334)$, $D = 0.5367$, $A \in \{1,2,3,4,5\}$.
+   - **Theorem P alone** eliminates all candidates: $A \equiv 11 \pmod{16}$ forces $A \ge 11$,
+     but $A \le 5.13$. No Theorem N needed.
+   - Theorem N also kills it independently: $v_3(2^x+5-a^3) \le 3$ for $a \le 14$, vs
+     required depth $j+1 = 8{,}833{,}532{,}400$. Margin $\sim 3 \times 10^9$.
+3. Combined M+T survival fraction: exactly 20.0% of M-survivors (independent conditions).
+
+Twenty-sixth structural confirmation. WATCH remains the sole active priority. No framework
+built (Session-28 inventory-complete verdict).
 
 ---
 
@@ -49,7 +46,7 @@ This file is a snapshot of where the research currently stands. Per-session narr
 
 The conjecture is reduced to a single unconditional open target — an effective gap bound with a
 fixed $\kappa>1$ — that no current tool supplies. Research is in a **WATCH** phase: monitor arXiv,
-and record any new structural facts found along the way. As of Session 35 there have been **24
+and record any new structural facts found along the way. As of Session 37 there have been **26
 consecutive negative confirmations** of the two-comparable-S-units barrier.
 
 ## The open target (corrected framing, Session 26)
