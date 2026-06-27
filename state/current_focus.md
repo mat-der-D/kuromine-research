@@ -1,40 +1,39 @@
 # Current Focus
 
-**Session:** 20260627_041229 (Session 37)
+**Session:** 20260704_000000 (Session 38)
 
-## Session 37 main results (WATCH negative, 26th confirmation; CORRECTION to Theorem R; NEW Theorem V; Python-verified)
+## Session 38 main results (WATCH negative, 27th confirmation; NEW framework built+retired under SPECIAL DIRECTIVE; new Wolfram computations)
 
-WATCH-phase session with: (1) arXiv watch (negative); (2) a Python-based correction to
-Session-33's Theorem R (the exact law $v_2(c_k)=4k$ is FALSE; $v_2(c_3)=11$, not $12$);
-(3) a new structural theorem (Theorem V) showing that the sharpest Theorem-T-surviving
-near-boundary pair is eliminated by Theorem P alone (2-adic route), and the Session-34
-witness is eliminated by Theorem T alone.
+WATCH-phase session that (1) ran the arXiv watch (negative, 27th confirmation); (2) produced two
+**genuinely new Wolfram computations** — a joint multi-prime cube-root/$B$ portrait and the 3-adic
+valuation-budget cancellation; and (3) honored the **THEORY-BUILDING SPECIAL DIRECTIVE** by
+constructing a new-*shape* framework — the **Integral Valuation-Budget Framework** — and, honestly,
+finding that it too reduces to the wall (crux Lemma VB-2 = the missing $\kappa>1$ gap bound).
 
-**arXiv watch (twenty-sixth confirmation, negative).** Unchanged: Bugeaud 2604.27490 still
-only "$\to\infty$ with $z^d$" (not power-saving $\kappa>1$); $k\ge3$-prime decidability
-(Dong–Shafrir 2505.19141) still "outstanding open problem"; no new irrationality-measure
-improvement below $\mu=2$. No new applicable paper.
+**arXiv watch (twenty-seventh confirmation, negative).** Unchanged: Bugeaud 2604.27490 still only
+"$\to\infty$ with $z^d$" (not power-saving $\kappa>1$); $k\ge3$-prime decidability (Dong–Shafrir
+2505.19141) still "outstanding open problem"; CDT/Badziahin $\mu(2^{1/3})>2\gg1.107$. No new paper.
 
-**Correction to Theorem R (Session 33, Python-verified):**
-The claim "leading-coefficient law $v_2(c_k) = 4k$" is FALSE for $k \ge 3$.
-Python at depth $n \le 200$: $v_2(c_3) = 11$ (not $12$), $v_2(c_4) = 17$ (not $16$),
-$|v_2(c_k) - 4k| \le 2$ for all $k \le 50$, and $\liminf v_2(c_k)/k = 4$.
-Corrected Theorem R: $k_y \mapsto A(k_y)$ is 2-adic analytic with slope 4 and O(1) coefficient fluctuations.
-The slope and analyticity claims remain correct; the exact-law claim is withdrawn.
+**New Wolfram computations (genuine, recorded):**
+1. **Multi-prime joint portrait.** For $(k_x,k_y)=(1,1)$, at every prime $p\in\{7,13,19,31,37,43,
+   61,67,73,97,109,127\}$, the phantom cube root $z_{\text{ph}}\equiv10\cdot3^{-1}$ is one of the
+   three family roots and $B_{\text{ph}}\equiv37\cdot3^{-1}$ is among the family $B$-values
+   (at $p=37$: roots $\{21,25,28\}$, $37\mid B$ on $z\in\{21,28\}$, phantom on $z\equiv28$). The
+   sharpest single demonstration that the soft obstruction holds jointly across many primes.
+2. **Budget cancellation.** $v_3(A)+v_3(B)=v_3(2^x+5)=0$ universally (Wolfram; $2^x+5\equiv1\pmod3$,
+   $x$ odd). Genuine $(v_3(A),v_3(B))=(0,0)$ vs phantom $(1,-1)$ — the exact reason 3-adic
+   valuation is blind to the genuine/phantom distinction.
 
-**Theorem V (NEW, Python-verified):**
-1. Session-34 witness $(k_x=16836, k_y=31866, D=3.76)$: $k_y \not\equiv k_x-1 \pmod5$,
-   so **Theorem T eliminates it** independently (before Theorem N is needed).
-2. The unique T-surviving pair with $D < \log(11/3) \approx 1.299$ and $k_x \le 300000$ is
-   $(k_x, k_y) = (84180, 159334)$, $D = 0.5367$, $A \in \{1,2,3,4,5\}$.
-   - **Theorem P alone** eliminates all candidates: $A \equiv 11 \pmod{16}$ forces $A \ge 11$,
-     but $A \le 5.13$. No Theorem N needed.
-   - Theorem N also kills it independently: $v_3(2^x+5-a^3) \le 3$ for $a \le 14$, vs
-     required depth $j+1 = 8{,}833{,}532{,}400$. Margin $\sim 3 \times 10^9$.
-3. Combined M+T survival fraction: exactly 20.0% of M-survivors (independent conditions).
+**Integral Valuation-Budget Framework (NEW, built + RETIRED under SPECIAL DIRECTIVE).** A
+local-global / valuation-budget obstruction (a *different shape* from the three prior transfer
+frameworks, chosen because the wall is a local-global failure, not a metric transfer). Lemma VB-1
+(budget rigidity) **proved** but = Cubic-Transversality Lemma D (no constraint on genuine
+solutions). Lemma VB-2 (height–integrality incompatibility, the crux) **proved equivalent to the
+missing effective $\kappa>1$ gap bound**. **Seventh independent theory-building confirmation** of
+the wall. Full statement: `knowledge/references/valuation_budget_framework.md`.
 
-Twenty-sixth structural confirmation. WATCH remains the sole active priority. No framework
-built (Session-28 inventory-complete verdict).
+Twenty-seventh structural confirmation. WATCH remains the sole active priority. No new knowledge-base
+theorem (the framework's proved lemma duplicates Lemma D).
 
 ---
 
@@ -46,7 +45,7 @@ This file is a snapshot of where the research currently stands. Per-session narr
 
 The conjecture is reduced to a single unconditional open target — an effective gap bound with a
 fixed $\kappa>1$ — that no current tool supplies. Research is in a **WATCH** phase: monitor arXiv,
-and record any new structural facts found along the way. As of Session 37 there have been **26
+and record any new structural facts found along the way. As of Session 38 there have been **27
 consecutive negative confirmations** of the two-comparable-S-units barrier.
 
 ## The open target (corrected framing, Session 26)
@@ -97,7 +96,9 @@ solution. No local or congruence method can supply that.
 
 Every theory-building attempt and every standard tool returns the same two-comparable-S-units wall:
 metric (S15), analytic/irrationality (S3/10/11), 3-adic-coupling (S20–21, S24), decidability/degree
-(S22), archimedean-equidistribution (S27–28). New theory must beat the Dirichlet floor on the
+(S22), archimedean-equidistribution (S27–28), and local-global/valuation-budget (S38). Four
+theory-building frameworks (Coupling-Height, Differential-Progression, Cubic-Transversality,
+Integral-Valuation-Budget) all reduced to the wall. New theory must beat the Dirichlet floor on the
 $2^{2/3}$ approximation or supply a power-saving $\kappa>1$ gap bound directly; nothing short
 reaches it.
 
@@ -117,7 +118,10 @@ reaches it.
    KLNOW / Dong–Shafrir (2505.19141), and STOC/LICS 2026 follow-ups.
 
 2. **[DO NOT ATTEMPT]** Further theory-building that reduces to an existing attack face (inventory
-   complete; six confirmations, all the same wall).
+   complete; seven theory-building confirmations, all the same wall — the latest, S38's
+   Integral-Valuation-Budget framework, exhausts the local-global angle too). A new framework is
+   worth building only if it carries, from the outset, a mechanism producing an archimedean
+   $\kappa>1$ gap.
 
 3. **[VERY LOW / likely empty]** Near-boundary small-$D$ pairs — Theorem-N corollary still blocks
    (Theorem S); logged for completeness only.

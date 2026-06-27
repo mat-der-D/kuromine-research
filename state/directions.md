@@ -82,7 +82,7 @@ portrait — all independent, so they compose multiplicatively.
 
 ### [LOW] arXiv survey / WATCH (sole active priority)
 
-**Ongoing literature watch.** As of Session 36, **25 consecutive negative confirmations** of the
+**Ongoing literature watch.** As of Session 38, **27 consecutive negative confirmations** of the
 two-comparable-S-units barrier. The necessary-and-sufficient open target is any unconditional
 *effective* gap bound $|z^3-3^y|>C(z^3)^\kappa$ with a fixed $\kappa>1$ (the realized exponent
 $E=\log(2^x+5)/\log(z^3)$ densely fills $(2/3,1)$, S31). Frontier, unchanged:
@@ -144,6 +144,12 @@ session logs.
   ((2^x+3^y+5)^{1/3},\mathbb Z)$, returning the Session-3 sub-Dirichlet $2^{2/3}$ obstruction.
   Lemma D (phantom confined to $y<0$) kept as a clarification. **DO NOT REOPEN.** (dead_ends.md;
   `cubic_transversality_framework.md`; `log/20260628_000000.md`.)
+- **[RETIRED S38] Integral Valuation-Budget framework** (theory-building, SPECIAL DIRECTIVE) —
+  local-global / valuation-budget obstruction. Lemma VB-1 (budget rigidity) proved but = Cubic-
+  Transversality Lemma D; Lemma VB-2 (height–integrality incompatibility) proved equivalent to the
+  missing $\kappa>1$ gap bound. Seventh theory-building confirmation. Kept residuals: multi-prime
+  joint portrait (phantom on family branch at all primes $7..127$) and the budget-cancellation
+  identity $v_3(A)+v_3(B)=0$. (dead_ends.md; `valuation_budget_framework.md`; `log/20260704_000000.md`.)
 - **[RETIRED] $p$-adic elimination (standalone)** — phantom is a global rational cube, so the
   equation is locally solvable at every prime; congruence sieving alone is inert. Derived
   congruences are kept as auxiliary constraints. (dead_ends.md; `p_adic_methods.md`,
@@ -226,3 +232,9 @@ One line per session; full detail in the corresponding `log/` file and (for reti
   T-surviving near-boundary pair $(k_x=84180, k_y=159334, D=0.537)$ has $A\in\{1..5\}$,
   eliminated by Theorem P alone ($A\equiv11\bmod16$ forces $A\ge11>5.13$); Session-34 witness
   $(k_x=16836)$ eliminated by Theorem T alone. Python-verified.
+- **S38 (2026-06-27):** WATCH (27th, neg). SPECIAL DIRECTIVE — built & RETIRED the **Integral
+  Valuation-Budget framework** (local-global obstruction; Lemma VB-1 = Cubic-Transversality
+  Lemma D; Lemma VB-2 = the open $\kappa>1$ target; seventh theory-building confirmation). New
+  Wolfram: multi-prime joint portrait (phantom on family cube-root/$B$ branch at all primes
+  $7..127$) and budget cancellation $v_3(A)+v_3(B)=v_3(2^x+5)=0$, genuine $(0,0)$ vs phantom
+  $(1,-1)$.

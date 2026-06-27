@@ -393,3 +393,44 @@ analytic/irrationality (S3/10/11), 3-adic-coupling (S20–21, S24), decidability
 and archimedean-equidistribution (S27–28) — all returning the same wall. Full detail in
 `log/20260628_000000.md`. **DO NOT REOPEN** without a tool that beats the Dirichlet floor on the
 $2^{2/3}$ approximation (equivalently, supplies a power-saving $\kappa>1$ gap bound).
+
+## Integral Valuation-Budget framework (Session 38 build + retirement)
+
+**Status:** RETIRED. Theory-building under the SPECIAL DIRECTIVE. The framework's only proved
+lemma (VB-1) duplicates Cubic-Transversality Lemma D; its crux lemma (VB-2) is proved equivalent
+to the missing effective $\kappa>1$ gap bound. **Seventh independent theory-building confirmation
+of the wall.** Do not reopen.
+
+**The framework (Session 38).** A local-global / valuation-budget obstruction (a *different shape*
+from the three prior transfer frameworks, deliberately chosen because the wall is a local-global
+failure — solvable everywhere locally, no global integer point — not a metric-transfer gap).
+Records, for the factorization $2^x+5=A\cdot B$, the **valuation-budget vector**
+$(v_p(A))_p$ vs $(v_p(B))_p$ at every place plus the archimedean size of $A$, and the
+**phantom defect** $\partial=-\min_p\min(v_p(A),v_p(B))$ ($\partial=0$ iff $A,B\in\mathbb Z$).
+
+- **Lemma VB-1 (Budget rigidity) — PROVED, KEPT.** On the survival sheet $k_y\ge0$ ($y\ge0$), the
+  conserved budget $v_3(A)+v_3(B)=v_3(2^x+5)=0$ (Wolfram: $2^x+5\equiv1\pmod3$ universal, $x$ odd)
+  plus integrality of $A,B$ forces $(v_3(A),v_3(B))=(0,0)$; the phantom's split $(1,-1)$
+  ($A_{\text{ph}}=3$, $B_{\text{ph}}=37/3$) requires $y<0$. **This is exactly Cubic-Transversality
+  Lemma D**, re-derived through the budget; correct but gives no constraint on genuine solutions
+  ($\partial=0$ is automatic).
+
+- **Lemma VB-2 (Height–Integrality Incompatibility) — REFUTED as a route (= the open target).**
+  Claimed: no $(k_x\ge1,k_y\ge0,D\ge0)$ has the band-integer $A\in[e^D/3,3e^D]$ at depth
+  $v_3(2^x+5-A^3)=j+1$. This is precisely "does the size-$e^D$ band contain the depth-$(j+1)$
+  3-adic truncation of size $\sim2^{x/3}$" — the realized-gap-exponent question. A uniform proof
+  requires $|z^3-3^y|>C(z^3)^\kappa$, $\kappa>1$ — the missing tool. Provably equivalent to the
+  open target, not a way around it.
+
+**Why it fails (root cause).** The $p$-adic valuation budget is conserved and self-consistent at
+every place (the phantom satisfies it everywhere — Session-38 multi-prime portrait: phantom on the
+family cube-root/$B$ branch at all primes $7..127$). The only datum separating genuine from
+phantom is integrality, which is archimedean once the place-valuations are pinned. The local-global
+angle is genuinely a new *shape* but returns the same archimedean $\kappa>1$ gap. **Seventh
+confirmation.** Full statement in `knowledge/references/valuation_budget_framework.md`;
+session narrative in `log/20260704_000000.md`. **DO NOT REOPEN** without a mechanism that produces
+an archimedean $\kappa>1$ gap from the outset.
+
+**Genuine residual facts (kept):** (i) the multi-prime joint portrait (phantom on the family branch
+at all primes $7..127$, the sharpest single soft-obstruction demonstration); (ii) the
+budget-cancellation identity $v_3(A)+v_3(B)=0$, genuine $(0,0)$ vs phantom $(1,-1)$.
