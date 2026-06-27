@@ -346,10 +346,28 @@ change.** See Theorem S in `knowledge/problem.md` and `log/20260703_000000.md`.
   $z^3 \equiv 11 \pmod{37}$; 11 is a cubic residue mod 37. Non-contradictory.
 - No actionable consequence found yet.
 
-**Open question:** Does the specific arithmetic of $c = 5$ (the phantom structure) impose
-any POSITIVE constraint that could be exploited? So far it has only been an OBSTRUCTION.
+**Session 35 progress (Theorem T — 5-adic Valuation Sieve; the first use of the prime 5).**
+Examined the equation at the prime 5 (= the constant) *as a valuation*, never done before. Findings
+(Wolfram): (i) $v_5(N)\geq2$ universally on the family ($2^x\equiv7,3^y\equiv13\pmod{25}$ pinned
+since $332640\equiv166320\equiv0\pmod{20}$); (ii) a cube needs $3\mid v_5(N)$, forcing
+$v_5\geq3\iff N\equiv0\pmod{125}\iff k_y\equiv k_x-1\pmod5$ — a **new necessary congruence
+eliminating 80% of the family**; (iii) iterated 5-adically (survivors $\approx16.2\%$ of the mod-25
+grid). **Soft-obstructed**: the phantom $1000/27$ has $v_5=3$ and lies on the survival diagonal
+($(k_x,k_y)=(0,-1)$), so the sieve never empties the family — a 24th confirmation, now from the
+prime-5/valuation side. This is a *partial positive answer* to the open question below: the
+arithmetic of $c=5$ does impose a real new POSITIVE (necessary) congruence on the family, but it is
+soft-obstructed like all local constraints. Practical value: cheapest large search-space cut
+($\geq5\times$), composes independently with Theorem M (size) and the $p$-adic portrait. See
+Theorem T in `knowledge/problem.md` and `log/20260627_140000.md`. **No priority change** (live
+content remains the global/size $\kappa>1$ tool).
 
-**Priority:** LOW. Speculative; cyclotomic characterization derived but no concrete attack.
+**Open question:** Does the specific arithmetic of $c = 5$ (the phantom structure) impose
+any POSITIVE constraint that could be exploited? **Partial answer (S35):** yes, the $v_5$-valuation
+sieve $k_y\equiv k_x-1\pmod5$ is a genuine new positive constraint — but soft-obstructed (the
+phantom satisfies it). No *un*-obstructed positive consequence found.
+
+**Priority:** LOW. Cyclotomic characterization (S17) + 5-adic valuation sieve (S35, Theorem T)
+derived; the sieve is useful for numerical search but soft-obstructed for a proof.
 
 ### [~RETIRED, Session 17] Function-field analog / Mason-Stothers inspiration
 
@@ -473,6 +491,14 @@ $(1,0),(5,3),(1445,597),(1445,1677)$ with only the first two being cubes. The tw
 survivors are non-cubes and outside the Theorem-5 class. The full Theorem-5 floor
 ($x=332645$) remains far beyond brute force, so direct numerical refutation of the conjecture
 is infeasible — keep at LOW.
+
+**Session 35 (Theorem T — new cheap large cut for any search).** The 5-adic valuation sieve gives
+the strongest single elementary filter found: any Theorem-5 solution must satisfy
+$k_y\equiv k_x-1\pmod5$ (else $v_5(N)=2$ is not a multiple of 3, so $N$ is not a cube), a
+$\geq5\times$ reduction, refinable 5-adically (survivors $\approx16.2\%$ of the mod-25 grid). It is
+**independent of** Theorem M (size, $\sim$half) and the mod-$3^n$/mod-$2^n$ portrait, so all combine
+multiplicatively. For any future Theorem-5 numerical verification, apply Theorem T first (cheapest).
+See Theorem T in `knowledge/problem.md`.
 
 ### [RETIRED in Session 5] Skolem's method / Bertók-Hajdu algorithm
 
@@ -627,6 +653,22 @@ digits of $A\Leftrightarrow k_x$ alone, 2-adic digits of $A\Leftrightarrow k_y$ 
 places are independent free bijective parameters, coupled only by the archimedean size
 $A\approx2^{x/3}$. This is the sharpest $p$-adic statement of the soft obstruction; confirms (does
 not breach) the wall. Recorded in `knowledge/problem.md` (Theorems P, Q). No priority change.
+
+**Session 35 update (5-adic valuation sieve — first use of the prime 5; twenty-fourth
+confirmation):** arXiv watch **negative (twenty-fourth confirmation)**: Bugeaud (2503.22084 /
+2604.27490) still only "$\to\infty$ with $z^d$"; $k\ge3$-prime decidability still "an outstanding
+open problem" (Dong–Shafrir 2505.19141); a "$2^x+3^y=$ cube" sweep surfaced only standard ternary
+$a^x+b^y=c^z$ work (no free cube; not applicable); CDT/Badziahin $\mu(2^{1/3})>2\gg1.107$. **New
+recordable structural theorem (Wolfram, no framework) — Theorem T (5-adic Valuation Sieve):** the
+prime 5 (= the constant) examined for the first time, and as a valuation. $v_5(N)\geq2$ universally
+($2^x\equiv7,3^y\equiv13\pmod{25}$); a cube needs $3\mid v_5(N)$, forcing $v_5\geq3\iff N\equiv0
+\pmod{125}\iff k_y\equiv k_x-1\pmod5$ — a **new necessary congruence eliminating 80% of the
+family**, refinable 5-adically (survivors $\approx16.2\%$ of the mod-25 grid). **Soft-obstructed:**
+the phantom $1000/27$ has $v_5=3$ and lies on the survival diagonal $(k_x,k_y)=(0,-1)$, so the sieve
+removes a fixed positive fraction at every depth and cannot empty the family. Strongest single
+elementary cut since Theorem M (80% vs 53%), independent of it, useful for numerical search
+($\geq5\times$). Confirms (does not breach) the wall. Recorded in `knowledge/problem.md`
+(Theorem T). No priority change.
 
 ---
 

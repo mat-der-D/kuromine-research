@@ -1,6 +1,51 @@
 # Current Focus
 
-**Session:** 20260703_000000 (Session 34)
+**Session:** 20260627_140000 (Session 35)
+
+## Session 35 main result (WATCH negative, 24th confirmation; NEW Theorem T = 5-adic Valuation Sieve at the constant prime, Wolfram-verified)
+
+WATCH-phase session plus a concrete Wolfram computation examining a facet **never before touched**:
+the prime $5$ (the additive constant), and as a **valuation** rather than a residue. Every prior
+session sieved at the bases 2, 3 or at auxiliary primes $7,13,19,\ldots$; the constant prime 5 had
+never been used, despite Session 17 identifying the constant as the genuinely hard ingredient.
+
+**arXiv watch (twenty-fourth confirmation, negative).** Unchanged: Bugeaud 2503.22084 / 2604.27490
+still only "$\to\infty$ with $z^d$" (not power-saving $\kappa>1$); $k\ge3$-prime decidability still
+"an outstanding open problem" (Dong–Shafrir 2505.19141, STOC 2026); a "$2^x+3^y=$ cube" sweep
+surfaced only standard ternary $a^x+b^y=c^z$ Terai/Pillai work (no free cube, not applicable);
+CDT/Badziahin $\mu(2^{1/3})>2\gg1.107$.
+
+**Theorem T (NEW, Wolfram-verified) — 5-adic Valuation Sieve.** With $N=2^x+3^y+5=z^3$:
+1. **$v_5(N)\geq2$ universally** on the family ($2^x\equiv7$, $3^y\equiv13\pmod{25}$, pinned since
+   $332640\equiv166320\equiv0\pmod{20}$).
+2. A cube needs $3\mid v_5(N)$; with $v_5\geq2$ this forces $v_5\geq3$, i.e. $N\equiv0\pmod{125}
+   \iff \boxed{k_y\equiv k_x-1\pmod5}$ — a clean new necessary congruence eliminating **80%** of the
+   Theorem-5 family at level 1 (the cube map at 5 is a bijection, so the content is purely the
+   valuation, not a residue).
+3. **Iterated 5-adically**: on the survival diagonal, $v_5$ distribution over $(k_x,k_y)\bmod25$ is
+   $\{3{:}100,4{:}20,5{:}4,6{:}1\}$; survivors ($3\mid v_5$) $\approx16.2\%$ of the mod-25 grid.
+4. **Soft-obstructed**: phantom $1000/27$ has $v_5=3$ and parameters $(k_x,k_y)=(0,-1)$ on the
+   survival diagonal, so the sieve removes a fixed positive fraction at every depth and **cannot
+   empty the family** (random-sample survival $\approx16.7\%$). Neither known solution is removed
+   (both off-family, $v_5=0$).
+
+**Net.** No new direction. Theorem T is the strongest single *elementary* cut since Theorem M (80%
+vs 53%) and is independent of it (valuation vs size), so they compose; it has genuine practical
+value (a $\geq5\times$ search-space reduction for any future numerical verification). But it
+**confirms, does not breach**, the wall — the prime 5 / valuation face is soft-obstructed exactly
+like the bases. Twenty-fourth structural confirmation. WATCH remains the sole active priority. No
+framework built (Session-28 inventory-complete verdict). See Theorem T in `knowledge/problem.md`
+and `log/20260627_140000.md`.
+
+---
+
+## Session 34 main result (WATCH negative, 23rd confirmation; NEW Theorem S = Convergent–Depth Trade-off Law for the boundary distance $D$, Wolfram-verified)
+
+**(prior session — retained below)**
+
+### Session 34 header (preserved)
+
+**Session (prior):** 20260703_000000 (Session 34)
 
 ## Session 34 main result (WATCH negative, 23rd confirmation; NEW Theorem S = Convergent–Depth Trade-off Law for the boundary distance $D$, Wolfram-verified)
 
