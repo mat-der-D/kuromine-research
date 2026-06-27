@@ -198,6 +198,42 @@ uniformity across the infinite $y$-progression — the actual open content.
   the family). Documented in `knowledge/references/thue_mahler_approach.md` and
   `log/20260626_230000.md`.
 
+## Chabauty-Kim / algebraic-geometry methods (Session 13)
+
+**Status:** Categorically inapplicable. Do not pursue any Chabauty-Kim variant.
+
+**What was checked (Session 13):** The full 2025–2026 Chabauty-Kim cluster — Affine Chabauty I/II
+(arXiv:2511.15949, 2602.05643), Modular Chabauty (arXiv:2505.12947), Cubic Chabauty
+(arXiv:2604.20662).
+
+**Why it fails (root cause):** Chabauty-Kim methods compute integral/$S$-integral points on
+*algebraic curves*. Kuromine's variables $x,y$ are **exponents of fixed bases**, not algebraic
+coordinates; the constraint "$u = 2^x$ for integer $x$" cannot be encoded as $S$-integrality on a
+curve. This is a **categorical mismatch** (the equation lies outside the algebraic category), not a
+quantitative gap — no improvement in Kim-set depth, rank condition, or computational reach can
+change it. The fixed-variable specialization only re-derives the per-fixed-$N$ Mordell/Thue
+finiteness already covered by the Thue-Mahler and elliptic-curve dead ends, with no family
+uniformity. **Fifth categorical barrier.** Full analysis in `log/20260626_120000.md`.
+
+## Cyclotomic phantom family (Session 17 build, Session 19 retirement)
+
+**Status:** RETIRED. Structural insight only; no actionable attack on $c=5$.
+
+**What was tried:** Compare the general $y=-3$ phantom family $c_m = 27m^3+9m^2+m-32$,
+$z_m=(9m+1)/3$ (giving $c_1=5$, $c_2=222$, $c_3=781$) to see whether a neighboring constant is
+easier and transfers a method back to $c=5$.
+
+**Findings (Session 19, analytic):** (i) **Theorem O (parity partition):** $c_m$ is odd iff $m$ is
+odd, so $z$ is even for odd-$m$ equations and odd for even-$m$ equations. (ii) $c_1=5$ is uniquely
+special — the only $c_m$ with $2^5+c_m$ prime $\equiv1\pmod3$ (the forced-factor pivot $37$);
+all others are composite with extra small-prime factors, and the "$37\|B$" structure is absent for
+$m\ge2$ (e.g. $37\mid c_2=222$). $c_1=5$ is the *easiest* case in the family.
+
+**Why it fails:** Every equation $2^x+3^y+c_m=z^3$ is locally solvable at every $p\ne3$ (the
+phantom is a global rational cube for all $m$), so the soft obstruction is universal and no
+modular method works for any $c_m$. Studying $m\ge2$ yields no technique applicable to $c_1=5$.
+Full analysis in `log/20260627_000000.md`.
+
 ## Coupling-Height / Moving-Filtration framework (Session 20 build, Session 21 retirement)
 
 **Status:** RETIRED. The Session-20 theory-building framework rested on two candidate

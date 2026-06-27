@@ -1,933 +1,211 @@
 # Research Directions
 
-Directions are listed with a priority estimate and current status.
+Directions are listed with a priority estimate and current status. Retired directions are
+recorded as one-line markers; their full reasoning lives in `knowledge/dead_ends.md` (and the
+cited session logs). Theorems are stated in `knowledge/problem.md`.
 
 ---
 
 ## Active Directions
 
-### [RETIRED in Session 28] Cubic-Transversality / Dial–Lattice framework (theory-building)
-
-**Built in Session 27, RETIRED in Session 28 — Lemma C (the crux) refuted.**
-
-**Session 28 resolution (Wolfram).** The crux Lemma C collapses onto already-settled ground via
-an exact identity (`Simplify` = 0):
-$$\operatorname{dist}\big(R_y(x),\,3\mathbb Z\big) = 3\cdot\operatorname{dist}\big((2^x+3^y+5)^{1/3},\,\mathbb Z\big).$$
-The dial-orbit discrepancy from $3\mathbb Z$ is exactly 3 times the **original cube-root
-distance** — the $\times27$ / $W=3z$ rescaling is undone by the cube root, so the "new
-archimedean object" is the original cube-distance. Since the family has $x\equiv2\bmod3$
-(Wolfram), $2^x=4M^3$ ($M=2^{(x-2)/3}$) and the discrepancy is governed by the rational
-approximation of $2^{2/3}=4^{1/3}$ by $m/M$ — **the Session-3 $2^{2/3}$-Thue quantity**. Wolfram:
-the discrepancy descends toward 0 along deep $2^{2/3}$-convergents (e.g. $\operatorname{dist}
-\approx0.0026$ at $x=35$), so it has **no positive constant lower bound**; the realized
-approximation exponent is sub-Dirichlet ($\kappa\le1.21$, negative for most pairs), so no
-irrationality measure can act. Lemma C's effective-equidistribution route IS the
-two-comparable-S-units barrier in archimedean clothing. **Sixth independent confirmation that the
-barrier is place-independent.** Lemma D (phantom confined to $y<0$, survival sheet phantom-free)
-is **kept** as a correct structural clarification in the reference file. Moved to
-`knowledge/dead_ends.md`. **DO NOT REOPEN** — Lemma C is equivalent to the open target itself.
-
----
-
-#### Original Session-27 entry (superseded by the retirement above)
-
-**Built in Session 27 (2026-06-27)** under the SPECIAL DIRECTIVE after a negative arXiv watch.
-A genuinely **archimedean-first** framework, logically distinct from the two retired
-3-adic-only theory-building frameworks (Coupling-Height S20–21, Differential-Progression S24).
-Full write-up: `knowledge/references/cubic_transversality_framework.md`.
-
-**New handle (Wolfram-verified).** Genuine solution = *integer* cube root ($z\in\mathbb Z$);
-phantom = *denominator-exactly-3 rational* cube root ($z=10/3$). With $W:=3z$ the equation
-becomes the **dial form** $W^3 = 27\cdot 2^x + 3^{\,y+3} + 135$. A real/rational distinction,
-not a $p$-adic one.
-
-- **Lemma D — PROVED (clean output).** On the survival sheet $y\ge0$, any cube hit
-  $W^3=27(2^x+3^y+5)$ has $27\mid W^3\Rightarrow 3\mid W\Rightarrow z\in\mathbb Z$. So the
-  phantom's denominator-3 escape is **confined to $y<0$, OFF the Theorem-5 lattice**. This is
-  the first formulation in which the phantom is provably ABSENT from the relevant sheet (not
-  merely soft-obstructing). The conjecture on $\mathcal L$ reduces to **pure transversality with
-  no phantom to dodge**.
-- **Lemma C — UNPROVEN crux.** Effective resonance-exclusion: the exponential dial orbit
-  $R_y(x)=(27\cdot2^x+3^{y+3}+135)^{1/3}$ (velocity $\theta'\asymp2^{x/3}$, Wolfram ✓) never
-  lands exactly on $3\mathbb Z$ on the survival wedge. As a naive gap bound it is **vacuous**
-  (= the original $27|2^x+3^y+5-z^3|$); its only route is an **effective equidistribution/
-  discrepancy** bound for the dial orbit. **Honest expectation:** the two-comparable-S-units
-  degeneracy likely re-surfaces here (the orbit's effective equidistribution rate is governed
-  by the same Diophantine quantity that makes Baker give $v_p=0$). The framework **relocates**
-  the wall to an archimedean equidistribution question; it does not yet breach it.
-
-**Priority rationale.** Kept at LOW (not retired) because (i) Lemma D is a genuine, proved
-clarification — the phantom does not obstruct the survival sheet in this formulation — and
-(ii) Lemma C is the one untried *archimedean* angle. Next step: test whether effective
-equidistribution can exclude a single lattice hit, or confirm it collapses to the same barrier.
-
 ### [HIGH] Factorization approach via $z^3 - w^3 = 2^x + 5$
 
-**Discovered in Session 1 (2026-06-25).** For all Theorem 5 solutions, $y = 3j$ and the equation factors as $(z-w)(z^2+zw+w^2) = 2^x + 5$ with $\gcd = 1$ and $z^2+zw+w^2$ having only prime factors $\equiv 1 \pmod 3$. This is a norm form equation in $\mathbb{Z}[\omega]$ (Eisenstein integers).
+**Discovered Session 1.** For all Theorem-5 solutions $y=3j$ and the equation factors as
+$(z-w)(z^2+zw+w^2)=2^x+5$ with $w=3^j$, $\gcd=1$, and $z^2+zw+w^2$ having only prime factors
+$\equiv1\pmod3$ — a norm-form equation in the Eisenstein integers $\mathbb Z[\omega]$. Clean
+single-equation form with $A=z-3^j$, $B=z^2+z3^j+3^{2j}$:
+$$2^x+5 = A\,(A^2+3^{j+1}A+3^{2j+1}) = A\cdot B.$$
 
-**Session 3 progress:**
-- Clean equivalent single equation, with $A = z - 3^j$:
-  $$2^x + 5 = A^3 + 3^{j+1}A^2 + 3^{2j+1}A = A\,(A^2 + 3^{j+1}A + 3^{2j+1}).$$
-  Brute force ($x\le40$) recovers BOTH known solutions, each with **$A = z-3^{y/3} = 1$**.
-- Eisenstein-norm identity $4B - 3w^2 = (2z+w)^2$ (verified on $(5,3,4)$: $148-27=121$).
-- **Negative:** the inert-prime condition ($q\equiv2\bmod3$, $q\mid2^x+5 \Rightarrow q\mid z-3^j$)
-  is automatically consistent (gives $3^{3j}\equiv3^y\bmod q$, automatic since $y=3j$). So the
-  factorization yields no new congruence — soft obstruction again.
+**Current status: MEDIUM in practice.** All *congruence* and *multiplicative* content is soft-
+obstructed (the phantom $A=3$, $B=37/3$ reduces mod every $p\ne3$; the Eisenstein "primes
+$\equiv1\bmod3$" condition on $B$ is forced automatically by $\gcd(z,3^j)=1$ — S29). $A$ is
+provably $\sim2^{x/3}$ (never the phantom value), so "$A=1$" is impossible. The complete $p$-adic
+portrait of $A$ is documented as Theorems I–L, N, P, Q, R in `knowledge/problem.md`: $A$ is a free
+3-adic unit (digits $\leftrightarrow k_x$) and a free 2-adic unit (digits $\leftrightarrow k_y$),
+coupled only by the archimedean size. The direction survives **only** in its global/size sub-
+question (a), which needs an effective $\kappa>1$ gap bound that does not exist.
 
-**Session 4 progress / downgrade:** The factorization's *congruence* content is now proven
-inert (soft obstruction: $A\equiv3\pmod p$, $B\equiv37/3\pmod p$ for all $p\ne3$, matching the
-phantom $A=3$, $B=37/3$). The only real-vs-phantom distinction is 3-adic ($v_3(A)=0$ vs $1$),
-blocked by the $3^n$ wall. $A$ is provably huge ($\sim2^{x/3}/3 \le A \le 1.587\cdot2^{x/3}$),
-so "$A=1$" is impossible for Theorem-5 — sub-question (c) is closed negatively. The direction
-survives **only** in its global/size form (sub-question (a)), which still needs a tool that
-does not yet exist. Effective priority is now **MEDIUM at best**, kept here as the cleanest
-single-equation reformulation rather than an active lead.
-
-**Session 29 sharpening (Wolfram density experiment, confirms inertness from a new side).**
-Tested directly whether the Eisenstein constraint on $B$ — "all prime factors of
-$B=z^2+z\,3^j+3^{2j}$ are $\equiv 1 \pmod 3$" — is an independent condition a genuine solution
-must meet. **It is not:** it is forced automatically by $\gcd(z,3^j)=1$ (which holds on the
-family, $z\equiv1\bmod3$). Wolfram: for arbitrary $z\equiv1$, $w\equiv0\bmod3$ *without*
-coprimality the condition fails 6/8 of the time (a prime $p\equiv2\bmod3$ in $\gcd(z,w)$ enters
-$B$ to odd power); with $\gcd(z,w)=1$ it holds 12/12 (classical: primitive principal-Eisenstein
-form values are products of split primes only). This is the **multiplicative/density-side**
-confirmation of the Session-4 congruence-side soft obstruction: the factorization imposes no new
-global constraint, and the phantom remains on the inert side. **No priority change** (the
-direction's only live content remains the global/size sub-question (a), which needs the
-unavailable $\kappa>1$ tool).
-
-**Session 32 progress (Theorem P + Observation Q — 2-adic mirror law, completes the $p$-adic
-portrait).** Computed (Wolfram) the previously-undocumented 2-adic lifting law for $A = z-3^j$:
-with $v_2(3^y+5)=3$ universal ($y$ odd on the family) $\Rightarrow v_2(z)=1$, $z=2u$ ($u$ odd);
-$A \equiv 11 \pmod{16}$ universally; for $n\ge5$, $A \bmod 2^n$ is determined by
-$k_y \bmod 2^{n-4}$ (period exactly $2^{n-4}$, independent of $k_x$), so $k_y\mapsto A$ is a
-**bijection $\mathbb Z_2 \to 11+16\mathbb Z_2$** — no 2-adic obstruction. The "$-4$" offset
-mirrors the 3-adic $v_3(2^{332640}-1)=4$ via $v_2(166320)=4$. **Observation Q (variable
-separation):** 3-adic digits of $A$ $\Leftrightarrow k_x$ alone (Theorem J), 2-adic digits of $A$
-$\Leftrightarrow k_y$ alone (Theorem P); the two places are independent free bijective
-parameters, coupled only by the archimedean size $A\approx2^{x/3}$. Sharpest $p$-adic statement
-of the soft obstruction: no congruence (at 2, 3, or CRT-joint) pins $A$ off a genuine value.
-Confirms (does not breach) the wall. **No priority change.** See Theorems P, Q in
-`knowledge/problem.md` and `log/20260701_000000.md`.
-
-**Session 33 progress (Theorem R — 2-adic Newton/tangent expansion; completes the
-tangent-valuation symmetry).** Sharpened (Wolfram) Theorem P from a period statement to an explicit
-2-adic analytic Mahler expansion of the bijection $k_y\mapsto A$: $A(k_y)=c_0+c_1k_y+c_2\binom{k_y}{2}
-+\cdots$ with $c_0\equiv11\pmod{16}$, $v_2(c_1)=4$, $v_2(c_2)=8$ (leading-coefficient law
-$v_2(c_k)=4k$; verified $k=1,2$ at moduli $2^{12},2^{16},2^{24}$). So $k_y\mapsto A$ is **2-adic
-analytic with tangent valuation 4**, re-deriving Theorem P's "$-4$" offset from the slope; the
-affine form is exact up to depth $n=8$. The **same holds for $z$** ($z\equiv102-16k_y\pmod{256}$,
-step $v_2=4$); and since $3^j\equiv0\pmod{3^n}$, $z\equiv A\pmod{3^n}$, so Observation Q's variable
-separation holds for $z$ too. New subtlety: $N\equiv1\pmod9$ has **three** 3-adic cube-root branches
-$\equiv1\pmod3$; the genuine $z$ is selected archimedeanly, not congruentially — a clean restatement
-of why the obstruction is archimedean. This completes the symmetry with the Session-24 3-adic
-tangent valuation 3 (2-adic slope $v_2=4$ via $v_2(166320)=4$; 3-adic slope $v_3=3$). Confirms (does
-not breach) the wall. **No priority change.** See Theorem R in `knowledge/problem.md` and
-`log/20260702_000000.md`.
-
-**Session 15 progress (Theorem N).** New exact 3-adic valuation identity:
-$2^x + 5 - A^3 = 3^{j+1}A(A+3^j)$, hence $v_3(2^x+5-A^3) = j+1$ (using $\gcd(A,3)=1$ from
-Theorem I). This re-proves cleanly, via valuation, that $A$ is no fixed small integer (for
-fixed $a$ coprime to 3, $v_3(2^x+5-a^3)$ is a bounded constant $\leq 3$, contradicting
-$j+1 \geq 55440$). The $A=1$ band: LTE gives $v_3(2^x+4)=2$ universally $\Rightarrow j=1$
-(only the known solution). See Theorem N in `knowledge/problem.md`. The *elimination*
-strategy (bounded $A$ + small valuation) is closed negatively — see sub-question (a).
-
-Key sub-questions (remaining):
-- (a) [CLOSED negatively, Session 15] Bounded-$A$ / boundary-case elimination. $A$ is small
-  only at the Theorem-M boundary $D := x\log2-(2j+1)\log3 \approx 0$, but the Theorem-5
-  lattice never lands within $O(1)$ log-distance of it: closest *surviving* ($D\geq0$)
-  approach over $k_x\leq5000$ is $D\approx55$ ($A\gtrsim10^{24}$); closest overall $D\approx10$
-  is on the *eliminated* side (Wolfram). The metric face of the two-S-units barrier. Moved to
-  `knowledge/dead_ends.md`. [Session 21 note: the "$D\approx55$ floor" is a finite-range
-  artifact; in fact $\inf D_{\ge0}=0$ by equidistribution — but this does NOT revive the
-  elimination; the Theorem-N corollary still blocks. See dead_ends.md.] (The earlier
-  Thue-Mahler-per-$x$ note remains: finiteness per $x$ known; uniformity over the
-  $x$-progression open, no current tool delivers it.)
-- (b) [CLOSED, Session 4] growth / primitive-divisor (Zsygmondy/BHV): inapplicable — $B$ is not a Lucas/Lehmer sequence. See RETIRED entry below.
-- (c) [CLOSED negatively, Session 4] $A = z - 3^{y/3}$ cannot be forced to 1; it is provably $\sim2^{x/3}$ for any Theorem-5 solution. (Re-proved 3-adically in Session 15, sub-question (a).)
-
-### [RETIRED in Session 3] Effective Diophantine approximation to $2^{1/3}$
-
-**Elevated in Session 2, RETIRED in Session 3 with a proof.** The reframing
-$z^3 - 4W^3 = 3^y+5$ ($W=2^a$, $x=3a+2$) makes $z/W$ a rational approximation to
-$2^{2/3}$. The session computed (Wolfram, two independent ways) that this approach
-*cannot* work:
-- The realized approximation exponent is $\kappa_{\text{real}}\approx0.62<1$, far below
-  any effective irrationality measure $\mu\ge2$. Irrationality measures are *lower*
-  bounds; they only constrain *good* approximations ($\kappa\ge\mu$). $z/W$ is a *bad*
-  approximation, so no measure (however sharp, including arXiv:2510.04156) gives
-  information.
-- As a Thue lower bound a contradiction needs $\log(3^y+5)<(3-\mu)\log\max(z,W)$, but
-  LHS $\approx182718$, RHS $\approx43809$ ⟹ off by $+138909$. The form value $3^y+5$ is
-  far too large.
-
-**Root cause:** $3^y$ is *not* a small perturbation of $2^x$ — $\log3^y/\log2^a\approx2.38$,
-so $3^y\approx z^2$. This is the "two comparable dominant S-units" regime, beyond any
-single cubic irrationality measure. See
-`knowledge/references/irrationality_measure_obstruction.md`. Moved toward dead_ends.
-
-**Session 11 strengthening.** The realized approximation exponent $\kappa_{\text{real}}$
-of $z/W$ to $2^{2/3}$ is **not** a single value $\approx 0.62$; it is $0.62$ only at the
-family floor $k_y = 0$ and goes **negative** for every $k_y \geq 1$ ($-1.75, -4.13, -6.51,
-\dots$; Wolfram). For almost the entire Theorem-5 family the approximation *diverges*
-($|2^{2/3} - z/W| \gg e^{134867} \gg 1$), because $3^y$ grows faster than $2^x$ along the
-progression. So the situation is even worse than Session 3 recorded: any
-separation/measure bound (a lower bound, nontrivial only for *good* approximations,
-$v \geq 2$) has nothing to act on. This also rules out Badziahin's 2026 cubic-vs-rational
-separation results — see the arXiv-survey [LOW] direction below.
-
-### [LOW, ~RETIRED as standalone] $p$-adic analysis of the phantom solution
-
-**Session 10 addendum (Suggestion #1 resolved).** The map $k_x \mapsto A$ is now written
-explicitly as a 3-adic analytic function: with $g = 2^{332640}$ one has $v_3(g-1)=4$
-(Wolfram), so $2^x = 32\,g^{k_x} = 32\exp_3(k_x L)$ with $L=\log_3 g$, $v_3(L)=4$, and
-$A(k_x) = (32\exp_3(k_x L)+5)^{1/3}$ (the $z\equiv1\bmod3$ branch) is 3-adic analytic. By
-Theorem J it is a **bijection** $\mathbb{Z}_3\to\mathbb{Z}_3$; hence for each integer target
-$a\equiv22\pmod{27}$ there is a unique $s_a\in\mathbb{Z}_3$ with $A(s_a)=a$, and "$A(k_x)$
-rational at integer $k_x$" reduces to "$s_a\in\mathbb{Z}\subset\mathbb{Z}_3$", which is
-**3-adically undetectable** ($\mathbb{Z}$ dense in $\mathbb{Z}_3$). No analytic obstruction.
-This was the last untried 3-adic idea; it is empty. Keep at LOW/~RETIRED.
-
-**Downgraded in Session 2.** The phantom $2^5+3^{-3}+5 = (10/3)^3$ is a *global rational
-cube*, hence a cube modulo every prime $p\ne3$ and (constrained to 37) mod $3^n$ for all
-$n$. The cube map is a bijection mod $2^n$ and mod $3^n$ on the relevant residues, so the
-equation is **locally solvable at every prime**. Therefore no p-adic / congruence
-argument can *alone* refute a solution — proven, not just observed. The p-adic
-computations remain useful as auxiliary constraints feeding a global argument (e.g.
-$z\equiv6\pmod{32}$, $v_3(z^3-37)=4+v_3(k)$), but p-adic elimination on its own is a
-dead end. See `knowledge/references/two_adic_structure.md`. (Kept at LOW only because the
-derived congruences support other directions.)
-
-### [RETIRED in Session 5] Baker's method / linear forms in logarithms (all variants)
-
-**Session 1 assessment:** Matveev's archimedean bound is too weak (bound $\exp(-5.6\times10^{14})$ vs actual $\exp(-47854)$, no contradiction).
-
-**Session 5 retirement:** Yu's p-adic Baker theorem also fails, for a *structural* reason not a quantitative one. For the 3-adic linear form $\Lambda_3 = x\log_3(2) - 3\log_3(z)$: $v_3(\Lambda_3) = v_3(-(3^y+5)) = 0$ (since $5 \equiv 2 \pmod 3$). For the 2-adic form: $v_2(\Lambda_2) = v_2(-(3^y+5)) - v_2(z^3) = 3 - 3 = 0$. Yu's theorem gives an *upper* bound on $v_p(\Lambda_p)$; a contradiction requires actual $v_p$ to exceed the upper bound. With $v_p = 0$, this is trivially impossible regardless of constants. **All Baker-type methods — archimedean and p-adic — are now retired.** Root cause: the "two comparable dominant S-units" regime ($3^y \approx z^2$) means no linear form of the expected type is small in any metric. See `knowledge/references/baker_method.md` and `knowledge/dead_ends.md`.
-
-### [~RETIRED in Session 18] Elliptic curve approach (fix one variable)
-
-Fixing $x = 5 + 332640k$ and studying $z^3 - 3^y = 2^x + 5$ as a family of curves. **Now linked to the factorization approach** above.
-
-**Session 18 assessment (effectively retired).** This is the same per-fixed-variable wall as the Thue-Mahler direction (now retired). Fixing $x$ (or $y$) gives a Mordell / Thue equation $z^3 = 2^x + (3^y+5)$ with finitely many, effectively computable solutions per fixed value — but $N_{k_x} = 2^{5+332640k_x}+5$ has $\sim 10^5$ decimal digits, so no per-curve computation is feasible, and (as Session 4's `modular_method.md` already noted) there is **no uniformity** across the infinite family. The elliptic/Mordell route degenerates to exactly the Thue-Mahler wall: solvable case-by-case in principle, silent about the infinite Theorem-5 progression. No distinct new content beyond the retired Thue-Mahler entry; treated as ~RETIRED.
-
-### [RETIRED in Session 4] Primitive divisor / growth arguments (Zsygmondy, Bilu–Hanrot–Voutier)
-
-**Elevated in Session 3, RETIRED in Session 4.** Two sub-forms, both closed:
-- *Congruence form* (find a prime $p\equiv1\bmod3$ that must/cannot divide $B$): dead by the
-  soft obstruction. Session 4 showed $x\bmod3$, $y\bmod6$ are constant over the family, so
-  $2^x,3^y,w\pmod p$ are pinned, and $A=z-w\equiv3\pmod p$ for *every* prime $p\equiv2\bmod3$
-  tested — because the phantom has $A_{\text{phantom}}=3$, $B_{\text{phantom}}=37/3$, which
-  reduce mod every $p\ne3$. Every congruence on $A,B$ is satisfied by the phantom.
-- *Growth form* (primitive divisors of $B$ along the progression): no clean object —
-  $B=(2^x+5)/(z-3^j)$ is **not** a Lucas/Lehmer $a^n-b^n$ sequence ($z,j$ both vary
-  non-linearly in $x$), so Zsygmondy/BHV do not apply.
-
-The only genuine real-vs-phantom distinction is 3-adic ($v_3(A)=0$ vs $1$; $A\bmod9\in
-\{1,4,7\}$ vs $3$) and is blocked by the known "$37$ is a cube mod $3^n$" wall. Moved to
-`knowledge/dead_ends.md`; details in `knowledge/references/factorization_approach.md`.
-
-### [RETIRED in Session 4] Modular method / Frey curves
-
-**Tried and ruled out in Session 4 (structural).** The Frey-curve / modular method needs a
-*varying prime exponent* to carry the mod-$p$ Galois representation; the Kuromine equation
-has only a fixed small cube exponent, with $x,y$ on fixed small bases 2,3. No Frey curve can
-be built. The fixed-$y$ elliptic/Mordell route only re-derives the already-known per-$y$
-finiteness, giving no uniformity over the Theorem-5 family. See
-`knowledge/references/modular_method.md`. Moved to `knowledge/dead_ends.md`.
-
-### [RETIRED in Session 18] Thue-Mahler equation approach
-
-**New direction identified in Session 1; deeply explored and RETIRED in Session 18.** The equation $z^3 - w^3 = N_k$ with $w = 3^j$ is a Thue-Mahler type equation. For each fixed $k$, $N_k = 2^{5+332640k} + 5$ is fixed, and the Thue-Mahler theorem gives finitely many solutions. The question is whether no solution exists for any $k \geq 1$.
-
-**Session 18 deep exploration (Wolfram), result negative.** Enumerated all four candidate castings to a single Thue-Mahler equation $F(X,Y) = (\text{S-unit})$ and showed each is broken by the additive constant 5 (the RHS is never a single S-unit):
-1. $z^3-4W^3 = 3^y+5$ ($W=2^a$): RHS not a $\{2\}$-S-unit. 2. $z^3-w^3 = 2^x+5$ ($w=3^j$): RHS not a $\{3\}$-S-unit. 3. Eisenstein norm form $N(z-w\omega)=B$: $A$ varies independently; phantom-blocked. 4. $N_{\mathbb{Q}(5^{1/3})}(z-5^{1/3}) = 2^x+3^y$: RHS a *sum* of two S-units, uncontrolled.
-
-Per-fixed-$y$ the Thue equation $z^3-4W^3=3^y+5$ is finite (Wolfram: $W=2^a$ occurs only at $y=3$, the known solution); Thue-Mahler theory gives finiteness *per equation* (via unit rank $1$ of $\mathbb{Q}(2^{1/3})$ and $|S|$) but **no uniformity** over the infinite $y$-progression. Same two-comparable-S-units / phantom barrier.
-
-**New facts (kept, non-actionable):** (i) symmetric reframing of the hard case $z^3 - 4(2^a)^3 - (3^j)^3 = 5$ (verified on $(5,3,4)$); (ii) $v_{37}(2^x+5)=1$ exactly and universally $\Rightarrow 37\|B$; the mod-37 cube branches $z\in\{21,25,28\}$ are all soft-obstructed (phantom is a cube mod $37^n$ for all $n$). See `knowledge/references/thue_mahler_approach.md`. **Moved to `knowledge/dead_ends.md`.**
-
-**References:** arXiv:2207.14492 (Efficient resolution of Thue-Mahler equations).
-
-### [RETIRED in Session 14] Greatest prime factor reformulation: gpf($z^3 - 5$)
-
-**Identified in Session 13. Retired in Session 14 (fundamental conflation).**
-
-The original claim was: if gpf($z^3-5$) grows with $z$, then only finitely many $z$
-can satisfy $z^3-5 \in \{2^a 3^b\}$, which is "exactly the Kuromine condition."
-
-**Why this is wrong (Session 14):** The Kuromine condition is $z^3 - 5 = 2^x + 3^y$
-(sum-representability), NOT $z^3-5 \in \{2^a 3^b\}$ ($\{2,3\}$-smoothness). These
-are entirely different. The known solution $z=4$ gives $z^3-5=59$ (prime, gpf=59 >> 3),
-yet $59 = 2^5 + 3^3$ is a valid decomposition. gpf growth does NOT prevent sum
-representations.
-
-The reformulation as $z^3-5 = 2^a 3^b$ (a different equation) has a different solution
-set: Wolfram check shows $z=2$ gives $z^3-5=3=3^1$ (the ONLY $z \leq 1000$ with
-$z^3-5$ being $\{2,3\}$-smooth). That equation ($z^3-5=2^a 3^b$) has at most finitely
-many solutions by Runge's method / Baker's theorem, but resolving it does not resolve
-the original Kuromine problem.
-
-**Conclusion:** The direction conflates two distinct mathematical conditions. Retired.
-Moved to `knowledge/dead_ends.md`.
+Sub-questions: (a) global/size elimination — open, blocked on the missing $\kappa>1$ tool;
+(b) growth/primitive-divisor — CLOSED S4 ($B$ is not Lucas/Lehmer); (c) bounded-$A$ — CLOSED
+negatively S4/S15 ($A\sim2^{x/3}$).
 
 ### [MEDIUM] Theorem M and the size-partitioned Theorem-5 family
 
-**New direction, Session 14.** Proved:
+**Session 14.** **Theorem M** (elementary): if $y=3j$ and $3^{2j+1}>2^x+4$ then $2^x+3^y+5$ is not
+a cube (target trapped between consecutive cubes). Eliminates the "$3^y\gg2^x$" regime: surviving
+pairs satisfy $k_y/k_x<3\log_3 2-1\approx0.893$. The survivors are exactly the two-comparable-
+S-units regime ($2^x\geq3^y$) where all known analytic tools also fail; Theorem M alone does not
+resolve the conjecture.
 
-**Theorem M (new, elementary):** If $y = 3j$ and $3^{2j+1} > 2^x + 4$, then
-$2^x + 3^y + 5$ is NOT a perfect cube.
+**Status: fully explored.** Sub-questions (a) bounded-$A$ at the boundary $D\approx0$ and
+(b) the companion "from-above" $A<3^j$ window are both CLOSED negatively (S15/S16); the metric
+structure is pinned by **Theorem S** (Convergent–Depth Trade-off Law, S34): record minima of the
+boundary distance $D=x\log2-(2j+1)\log3$ sit at the convergent denominators of $\rho=3\log2/\log3$
+($\mu(\rho)=2$ numerically), so small $D$ (hence small $A$) only occurs at huge $k_x$ (hence huge
+depth $j+1$), the two coupled by $\rho$ — Theorem-N exclusion fires with $\sim10^9$ margin at the
+first concrete bounded-$A$ lattice point ($k_x=16836$). Sub-question (c) (combine with a
+quantitative gap bound) is blocked pending the same $\kappa>1$ tool.
 
-*Proof:* The integer target lies strictly between consecutive cubes $(3^j)^3$ and
-$(3^j+1)^3$, which are spaced $3^{2j+1}+3^{j+1}+1$ apart. $\square$
+### [LOW] Special role of $c=5$ and the phantom
 
-**Application to Theorem-5:** With $x = 5+332640\,k_x$ and $j = 55439+55440\,k_y$:
+**Session 16–17, 35.** Cyclotomic origin: $2^5+5=37=\Phi_3(10)/3$; $c=5$ is the unique small
+positive constant with the phantom structure $(10/3)^3$. **Theorem T** (5-adic Valuation Sieve,
+S35) is the first use of the prime 5 as a valuation: $v_5(N)\geq2$ universally, and a cube needs
+$3\mid v_5(N)$, forcing the new necessary congruence $k_y\equiv k_x-1\pmod5$ — eliminating 80% of
+the family (refinable 5-adically, survivors $\approx16.2\%$ of the mod-25 grid). **Soft-
+obstructed**: the phantom has $v_5=3$ on the survival diagonal, so the sieve never empties the
+family.
 
-$$\text{Ruled out: } k_y \geq \left\lceil \frac{x\log 2/\log 3 - 110879}{110880} \right\rceil \approx \lceil 1.893\,k_x - 1.107 \rceil.$$
-
-For $k_x=1$: all $k_y \geq 1$ ruled out (only $k_y=0$ survives).
-For $k_x=2$: $k_y \geq 3$ ruled out (only $k_y \in \{0,1,2\}$ survive).
-In general: the surviving pairs satisfy $k_y/k_x < 3\log_3 2 - 1 \approx 0.893$.
-
-**Scope and limits:** Theorem M eliminates the "$3^y \gg 2^x$" regime. The surviving
-cases are exactly the two-comparable-S-units regime ($2^x \geq 3^y$) — which is
-precisely where all known analytic tools (Baker, Bugeaud, Badziahin, Chabauty-Kim)
-also fail. Theorem M alone does NOT resolve the conjecture.
-
-**Open sub-questions:**
-- (a) [CLOSED negatively, Session 15] The boundary case $A \approx 1$ was analyzed via the
-  new valuation identity (Theorem N) and the size bound $A < (2^x+5)/3^{2j} \approx 3e^{D}$.
-  $A$ is small only when $D \approx 0$, but the Theorem-5 lattice never approaches the
-  boundary within $O(1)$ log-distance (closest surviving $D \approx 55$, $A \gtrsim 10^{24}$;
-  Wolfram). Bounded-$A$ elimination cannot fire. See dead_ends.md and `knowledge/problem.md`
-  Theorem N.
-- (b) [CLOSED negatively, Session 16] Companion "from-above" argument for surviving
-  $A < 3^j$ cases. The "Case II window" $A \in (e^D/7,\, e^D/3)$ was derived (width
-  $\sim 0.19e^D$). This window is exponentially wide (for $k_x=1$, $k_y=0$: width
-  $\approx 10^{3799}$). The 2-adic analysis imposes no new constraint (2-adic cube bijection);
-  the 3-adic analysis is non-obstructive (3-adic bijection, Sessions 9–10); the norm-form
-  constraint on $B$ (primes $p \equiv 2\pmod 3$ dividing $2^x+5$ to odd power go to $A$)
-  is phantom-compatible. No contradiction. See log/20260626_200000.md.
-- (c) Can Theorem M be combined with a quantitative lower bound on $z^3 - w^3$ to
-  get a further restriction? (Still requires the unavailable $\kappa < 1.107$ bound.)
-
-**Status update (Session 16):** Both sub-questions (a) and (b) are now closed negatively.
-Sub-question (c) is blocked pending the open target. The Theorem-M direction has been
-fully explored; no further active sub-questions remain.
-
-**Session 34 progress (Theorem S — Convergent–Depth Trade-off Law; explicit metric law behind
-sub-question (a)).** Sharpened (Wolfram) the metric structure of sub-question (a) from the
-qualitative S21 statement ($\inf D_{\ge0}=0$ by Weyl) to an explicit law: the record minima of the
-boundary distance $D=x\log2-(2j+1)\log3$ over the lattice occur at the **convergent denominators
-$q_n$ of $\rho=3\log2/\log3$** (9, 513, 7891, 16836, …) and their small integer multiples
-(three-distance pattern); $\rho$ has irrationality measure (numerically) $=2$ (bounded partial
-quotients, $q_n\theta_n\in(0.02,0.70)$, $\mu_n$ flat near 2), so $D\to0$ at the Dirichlet rate
-($D$ small only at $k_x\sim1/D$). Since $A\in[e^D/3,3e^D]$, small $D\Rightarrow$ small $A$, but
-small $D\Rightarrow$ large $k_x=q_n\Rightarrow$ huge depth $j+1$, the two coupled by $\rho$.
-**Decisive concrete instance** $k_x=16836,k_y=31866$: $D=3.7588$, $A\in[43,129]$ (genuinely small),
-yet $v_3(2^x+5-a^3)\le7$ for all $a\in[40,130]$ while $j+1=1{,}766{,}706{,}480$ — Theorem-N exclusion
-with $\sim10^9$ margin. This is the **first concrete lattice point at which bounded-$A$ is realized**
-and shown excluded (S21 argued it only abstractly). Confirms (does not breach) the wall; sub-question
-(a) remains CLOSED negatively, now with an explicit metric law and a verified instance. **No priority
-change.** See Theorem S in `knowledge/problem.md` and `log/20260703_000000.md`.
-
-### [LOW] Special role of $c = 5$ and the phantom
-
-**New direction, Session 16. Cyclotomic characterization derived, Session 17.**
-
-**Session 17 findings:**
-- The general phantom family ($y = -3$, $x = 5$, rational $z$) is parametrized by
-  $m \geq 1$: $c_m = 27m^3 + 9m^2 + m - 32$, $z_m = (9m+1)/3$.
-  Gives $c_1 = 5$, $c_2 = 222$, $c_3 = 781$.
-- The identity $2^5 + 5 = 37 = \Phi_3(10)/3$ (3rd cyclotomic polynomial) is the algebraic
-  origin: $37 \mid \Phi_3(10) = 10^2 + 10 + 1 = 111$.
-- $c = 5$ is the unique small positive constant with this phantom structure.
-- New: $y \equiv 15 \pmod{18}$ for all Theorem-5 solutions; $3^y \equiv 11 \pmod{37}$;
-  $z^3 \equiv 11 \pmod{37}$; 11 is a cubic residue mod 37. Non-contradictory.
-- No actionable consequence found yet.
-
-**Session 35 progress (Theorem T — 5-adic Valuation Sieve; the first use of the prime 5).**
-Examined the equation at the prime 5 (= the constant) *as a valuation*, never done before. Findings
-(Wolfram): (i) $v_5(N)\geq2$ universally on the family ($2^x\equiv7,3^y\equiv13\pmod{25}$ pinned
-since $332640\equiv166320\equiv0\pmod{20}$); (ii) a cube needs $3\mid v_5(N)$, forcing
-$v_5\geq3\iff N\equiv0\pmod{125}\iff k_y\equiv k_x-1\pmod5$ — a **new necessary congruence
-eliminating 80% of the family**; (iii) iterated 5-adically (survivors $\approx16.2\%$ of the mod-25
-grid). **Soft-obstructed**: the phantom $1000/27$ has $v_5=3$ and lies on the survival diagonal
-($(k_x,k_y)=(0,-1)$), so the sieve never empties the family — a 24th confirmation, now from the
-prime-5/valuation side. This is a *partial positive answer* to the open question below: the
-arithmetic of $c=5$ does impose a real new POSITIVE (necessary) congruence on the family, but it is
-soft-obstructed like all local constraints. Practical value: cheapest large search-space cut
-($\geq5\times$), composes independently with Theorem M (size) and the $p$-adic portrait. See
-Theorem T in `knowledge/problem.md` and `log/20260627_140000.md`. **No priority change** (live
-content remains the global/size $\kappa>1$ tool).
-
-**Session 36 progress (Theorem U — 5-adic portrait of $z$; scan for other universal primes;
-iterated sieve to level 4; Python-verified due to Wolfram MCP unavailability).** Extended
-the Session-35 analysis to its natural completion: (i) **$v_5(z)=1$ universally** on the
-generic survival sub-lattice (since $v_5(N)=3\Rightarrow v_5(z)=1$; $z\equiv0\pmod5$,
-$z\not\equiv0\pmod{25}$); (ii) $z'=z/5\bmod5^n$ is bijective in $(k_x,k_y)$ — same
-structure as Theorems J/P for 3-adic/2-adic; (iii) scan of all primes $\ell\leq5000$: only
-$\ell=5$ divides $N$ universally (57 compatible primes checked; all other $\ell$ give
-$v_\ell(N)=0$ on the survival diagonal); (iv) iterated survival fractions converge to
-$\approx16.13\%$ (levels 1–4), bounded away from 0 — soft obstruction confirmed
-quantitatively; (v) **combined CRT portrait**: $z\equiv3910\pmod{4320=27\cdot32\cdot5}$ for
-the $k_y=0$ case, the sharpest combined $z$-constraint available. All soft-obstructed: the
-phantom $z_{\text{phantom}}=10/3$ satisfies $v_5(10/3)=1$ and all 5-adic conditions. 25th
-confirmation. See Theorem U in `knowledge/problem.md` and Session-36 log.
-
-**Open question:** Does the specific arithmetic of $c = 5$ (the phantom structure) impose
-any POSITIVE constraint that could be exploited? **Full answer after S35–S36:** yes, the
-$v_5$-valuation sieve $k_y\equiv k_x-1\pmod5$ (Theorem T) and $v_5(z)=1$ (Theorem U) are
-genuine new positive constraints on the family — but **both are soft-obstructed** (the
-phantom satisfies them). Prime 5 is the unique source of a valuation sieve (no other $\ell$
-works). The 5-adic face is now fully examined and joins the existing confirmations. No
-*un*-obstructed positive consequence found; this sub-question is effectively exhausted.
-
-**Priority:** LOW. The 5-adic face is now fully analyzed (Theorems T+U, Sessions 35–36):
-the arithmetic of $c=5$ gives the cheapest combined search-space cut ($\geq5\times$ from T,
-$\geq5\times$ more from U), useful for any future numerical verification; soft-obstructed
-for a proof. No further 5-adic analysis is expected to produce a new result.
-
-### [~RETIRED, Session 17] Function-field analog / Mason-Stothers inspiration
-
-**New direction, Session 16. Concretely analyzed and negatively resolved, Session 17.**
-
-**Session 17 findings:**
-- The equation *without* the constant, $P^x + Q^y = H^3$ over $\mathbb{C}[t]$, is fully
-  resolved by Mason-Stothers: only finitely many non-constant solutions.
-- The equation *with* $c \neq 0$, $P^x + Q^y + c = H^3$, is NOT resolved: $\text{rad}(P^x + c)$
-  has full degree $x\deg P$ (squarefree polynomial), making the Mason-Stothers bound vacuous.
-  This is the function-field analog of the phantom obstruction.
-- **Conclusion:** The function-field version is provably as hard as the integer version
-  (same structural obstruction). The function-field analog is NOT an easier proxy.
-  Any proof must exploit specific arithmetic properties of $c = 5$.
-
-See `knowledge/references/function_field_analog.md` for full analysis. **Retired.**
-
-### [RETIRED in Session 21] Coupling-Height / Moving-Filtration framework (theory-building)
-
-**Built in Session 20, RETIRED in Session 21 — both candidate lemmas resolved negatively.**
-
-**Session 21 (Wolfram numerical test + equidistribution argument):**
-
-- **Lemma A (Depth–Size Incompatibility, the crux) — REFUTED as circular.** The mechanism
-  Lemma A needs is "the smallest integer of 3-adic depth $\ge d$ relative to $N$ is
-  $\approx 3^{d-2}$, hence pushed off the size band $\sigma\approx1$." Wolfram verified this
-  law holds for the **fixed** target $N=37$ ($x_0=5$): smallest $a$ of depth $d$ is
-  $1,4,22,49,211,697,2155,\ldots\approx 3^{d-2}$, giving $\sigma_5(a)\approx0.95(d-2)$,
-  growing linearly and leaving $\sigma=1$ for $d\ge4$; implied $c_0\in[0.33,3.5]$. **BUT**
-  the decisive surrogate test — a constructed *moving-style* target
-  $N=22^3+3^{10}\cdot7$ — has its smallest depth-10 integer equal to the *small* number 22.
-  So the "$3^{d-2}$ law" is a property of the fixed target, **not** universal. For the actual
-  moving target $N(x)=2^x+5$, "a small deep cube-root ($A$) exists" is *precisely the
-  Kuromine question*; Lemma A is therefore circular and cannot be proved without
-  re-importing an effective irrationality measure (the unavailable tool). At the first
-  surviving pair ($k_x=k_y=1$: $x=332645$, $n=j+1=110880$) the genuine $A$ has
-  $\log_2 A=x/3\approx110882 < (n-2)\log_2 3\approx175737$ — smaller than the fixed-target
-  law allows, which is exactly the desired contradiction *if* the law transferred; it does
-  not.
-
-- **Lemma B′ (Lattice Rigidity) — REFUTED as false.** $D(k_x,k_y)=c_0+k_xP-k_yQ$ with
-  $c_0=5\log2-110879\log3=-121809.57$, $P=332640\log2=230568.48$, $Q=110880\log3=121814.13$,
-  $P/Q=3\log2/\log3=1.8927892607\ldots$ **irrational** (CF $[1;1,8,3,18,2,7,2,8,\ldots]$,
-  infinite). By Weyl equidistribution $\{k_xP/Q+c_0/Q\}$ is dense in $[0,1)$, so
-  $\inf_{k_x}D_{\ge0}=0$. Wolfram: minimal nonnegative $D$ falls $98.5\to0.537$ by
-  $k_x=84180$ and keeps decreasing. **Session 15's "$D\approx55$ floor" was a finite-range
-  ($k_x\le5000$) artifact.** The $D$-lattice does approach $D=0$ arbitrarily closely. This
-  does **not** revive bounded-$A$ elimination: small $D$ at huge $k_x$ gives $O(1)$ genuine
-  $A$ only with $j$ enormous, so the Theorem-N corollary (fixed small $a\Rightarrow$ bounded
-  $v_3$, contradicting $j+1$) still blocks it — already known.
-
-**Conclusion:** Framework retired. Diagnostic residue: the unique non-degenerate handle
-(3-adic depth $j+1$ vs phantom depth 0) is real but **non-transferable** to an archimedean
-size constraint without an effective irrationality measure — a third independent
-confirmation (after the metric face S15, the analytic face S3/S10/S11) of the P1–P4
-conjunction barrier. Moved to `knowledge/dead_ends.md`. Full detail in
-`log/20260627_120000.md`. **DO NOT REOPEN** without a new external transfer inequality.
-
-### [SUPERSEDED] Coupling-Height / Moving-Filtration framework — original Session-20 entry
-
-**New framework, Session 20 (theory-creator mode).** Built from the obstruction diagnosis
-(the wall is a four-fold structural degeneracy P1–P4 with one non-degenerate handle: 3-adic
-depth $v_3(2^x+5-A^3)=j+1\to\infty$ vs the phantom's depth 0). The framework is a
-**non-additive arithmetic height coupling the archimedean place and the place 3**, indexed
-by the Theorem-5 progression. Core objects (full definitions in `log/20260627_070633.md` §3):
-
-- **Principal 3-adic cube root** $\beta(x)\in\mathbb Z_3$ of $N(x)=2^x+5$ ($\beta\equiv1\bmod3$).
-- **Moving 3-adic depth** $\delta_x(a)=v_3(2^x+5-a^3)$ and the **depth filtration**
-  $\mathcal F=\{F_n(x)\}$. Genuine solution: $A\in F_{j+1}\setminus F_{j+2}$ (Theorem N).
-- **Size class** $\sigma_x(a)=3\log a/(x\log2)$; genuine $\sigma_x(A)\to1$.
-- **Coupling Height** $\widehat H_x(a)=\sigma_x(a)\cdot(1+\delta_x(a))\cdot\mathbf1[\text{Eisenstein gate on }B]$
-  — *product* across $\{\infty,3\}$, designed to vanish on the phantom (depth 0) and be
-  forced large on genuine solutions (depth $j+1$).
-- **Progression-rigidity** $\rho=|D|$, $D=x\log2-(2j+1)\log3$ (the two-S-units log-distance).
-
-**Candidate lemmas (stated, NOT proven) — BOTH refuted in Session 21 (see RETIRED entry above):**
-- **Lemma A (Depth–Size Incompatibility) — the crux.** $\delta_x(a)\ge j+1 \Rightarrow
-  |\sigma_x(a)-1|\ge c_0(j+1)/x$. Refuted as circular (Session 21).
-- **Lemma B/B′ (Lattice Rigidity).** Relativized form claimed minimal nonnegative $D$ over
-  the $D$-lattice bounded below. Refuted as false (Session 21; $\inf D_{\ge0}=0$).
-
-### [RETIRED in Session 19] Cyclotomic phantom family
-
-**New direction, Session 17. Concretely analyzed and RETIRED in Session 19.**
-
-The general $y = -3$ phantom family for $2^x + 3^y + c = z^3$ is parametrized by:
-$$c_m = 27m^3 + 9m^2 + m - 32, \quad z_m = \frac{9m+1}{3}, \quad m \geq 1.$$
-
-First values: $c_1 = 5$ ($z_1 = 10/3$), $c_2 = 222$ ($z_2 = 19/3$), $c_3 = 781$ ($z_3 = 28/3$).
-
-**Session 19 deep analysis (analytic, Wolfram unavailable), result negative:**
-
-1. **Parity partition (Theorem O):** $c_m$ odd iff $m$ odd. Odd-$m$ equations have $z$ even;
-   even-$m$ equations have $z$ odd. New structural fact, non-actionable.
-
-2. **Uniqueness of $c_1=5$ confirmed:** $2^5 + c_1 = 37$ is the UNIQUE case where
-   $2^5 + c_m$ is prime $\equiv 1 \pmod 3$. For $m \geq 2$, $2^5 + c_m$ is composite with
-   extraneous small-prime factors ($2$ for $m=2$, $3$ for $m=3$, etc.). $c_1 = 5$ is the
-   EASIEST case in the phantom family.
-
-3. **Forced-factor analogy:** 37's role for $c_1$ is played by 127 ($\mathrm{ord}_{127}(2)=7$)
-   for $c_2$. But $37 \mid c_2$ (since $222 = 6 \cdot 37$), so $37 \nmid 2^x + c_2$ for any
-   $x$ — the "forced $37 \| B$" fact is absent for $c_2$.
-
-4. **Soft obstruction universal:** Every equation $2^x + 3^y + c_m = z^3$ is locally solvable
-   at every $p \neq 3$ (phantom is a global rational cube). No modular method works for any $c_m$.
-
-5. **No new approach:** Studying $c_m$ for $m \geq 2$ does not yield a technique applicable
-   to $c_1 = 5$. The family comparison is a closed exercise.
-
-**Conclusion:** The direction produces structural insight (parity partition, uniqueness of $c_1$'s
-prime pivot) but no actionable new approach. Retired. Details in `log/20260627_000000.md`.
+**Open question:** does the arithmetic of $c=5$ impose any *un*-obstructed positive constraint?
+**Full answer after S35–S36:** Theorem T ($k_y\equiv k_x-1\pmod5$, 80% elimination) and
+Theorem U ($v_5(z)=1$, combined CRT $z\equiv3910\pmod{4320}$, prime-5-unique scan, survival
+fraction $\to16.13\%$ at four 5-adic depths) are genuine new positive constraints — both
+soft-obstructed (phantom satisfies them). The 5-adic face is now **fully analyzed**; no
+further 5-adic analysis expected to yield a new result. Practical value: cheapest combined
+search cut ($\geq5\times$ from T, $\geq5\times$ more from U), composing independently with
+Theorem M (size) and the $p$-adic portrait.
 
 ### [LOW] Numerical search with Theorem 5 filtering
 
-Verify computationally that no solutions exist for small $k$ (say $k \leq 5$). Not mathematically deep but can confirm the conjecture computationally and potentially reveal patterns in $2^x + 5 \pmod p$ for primes $p \equiv 1 \pmod 3$.
+Confirms the conjecture for small $k$ and probes for patterns; cannot reach the Theorem-5 floor
+($x=332645$). Exhaustive search $0\le x,y\le2000$ (S4) and $z\le10000$ (S14) found only the two
+known solutions. For any future verification, apply the filters in order of cost: Theorem T
+($k_y\equiv k_x-1\pmod5$, $\geq5\times$), Theorem M (size, $\sim$half), then the mod-$3^n$/mod-$2^n$
+portrait — all independent, so they compose multiplicatively.
 
-**Session 4:** Exhaustive search over $0\le x,y\le 2000$ (Python, 14-prime cubic-residue
-sieve) confirms only the two known solutions; sieve survivors were
-$(1,0),(5,3),(1445,597),(1445,1677)$ with only the first two being cubes. The two near-miss
-survivors are non-cubes and outside the Theorem-5 class. The full Theorem-5 floor
-($x=332645$) remains far beyond brute force, so direct numerical refutation of the conjecture
-is infeasible — keep at LOW.
+### [LOW] arXiv survey / WATCH (sole active priority)
 
-**Session 35 (Theorem T — new cheap large cut for any search).** The 5-adic valuation sieve gives
-the strongest single elementary filter found: any Theorem-5 solution must satisfy
-$k_y\equiv k_x-1\pmod5$ (else $v_5(N)=2$ is not a multiple of 3, so $N$ is not a cube), a
-$\geq5\times$ reduction, refinable 5-adically (survivors $\approx16.2\%$ of the mod-25 grid). It is
-**independent of** Theorem M (size, $\sim$half) and the mod-$3^n$/mod-$2^n$ portrait, so all combine
-multiplicatively. For any future Theorem-5 numerical verification, apply Theorem T first (cheapest).
-See Theorem T in `knowledge/problem.md`.
+**Ongoing literature watch.** As of Session 36, **25 consecutive negative confirmations** of the
+two-comparable-S-units barrier. The necessary-and-sufficient open target is any unconditional
+*effective* gap bound $|z^3-3^y|>C(z^3)^\kappa$ with a fixed $\kappa>1$ (the realized exponent
+$E=\log(2^x+5)/\log(z^3)$ densely fills $(2/3,1)$, S31). Frontier, unchanged:
 
-### [RETIRED in Session 5] Skolem's method / Bertók-Hajdu algorithm
+- **Bugeaud** (arXiv:2503.22084, 2604.27490): effective $|z^d-S\text{-unit}|$ bounds only
+  "$\to\infty$ with $z^d$" — trivially met, not power-saving.
+- **CDT holonomy** (arXiv:2510.04156) and **Badziahin**: effective $\mu(2^{1/3})>2\gg1.107$;
+  the target is sub-Dirichlet, so irrationality measures categorically cannot reach it (S25).
+- **Decidability** (KLNOW; Dong–Shafrir arXiv:2505.19141, STOC 2026): settled only for $\le2$
+  primes / degree-$\le1$ free terms; $k\ge3$ primes "an outstanding open problem"; a *general*
+  degree-3 decidability theorem is provably impossible (arXiv:2510.00759, S30) — watch only for a
+  *bespoke special-structure* Kuromine argument.
 
-**Session 5 assessment:** Inapplicable by the same phantom obstruction. The Bertók-Hajdu/Miyazaki infinite-family approach (arXiv:2503.00843, 2508.17601) requires the equation to be *locally unsolvable* somewhere — the algorithm finds a modulus $N$ with no solution mod $N$ and concludes no integer solution exists. The Kuromine equation is locally solvable at every prime (proven in Session 2: the phantom $(10/3)^3$ is a global rational cube). Therefore the algorithm can never find a blocking modulus. The search would run indefinitely without result. Moved to dead ends.
-
-### [RETIRED in Session 13] Chabauty-Kim / algebraic geometry methods
-
-**Added and immediately retired in Session 13.** Session 12 suggested exploring Galois
-representations and algebraic geometry approaches. The Chabauty-Kim framework (Affine
-Chabauty I/II by Leonhardt-Lüdtke; Modular Chabauty by Zehavi; Cubic Chabauty by
-Balakrishnan-Bianchi-Dogra) is the primary modern algebraic-geometry tool for integral
-points. Four papers were assessed systematically:
-
-- **arXiv:2511.15949** (Affine Chabauty I, Nov 2025): S-integral points on affine curves
-  via generalized Jacobian. NOT APPLICABLE: Kuromine's $x, y$ are exponents, not
-  algebraic coordinates; S-integrality cannot encode "$u = 2^x$".
-- **arXiv:2602.05643** (Affine Chabauty II, Feb 2026): Algorithm for the above.
-  Same barrier.
-- **arXiv:2505.12947** (Modular Chabauty, May 2025): S-integral points on curves with
-  elliptic fibrations. NOT APPLICABLE: provides per-fixed-$N$ Thue-Mahler solvers, but
-  $N_{k_x} \approx e^{230572}$ is astronomically large; no information across the family.
-- **arXiv:2604.20662** (Cubic Chabauty, Apr 2026): depth-3 Kim set for fixed elliptic
-  curves of rank ≤ 2. NOT APPLICABLE: Kuromine gives a varying family of Mordell curves.
-
-**Fifth categorical barrier (new, Session 13):** Chabauty-Kim in all forms is categorically
-inapplicable to exponential Diophantine equations where two or more variables appear as
-exponents of fixed bases. The Kuromine equation's two-exponential structure ($x$ and $y$
-are both exponents) lies outside the algebraic category. This is a categorical mismatch,
-not a quantitative gap; no improvement in depth, rank condition, or computational reach
-can change this.
-
-See log/20260626_120000.md for full analysis.
-
-### [LOW] arXiv survey of exponential Diophantine equations
-
-**Partially done in Session 1.** Found literature on Baker's method, S-unit equations, and Thue-Mahler equations. Session 5 adds: Miyazaki (2503.00843) solves infinite families of 4-term purely exponential equations using Baker+p-adic Baker+Skolem, but all rely on local non-solvability. The Kuromine equation's phantom blocks this route.
-
-**Session 6 update:** Surveyed 2025-2026 arXiv. Found four potentially relevant papers; all either inapplicable or conditional on ABC:
-- arXiv:2510.11753 (Cai 2025): handles a^x+b=c^y (one exponential unknown). Not applicable.
-- arXiv:2601.11376 (Müller–Taktikos 2026): Effective Roth/Ridout for cube roots, conditional on ABC. Not unconditional; would still face the two-S-units regime.
-- arXiv:2602.19061 (Müller 2026): Gain bounds for diagonal superelliptic equations under strong ABC. Conditional and structurally mismatched.
-- arXiv:2506.20909 (Jun 2025): Reduces exponential Diophantine to ordinary via Lucas sequences; requires a structure Kuromine (with additive constant 5) does not have.
-- **No new unconditional method for the two-comparable-S-units regime found.** The κ_real ≈ 0.62 barrier (Session 3) remains open.
-
-**Session 10 update:** Assessed the two newest 2026 Bugeaud papers, which are the first
-to directly bound the *difference* between a perfect power and an integral S-unit (the
-Kuromine shape):
-- arXiv:2604.27490 (Bugeaud, Apr 2026): effective lower bound for |z^d − q1^a1···qt^at|
-  and its greatest prime factor, → ∞ with z^d, for z coprime to the q_i, d ≥ 2.
-- arXiv:2503.22084 (Bugeaud, Mar 2025): the d = 2 (squares) case; greatest prime factor
-  of |x² − S-unit| → ∞.
-- **Assessment: NOT APPLICABLE.** Option (1) z³−2^x = 3^y+5 fails the hypothesis (z is
-  even, gcd(z,2)≠1). Option (2) z³−3^y = 2^x+5 satisfies it (x odd ⇒ z coprime to 3) but
-  gives no contradiction: |z³−3^y| = 2^x+5 ≈ z^{1.89} (log 230572 = 0.631·log z³), so a
-  contradiction needs an *effective* exponent κ < 1.107, whereas Baker-type bounds (which
-  Bugeaud uses) give κ just below d=3. The 0.631 figure is exactly the Session-3 κ_real
-  barrier, now seen from the cube-vs-3^y side. Bugeaud's "→ ∞ with z^d" is trivially met
-  by 2^x+5 → ∞.
-- Holonomy bounds (2510.04156) re-checked: still effective irrationality measure > 2 for
-  2^{1/3}, far above κ < 1.107. No new unconditional tool in the two-S-units regime.
-
-**Session 12 update:** Assessed Zhou's IUT effective abc (arXiv:2503.14510, Mar 2025) and
-did a June 2026 arXiv sweep. Zhou's result (log|abc| ≤ 3 log rad + 8√(log|abc|·log log|abc|))
-is NOT APPLICABLE: the Kuromine triple has quality ≈ 0.888 < 1, so the Zhou bound is
-trivially satisfied — it upper-bounds quality, but Kuromine already has quality well below 1.
-June 2026 arXiv sweep: five papers (2605.31114, 2605.28449, 2605.18348, 2606.00466,
-2606.02244) — none applicable (modular/Baker/recurrence methods; no variable z³; no
-{2,3}-S-unit structure). Calegari–Dimitrov–Tang (2510.04156) has no published follow-up
-improving the effective irrationality measure for 2^{1/3} below ~1.1. Four independent
-confirmations (S3/S10/S11/S12) of the two-comparable-S-units barrier. **The open target
-is unchanged.**
-
-**Session 13 update:** Assessed four Chabauty-Kim papers (2511.15949, 2602.05643, 2505.12947,
-2604.20662) — all NOT APPLICABLE for the categorical reason that Chabauty-Kim methods apply
-to algebraic curves, not exponential Diophantine equations (fifth categorical barrier,
-new in Session 13). June/July 2026 arXiv sweep: no new applicable paper. Holonomy-bounds
-school (2510.04156) has no new result. Identified new [LOW] direction: gpf($z^3 - 5$)
-reformulation (see separate direction entry). **The open target is unchanged.**
-
-**Session 11 update:** Assessed two previously-unassessed 2024–2026 papers, the closest to
-the exact quantified target found so far. Both NOT APPLICABLE:
-- arXiv:2509.01105 (Badziahin, "Distance between cubics and rationals", Sep 2025; Results
-  in Math. 2026): bounds |ξ − p/q| for **cubic irrationals** ξ via cubic root-separation;
-  nontrivial only for good approximations 2 ≤ v ≤ 3, and **all results conditional on
-  abc/Hall** (under abc: interior of D_{3,1} is u > 10 − 3v). Kuromine cannot enter that
-  regime: "cube − square" needs y even but y is always odd in the family (y ≡ 3 mod 6);
-  "cube − cube" degenerates (3^{y/3} is a rational integer, not a cubic irrational);
-  the 2^{2/3}-Thue casting realizes v_real ≈ 0.62 at the floor (k_y=0) and **negative** for
-  all k_y ≥ 1 (the approximation diverges). All far below v ≥ 2. And abc gives no leverage
-  anyway — Kuromine's abc-quality ≈ 0.888 < 1 (Session 8).
-- Bajpai, "Effective and Explicit S-Unit Equations with Many Terms" (UBC thesis;
-  Bajpai–Bennett, Acta Arith. 214 (2024)): effective many-term S-unit equations, but
-  **method = Baker's linear forms in logarithms** (retired Session 5: v_p = 0, no bound
-  violable) and requires all terms to be S-units, which z³ and the constant 5 are not
-  (= the Session-8 obstruction for arXiv:2505.19141). NOT APPLICABLE.
-
-**Session 8 update:** Assessed two additional 2026 papers:
-- arXiv:2505.19141 (Dong-Shafrir / Karimov et al., 2025): Decidability of linear-exponential Diophantine equations over two primes {p,q}. These are equations Σ a_i · p^{x_i} · q^{y_i} = 0. NOT APPLICABLE: Kuromine has z^3 as a term, and z is not an S-unit (not of the form 2^a·3^b). The decidability result requires all terms to be S-units in {p,q}; z^3 falls outside this class.
-- arXiv:2604.18991 (Miyazaki-Scott-Styer, April 2026): Handles a^x + b^y = c^z (purely exponential, all three bases fixed). NOT APPLICABLE: Kuromine has z^3 with z as the variable, not c^z with c fixed.
-- ABC conjecture assessment (Session 8): No contradiction from ABC. The radical grows as rad(2^x·(3^y+5)·z^3) ~ 2·(3^y/8)·z, giving quality q = log(z^3)/log(rad) ≈ 1/1.126 ≈ 0.888 < 1. ABC is satisfied (not violated) for all Kuromine solutions.
-
-**Session 21 update:** WebSearch (June 2026) for unconditional effective κ<1.107 bounds and CDT follow-ups. Negative (tenth confirmation of the two-comparable-S-units barrier). Calegari–Dimitrov–Tang (arXiv:2510.04156) remains the frontier: gives effective irrationality measures for high-order roots and algorithmic resolution of two-variable S-unit / Thue–Mahler / superelliptic equations, but the effective measure for 2^{1/3} is still > 2 ≫ 1.107, and per-equation resolution gives no uniformity across the infinite Theorem-5 family. No 2026 follow-up below the ~1.1 threshold.
-
-**Session 30 update (decidability/degree face sharpened — important):** New paper
-**arXiv:2510.00759 (Feb 2026), "Cubic incompleteness: Hilbert's tenth problem begins at degree
-three"** (also "Proof by Mechanization: Cubic Diophantine Equation Satisfiability is
-Σ⁰₁-Complete"). Result: satisfiability of a *single* Diophantine equation of total degree ≤ 3
-over ℕ (number of variables in the input) is **Σ⁰₁-complete**, hence undecidable. **Assessment —
-this CONFIRMS/SHARPENS the S22 decidability barrier, it does NOT breach it.** The S22 face
-recorded that KLNOW/Dong–Shafrir decidability (arXiv:2505.19141) is settled only for ≤2 primes
-and degree-≤1 free terms, with the open hope of an extension to degree-≥2/degree-3 free terms.
-2510.00759 proves that hope is **impossible in general**: degree 3 is exactly the
-universal-undecidability threshold, so no *general* decidability theorem can ever cover degree-3
-free terms (and Kuromine's free term $z^3$ is genuinely degree 3 — Wolfram-verified $z^3-n$
-irreducible over ℚ[z]). Consequently **any** decidability/finiteness route to Kuromine must be a
-*bespoke special-structure* argument exploiting the two-fixed-base-exponentials-plus-one-cube
-form — never a general decision procedure. Honest caveat: undecidability of the *general* cubic
-class does NOT make Kuromine itself undecidable (Kuromine is one structured family, not the
-universal class), so this neither resolves nor refutes the conjecture. **Net effect on the WATCH
-list:** item (b) is **narrowed** — watch only for a *special-structure* Kuromine decidability/
-finiteness argument, not a general degree-3 decidability theorem (which is now provably
-impossible). Eighteenth confirmation of the wall.
-
-**Session 31 update (open-target exponent range pinned — Wolfram):** arXiv watch **negative
-(nineteenth confirmation)**: Bugeaud (2503.22084 / 2604.27490) still only "$\to\infty$ with
-$z^d$"; decidability over $k\ge3$ primes still "an outstanding open problem" (Dong–Shafrir
-2505.19141, STOC 2026); CDT 2510.04156 and Badziahin 2301.02391 effective $\mu(2^{1/3})>2\gg
-1.107$, sub-Dirichlet-blind; no LICS/STOC 2026 follow-up reaches the regime. **New recordable
-sharpening (Wolfram, no framework):** computed the realized gap exponent
-$E=\log(2^x+5)/\log(z^3)$ at the largest surviving $k_y$ for several $k_x$: $E$ **decreases
-monotonically to $2/3^+$** as surviving pairs approach the boundary $D\to0^+$ ($k_x=84180$:
-$E=0.66666666672$) and equals $1^-$ at the floor $k_y=0$. Since $\inf D_{\ge0}=0$ (S21
-equidistribution), $E$ **densely fills $(2/3,1)$ and floors at exactly $2/3$** (Wolfram `Limit`:
-$\lim_{j\to\infty}(2j+1)/(3j)=2/3$, the boundary identity $3^y\approx z^3$, $2^x+5\approx z^2$).
-**Consequence (sharpens the WATCH target):** any fixed effective $\kappa$ with $2/3<\kappa<1$ is
-*violated* at near-boundary surviving pairs ($E<\kappa$ there), and $E<1$ everywhere, so only a
-uniform $\kappa>1$ resolves the family — the necessary-and-sufficient requirement is now seen to
-be sharp because the realized-exponent *range* is exactly the half-open $(2/3,1)$. Confirms (does
-not breach) the wall. No priority change.
-
-**Session 32 update (2-adic mirror law — $p$-adic portrait completed; twentieth confirmation):**
-arXiv watch **negative (twentieth confirmation)**: Bugeaud (2503.22084 / 2604.27490) still only
-"$\to\infty$ with $z^d$"; decidability over $k\ge3$ primes still "an outstanding open problem"
-(Dong–Shafrir 2505.19141, STOC 2026); degree-3 free terms blocked (2510.00759). **New recordable
-structural theorem (Wolfram, no framework):** computed the 2-adic lifting law for $A=z-3^j$,
-previously documented only as the static $A\equiv11\pmod{16}$. **Theorem P:** $v_2(3^y+5)=3$
-universal ($y$ odd) $\Rightarrow v_2(z)=1$; $A\equiv11\pmod{16}$ universal; for $n\ge5$,
-$A\bmod2^n$ determined by $k_y\bmod2^{n-4}$ (period exactly $2^{n-4}$, independent of $k_x$);
-$k_y\mapsto A$ a bijection $\mathbb Z_2\to11+16\mathbb Z_2$ — no 2-adic obstruction. The "$-4$"
-offset mirrors the 3-adic $v_3(2^{332640}-1)=4$ via $v_2(166320)=4$. **Observation Q:** 3-adic
-digits of $A\Leftrightarrow k_x$ alone, 2-adic digits of $A\Leftrightarrow k_y$ alone — the two
-places are independent free bijective parameters, coupled only by the archimedean size
-$A\approx2^{x/3}$. This is the sharpest $p$-adic statement of the soft obstruction; confirms (does
-not breach) the wall. Recorded in `knowledge/problem.md` (Theorems P, Q). No priority change.
-
-**Session 35 update (5-adic valuation sieve — first use of the prime 5; twenty-fourth
-confirmation):** arXiv watch **negative (twenty-fourth confirmation)**: Bugeaud (2503.22084 /
-2604.27490) still only "$\to\infty$ with $z^d$"; $k\ge3$-prime decidability still "an outstanding
-open problem" (Dong–Shafrir 2505.19141); a "$2^x+3^y=$ cube" sweep surfaced only standard ternary
-$a^x+b^y=c^z$ work (no free cube; not applicable); CDT/Badziahin $\mu(2^{1/3})>2\gg1.107$. **New
-recordable structural theorem (Wolfram, no framework) — Theorem T (5-adic Valuation Sieve):** the
-prime 5 (= the constant) examined for the first time, and as a valuation. $v_5(N)\geq2$ universally
-($2^x\equiv7,3^y\equiv13\pmod{25}$); a cube needs $3\mid v_5(N)$, forcing $v_5\geq3\iff N\equiv0
-\pmod{125}\iff k_y\equiv k_x-1\pmod5$ — a **new necessary congruence eliminating 80% of the
-family**, refinable 5-adically (survivors $\approx16.2\%$ of the mod-25 grid). **Soft-obstructed:**
-the phantom $1000/27$ has $v_5=3$ and lies on the survival diagonal $(k_x,k_y)=(0,-1)$, so the sieve
-removes a fixed positive fraction at every depth and cannot empty the family. Strongest single
-elementary cut since Theorem M (80% vs 53%), independent of it, useful for numerical search
-($\geq5\times$). Confirms (does not breach) the wall. Recorded in `knowledge/problem.md`
-(Theorem T). No priority change.
+Watch for genuinely new *separation/gap* techniques that beat the Dirichlet floor on the
+$2^{2/3}$ approximation or supply $\kappa>1$ directly. See the arXiv reference notes under
+`knowledge/references/`.
 
 ---
 
 ## Retired Directions
 
-### [RETIRED] Pure congruence sieving
-See `knowledge/dead_ends.md`. Cannot eliminate the phantom solution by this method alone.
+Full reasoning for each is in `knowledge/dead_ends.md`; the original derivations are in the cited
+session logs.
+
+- **[RETIRED S3] Effective irrationality measure for $2^{1/3}$** — realized exponent
+  $\kappa_{\text{real}}<1$ (negative for $k_y\ge1$); measures only constrain good approximations.
+  Two-comparable-S-units regime. (dead_ends.md; `irrationality_measure_obstruction.md`.)
+- **[RETIRED S4] Primitive divisor / growth (Zsygmondy, BHV)** — congruence form soft-obstructed;
+  $B$ is not a Lucas/Lehmer sequence. (dead_ends.md.)
+- **[RETIRED S4] Modular method / Frey curves** — no varying prime exponent; no Frey curve.
+  (dead_ends.md; `modular_method.md`.)
+- **[RETIRED S5] Baker's method (all variants, incl. Yu's $p$-adic Baker)** — $v_p(\Lambda_p)=0$
+  for $p\in\{2,3\}$, so no Baker upper bound can be violated. (dead_ends.md; `baker_method.md`.)
+- **[RETIRED S5] Skolem / Bertók-Hajdu** — needs local non-solvability; the phantom makes the
+  equation locally solvable everywhere. (dead_ends.md.)
+- **[RETIRED S13] Chabauty-Kim / algebraic geometry** — categorical mismatch (exponents are not
+  algebraic coordinates). Fifth categorical barrier. (dead_ends.md; `log/20260626_120000.md`.)
+- **[RETIRED S14] gpf($z^3-5$) reformulation** — conflates $\{2,3\}$-smoothness with sum-
+  representability. (dead_ends.md.)
+- **[RETIRED S18] Thue-Mahler / norm-form** — no single-S-unit casting survives the additive
+  constant 5; finiteness per fixed $y$ but no family uniformity. (dead_ends.md;
+  `thue_mahler_approach.md`.)
+- **[RETIRED S18] Elliptic / Mordell curve (fix one variable)** — same per-fixed-variable wall as
+  Thue-Mahler; $N_{k_x}$ has $\sim10^5$ digits, no uniformity. (dead_ends.md.)
+- **[RETIRED S19] Cyclotomic phantom family** — Theorem O (parity partition) and uniqueness of
+  $c_1=5$ derived, but soft obstruction universal; no transfer to $c=5$. (dead_ends.md;
+  `log/20260627_000000.md`.)
+- **[RETIRED S21] Coupling-Height / Moving-Filtration framework** (theory-building) — both lemmas
+  refuted: Lemma A circular, Lemma B′ false ($\inf D_{\ge0}=0$). 3-adic depth handle non-
+  transferable. (dead_ends.md; `log/20260627_120000.md`.)
+- **[RETIRED S24] Differential Progression framework** (theory-building) — 3-adic Taylor data is
+  equivalent to the Theorem-J lifting law; no new information. (dead_ends.md;
+  `log/20260626_120100.md`.)
+- **[RETIRED S22] Linear-exponential decidability route** — blocked by the free degree-3 cube term
+  (collapses onto the per-fixed-variable wall; engine is Baker, itself dead). (dead_ends.md;
+  `linear_exponential_decidability.md`.)
+- **[RETIRED S28] Cubic-Transversality / Dial–Lattice framework** (theory-building) — Lemma C
+  refuted via the exact identity $\operatorname{dist}(R_y(x),3\mathbb Z)=3\operatorname{dist}
+  ((2^x+3^y+5)^{1/3},\mathbb Z)$, returning the Session-3 sub-Dirichlet $2^{2/3}$ obstruction.
+  Lemma D (phantom confined to $y<0$) kept as a clarification. **DO NOT REOPEN.** (dead_ends.md;
+  `cubic_transversality_framework.md`; `log/20260628_000000.md`.)
+- **[RETIRED] $p$-adic elimination (standalone)** — phantom is a global rational cube, so the
+  equation is locally solvable at every prime; congruence sieving alone is inert. Derived
+  congruences are kept as auxiliary constraints. (dead_ends.md; `p_adic_methods.md`,
+  `two_adic_structure.md`.)
 
 ---
 
 ## History of Changes
 
-- **2026-06-26 (Session 34):** WATCH-phase session + concrete Wolfram computation (no framework,
-  per the Session-28 inventory-complete verdict). arXiv watch **negative (twenty-third
-  confirmation)** — frontiers unchanged (Bugeaud "$\to\infty$ with $z^d$"; $k\ge3$-prime
-  decidability still "an outstanding open problem"; two new 2026 Skolem papers 2504.14413 /
-  2510.27603 are linear-recurrence zero-detection, NOT the Kuromine gap; degree-3 blocked by
-  2510.00759; CDT/Badziahin $\mu(2^{1/3})>2$). **New recordable structural theorem (Wolfram):**
-  **Theorem S (Convergent–Depth Trade-off Law for the boundary distance $D$)** — record minima of
-  $\min_{k_y}D_{\ge0}$ over $k_x$ sit at the convergent denominators $q_n$ of $\rho=3\log2/\log3$
-  (9, 513, 7891, 16836, …) and their small integer multiples; $\rho$ has irrationality measure
-  (numerically) $=2$ (bounded partial quotients, $q_n\theta_n\in(0.02,0.70)$, $\mu_n$ flat), so
-  $D\to0$ at the Dirichlet rate; small $D\Rightarrow$ small $A\in[e^D/3,3e^D]$ but $\Rightarrow$
-  large $k_x=q_n\Rightarrow$ huge depth $j+1$, coupled by $\rho$. **Decisive concrete instance**
-  $k_x=16836,k_y=31866$: $D=3.7588$, $A\in[43,129]$ (genuinely small), yet $v_3(2^x+5-a^3)\le7$ for
-  all $a\in[40,130]$ (Wolfram via $2^x\bmod3^{80}$) while $j+1=1{,}766{,}706{,}480$ — Theorem-N
-  exclusion with $\sim10^9$ margin: **the first concrete realization of bounded-$A$** (S21 argued it
-  only abstractly). Metric-face analogue of the $p$-adic Theorems J/P/R; completes the portrait
-  across all three places (metric $\mu(\rho)=2$; 2-adic tangent val 4; 3-adic tangent val 3).
-  Confirms (does not breach) the wall. Added Theorem S to `knowledge/problem.md`; added a Session-34
-  note to the [MEDIUM] Theorem-M direction (sub-question (a)); created `log/20260703_000000.md`;
-  updated `current_focus.md`; updated the bounded-$A$ cross-reference in `dead_ends.md`. No
-  direction retired/elevated.
+One line per session; full detail in the corresponding `log/` file and (for retirements)
+`knowledge/dead_ends.md`.
 
-- **2026-06-26 (Session 33):** WATCH-phase session + concrete Wolfram computation (no framework,
-  per the Session-28 inventory-complete verdict). arXiv watch **negative (twenty-second
-  confirmation)** — frontiers unchanged (Bugeaud "$\to\infty$ with $z^d$"; $k\ge3$-prime
-  decidability still "an outstanding open problem"; degree-3 blocked by 2510.00759; CDT/Badziahin
-  $\mu(2^{1/3})>2$). **New recordable structural theorem (Wolfram):** **Theorem R (2-adic
-  Newton/tangent expansion of $k_y\mapsto A$)** — Mahler form $A(k_y)=c_0+c_1k_y+c_2\binom{k_y}{2}
-  +\cdots$ with $c_0\equiv11\pmod{16}$, $v_2(c_1)=4$, $v_2(c_2)=8$ (law $v_2(c_k)=4k$, verified
-  $k=1,2$ at $2^{12},2^{16},2^{24}$); so the Theorem-P bijection is 2-adic analytic with tangent
-  valuation 4, re-deriving the "$-4$" offset from the slope; affine-exact up to depth $n=8$. Same
-  expansion for $z$; $z\equiv A\pmod{3^n}$ so variable separation (Obs Q) extends to $z$. Pinned a
-  new subtlety: $N\equiv1\pmod9$ has three 3-adic cube-root branches $\equiv1\pmod3$, with the
-  genuine $z$ selected archimedeanly (not congruentially) — a clean statement of why the wall is
-  archimedean. Completes the 2-adic/3-adic tangent-valuation symmetry ($v_2=4$ vs Session-24
-  $v_3=3$). Confirms (does not breach) the wall. Added Theorem R to `knowledge/problem.md`; added a
-  Session-33 note to the factorization [HIGH] direction; created `log/20260702_000000.md`; updated
-  `current_focus.md`. No direction retired/elevated. (Note: the Wolfram MCP endpoint returned
-  intermittent 502 gateway errors late in the session; the $k=3$ coefficient confirmation
-  ($v_2(c_3)=12$ expected) was left pending — recorded honestly as $\ge11$/expected-12.)
-
-- **2026-06-26 (Session 32):** WATCH-phase session + concrete Wolfram computation (no framework,
-  per the Session-28 inventory-complete verdict). arXiv watch **negative (twentieth
-  confirmation)** — frontiers unchanged (Bugeaud "$\to\infty$"; $k\ge3$-prime decidability still
-  "an outstanding open problem"; degree-3 blocked by 2510.00759; CDT/Badziahin $\mu(2^{1/3})>2$).
-  **New recordable structural theorem (Wolfram):** **Theorem P (2-adic mirror law for $A$)** —
-  $v_2(3^y+5)=3$ universal ($y$ odd) $\Rightarrow v_2(z)=1$; $A\equiv11\pmod{16}$ universal; for
-  $n\ge5$, $A\bmod2^n$ determined by $k_y\bmod2^{n-4}$ (period exactly $2^{n-4}$, independent of
-  $k_x$); $k_y\mapsto A$ a bijection $\mathbb Z_2\to11+16\mathbb Z_2$ (no 2-adic obstruction);
-  "$-4$" offset $=v_2(166320)$, mirroring 3-adic $v_3(2^{332640}-1)=4$. **Observation Q (variable
-  separation):** 3-adic digits of $A\Leftrightarrow k_x$ alone, 2-adic digits $\Leftrightarrow
-  k_y$ alone; coupled only by archimedean size $A\approx2^{x/3}$. Completes the $p$-adic portrait
-  of $A$ and gives the sharpest $p$-adic statement of the soft obstruction. Confirms (does not
-  breach) the wall — twenty-first structural confirmation. Added Theorems P, Q to
-  `knowledge/problem.md`. No direction retired/elevated.
-
-- **2026-06-26 (Session 31):** WATCH-phase session + concrete Wolfram experiment (no framework,
-  per the Session-28 inventory-complete verdict). arXiv watch **negative (nineteenth
-  confirmation)** — all frontiers unchanged (Bugeaud "$\to\infty$"; $k\ge3$-prime decidability
-  still open; CDT/Badziahin $\mu(2^{1/3})>2$). **New recordable sharpening (Wolfram):** the
-  realized gap exponent $E=\log(2^x+5)/\log(z^3)$ over surviving Theorem-5 pairs **densely fills
-  $(2/3,1)$ and floors at exactly $2/3$** (monotone $\to2/3^+$ as $D\to0^+$, $=1^-$ at $k_y=0$;
-  boundary limit $(2j+1)/(3j)\to2/3$ Wolfram-verified). This pins the open-target exponent
-  *range* to the half-open $(2/3,1)$, making the "$\kappa>1$ necessary-and-sufficient" framing
-  sharp: any $\kappa<1$ is violated at near-boundary pairs. Confirms (does not breach) the wall.
-  No direction retired/elevated; no new theorem.
-
-- **2026-06-26 (Session 30):** Pure WATCH-phase session. arXiv watch **negative (eighteenth
-  confirmation)**, but surfaced **one genuinely new, previously-unassessed paper:**
-  **arXiv:2510.00759 (Feb 2026), "Cubic incompleteness: Hilbert's tenth problem begins at degree
-  three"** — satisfiability of a single Diophantine equation of total degree ≤ 3 is
-  **Σ⁰₁-complete (undecidable)**. **Assessment:** this **sharpens/confirms** the S22
-  decidability/degree barrier rather than breaching it. The S22 hope of a *general* decidability
-  extension to degree-≥2 / degree-3 free terms is now **provably impossible** (degree 3 = the
-  universal-undecidability threshold). Any decidability route to Kuromine must be a *bespoke
-  special-structure* argument, never a general decision procedure. It does **NOT** make Kuromine
-  itself undecidable (Kuromine is one structured family, not the universal cubic class). **WATCH
-  item (b) narrowed accordingly** (see below). Other frontiers unchanged: Bugeaud
-  2503.22084/2604.27490 still only "$\to\infty$ with $z^d$"; Baker $\mu(2^{1/3})\le2.955$,
-  Voutier $\kappa<2$ only for $(c+1)/c$ near 1, CDT 2510.04156 still $\mu>2\gg1.107$;
-  target sub-Dirichlet ($E\to2/3$). **Wolfram re-anchor (high precision):** at
-  $(k_x,k_y)=(84180,159334)$, $D=0.53666886633\ldots$ (min nonneg over $k_x\le200000$),
-  realized gap exponent $E=\log(2^x+5)/\log(z^3)=0.66666666670696\ldots\to2/3^+$ ($3^y$ dominates
-  $z^3$ here); frame constants re-confirmed to **25 digits**. Structural check (Wolfram): $z^3-n$
-  irreducible over $\mathbb Q[z]$ — free term genuinely degree 3, at the 2510.00759 threshold;
-  $z=4$ for $(5,3)$ verified. **No theory-building** (Session-28 inventory-complete verdict
-  re-affirmed). No direction retired/elevated/added; added this assessment to the arXiv-survey
-  [LOW] direction; created `log/20260629_000000.md`; updated `current_focus.md`. WATCH remains
-  the sole active priority.
-
-- **2026-06-26 (Session 29):** WATCH-phase session. arXiv watch **negative (seventeenth
-  confirmation):** Bugeaud 2503.22084/2604.27490 still only "$\to\infty$ with $z^d$" (no
-  power-saving $\kappa>1$); CDT holonomy (2510.04156, ICM proceedings) still gives effective
-  $\mu(2^{1/3})>2$, no follow-up below $\sim1.1$; KLNOW/Dong–Shafrir (2505.19141, STOC 2026
-  proceedings) decidability still two-prime / degree-$\le1$, arbitrary $T$ = "major
-  breakthrough." **No theory-building** (per Session-28 inventory-complete verdict: a fourth
-  framework would collapse onto an existing face). Instead ran a concrete **Wolfram density
-  experiment** on the last multiplicative handle and **proved the Eisenstein-norm condition on
-  $B$ is AUTOMATIC**: "all prime factors of $B=z^2+z\,3^j+3^{2j}$ are $\equiv1\bmod3$" is forced
-  by $\gcd(z,3^j)=1$ (Wolfram: fails 6/8 without coprimality, holds 12/12 with it). This is the
-  **multiplicative/density-side confirmation** of the Session-4 congruence-side soft obstruction
-  — the factorization imposes no new global constraint, the phantom stays inert. Re-anchored the
-  open target (Wolfram): at $(k_x,k_y)=(84180,159334)$, $D=0.53667$, realized gap exponent
-  $E=\log(2^x+5)/\log(z^3)=0.6\overline{6}\to2/3^+$, far below the needed $\kappa>1$. Frame
-  constants re-confirmed to 20 digits. Re-verified the genuine-vs-phantom $A$ separation
-  ($A\equiv427\bmod432$ vs phantom $A=3$; real but non-actionable, $A$ a bijective 2-/3-adic
-  unit). No direction retired/elevated/added; added Session-29 sharpening to the Factorization
-  [HIGH] entry; created `log/20260626_180946.md`; updated `current_focus.md`. WATCH remains the
-  sole active priority.
-
-- **2026-06-26 (Session 28):** Attempted **Lemma C** (the unproven crux) of the
-  Cubic-Transversality / Dial–Lattice framework and **RETIRED the framework** (Lemma C refuted
-  as a route). **Decisive Wolfram finding — exact identity:** $\operatorname{dist}(R_y(x),
-  3\mathbb Z) = 3\operatorname{dist}((2^x+3^y+5)^{1/3},\mathbb Z)$, i.e. the dial-orbit
-  discrepancy from $3\mathbb Z$ IS three times the original cube-root distance (the $\times27$ /
-  $W=3z$ rescaling is undone by the cube root). Since the family has $x\equiv2\bmod3$ (so
-  $2^x=4M^3$, $M=2^{(x-2)/3}$), the discrepancy is governed by the rational approximation of
-  $2^{2/3}$ by $m/M$ — **exactly the Session-3 $2^{2/3}$-Thue quantity**. Wolfram: discrepancy
-  descends toward 0 along deep $2^{2/3}$-convergents ($\operatorname{dist}\approx0.0026$ at
-  $x=35$) → **no positive constant lower bound**; realized approximation exponent sub-Dirichlet
-  ($\kappa\le1.21$, negative for most pairs) → no irrationality measure acts. Lemma C's only
-  non-trivial route (effective equidistribution) IS the two-comparable-S-units barrier in
-  archimedean clothing. **Sixth independent confirmation** that the barrier is place-independent;
-  attack-face inventory now complete (metric S15, analytic/irrationality S3/10/11,
-  3-adic-coupling S20–21/S24, decidability/degree S22, archimedean-equidistribution S27–28).
-  **Lemma D kept** (phantom confined to $y<0$, survival sheet phantom-free — a clarification, not
-  a proof step). arXiv watch negative (sixteenth confirmation): effective-equidistribution
-  literature is homogeneous-dynamics, not the scalar-orbit question; Bugeaud 2604.27490 still
-  only "$\to\infty$". Moved the framework to RETIRED in this file; added dead-end entry to
-  `knowledge/dead_ends.md`; appended Session-28 resolution to
-  `knowledge/references/cubic_transversality_framework.md`; created `log/20260628_000000.md`;
-  updated `current_focus.md`. WATCH is now the sole active priority.
-
-- **2026-06-27 (Session 27):** Negative arXiv watch (fifteenth confirmation) + SPECIAL
-  DIRECTIVE theory-building. **Watch finding:** Bugeaud **arXiv:2604.27490** (Apr 2026, "On the
-  difference between perfect powers and integral S-units") gives effective lower bounds for
-  $|z^d - \text{S-unit}|$ that "**tend to infinity with $z^d$**" — the *trivially-met* form
-  (Kuromine gap $=2^x+5\to\infty$ already), NOT a power-saving $\kappa>1$. Wolfram-re-verified
-  $E\to2/3^+$ at the near-boundary surviving pair ($k_x=84180$, $D=0.53667$). **New direction
-  added:** the **Cubic-Transversality / Dial–Lattice framework** [LOW], a genuinely
-  *archimedean* framework distinct from the two retired 3-adic-only ones. Dial form
-  $W^3=27\cdot2^x+3^{y+3}+135$ ($W=3z$); **Lemma D PROVED** (phantom's denominator-3 escape
-  confined to $y<0$, so the survival sheet is phantom-free — first such formulation);
-  **Lemma C UNPROVEN crux** (effective resonance-exclusion of the dial orbit from $3\mathbb Z$;
-  naive gap bound vacuous; only route is effective equidistribution, where the barrier likely
-  re-surfaces). No direction retired this session. New reference
-  `knowledge/references/cubic_transversality_framework.md`.
-
-- **2026-06-26 (Session 26):** WATCH-phase **target-audit pass** (Wolfram). No direction
-  retired/elevated/added; no theory-building (per standing DO-NOT-ATTEMPT). Independently
-  re-derived the exponent threshold on which the entire reduction rests and **corrected a
-  long-standing imprecise framing** of the open target. Wolfram-verified: for surviving
-  Theorem-5 pairs the realized exponent of the gap $|z^3-3^y| = 2^x+5$ **measured against
-  $z^3$** is $E = \log(2^x+5)/\log(z^3) \in (2/3, 1)$, **strictly below 1 everywhere** —
-  it $\to 2/3$ at the survival boundary (where $2^x \approx 3^{2j+1} \approx z^3$, so
-  $3^y \approx z^3$, log-ratio $3^y/z^2 = 1.5$, NOT $3^y\approx z^2$) and $\to 1^-$ at
-  $k_y=0$ (equal to $1 - e^{-47854}/\log z^3$ for $k_x=1$). **Consequence:** the
-  necessary-and-sufficient open target is *any* fixed **effective** $\kappa>1$ in
-  $|z^3-3^y|>C(z^3)^\kappa$ (the recorded $\kappa<1.107 = 3-3\log_3 2 = 3\log_3(3/2)$ is a
-  *sufficient margin*, not a necessary ceiling; $\kappa=1$ exactly is just barely
-  insufficient). The "$3^y\approx z^2$" regime label in older logs is imprecise (the $z^2$
-  arises only in the auxiliary $2^{2/3}$-Thue casting, not the direct gap). The substantive
-  impasse is unchanged — Baker gives $v_p(\Lambda_p)=0$ so no positive effective $\kappa$
-  exists. Verified the three frame-constants again to 30 digits ($3-3\log_3 2 = 1.107210739\ldots
-  = 3\log_3(3/2)$; $2\log3/(3\log2)=1.056641667\ldots$; $3\log2/\log3=1.892789261\ldots$).
-  Updated `current_focus.md` (corrected target framing) and this file. Created
-  `log/20260626_150517.md`. No change to `knowledge/problem.md` or `dead_ends.md`
-  (a framing correction, not a new theorem or dead end).
-
-- **2026-06-26 (Session 25):** WATCH-phase, executed as a **Wolfram-enabled
-  verification-and-consolidation pass** (MCP was available this session, unlike Sessions 20
-  and 24 which left numerical verifications pending). **Resolved all pending Wolfram anchors
-  — first direct machine verification:** $v_3(2^{332640}-1)=4$ exactly (so $v_3(\log_3 g)=4$);
-  Theorem I exact ($A\bmod81 = 49/22/76$ for $k_x\equiv0/1/2\pmod3$); Theorem L exact
-  ($B\bmod81 = 52/79/25$); tangent-speed valuation $v_3(\tau)=v_3((A^3-5)L/(3A^2))=3$ (Session
-  24 anchor); $\operatorname{ord}_{3^n}(2)=2\cdot3^{n-1}$; and the three frame-constants to 15
-  digits ($3-3\log_32=1.10721\ldots$, $2\log3/(3\log2)=1.05664\ldots$,
-  $3\log2/\log3=1.89279\ldots$). The numerical record is now self-consistent and
-  machine-checked. **New diagnostic sharpening (kept, non-actionable):** the open target
-  $\kappa<1.107$ for $|z^3-3^y|>C(z^3)^\kappa$ lies **below the Dirichlet floor $\mu\ge2$**, so
-  it is categorically NOT an irrationality-measure statement — improving the effective measure
-  for $2^{1/3}$ (the CDT-school program) can never reach it, regardless of sharpness, because
-  measures only constrain *good* approximations (exponent $\ge2$). Wolfram (50-digit)
-  reconfirmed the realized approximation exponent of $z/W$ to $2^{2/3}$ is **negative** for all
-  $k_y\ge1$ ($-0.585,-1.377,-2.170$): $z/W$ is an *anti*-approximation. The target is a
-  **sub-Dirichlet gap/separation inequality**, outside the measure paradigm. **arXiv watch
-  negative (fourteenth confirmation):** CDT (2510.04156) measure for $2^{1/3}$ still $\gg2$
-  (explicit bound large since $a=2$ is far from 1); KLNOW/Dong–Shafrir (2505.19141) decidability
-  still only $\le2$-prime bases, degree-$\le1$ free terms. No direction retired/elevated/added;
-  WATCH remains sole active priority. Created `log/20260626_140741.md`; updated
-  `current_focus.md`.
-
-- **2026-06-26 (Session 24):** WATCH-phase reconnaissance (thirteenth arXiv watch, negative)
-  plus mandatory theory-building attempt 2 (Special Directive). **Built and immediately
-  retired the Differential Progression Framework:** studied the 3-adic analytic curve
-  $\mathcal{K}: A^3 = 32\exp_3(kL)+5$ over $\mathbb{Z}_3$, computed the tangent speed
-  $\tau(k) = (A^3-5)L/(3A^2)$ with $v_3(\tau)=3$ analytically (Wolfram verification
-  pending for 3-adic digit precision), and showed that the resulting inter-term constraints
-  ($A(k+1)-A(k) \equiv \tau(k) \pmod{3^6}$, $v_3(\Delta A)=3$) are EQUIVALENT to the
-  existing Theorem-J lifting law (Sessions 6–10). The 3-adic Taylor coefficients of
-  $A(k_x)$ at any integer point ARE the Theorem-J data; the differential framework adds no
-  information beyond the complete 3-adic portrait. **Fourth independent confirmation that
-  3-adic data alone cannot produce an archimedean size contradiction.** Added
-  Differential Progression Framework to `knowledge/dead_ends.md`. No direction priorities
-  changed; WATCH remains the sole active priority. Created `log/20260626_120100.md`.
-
-- **2026-06-26 (Session 23):** WATCH-phase reconnaissance. No direction retired or elevated; no new direction added. (i) **Independently re-verified the soft-obstruction** that underpins every phantom-blocked dead-end, catching and correcting a self-introduced mis-test in the process: the phantom RHS is $2^5+3^{-3}+5 = 1000/27 = (10/3)^3$ (NOT $37/27$); Wolfram confirms $1000/27$ is a cube residue mod **195/195** primes $p\equiv1\pmod3$ below $\approx2740$ (the mistaken $37/27$ gave only 63/195). This re-confirms that along the Theorem-5 phantom residues the equation reduces to the global rational cube $1000/27 \pmod p$ for every $p\neq3$ — so pure congruence sieving with any $\gcd(m,3)=1$ modulus is provably inert, exactly as recorded. (ii) **Sharpened the $D$-lattice equidistribution record** (Lemma B′ remains false, non-actionably): running minimum of nonnegative $D=c_0+k_xP-k_yQ$ ($P/Q=3\log2/\log3$ irrational) descends from Session 21's $0.5367$ ($k_x=84180$) to **$0.1446$ at $k_x=243595$** (Wolfram, $k_x\le1.5\times10^6$), confirming $\inf D_{\ge0}=0$; the implied genuine $A\approx3.47$ there is still blocked by the Theorem-N corollary ($j\approx1.35\times10^{10}$, fixed small $A$ has bounded $v_3$). (iii) **arXiv watch negative (twelfth confirmation):** CDT holonomy school active but on L-value irrationality ($L(2,\chi_{-3})$, $\zeta_2(5)$), no effective measure for $2^{1/3}$ below $\sim1.1$; KLNOW/Dong–Shafrir decidability settled for two primes, **explicitly open for $k\ge3$ primes**, no extension to a free higher-degree term. Created `log/20260626_110746.md`; updated `current_focus.md`. WATCH remains the sole active priority.
-- **2026-06-26 (Session 22):** WATCH-phase reconnaissance; focused assessment of the 2025–2026 **decidability frontier for linear-exponential Diophantine systems** relative to Kuromine. Found and analyzed **KLNOW (Karimov–Luca–Nieuwveld–Ouaknine–Worrell, 2025)** — decidability of linear-exponential Diophantine systems **over two primes** (free variables at degree $\le 1$ outside exponents; proof **uses Baker's theorem**) — and **Dong–Shafrir (arXiv:2505.19141, STOC 2026)**, which reduces module S-unit equations to such systems (decidable for base $T$ with $\le 2$ prime divisors; arbitrary $T$ = "major breakthrough in number theory"). **Sharp new placement:** Kuromine's exponential skeleton $2^x+3^y+5$ is over **exactly two primes** ($T=6$) — *inside* the prime-count frontier — but the term $z^3$ is **degree 3 in the free variable** ($z=3^j+A\Rightarrow z^3=3^{3j}+3^{1+2j}A+3^{1+j}A^2+A^3$, Wolfram; free cube $A^3$, and $z$ not $\{2,3\}$-smooth in general so not re-encodable as a monomial), placing Kuromine **two polynomial degrees above** the degree-1 decidable class. The degree obstruction = the already-retired per-fixed-variable Thue/Mordell wall (finite per fixed $x$, no family uniformity), and KLNOW's engine (Baker) is itself dead here (Session 5). This sharpens the Session-8 note that flagged 2505.19141 as "not applicable" by pinning the *exact* reason (degree, not prime-count) and folding in the new KLNOW decidability. **Eleventh independent confirmation** of the barrier. Created `knowledge/references/linear_exponential_decidability.md`; added the dead-end entry to `knowledge/dead_ends.md`; updated `current_focus.md`. No new direction elevated; WATCH remains sole active priority, with an added watch item: any extension of the linear-exponential decidability class to a single free higher-degree (quadratic/cubic) term.
-- **2026-06-27 (Session 21):** Executed the Session-20 next-suggestions: numerically tested (Wolfram) the two candidate lemmas of the **Coupling-Height / Moving-Filtration framework** and **RETIRED the framework** (both lemmas resolved negatively). **Lemma A (Depth–Size Incompatibility, the crux) REFUTED as circular:** the "smallest integer of 3-adic depth $\ge d$ is $\approx 3^{d-2}$, hence off the size band" law (verified for the fixed target $N=37$: smallest $a$ of depth $d$ runs $1,4,22,49,211,697,2155,\ldots$, $\sigma_5\approx0.95(d-2)$, implied $c_0\in[0.33,3.5]$) is a property of the *fixed* target only — a constructed moving-style surrogate $N=22^3+3^{10}\cdot7$ has its smallest depth-10 integer equal to the small number 22. For the real moving target $2^x+5$, "a small deep cube-root exists" *is* the Kuromine question, so Lemma A cannot be proved without an effective irrationality measure (unavailable). **Lemma B′ (Lattice Rigidity) REFUTED as false:** $D=c_0+k_xP-k_yQ$ with $P/Q=3\log2/\log3=1.89278926\ldots$ irrational (CF infinite) $\Rightarrow$ Weyl equidistribution $\Rightarrow\inf D_{\ge0}=0$; Wolfram running-min of nonnegative $D$ falls $98.5\to0.537$ by $k_x=84180$ and keeps decreasing — Session 15's "$D\approx55$ floor" was a finite-range ($k_x\le5000$) artifact; the $D$-lattice does approach $D=0$ (does NOT revive bounded-$A$ elimination — Theorem-N corollary still blocks). arXiv watch negative (tenth confirmation; CDT 2510.04156 still frontier, measure for $2^{1/3}$ $>2$, no $\kappa<1.107$, no family uniformity). Net: the last constructed framework is exhausted; the depth handle is real but **non-transferable** without an effective irrationality measure. Research returns to pure WATCH. Moved Coupling-Height direction to RETIRED; added it to `knowledge/dead_ends.md`; created `log/20260627_120000.md`; updated `current_focus.md`.
-- **2026-06-25 (Session 1):** Added [HIGH] Factorization approach. Added [MEDIUM] Thue-Mahler equation approach. Lowered Baker's method assessment from [MEDIUM] to [MEDIUM-LOW] but kept at [MEDIUM] pending p-adic Baker investigation. Elevated $p$-adic direction to [HIGH] (tied). Noted Session 1 discoveries.
-- **2026-06-25 (Session 2):** Downgraded standalone $p$-adic elimination from [HIGH] to [LOW/~RETIRED] after *proving* (not just observing) that local methods cannot obstruct the equation: the phantom is a global rational cube $(10/3)^3$, so every local condition is satisfiable. Added new [HIGH] direction "Effective Diophantine approximation to $2^{1/3}$" as the realistic global path. Completed the 2-adic structure analysis ($z\equiv6\pmod{32}$, $v_2(3^y+5)=3$). See `knowledge/references/two_adic_structure.md`.
-- **2026-06-25 (Session 3):** RETIRED "Effective Diophantine approximation to $2^{1/3}$" (was [HIGH]) with a proof that it is quantitatively dead: realized exponent $\kappa\approx0.62\ll\mu$, and the Thue value $3^y+5$ is too large by $\sim e^{138909}$ — root cause is the two-comparable-dominant-S-units regime ($3^y\approx z^2$). See `knowledge/references/irrationality_measure_obstruction.md`. Added Session-3 progress to the Factorization [HIGH] direction (reduced equation $2^x+5=A(A^2+3^{j+1}A+3^{2j+1})$, both real solutions have $A=z-3^{y/3}=1$, Eisenstein identity $4B-3w^2=(2z+w)^2$). Elevated primitive-divisor (Zsygmondy/BHV) direction to [MEDIUM-HIGH] as the best remaining non-size lead, since all size methods are now shown too weak.
-- **2026-06-25 (Session 4):** RETIRED the [MEDIUM-HIGH] primitive-divisor/growth direction: its congruence form is killed by the soft obstruction (showed $A\equiv3$, $B\equiv37/3\pmod p$ for all $p\ne3$, matching the phantom; $x\bmod3$, $y\bmod6$ constant over the family), and its growth form has no Lucas/Lehmer object ($B$ not an $a^n-b^n$ sequence). RETIRED the modular/Frey-curve method as structurally inapplicable (no varying prime exponent) — created `knowledge/references/modular_method.md`. Downgraded the Factorization [HIGH] direction toward MEDIUM: closed sub-questions (b) and (c) negatively ($A$ is provably $\sim2^{x/3}$, never 1), leaving only the global/size sub-question (a) for which no adequate tool exists. Added Session-4 progress note to `knowledge/references/factorization_approach.md`. Extended numerical verification to $x,y\le2000$ (only the two known solutions). Both retirements moved to `knowledge/dead_ends.md`.
-- **2026-06-25 (Session 5):** RETIRED Baker's method (all variants, including Yu's p-adic Baker): p-adic linear forms have $v_p = 0$ for $p \in \{2,3\}$ — p-adic units — so no Baker upper bound can ever be violated. RETIRED Skolem/Bertók-Hajdu: inapplicable because the phantom makes the equation locally solvable everywhere. Added A=1 sub-theorem proof (exactly $(1,0,2)$ and $(5,3,4)$ satisfy $A=1$). Documented the algebraic origin of the phantom: $c=5$ is the smallest positive integer for which $865+27c$ is a perfect cube. Checked $z\bmod37$ structure: three branches cycle over Theorem-5 family, no contradiction. Added Session-5 history entry, retired Baker and Skolem to dead ends.
-- **2026-06-25 (Session 6):** No new directions retired; no new directions elevated. Literature survey of 2025-2026 arXiv found no unconditional new tool for the two-S-units regime. Investigated descent-on-A: found A ≡ 4 (mod 9), A ≡ 22 (mod 27), A ≡ 27 (mod 32) [NOTE: the last is only for k_y even; corrected in Session 7], j ≡ 7 (mod 8) as new refined constraints for the Theorem-5 family; these are genuine addenda but do not yield a contradiction. Confirmed phantom-free neighboring constants c=4,6,7,... have no rational phantom and are structurally simpler, but this doesn't help resolve c=5. Updated arXiv survey [LOW] direction with Session 6 findings. Updated current_focus.md.
-- **2026-06-25 (Session 7):** No new directions retired; no new directions elevated. Corrected Session 2 result: $z \equiv 6 \pmod{32}$ is not universal; the correct universal statement is $z \equiv 6 \pmod{16}$ (the full family splits into $z \equiv 6$ and $z \equiv 22 \pmod{32}$ by $k_y$ parity). Derived new universal constraints (Theorems E–H): $y \equiv 13 \pmod{16}$, $j \equiv 3 \pmod{4}$, $z \equiv 6 \pmod{16}$, $A \equiv 11 \pmod{16}$. Corrected Session 6 Theorem B: the correct universal form is $A \equiv 11 \pmod{16}$ (not $27 \pmod{32}$). Derived $B \equiv 79 \pmod{432}$ as a new universal constraint. Updated CRT: $A \equiv 427 \pmod{432}$, $B \equiv 79 \pmod{432}$, consistent with $A \cdot B \equiv 37 \pmod{432}$. Noted that $A_{\mathrm{phantom}} = 3 \equiv 3 \pmod{16}$ while $A_{\mathrm{real}} \equiv 11 \pmod{16}$ — genuine 2-adic separation but not a contradiction. arXiv 2026 search: one new paper (2603.29831, cubic reciprocity) found; not applicable. Updated current_focus.md.
-- **2026-06-25 (Session 9):** No new directions retired; no new directions elevated. Completed the 3-adic portrait of the integer factor B (Theorem L), mirroring Theorems I/J for A: B ≡ 25 (mod 27) universal; B mod 81 indexed by k_x mod 3 (52/79/25 for k_x ≡ 0/1/2); B mod 3^{n-1} a function of k_x mod 3^{n-4} for n ≥ 5, inherited from Theorem J via B ≡ (2^x+5)·A^{-1} (A a 3-adic unit). Corrected Session 8 suggestion #1: B mod 729 needs k_x mod 27 (not mod 9); full 27-branch (A,B) mod 729 table computed and verified (A·B ≡ 2^x+5 mod 729 in every row). B is a 3-adic unit (v_3(B)=0), separating it from the phantom (B_phantom=37/3, v_3=-1) but non-actionably. Formalized Theorems I, J, K, L into knowledge/problem.md and created knowledge/references/adic_structure_extended.md (full 2-adic + 3-adic portraits of A and B side by side). The local portrait of a Theorem-5 solution is now complete for both coprime factors at arbitrary p-adic depth; no contradiction; fundamental barrier unchanged. Updated current_focus.md.
-
-- **2026-06-25 (Session 8):** No new directions retired; no new directions elevated. Completed the (k_x, k_y) indexing of all A-congruence branches. Theorem I: the three branches of A mod 81 are indexed by k_x mod 3 (k_x≡0 → A≡49, k_x≡1 → A≡22, k_x≡2 → A≡76 mod 81). Theorem J: A mod 3^{n-1} uniquely determined by k_x mod 3^{n-4} for n≥5 (gcd(332640, ord_{3^n}(2))=54 for all n≥5). Theorem K: full 12-branch A mod 20736=lcm(81,256) indexed by (k_x mod 3, k_y mod 4), all 12 values listed. Corrected and completed Session 6's three-branch CRT to a six-branch CRT mod 2592 indexed by (k_x mod 3, k_y mod 2). Assessed ABC conjecture: no contradiction (quality exponent q≈0.888<1, ABC is never violated). Assessed two new 2026 arXiv papers: arXiv:2505.19141 (S-unit decidability, two primes) and arXiv:2604.18991 (a^x+b^y=c^z); both NOT APPLICABLE to Kuromine. Noted that the 3-adic expansion of A is determined digit-by-digit by k_x, confirming it is a bijection Z_3→Z_3 (no contradiction). Updated current_focus.md.
-
-- **2026-06-25 (Session 11):** No new directions retired (all relevant ones already retired); no new directions elevated. Literature watch on a previously-unassessed, maximally on-target paper — Badziahin's "Distance between cubics and rationals" (arXiv:2509.01105 / Results in Math. 2026), which studies cubic-irrational-vs-rational separation, the geometry directly underlying |z³ − 3^y|. NOT APPLICABLE: its bounds are conditional on abc/Hall and nontrivial only for good approximations 2 ≤ v ≤ 3; Kuromine cannot be cast there ("cube − square" needs y even but y is always odd in the family; "cube − cube" degenerates to a rational nearby integer = the old factorization; the 2^{2/3}-Thue casting realizes v_real ≈ 0.62 at the floor k_y=0 and **negative** for all k_y ≥ 1 — the approximation *diverges*). This sharpens Session 3: κ_real is 0.62 only at the family floor and goes negative (−1.75, −4.13, −6.51, …) for every k_y ≥ 1, so almost the whole family has z/W not approximating 2^{2/3} at all (Wolfram). Also assessed Bajpai's effective many-term S-unit thesis (Bajpai–Bennett, Acta Arith. 214 (2024)): NOT APPLICABLE — Baker-based (retired Session 5) and requires S-unit-controlled terms, which z³ and the constant 5 are not (= Session 8 obstruction). Three independent literature lines (irrationality measures S3, Bugeaud S10, Badziahin S11) now confirm the two-comparable-S-units barrier structurally. Added a Session-11 strengthening note to the RETIRED 2^{1/3} entry and a Session-11 assessment to the arXiv-survey [LOW] direction. Updated current_focus.md.
-- **2026-06-25 (Session 10):** No new directions retired; no new directions elevated. Literature watch: assessed the two newest Bugeaud "perfect-power minus integral S-unit" papers (arXiv:2604.27490, Apr 2026; arXiv:2503.22084, Mar 2025), the first 2026 results to bound exactly the Kuromine-shaped difference. NOT APPLICABLE: Option (1) z³−2^x = 3^y+5 fails the coprimality hypothesis (z even); Option (2) z³−3^y = 2^x+5 satisfies it (x odd ⇒ z coprime to 3) but gives no contradiction because |z³−3^y| = 2^x+5 ≈ z^{1.89} (log 230572 = 0.631·log z³, Wolfram), so it lands exactly on the Session-3 κ_real ≈ 0.63 two-comparable-S-units barrier; a contradiction needs an effective exponent κ < 1.107 while Baker-type bounds (which Bugeaud uses) give κ just below d=3. Resolved Session 9 Suggestion #1: made k_x ↦ A explicit as the 3-adic analytic function A(k_x) = (32·exp_3(k_x·L)+5)^{1/3} with g=2^332640, v_3(g−1)=4, L=log_3 g, v_3(L)=4 (Wolfram); by Theorem J it is a bijection Z_3→Z_3, so rationality of A at an integer k_x reduces to whether a specific s_a ∈ Z_3 lies in Z — 3-adically undetectable (Z dense in Z_3). No obstruction; last 3-adic stone turned. Added Session-10 addendum to the p-adic direction; updated arXiv survey notes; updated current_focus.md.
-- **2026-06-25 (Session 12):** No new directions retired; no new directions elevated. Literature watch: assessed Zhou's effective IUT abc paper (arXiv:2503.14510, Mar 2025) — the most significant new 2025 number-theory preprint found to date, giving an effective abc bound log|abc| ≤ 3 log rad(abc) + 8√(log|abc|·log log|abc|). NOT APPLICABLE to Kuromine: the Kuromine triple (a,b,c)=(2^x, 3^y+5, z^3) has quality ≈ 0.888 < 1 (Session 8), so the Zhou bound is trivially satisfied (it upper-bounds quality at ≤ 3+ε, and Kuromine already satisfies quality < 1). Effective abc bounds help only when c ≫ rad(abc) (quality > 1); Kuromine is the opposite regime. Also did a broad June 2026 arXiv sweep: five additional papers assessed (2605.31114, 2605.28449, 2605.18348, 2606.00466, 2606.02244); none applicable. The Calegari–Dimitrov–Tang holonomy school (2510.04156) has no published follow-up below the ~1.1 exponent threshold. Four independent lines (S3/S10/S11/S12) now confirm the two-comparable-S-units barrier. Added Session-12 notes to the arXiv-survey [LOW] direction. Updated current_focus.md.
-- **2026-06-26 (Session 13):** RETIRED new direction "Chabauty-Kim / algebraic geometry methods" (added and immediately retired — assessed the full cluster of 2025–2026 papers: Affine Chabauty I/II arXiv:2511.15949/2602.05643, Modular Chabauty arXiv:2505.12947, Cubic Chabauty arXiv:2604.20662). All NOT APPLICABLE for the same categorical reason: Kuromine's variables $x,y$ are exponents of fixed bases, not algebraic coordinates; Chabauty-Kim methods apply to algebraic curves and cannot encode the constraint "$u = 2^x$ for integer $x$". Established **fifth categorical barrier**: Chabauty-Kim in all forms is categorically inapplicable to two-exponential Diophantine equations. Added new [LOW] direction suggestion: "greatest prime factor of $z^3 - 5$" reformulation — if gpf($z^3-5$) grows effectively with $z$, then only finitely many $z$ can have $z^3-5$ a $\{2,3\}$-integer. June/July 2026 arXiv sweep: no new applicable paper. The Calegari–Dimitrov–Tang holonomy school has no new follow-up. Updated current_focus.md and directions.md.
-- **2026-06-26 (Session 14):** RETIRED the [LOW] gpf($z^3-5$) direction (fundamental conflation: $\{2,3\}$-smoothness of $z^3-5$ is different from sum-representability as $2^x+3^y$; the known solution $z=4$ has $z^3-5=59$, prime, not $\{2,3\}$-smooth, yet $59=2^5+3^3$; moved to dead_ends.md). Proved and documented **Theorem M** (new elementary theorem): if $y=3j$ and $3^{2j+1} > 2^x+4$, then $2^x+3^y+5$ is not a perfect cube. This rigorously eliminates all Theorem-5 pairs with $k_y \geq \lceil 1.893\,k_x - 1.107\rceil$. For $k_x=1$: only $k_y=0$ survives. The surviving pairs satisfy $k_y/k_x < 3\log_3 2 - 1 \approx 0.893$, i.e., exactly the two-comparable-S-units regime ($2^x \geq 3^y$) where Baker and all analytic tools also fail. Extended numerical verification to $z \leq 10000$ (no new solutions). Added new [MEDIUM] direction entry for "Theorem M and size-partitioned Theorem-5 family." Updated current_focus.md and directions.md.
-- **2026-06-26 (Session 15):** Pursued the Session-14 bounded-$A$ / boundary-case exploration (Theorem M sub-question (a), Factorization sub-question (a)). Proved and documented **Theorem N** (new exact 3-adic valuation identity): $2^x+5-A^3 = 3^{j+1}A(A+3^j)$, hence $v_3(2^x+5-A^3) = j+1$, using $\gcd(A,3)=1$ from Theorem I. Corollary: $A$ is no fixed small integer (for fixed $a$ coprime to 3, $v_3(2^x+5-a^3)$ is a bounded constant $\leq 3$, contradicting $j+1\geq 55440$; the $A=1$ band gives $v_3(2^x+4)=2$ by LTE, forcing $j=1$ = known solution). **CLOSED negatively** the bounded-$A$ elimination strategy: $A$ is small only at the Theorem-M boundary $D=x\log2-(2j+1)\log3\approx0$, but the Theorem-5 lattice never lands within $O(1)$ log-distance of it (Wolfram: closest surviving $D\approx55$ over $k_x\leq5000$, $A\gtrsim10^{24}$; closest overall $D\approx10$ on the eliminated side). This is the **metric face** of the two-comparable-S-units barrier. Added Theorem N to `knowledge/problem.md`; added the bounded-$A$ dead end to `knowledge/dead_ends.md`; closed Factorization sub-question (a) and Theorem-M sub-question (a); **promoted** Theorem-M sub-question (b) (the power-of-2 / narrow-$z$-band angle for $A<3^j$ cases) as the best concrete next lead. Updated current_focus.md and directions.md.
-- **2026-06-26 (Session 17):** Pursued the two [LOW] directions: (1) function-field analog / Mason-Stothers, (2) special role of $c = 5$. For the function-field direction: proved that the equation *without* the constant ($P^x + Q^y = H^3$) is completely resolved by Mason-Stothers (only finitely many non-constant solutions, bounded by $\deg P + \deg Q$); proved that the equation *with* the constant ($P^x + Q^y + c = H^3$, $c \neq 0$) is NOT resolved by Mason-Stothers because $\text{rad}(P^x + c)$ has full degree (squarefree polynomial) — the function-field phantom obstruction. **RETIRED** the function-field direction (provably as hard as the integer case). For the $c = 5$ direction: derived the cyclotomic characterization $37 = \Phi_3(10)/3$ (3rd cyclotomic polynomial); parametrized the full phantom family $c_m = 27m^3 + 9m^2 + m - 32$, $z_m = (9m+1)/3$ ($c_1 = 5$, $c_2 = 222$, $c_3 = 781$); derived new universal congruence $z^3 \equiv 11 \pmod{37}$ for all Theorem-5 solutions (non-contradictory). Added new [LOW] direction: cyclotomic phantom family. Literature watch: negative. Six independent confirmations of the two-comparable-S-units barrier. Created `knowledge/references/function_field_analog.md`.
-- **2026-06-27 (Session 20):** SPECIAL DIRECTIVE — **theory-creator mode** (all standard tools proven dead). Executed the mandatory four-step Theory-Building Protocol. **(1) Obstruction Diagnosis:** characterized the wall as the *conjunction* of four structural degeneracies — (P1) two-exponential/no-curve (kills modular & Chabauty-Kim), (P2) two-comparable-S-units (no distinguished small quantity; effective-exponent gap $0.631<\kappa<1.107$; kills Baker & irrationality measures), (P3) additive constant 5 (quality $0.888<1$; kills Thue-Mahler & ABC), (P4) phantom global rational cube (locally solvable everywhere; kills congruence/local) — with **one non-degenerate handle**: 3-adic depth $v_3(2^x+5-A^3)=j+1\to\infty$ (Theorem N) vs phantom depth 0. **(2) Framework Blueprinting:** argued the minimal bypassing machinery is a *non-additive arithmetic height coupling the archimedean place and the place 3* along the Theorem-5 progression. **(3) Axiomatic Definition:** defined the **Coupling-Height / Moving-Filtration framework**. **(4) Translation & Testing:** recast a Theorem-5 solution as an integer $A$ satisfying (T-real)∧(T-adic)∧(T-gate)∧(T-couple); stated **Lemma A** (Depth–Size Incompatibility, the crux, UNPROVEN) and **Lemma B/B′** (Lattice Rigidity). [Both refuted in Session 21.] arXiv watch: negative (ninth confirmation). Wolfram re-verified the anchors $3\log2/\log3=1.8928$ and $2\log3/(3\log2)=1.0566$.
-- **2026-06-27 (Session 19):** Pursued and **RETIRED** the [LOW] Cyclotomic phantom family direction. Systematically compared $c_m = 27m^3+9m^2+m-32$ for $m=1,2,3$ (giving $c_1=5, c_2=222, c_3=781$). New: **Theorem O (parity partition)**: $c_m$ odd iff $m$ odd, hence $z$ even for odd-$m$ equations, $z$ odd for even-$m$ equations. Confirmed $c_1=5$ is uniquely special (only $c_m$ with $2^5+c_m$ prime $\equiv 1\pmod3$; all others composite with extra small-prime factors); $c_1=5$ is the EASIEST case in the family. Soft obstruction is universal (phantom is global rational cube for all $m$). No new attack strategy. Also conducted arXiv watch (negative; eighth confirmation of two-comparable-S-units barrier). **ALL non-watch directions now exhausted.** Research enters pure monitoring phase.
-- **2026-06-26 (Session 18):** Deeply explored and **RETIRED** the [MEDIUM] Thue-Mahler equation approach (identified Session 1, never analyzed in depth). Enumerated all four candidate Thue-Mahler/norm-form castings and proved (Wolfram) each is broken by the additive constant 5 — the RHS is never a single S-unit. Established the symmetric reframing of the hard case $z^3 - 4(2^a)^3 - (3^j)^3 = 5$ (cube minus two S-unit-cubes = 5; verified on $(5,3,4)$). Proved $v_{37}(2^x+5)=1$ exactly and universally, hence $37\|B$; analyzed the 3-way mod-37 cube branch $z\in\{21,25,28\}$ (37 splits in $\mathbb{Z}[\omega]$), all soft-obstructed (phantom is a cube mod $37^n$ for all $n$, verified mod $37^3$; deeper 37-adic residues vary across the family). Confirmed per-fixed-$y$ Thue equation $z^3-4W^3=3^y+5$ is finite (Wolfram: $W=2^a$ only at $y=3$ = known solution) but Thue-Mahler theory gives no uniformity over the infinite progression (unit rank of $\mathbb{Q}(2^{1/3})$ is 1). **Also marked the [MEDIUM] Elliptic-curve direction as ~RETIRED** (same per-fixed-variable Mordell/Thue wall; no uniformity; $N_{k_x}\approx 10^5$ digits). arXiv watch: holonomy school (2510.04156) still $\mu>2$ for $2^{1/3}$, no new applicable 2026 follow-up (seventh confirmation of the two-S-units barrier). Created `knowledge/references/thue_mahler_approach.md`; added the Thue-Mahler dead end to `knowledge/dead_ends.md`. Updated current_focus.md and directions.md.
-- **2026-06-26 (Session 16):** Pursued Theorem-M sub-question (b) — the "companion from-above" / narrow-$z$-band analysis. Derived the **Case II window** $A \in (e^D/7, e^D/3)$ for surviving pairs with $A < 3^j$ (i.e., $z \in (3^j, 2\cdot3^j)$). Width $\sim 0.19e^D$, exponentially large (for $k_x=1$, $k_y=0$: width $\approx 10^{3799}$). Confirmed: 2-adic analysis non-obstructive (2-adic cube bijection, Session 2); 3-adic analysis non-obstructive (3-adic bijection, Sessions 9–10); norm-form constraint (primes $p\equiv2\pmod3$ with odd $v_p$ in $2^x+5$ must divide $A$) phantom-compatible. **CLOSED negatively** sub-question (b). Conducted June 2026 arXiv watch: no new applicable paper; Calegari–Dimitrov–Tang (arXiv:2510.04156) has no new follow-up below $\mu\approx2$; Gherga–Siksek (arXiv:2207.14492, published ANT 2025) practical only for moderate $N$, not for $N\approx2^{332645}$. Five independent literature confirmations of the two-S-units barrier (S3/S10/S11/S12/S16). The Theorem-M direction is now **fully exhausted** (both sub-questions closed). Added new [LOW] direction suggestions: (1) special role of $c=5$ and the phantom; (2) function-field analog / Mason-Stothers inspiration. Updated current_focus.md and directions.md.
+- **S1 (2026-06-25):** Added [HIGH] Factorization and [MEDIUM] Thue-Mahler; elevated $p$-adic.
+- **S2 (2026-06-25):** Downgraded standalone $p$-adic elimination to [LOW] (phantom = global
+  rational cube ⇒ locally solvable everywhere); added [HIGH] effective-approx-to-$2^{1/3}$.
+- **S3 (2026-06-25):** RETIRED effective-approx-to-$2^{1/3}$ ($\kappa_{\text{real}}\approx0.62$,
+  Thue value too large); added the reduced equation $2^x+5=A\cdot B$; elevated primitive-divisor.
+- **S4 (2026-06-25):** RETIRED primitive-divisor and modular/Frey; downgraded Factorization toward
+  MEDIUM (sub-qs (b),(c) closed); search to $x,y\le2000$.
+- **S5 (2026-06-25):** RETIRED Baker (all variants, $v_p=0$) and Skolem; $A=1$ sub-theorem; phantom
+  algebraic origin ($c=5$).
+- **S6 (2026-06-25):** Literature survey, no new tool; refined congruences on $A$ (descent).
+- **S7 (2026-06-25):** Corrected universal constraints (Theorems E–H; $A\equiv11\bmod16$).
+- **S8 (2026-06-25):** $(k_x,k_y)$-indexed $A$-branches (Theorems I/J/K); ABC quality $0.888<1$.
+- **S9 (2026-06-25):** 3-adic portrait of $B$ (Theorem L); local portrait complete for both factors.
+- **S10 (2026-06-25):** $k_x\mapsto A$ explicit 3-adic analytic bijection; Bugeaud papers N/A.
+- **S11 (2026-06-25):** Badziahin (2509.01105) N/A; $\kappa_{\text{real}}$ negative for $k_y\ge1$.
+- **S12 (2026-06-25):** Zhou IUT-abc (2503.14510) N/A (quality $<1$); June-2026 sweep negative.
+- **S13 (2026-06-26):** RETIRED Chabauty-Kim (categorical, fifth barrier); added/explored gpf idea.
+- **S14 (2026-06-26):** RETIRED gpf (conflation); proved **Theorem M**; added [MEDIUM] Theorem-M
+  direction; search to $z\le10000$.
+- **S15 (2026-06-26):** Proved **Theorem N** ($v_3(2^x+5-A^3)=j+1$); CLOSED bounded-$A$ (metric face).
+- **S16 (2026-06-26):** CLOSED Theorem-M sub-q (b) (Case-II window); added [LOW] $c=5$ and
+  function-field directions.
+- **S17 (2026-06-26):** RETIRED function-field analog (as hard as integer case); cyclotomic
+  characterization of $c=5$; added [LOW] cyclotomic phantom family.
+- **S18 (2026-06-26):** RETIRED Thue-Mahler and (≈)elliptic-curve (per-fixed-variable wall);
+  $v_{37}(2^x+5)=1$.
+- **S19 (2026-06-27):** RETIRED cyclotomic phantom family (Theorem O; soft obstruction universal).
+  All non-watch directions exhausted; enter monitoring.
+- **S20 (2026-06-27):** SPECIAL DIRECTIVE — built Coupling-Height / Moving-Filtration framework
+  (Lemmas A, B; both refuted S21).
+- **S21 (2026-06-27):** RETIRED Coupling-Height (Lemma A circular, Lemma B′ false, $\inf
+  D_{\ge0}=0$); 3-adic depth handle non-transferable.
+- **S22 (2026-06-26):** RETIRED linear-exponential decidability route (free degree-3 cube blocks);
+  added watch item.
+- **S23 (2026-06-26):** WATCH (12th, neg); re-verified soft obstruction ($1000/27$ cube mod 195/195
+  primes); $D$-min descends to $0.1446$.
+- **S24 (2026-06-26):** SPECIAL DIRECTIVE — built & RETIRED Differential Progression framework
+  (≡ Theorem-J lifting law).
+- **S25 (2026-06-26):** WATCH (14th, neg); verified all pending Wolfram anchors; target is sub-
+  Dirichlet (outside the measure paradigm).
+- **S26 (2026-06-26):** WATCH (target-audit); corrected open target to "any effective $\kappa>1$",
+  realized exponent $E\in(2/3,1)$.
+- **S27 (2026-06-27):** SPECIAL DIRECTIVE — built Cubic-Transversality / Dial–Lattice framework
+  (Lemma D proved, Lemma C unproven crux).
+- **S28 (2026-06-28):** RETIRED Cubic-Transversality (Lemma C refuted via exact dist-identity);
+  attack-face inventory complete; WATCH sole priority.
+- **S29 (2026-06-26):** WATCH (17th, neg); proved the Eisenstein-norm condition on $B$ is automatic
+  (multiplicative-side soft obstruction).
+- **S30 (2026-06-26):** WATCH (18th, neg); arXiv:2510.00759 — no *general* degree-3 decidability
+  theorem can exist; narrowed watch item (b).
+- **S31 (2026-06-26):** WATCH (19th, neg); realized gap exponent $E$ densely fills $(2/3,1)$, floors
+  at $2/3$ — pins the $\kappa>1$ target as sharp.
+- **S32 (2026-06-26):** WATCH (20th, neg); proved **Theorem P** (2-adic mirror law) and
+  **Observation Q** (variable separation), completing the $p$-adic portrait.
+- **S33 (2026-06-26):** WATCH (22nd, neg); proved **Theorem R** (2-adic Newton/tangent expansion,
+  slope $v_2=4$), completing the 2-/3-adic tangent-valuation symmetry.
+- **S34 (2026-06-26):** WATCH (23rd, neg); proved **Theorem S** (Convergent–Depth Trade-off Law);
+  first concrete bounded-$A$ lattice point, excluded with $\sim10^9$ margin.
+- **S35 (2026-06-27):** WATCH (24th, neg); proved **Theorem T** (5-adic valuation sieve,
+  $k_y\equiv k_x-1\bmod5$, eliminates 80%); first use of the prime 5; soft-obstructed.
