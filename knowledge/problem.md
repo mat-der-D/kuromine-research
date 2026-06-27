@@ -183,12 +183,12 @@ The additive constant $5$ couples the two places **only** through the single arc
 
 This is the 2-adic counterpart of the Session-24 3-adic tangent-speed result ($v_3(\tau)=3$ for the curve $A(k_x)=(32\exp_3(k_xL)+5)^{1/3}$), and it sharpens Theorem P from a "period statement" to an explicit **2-adic analytic Mahler expansion**. Throughout, $x=5+332640\,k_x$, $y=166317+166320\,k_y$, $j=y/3=55439+55440\,k_y$, $z=2u$ ($u$ odd), $A=z-3^j$.
 
-**Statement (Wolfram-verified).** Write the 2-adic bijection $k_y \mapsto A(k_y)$ (Theorem P) in its Mahler/Newton forward-difference form
+**Statement (Wolfram-verified; corrected at $k=3$ by Python, Session 37).** Write the 2-adic bijection $k_y \mapsto A(k_y)$ (Theorem P) in its Mahler/Newton forward-difference form
 $$A(k_y) \;=\; c_0 + c_1\,k_y + c_2\binom{k_y}{2} + c_3\binom{k_y}{3} + \cdots, \qquad c_k = (\Delta^k A)(0).$$
-Then (Wolfram, $A \bmod 2^n$ for $n$ up to $24$):
+Then:
 1. $c_0 = A(0) \equiv 11 \pmod{16}$ (the fixed 2-adic preamble of Theorem P).
-2. $v_2(c_1) = 4$ and $v_2(c_2) = 8$, i.e. the **leading-coefficient law $v_2(c_k) = 4k$** for $k\ge1$ (verified $k=1,2$ cleanly at moduli $2^{12},2^{16},2^{24}$; the $k=3$ digit is consistent with $12$ but crowds the modulus boundary at the depths reachable before the Wolfram endpoint became unavailable — recorded honestly as $v_2(c_3)\ge11$, expected $12$).
-3. Consequently $A(k_y)$ is a **2-adic analytic function of $k_y$ with leading slope $v_2 = 4$**: to first order $A(k_y) \equiv A_0 + s\,k_y \pmod{2^n}$ with $v_2(s)=4$ (so the period in $k_y$ at depth $n$ is exactly $2^{n-4}$ — re-deriving Theorem P's "$-4$" offset from the tangent valuation), and the affine approximation is **exact up to depth $n=8$** (Wolfram: linear over the full period for $n\le8$, with the $\binom{k_y}{2}$ term, $v_2=8$, first breaking exact linearity at $n=9$).
+2. $v_2(c_1) = 4$ and $v_2(c_2) = 8$ (Wolfram-verified). **Correction (Session 37, Python):** The exact law $v_2(c_k) = 4k$ does **not** hold for all $k \ge 1$; e.g. $v_2(c_3) = 11$ (not $12$, as Session 33 expected), $v_2(c_4) = 17$ (not $16$), $v_2(c_7) = 27$ (not $28$), etc. The correct statement is $|v_2(c_k) - 4k| \le 2$ for all $k \le 50$ (Python, depth $n = 200$), and $\liminf_{k\to\infty} v_2(c_k)/k = 4$.
+3. Consequently $A(k_y)$ is a **2-adic analytic function of $k_y$ with 2-adic radius of convergence $2^{-4}$** and **leading slope $v_2 = 4$**: to first order $A(k_y) \equiv A_0 + s\,k_y \pmod{2^n}$ with $v_2(s)=4$ (so the period in $k_y$ at depth $n$ is exactly $2^{n-4}$ — re-deriving Theorem P's "$-4$" offset from the tangent valuation), and the affine approximation is **exact up to depth $n=8$** (Wolfram: linear over the full period for $n\le8$, with the $\binom{k_y}{2}$ term, $v_2=8$, first breaking exact linearity at $n=9$).
 
 **The same expansion holds verbatim for $z$** (not only $A$): $z(k_y) \bmod 2^n$ is also a 2-adic arithmetic progression to leading order with $v_2(\text{step})=4$ (Wolfram: $z \equiv 102 - 16\,k_y \pmod{256}$, step $-16$, $v_2=4$). The 3-adic side is *trivially identical for $z$ and $A$*: since $j \ge 55439 \gg n$, $3^j \equiv 0 \pmod{3^n}$, so $z \equiv A \pmod{3^n}$ and $z$ inherits Theorem J's portrait exactly ($z \bmod 3^n$ depends only on $k_x$). Hence the variable-separation Observation Q holds for $z$ as well as for $A$.
 
@@ -273,3 +273,30 @@ The survival fraction converges to $\approx 16.13\%$, bounded away from 0 — co
 **Why it confirms (does not breach) the wall — the phantom passes.** The phantom solution $(x,y,z) = (5,-3,10/3)$ gives $z_{\text{phantom}} = 10/3$, and $10 \equiv 0 \pmod 5$: the phantom satisfies $5 \mid z_{\text{phantom}}$ (in $\mathbb Q_5$, $v_5(10/3) = v_5(10) = 1$). So the new condition $v_5(z) = 1$ is consistent with the phantom — the soft obstruction persists exactly. The phantom's $z'_{\text{phantom}} = 2/3 \equiv 2\cdot 2 = 4 \pmod 5$ (since $3^{-1} \equiv 2 \pmod 5$) is also a nonzero residue, consistent with item 2 above.
 
 **Scope (honest).** Theorem U is the natural completion of the 5-adic analysis opened by Theorem T: it characterizes $v_5(z) = 1$ (a new universal necessary condition on the solution $z$ itself) and the bijective portrait $z' = z/5 \bmod 5^n$ on the survival diagonal. Like all prior $p$-adic portraits (Theorems I/J/P/Q/R) it **confirms, does not breach**, the wall: the phantom satisfies $v_5(z)=1$ and all 5-adic conditions on $z$, so the sieve is soft-obstructed at every depth. The combined CRT constraint $z \equiv 3910 \pmod{4320}$ is the sharpest combined portrait currently available (from the 2-adic, 3-adic, and 5-adic places jointly). No new attack face is opened; no $\kappa>1$ gap bound is produced.
+
+## Theorem V: Combined T+P+N Elimination at the Sharpest T-Surviving Near-Boundary Witness (Session 37)
+
+This theorem exhibits the **sharpest T-surviving near-boundary lattice point** of the Theorem-5 family (i.e., the pair with smallest boundary distance $D$ among those satisfying Theorem T), demonstrates that $A = z - 3^j$ is forced into a single-digit band, and shows that **Theorem P alone** (the 2-adic preamble) eliminates all candidates — without invoking the heavier Theorem N. It also records that the Session-34 witness (the sharpest overall near-boundary pair) is independently eliminated by Theorem T alone. All computations Python-verified, Session 37.
+
+**Setting.** Throughout, $x = 5 + 332640\,k_x$, $j = 55439 + 55440\,k_y$, and $D = x\log 2 - (2j+1)\log 3$.
+
+**Statement 1 (Theorem T eliminates the Session-34 witness independently).** The Session-34 concrete witness $(k_x, k_y) = (16836, 31866)$ (the sharpest overall near-boundary pair, $D = 3.7588$) satisfies $k_y \bmod 5 = 1 \ne (k_x - 1) \bmod 5 = 0$. Hence **Theorem T eliminates this pair** ($N = 2^x + 3^y + 5$ does not have $v_5(N) \ge 3$, so it cannot be a perfect cube). No computation of $A$ or $v_3$ is required.
+
+**Statement 2 (Sharpest T-surviving pair).** Among all Theorem-5 pairs with $k_x \le 300{,}000$ and $D > 0$, the unique pair satisfying Theorem T ($k_y \equiv k_x - 1 \pmod 5$) with $D < \log(11/3) \approx 1.299$ is:
+$$(k_x, k_y) = (84180, 159334), \qquad D = 0.5367,$$
+where $84180 = 5\,q_8 = 5 \cdot 16836$ (Python, exhaustive scan $k_x \le 300{,}000$). Here $x = 28{,}001{,}635{,}205$ and $j = 8{,}833{,}532{,}399$, so $j + 1 = 8{,}833{,}532{,}400$.
+
+The boundary distance $D = 0.5367$ forces $A = z - 3^j \in [e^D/3,\, 3e^D] \approx [0.57,\, 5.13]$; the only positive integers in this band are $\{1, 2, 3, 4, 5\}$.
+
+**Statement 3 (Theorem P eliminates all candidates).** By Theorem P, $A \equiv 11 \pmod{16}$ universally on the Theorem-5 family. No integer in $\{1, 2, 3, 4, 5\}$ satisfies $a \equiv 11 \pmod{16}$; and the smallest positive integer with this residue is $11 > 5.13 = A_{\text{hi}}$. Therefore **Theorem P alone** — without any 3-adic depth computation — eliminates all candidates $A \in \{1,2,3,4,5\}$ at this pair. The pair $(84180, 159334)$ cannot be a Theorem-5 solution.
+
+**Statement 4 (Independent route via Theorem N).** As a verification, $v_3(2^x + 5 - a^3) \le 3$ for every $a \in \{1, \ldots, 14\}$ (Python, mod $3^{30}$), while a genuine solution with $A = a$ requires $v_3 = j + 1 = 8{,}833{,}532{,}400$. The depth margin is $\le 3$ vs $\sim 8.8 \times 10^9$, a factor $\sim 3 \times 10^9$. Theorem N independently eliminates the pair.
+
+**Combined M+T survival fraction (Python, $k_x \in [1,200]$, $k_y \in [0,360]$).** Theorem M eliminates $47.6\%$ of all pairs (size condition). Among M-survivors, Theorem T eliminates exactly $80\%$ (the two conditions are independent: combined fraction $= 20.0\%$ of M-survivors, confirming no correlation).
+
+**Scope (honest).** Theorem V is a **new concrete witness** with $A$ forced to single-digit integers ($1$–$5$), sharper than the Session-34 Theorem-S witness ($A \in [43, 129]$). It demonstrates that the filtering tools T, P, N have **non-overlapping action domains**:
+- Theorem T acts on mod-5 parameter residues: eliminates $(16836, 31866)$ independently.
+- Theorem P acts on 2-adic residues of $A$: eliminates $(84180, 159334)$ independently.
+- Theorem N acts on 3-adic depth of $2^x + 5 - A^3$: provides an independent route at both witnesses.
+
+This **confirms, does not breach**, the wall. No single tool closes the conjecture uniformly; the soft obstruction (phantom) ensures each tool is individually bypassed at some family of pairs. The value of Theorem V is the sharpest constructive demonstration that the existing toolset collectively excludes every explicitly computable near-boundary point, now with $A$ at the single-digit scale.

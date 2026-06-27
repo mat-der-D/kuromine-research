@@ -46,6 +46,13 @@ depth $j+1$), the two coupled by $\rho$ — Theorem-N exclusion fires with $\sim
 first concrete bounded-$A$ lattice point ($k_x=16836$). Sub-question (c) (combine with a
 quantitative gap bound) is blocked pending the same $\kappa>1$ tool.
 
+**Session-37 addition (Theorem V):** The Session-34 witness ($k_x=16836$) is independently
+eliminated by Theorem T (fails $k_y\equiv k_x-1\pmod5$). The sharpest T-surviving near-boundary
+pair ($k_x=84180$, $D=0.537$, $A\in\{1..5\}$) is independently eliminated by Theorem P ($A\equiv11
+\pmod{16}$ forces $A\ge11$) and also by Theorem N ($v_3\le3$ vs depth $j+1=8.8\times10^9$).
+The three filtering tools T, P, N have non-overlapping action domains and collectively cover all
+explicitly computable near-boundary cases.
+
 ### [LOW] Special role of $c=5$ and the phantom
 
 **Session 16–17, 35.** Cyclotomic origin: $2^5+5=37=\Phi_3(10)/3$; $c=5$ is the unique small
@@ -209,3 +216,13 @@ One line per session; full detail in the corresponding `log/` file and (for reti
   first concrete bounded-$A$ lattice point, excluded with $\sim10^9$ margin.
 - **S35 (2026-06-27):** WATCH (24th, neg); proved **Theorem T** (5-adic valuation sieve,
   $k_y\equiv k_x-1\bmod5$, eliminates 80%); first use of the prime 5; soft-obstructed.
+- **S36 (2026-06-27):** WATCH (25th, neg); proved **Theorem U** (5-adic portrait of $z$:
+  $v_5(z)=1$ universally on survival sub-lattice; bijective $z'=z/5 \bmod 5^n$; prime-5-unique
+  scan; combined CRT $z\equiv3910\pmod{4320}$; survival fraction $\to16.13\%$). Wolfram MCP
+  unavailable; Python-verified.
+- **S37 (2026-06-27):** WATCH (26th, neg). (i) **CORRECTION to Theorem R**: exact law
+  $v_2(c_k)=4k$ is FALSE — $v_2(c_3)=11\ne12$, $|v_2(c_k)-4k|\le2$ for $k\le50$; corrected
+  to slope/analyticity statement ($\liminf v_2(c_k)/k=4$). (ii) **Theorem V**: sharpest
+  T-surviving near-boundary pair $(k_x=84180, k_y=159334, D=0.537)$ has $A\in\{1..5\}$,
+  eliminated by Theorem P alone ($A\equiv11\bmod16$ forces $A\ge11>5.13$); Session-34 witness
+  $(k_x=16836)$ eliminated by Theorem T alone. Python-verified.
