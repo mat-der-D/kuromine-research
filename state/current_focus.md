@@ -1,39 +1,45 @@
 # Current Focus
 
-**Session:** 20260704_000000 (Session 38)
+**Session:** 20260627_060000 (Session 39)
 
-## Session 38 main results (WATCH negative, 27th confirmation; NEW framework built+retired under SPECIAL DIRECTIVE; new Wolfram computations)
+## Session 39 main results (WATCH negative, 28th confirmation; NEW framework built+retired under SPECIAL DIRECTIVE)
 
-WATCH-phase session that (1) ran the arXiv watch (negative, 27th confirmation); (2) produced two
-**genuinely new Wolfram computations** — a joint multi-prime cube-root/$B$ portrait and the 3-adic
-valuation-budget cancellation; and (3) honored the **THEORY-BUILDING SPECIAL DIRECTIVE** by
-constructing a new-*shape* framework — the **Integral Valuation-Budget Framework** — and, honestly,
-finding that it too reduces to the wall (crux Lemma VB-2 = the missing $\kappa>1$ gap bound).
+WATCH-phase session that (1) ran the arXiv watch (negative, 28th confirmation; checked and ruled out
+the new Le–Miyazaki paper arXiv:2508.17601); and (2) honored the **THEORY-BUILDING SPECIAL
+DIRECTIVE** by constructing a framework of a genuinely **new shape** — the **Geometry-of-Numbers /
+Successive-Minima Framework** — the first to keep the equation 2-dimensional via the log-lattice,
+and, honestly, finding that it too reduces to the wall (crux Lemma GN-2 = the missing $\kappa>1$ gap
+bound). One genuine new structural fact kept: **Lemma GN-1, the Degeneration Law.**
 
-**arXiv watch (twenty-seventh confirmation, negative).** Unchanged: Bugeaud 2604.27490 still only
+**arXiv watch (twenty-eighth confirmation, negative).** Bugeaud 2503.22084/2604.27490 still only
 "$\to\infty$ with $z^d$" (not power-saving $\kappa>1$); $k\ge3$-prime decidability (Dong–Shafrir
-2505.19141) still "outstanding open problem"; CDT/Badziahin $\mu(2^{1/3})>2\gg1.107$. No new paper.
+2505.19141) still "outstanding open problem"; CDT/Badziahin $\mu(2^{1/3})>2\gg1.107$. **New paper
+checked and ruled inapplicable:** Le–Miyazaki arXiv:2508.17601 ($n^x=(n+1)^y+(n+2)^z+(n+3)^w$) is
+*purely exponential* and its engine is a blocking modulus (Skolem local-non-solvability) — exactly
+what the phantom rules out for Kuromine (everywhere locally solvable). No transfer.
 
-**New Wolfram computations (genuine, recorded):**
-1. **Multi-prime joint portrait.** For $(k_x,k_y)=(1,1)$, at every prime $p\in\{7,13,19,31,37,43,
-   61,67,73,97,109,127\}$, the phantom cube root $z_{\text{ph}}\equiv10\cdot3^{-1}$ is one of the
-   three family roots and $B_{\text{ph}}\equiv37\cdot3^{-1}$ is among the family $B$-values
-   (at $p=37$: roots $\{21,25,28\}$, $37\mid B$ on $z\in\{21,28\}$, phantom on $z\equiv28$). The
-   sharpest single demonstration that the soft obstruction holds jointly across many primes.
-2. **Budget cancellation.** $v_3(A)+v_3(B)=v_3(2^x+5)=0$ universally (Wolfram; $2^x+5\equiv1\pmod3$,
-   $x$ odd). Genuine $(v_3(A),v_3(B))=(0,0)$ vs phantom $(1,-1)$ — the exact reason 3-adic
-   valuation is blind to the genuine/phantom distinction.
+**Geometry-of-Numbers / Successive-Minima Framework (NEW, built + RETIRED under SPECIAL DIRECTIVE).**
+The fifth distinct theory-building shape and the first to keep the problem 2-dimensional: a genuine
+solution is the simultaneous exact vanishing of two log-forms $L_1=x\log2-3\log z$,
+$L_2=y\log3-3\log z$ spanning a rank-2 log-lattice; ask whether its successive minima admit a
+Minkowski determinant bound.
+- **Lemma GN-1 (Degeneration Law) — PROVED, KEPT (genuine new fact).** On the survival wedge
+  ($D\ge0$, $2^x\gtrsim3^y$) the log-lattice is **maximally degenerate**: $\lambda_1=|L_1|\sim
+  e^{-(x\log2-y\log3)}$ is super-exponentially small, $\lambda_2=|L_2|\sim x\log2-y\log3$ huge,
+  $\det\to0$ — no second-minimum bound can bite. Exact offset identity (Wolfram, 8 digits):
+  $(-\log|L_1|)-D=(1-j)\log3$. On the known $(5,3,4)$ the lattice is non-degenerate
+  ($\varepsilon\approx1.25$), as it must be.
+- **Lemma GN-2 (Determinant-Driven Exclusion, the crux) — REFUTED as a route.** Because $\lambda_2$
+  carries no smallness, the problem **collapses to the single first minimum** $\lambda_1=|L_1|$ with
+  $-\log\lambda_1=x\log2-y\log3$ — the $\{\log2,\log3\}$ form whose effective lower bound IS the open
+  $\kappa>1$ target.
 
-**Integral Valuation-Budget Framework (NEW, built + RETIRED under SPECIAL DIRECTIVE).** A
-local-global / valuation-budget obstruction (a *different shape* from the three prior transfer
-frameworks, chosen because the wall is a local-global failure, not a metric transfer). Lemma VB-1
-(budget rigidity) **proved** but = Cubic-Transversality Lemma D (no constraint on genuine
-solutions). Lemma VB-2 (height–integrality incompatibility, the crux) **proved equivalent to the
-missing effective $\kappa>1$ gap bound**. **Seventh independent theory-building confirmation** of
-the wall. Full statement: `knowledge/references/valuation_budget_framework.md`.
+**Eighth independent theory-building confirmation** of the wall. Full statement:
+`knowledge/references/geometry_of_numbers_framework.md`.
 
-Twenty-seventh structural confirmation. WATCH remains the sole active priority. No new knowledge-base
-theorem (the framework's proved lemma duplicates Lemma D).
+Twenty-eighth structural confirmation. WATCH remains the sole active priority. No new
+knowledge-base *theorem* (Lemma GN-1 is a structural fact about the log-lattice, recorded in the
+reference file; it imposes no constraint on genuine solutions).
 
 ---
 
@@ -45,7 +51,7 @@ This file is a snapshot of where the research currently stands. Per-session narr
 
 The conjecture is reduced to a single unconditional open target — an effective gap bound with a
 fixed $\kappa>1$ — that no current tool supplies. Research is in a **WATCH** phase: monitor arXiv,
-and record any new structural facts found along the way. As of Session 38 there have been **27
+and record any new structural facts found along the way. As of Session 39 there have been **28
 consecutive negative confirmations** of the two-comparable-S-units barrier.
 
 ## The open target (corrected framing, Session 26)
@@ -96,11 +102,14 @@ solution. No local or congruence method can supply that.
 
 Every theory-building attempt and every standard tool returns the same two-comparable-S-units wall:
 metric (S15), analytic/irrationality (S3/10/11), 3-adic-coupling (S20–21, S24), decidability/degree
-(S22), archimedean-equidistribution (S27–28), and local-global/valuation-budget (S38). Four
-theory-building frameworks (Coupling-Height, Differential-Progression, Cubic-Transversality,
-Integral-Valuation-Budget) all reduced to the wall. New theory must beat the Dirichlet floor on the
-$2^{2/3}$ approximation or supply a power-saving $\kappa>1$ gap bound directly; nothing short
-reaches it.
+(S22), archimedean-equidistribution (S27–28), local-global/valuation-budget (S38), and
+geometry-of-numbers/successive-minima (S39). **Five** theory-building frameworks (Coupling-Height,
+Differential-Progression, Cubic-Transversality, Integral-Valuation-Budget, Geometry-of-Numbers) all
+reduced to the wall. New theory must beat the Dirichlet floor on the $2^{2/3}$ approximation or
+supply a power-saving $\kappa>1$ gap bound directly; nothing short reaches it. The S39 lesson:
+keeping the equation 2-dimensional (a log-lattice with two forms) does **not** help — on the
+survival wedge the second form $L_2$ is never small, so the lattice degenerates (Lemma GN-1) to its
+single first minimum, the same archimedean $\{\log2,\log3\}$ form.
 
 ## Next priority
 

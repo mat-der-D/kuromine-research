@@ -82,7 +82,7 @@ portrait — all independent, so they compose multiplicatively.
 
 ### [LOW] arXiv survey / WATCH (sole active priority)
 
-**Ongoing literature watch.** As of Session 38, **27 consecutive negative confirmations** of the
+**Ongoing literature watch.** As of Session 39, **28 consecutive negative confirmations** of the
 two-comparable-S-units barrier. The necessary-and-sufficient open target is any unconditional
 *effective* gap bound $|z^3-3^y|>C(z^3)^\kappa$ with a fixed $\kappa>1$ (the realized exponent
 $E=\log(2^x+5)/\log(z^3)$ densely fills $(2/3,1)$, S31). Frontier, unchanged:
@@ -150,6 +150,15 @@ session logs.
   missing $\kappa>1$ gap bound. Seventh theory-building confirmation. Kept residuals: multi-prime
   joint portrait (phantom on family branch at all primes $7..127$) and the budget-cancellation
   identity $v_3(A)+v_3(B)=0$. (dead_ends.md; `valuation_budget_framework.md`; `log/20260704_000000.md`.)
+- **[RETIRED S39] Geometry-of-Numbers / Successive-Minima framework** (theory-building, SPECIAL
+  DIRECTIVE) — keep the equation 2-dimensional via the log-lattice of forms $L_1=x\log2-3\log z$,
+  $L_2=y\log3-3\log z$; ask whether successive minima admit a Minkowski determinant bound. Lemma GN-1
+  (Degeneration Law) **proved & kept** (new fact): on the survival wedge $\lambda_1=|L_1|\sim
+  e^{-(x\log2-y\log3)}$ super-tiny, $\lambda_2=|L_2|\sim x\log2-y\log3$ huge, $\det\to0$ — lattice
+  maximally degenerate; exact offset $(-\log|L_1|)-D=(1-j)\log3$ (Wolfram). Lemma GN-2 (crux) proved
+  equivalent to the open $\kappa>1$ gap bound (problem collapses to the single $\{\log2,\log3\}$ first
+  minimum). Eighth theory-building confirmation. (dead_ends.md; `geometry_of_numbers_framework.md`;
+  `log/20260627_060000.md`.)
 - **[RETIRED] $p$-adic elimination (standalone)** — phantom is a global rational cube, so the
   equation is locally solvable at every prime; congruence sieving alone is inert. Derived
   congruences are kept as auxiliary constraints. (dead_ends.md; `p_adic_methods.md`,
@@ -238,3 +247,11 @@ One line per session; full detail in the corresponding `log/` file and (for reti
   Wolfram: multi-prime joint portrait (phantom on family cube-root/$B$ branch at all primes
   $7..127$) and budget cancellation $v_3(A)+v_3(B)=v_3(2^x+5)=0$, genuine $(0,0)$ vs phantom
   $(1,-1)$.
+- **S39 (2026-06-27):** WATCH (28th, neg; checked & ruled out Le–Miyazaki arXiv:2508.17601 —
+  purely-exponential, blocking-modulus engine, phantom blocks it). SPECIAL DIRECTIVE — built &
+  RETIRED the **Geometry-of-Numbers / Successive-Minima framework** (fifth distinct shape; keep the
+  log-lattice 2-D). Lemma GN-1 (Degeneration Law) **proved & kept**: survival-wedge log-lattice is
+  maximally degenerate ($\lambda_1\sim e^{-(x\log2-y\log3)}$, $\lambda_2\sim x\log2-y\log3$,
+  $\det\to0$), exact offset $(-\log|L_1|)-D=(1-j)\log3$ (Wolfram). Lemma GN-2 (crux) = the open
+  $\kappa>1$ target (collapses to the single $\{\log2,\log3\}$ first minimum). Eighth theory-building
+  confirmation.

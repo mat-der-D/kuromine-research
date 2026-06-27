@@ -434,3 +434,45 @@ an archimedean $\kappa>1$ gap from the outset.
 **Genuine residual facts (kept):** (i) the multi-prime joint portrait (phantom on the family branch
 at all primes $7..127$, the sharpest single soft-obstruction demonstration); (ii) the
 budget-cancellation identity $v_3(A)+v_3(B)=0$, genuine $(0,0)$ vs phantom $(1,-1)$.
+
+## Geometry-of-Numbers / Successive-Minima framework (Session 39 build + retirement)
+
+**Status:** RETIRED. Theory-building under the SPECIAL DIRECTIVE. A framework of a genuinely **new
+shape** — the geometry of numbers of the logarithmic lattice attached to a candidate solution,
+analyzed via successive minima — distinct from the four prior frameworks. The framework's proved
+structural lemma (GN-1, the Degeneration Law) is a genuine new fact and is kept; its crux lemma
+(GN-2) is proved equivalent to the missing effective $\kappa>1$ gap bound. **Eighth independent
+theory-building confirmation of the wall.** Do not reopen.
+
+**The framework (Session 39).** Keep the three-term equation 2-dimensional rather than collapsing to
+a single two-term gap: a genuine solution is the simultaneous exact vanishing of two linear forms in
+logs, $L_1 = x\log2 - 3\log z = \log(1-(3^y+5)/z^3)$ and $L_2 = y\log3 - 3\log z =
+\log(1-(2^x+5)/z^3)$, spanning a rank-2 log-lattice. The new question: do its successive minima
+$\lambda_1\le\lambda_2$ admit a Minkowski/determinant lower bound that bites (a *pair*-transcendence
+statement on $(\log2/\log3,\log z)$), escaping the single-$2^{1/3}$-form dead end?
+
+- **Lemma GN-1 (Degeneration Law) — PROVED, KEPT (genuine new fact).** On the survival wedge
+  ($D=x\log2-(2j+1)\log3\ge0$, $2^x\gtrsim3^y$), the log-lattice is **maximally degenerate**:
+  $\lambda_1=|L_1|\approx(3^y+5)/2^x = e^{-(x\log2-y\log3)}$ is **super-exponentially small** (an
+  $\sim10^5$-digit-exponent quantity at $k_x=1$), while $\lambda_2=|L_2|\approx x\log2-y\log3$ is
+  **huge** ($\sim10^4$–$10^5$). So eccentricity $\to\infty$ and $\det=\lambda_1\lambda_2\to0$:
+  no Minkowski second-minimum bound can bite. **Exact offset identity (Wolfram, 8 digits):**
+  $(-\log|L_1|)-D=(1-j)\log3$, $j=55439+55440k_y$ (AP $\{-60904.868,-121811.93,-182719.00\}$ for
+  $k_y=0,1,2$, step $-55440\log3$). On the known $(5,3,4)$: $L_1=-0.693$, $L_2=-0.863$,
+  $\varepsilon\approx1.25$ — non-degenerate, as it must be (small genuine solutions are the
+  well-conditioned points, already found).
+
+- **Lemma GN-2 (Determinant-Driven Exclusion, the crux) — REFUTED as a route (= the open target).**
+  Because $\lambda_2$ carries no smallness, the problem **collapses to the single first minimum**
+  $\lambda_1=|L_1|$, with $-\log\lambda_1 = x\log2-y\log3$ — the $\{\log2,\log3\}$ linear-form gap.
+  An effective lower bound on it strong enough to exclude the cube is precisely the missing
+  $\kappa>1$ gap bound (Baker gives $v_p=0$, S5; sub-Dirichlet $2^{2/3}$, S3/27/28). Provably
+  equivalent to the open target.
+
+**Why it fails (root cause).** The hoped-for 2-dimensionality is illusory: on the
+two-comparable-S-units wedge one log-form is forced super-tiny and the other forced large, so the
+Minkowski determinant degenerates and the problem reduces to the single archimedean first minimum —
+the same quantity every prior face returned. **Eighth confirmation.** Full statement in
+`knowledge/references/geometry_of_numbers_framework.md`; session narrative in
+`log/20260627_060000.md`. **DO NOT REOPEN** without a mechanism producing an archimedean $\kappa>1$
+gap, or genuine independent smallness in a second transverse log-form, from the outset.
