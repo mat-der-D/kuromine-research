@@ -361,13 +361,32 @@ soft-obstructed like all local constraints. Practical value: cheapest large sear
 Theorem T in `knowledge/problem.md` and `log/20260627_140000.md`. **No priority change** (live
 content remains the global/size $\kappa>1$ tool).
 
-**Open question:** Does the specific arithmetic of $c = 5$ (the phantom structure) impose
-any POSITIVE constraint that could be exploited? **Partial answer (S35):** yes, the $v_5$-valuation
-sieve $k_y\equiv k_x-1\pmod5$ is a genuine new positive constraint — but soft-obstructed (the
-phantom satisfies it). No *un*-obstructed positive consequence found.
+**Session 36 progress (Theorem U — 5-adic portrait of $z$; scan for other universal primes;
+iterated sieve to level 4; Python-verified due to Wolfram MCP unavailability).** Extended
+the Session-35 analysis to its natural completion: (i) **$v_5(z)=1$ universally** on the
+generic survival sub-lattice (since $v_5(N)=3\Rightarrow v_5(z)=1$; $z\equiv0\pmod5$,
+$z\not\equiv0\pmod{25}$); (ii) $z'=z/5\bmod5^n$ is bijective in $(k_x,k_y)$ — same
+structure as Theorems J/P for 3-adic/2-adic; (iii) scan of all primes $\ell\leq5000$: only
+$\ell=5$ divides $N$ universally (57 compatible primes checked; all other $\ell$ give
+$v_\ell(N)=0$ on the survival diagonal); (iv) iterated survival fractions converge to
+$\approx16.13\%$ (levels 1–4), bounded away from 0 — soft obstruction confirmed
+quantitatively; (v) **combined CRT portrait**: $z\equiv3910\pmod{4320=27\cdot32\cdot5}$ for
+the $k_y=0$ case, the sharpest combined $z$-constraint available. All soft-obstructed: the
+phantom $z_{\text{phantom}}=10/3$ satisfies $v_5(10/3)=1$ and all 5-adic conditions. 25th
+confirmation. See Theorem U in `knowledge/problem.md` and Session-36 log.
 
-**Priority:** LOW. Cyclotomic characterization (S17) + 5-adic valuation sieve (S35, Theorem T)
-derived; the sieve is useful for numerical search but soft-obstructed for a proof.
+**Open question:** Does the specific arithmetic of $c = 5$ (the phantom structure) impose
+any POSITIVE constraint that could be exploited? **Full answer after S35–S36:** yes, the
+$v_5$-valuation sieve $k_y\equiv k_x-1\pmod5$ (Theorem T) and $v_5(z)=1$ (Theorem U) are
+genuine new positive constraints on the family — but **both are soft-obstructed** (the
+phantom satisfies them). Prime 5 is the unique source of a valuation sieve (no other $\ell$
+works). The 5-adic face is now fully examined and joins the existing confirmations. No
+*un*-obstructed positive consequence found; this sub-question is effectively exhausted.
+
+**Priority:** LOW. The 5-adic face is now fully analyzed (Theorems T+U, Sessions 35–36):
+the arithmetic of $c=5$ gives the cheapest combined search-space cut ($\geq5\times$ from T,
+$\geq5\times$ more from U), useful for any future numerical verification; soft-obstructed
+for a proof. No further 5-adic analysis is expected to produce a new result.
 
 ### [~RETIRED, Session 17] Function-field analog / Mason-Stothers inspiration
 

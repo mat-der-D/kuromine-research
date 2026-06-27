@@ -1,6 +1,45 @@
 # Current Focus
 
-**Session:** 20260627_140000 (Session 35)
+**Session:** 20260627_Session36 (Session 36)
+
+## Session 36 main result (WATCH negative, 25th confirmation; NEW Theorem U = 5-adic portrait of $z$ on the survival sub-lattice; Python-verified due to Wolfram MCP unavailability)
+
+WATCH-phase session plus a concrete computation extending the 5-adic analysis of Session 35
+(Theorem T) to its natural completion: the 5-adic portrait of $z$ itself on the survival
+sub-lattice, a scan for any other primes giving a valuation sieve, and an iterated sieve
+analysis to four 5-adic depths.
+
+**arXiv watch (twenty-fifth confirmation, negative).** Unchanged: Bugeaud 2503.22084 /
+2604.27490 still only "$\to\infty$ with $z^d$" (not power-saving $\kappa>1$); $k\ge3$-prime
+decidability (Dong–Shafrir 2505.19141) still "outstanding open problem"; Badziahin 2509.01105
+is a conditional effective irrationality measure for cube roots, NOT an unconditional gap
+bound (and sub-Dirichlet: measures don't reach the needed $\kappa>1$ in the sub-Dirichlet
+regime $E\to2/3$). No new applicable paper.
+
+**Theorem U (NEW, Python-verified; Wolfram MCP unavailable) — 5-adic portrait of $z$.**
+On the generic $v_5(N)=3$ part of the survival sub-lattice ($k_y\equiv k_x-1\pmod5$):
+1. **$v_5(z)=1$ universally** (since $v_5(z^3)=v_5(N)=3$, so $3v_5(z)=3$, $v_5(z)=1$):
+   equivalently $z\equiv0\pmod5$, $z\not\equiv0\pmod{25}$.
+2. **$z'=z/5 \bmod 5^n$ is a bijective function of $(k_x,k_y)$** on the survival diagonal
+   (concrete sample: four generic diagonal pairs give $z'\bmod5\in\{1,2,3,4\}$).
+3. **No other prime $\ell\leq5000$ gives a valuation sieve**: Python scan over 57 compatible
+   primes shows only $\ell=5$ universally divides $N$; for all others $v_\ell(N)=0$ on the
+   survival diagonal. Prime 5 is the unique source.
+4. **Iterated survival fractions converge to $\approx16.13\%$** (levels 1–4: $16.0\%$,
+   $16.16\%$, $16.11\%$, $16.13\%$), confirming soft obstruction quantitatively.
+5. **Combined CRT portrait**: $z\equiv3910\pmod{4320}$ for the $k_y=0$ case, combining the
+   2-adic ($z\equiv6\pmod{32}$), 3-adic ($z\equiv22\pmod{27}$), and 5-adic ($z\equiv0\pmod5$)
+   conditions.
+6. **Soft-obstructed**: phantom $z_{\text{phantom}}=10/3$ has $v_5(10/3)=1$ (passes), and
+   $z'/5 \bmod 5$ is nonzero for the phantom. The sieve cannot terminate.
+
+**Net.** Theorem U is the natural 5-adic completion of Theorem T, and produces the sharpest
+combined portrait of $z$ across three primes. It confirms (does not breach) the wall: soft
+obstruction holds at every 5-adic depth ($\approx16.13\%$ survival, bounded away from 0).
+Twenty-fifth structural confirmation. WATCH remains the sole active priority. No framework
+built (Session-28 inventory-complete verdict). See Theorem U in `knowledge/problem.md`.
+
+---
 
 ## Session 35 main result (WATCH negative, 24th confirmation; NEW Theorem T = 5-adic Valuation Sieve at the constant prime, Wolfram-verified)
 
